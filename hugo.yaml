@@ -57,7 +57,7 @@ build:
         hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "https://matk0.github.io/"
     - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
