@@ -1,0 +1,219 @@
+# site default theme ["auto", "light", "dark"]
+defaultTheme = "auto"
+# date format
+dateFormat = "2006-01-02"
+# website title for Open Graph and Twitter Cards
+title = "Matej Lukášik - Eclectic AI Builder"
+# website description for RSS, SEO, Open Graph and Twitter Cards
+description = "Personal website of Matej Lukášik - Eclectic AI Builder"
+# website images for Open Graph and Twitter Cards
+images = ["/avatar.png"]
+
+# Author config
+[author]
+  name = "Matej Lukášik"
+  email = ""
+  link = ""
+
+# Header config
+[header]
+  # desktop header mode ["fixed", "normal", "auto"]
+  desktopMode = "fixed"
+  # mobile header mode ["fixed", "normal", "auto"]
+  mobileMode = "auto"
+  # Header title config
+  [header.title]
+    # URL of the LOGO
+    logo = ""
+    # title name
+    name = "Matej Lukášik"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    # whether to use typeit animation for title name
+    typeit = false
+
+# Footer config
+[footer]
+  enable = true
+  # Custom content (HTML format is supported)
+  custom = ""
+  # whether to show Hugo and theme info
+  hugo = false
+  # whether to show copyright info
+  copyright = true
+  # whether to show the author
+  author = true
+  # site creation time
+  since = 2025
+  # ICP info only in China (HTML format is supported)
+  icp = ""
+  # license info (HTML format is supported)
+  license = ''
+
+# Home page config
+[home]
+  # amount of RSS pages
+  rss = 10
+  # Home page profile
+  [home.profile]
+    enable = true
+    # Gravatar Email for preferred avatar in home page
+    gravatarEmail = ""
+    # URL of avatar shown in home page
+    avatarURL = "/avatar.png"
+    # title shown in home page (HTML format is supported)
+    title = "Matej Lukášik"
+    # subtitle shown in home page (HTML format is supported)
+    subtitle = "Eclectic AI Builder"
+    # whether to use typeit animation for subtitle
+    typeit = true
+    # whether to show social links
+    social = true
+    # disclaimer (HTML format is supported)
+    disclaimer = ""
+  # Home page posts
+  [home.posts]
+    enable = true
+    # special amount of posts in each home posts page
+    paginate = 6
+
+# Social config in home page
+[social]
+  GitHub = "matk0"
+  Linkedin = "matejlukasik"
+  X = "matejlukasik"
+  Instagram = "matejlukasik"
+  Facebook = "matejlukasik"
+  Telegram = "matejlukasik"
+  Medium = "matejlukasik"
+  Youtubecustom = "matejlukasik"
+  Reddit = "matejlukasik"
+  Pinterest = "matejlukasik"
+  Tumblr = "matejlukasik"
+  Spotify = "matejlukasik"
+  Soundcloud = "matejlukasik"
+  Twitch = "matejlukasik"
+  Discord = "matejlukasik"
+  TikTok = "matejlukasik"
+  Threads = "matejlukasik"
+  Email = ""
+  RSS = true
+
+# Page global config
+[page]
+  # whether to hide a page from home page
+  hiddenFromHomePage = false
+  # whether to hide a page from search results
+  hiddenFromSearch = false
+  # whether to enable twemoji
+  twemoji = false
+  # whether to enable lightgallery
+  lightgallery = false
+  # whether to enable the ruby extended syntax
+  ruby = true
+  # whether to enable the fraction extended syntax
+  fraction = true
+  # whether to enable the fontawesome extended syntax
+  fontawesome = true
+  # whether to show link to Raw Markdown content of the content
+  linkToMarkdown = true
+  # whether to show the full text content in RSS
+  rssFullText = false
+  # Table of the contents config
+  [page.toc]
+    # whether to enable the table of the contents
+    enable = true
+    # whether to keep the static table of the contents in front of the post
+    keepStatic = false
+    # whether to make the table of the contents in the sidebar automatically collapsed
+    auto = true
+  # Code config
+  [page.code]
+    # whether to show the copy button of the code block
+    copy = true
+    # the maximum number of lines of displayed code by default
+    maxShownLines = 50
+  # KaTeX mathematical formulas config (KaTeX https://katex.org/)
+  [page.math]
+    enable = false
+  # Social share links in post page
+  [page.share]
+    enable = true
+    X = true
+    Threads = true
+    Facebook = true
+    Linkedin = true
+    Whatsapp = false
+    Pinterest = true
+    Tumblr = true
+    HackerNews = true
+    Reddit = true
+    Telegram = true
+  # Comment config
+  [page.comment]
+    enable = false
+
+# TypeIt config
+[typeit]
+  # typing speed between each step (measured in milliseconds)
+  speed = 100
+  # blinking speed of the cursor (measured in milliseconds)
+  cursorSpeed = 1000
+  # character used for the cursor (HTML format is supported)
+  cursorChar = "|"
+  # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
+  duration = -1
+
+# Site verification code for Google/Bing/Yandex/Pinterest/Baidu
+[verification]
+  google = ""
+  bing = ""
+  yandex = ""
+  pinterest = ""
+  baidu = ""
+
+# Site SEO config
+[seo]
+  # image URL
+  image = "/avatar.png"
+  # thumbnail URL
+  thumbnailUrl = "/avatar.png"
+
+# Analytics config
+[analytics]
+  # Google Analytics
+  [analytics.google]
+    id = ""
+
+# Search config
+[search]
+  enable = false
+
+# App icon config
+[app]
+  # optional site title override for the app when added to an iOS home screen or Android launcher
+  title = "Matej Lukášik"
+  # whether to omit favicon resource links
+  noFavicon = false
+  # modern SVG favicon to use in place of older style .png and .ico files
+  svgFavicon = ""
+  # Android browser theme color
+  themeColor = "#ffffff"
+  # Safari mask icon color
+  iconColor = "#5bbad5"
+  # Windows v8-11 tile color
+  tileColor = "#da532c"
+
+# CDN config for third-party library files
+[cdn]
+  # CDN data file name, disabled by default
+  data = ""
+
+# Compatibility config
+[compatibility]
+  # whether to use Polyfill.io to be compatible with older browsers
+  polyfill = false
+  # whether to use object-fit-images to be compatible with older browsers
+  objectFit = false

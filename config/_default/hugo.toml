@@ -1,0 +1,15 @@
+baseURL = 'https://matejlukasik.com/'
+languageCode = 'en-us'
+title = 'Matej Lukášik'
+theme = 'LoveIt'
+
+# whether to use robots.txt
+enableRobotsTXT = true
+# whether to use git commit log
+enableGitInfo = false
+# whether to use emoji code
+enableEmoji = true
+
+# Permalinks config (https://gohugo.io/content-management/urls/#permalinks)
+[permalinks]
+  posts = ":contentbasename"
