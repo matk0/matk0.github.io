@@ -36,9 +36,6 @@
                         {{- .Pre | safeHTML }} {{ .Name }} {{ .Post | safeHTML -}}
                     </a>
                 {{- end -}}
-                {{- if .Site.Menus.main -}}
-                    <span class="menu-item delimiter"></span>
-                {{- end -}}
 
                 {{- if .Site.Params.search.enable -}}
                     <span class="menu-item search" id="search-desktop">
