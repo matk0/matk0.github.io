@@ -40,6 +40,8 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Remove problematic exampleSite to avoid build errors
+        run: rm -rf themes/LoveIt/exampleSite
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
