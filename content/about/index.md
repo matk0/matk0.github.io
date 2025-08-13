@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: 'About Me'
 date: 2025-07-16T12:00:00+00:00
 draft: false
 ---
@@ -15,12 +15,10 @@ I build, explore, and create with artificial intelligence. My approach is eclect
 ## Connect With Me
 
 You can find me @matejlukasik on most social platforms:
+
 - X (Twitter): [@matejlukasik](https://x.com/matejlukasik)
-- LinkedIn: [@matejlukasik](https://linkedin.com/in/matejlukasik)
 - Instagram: [@matejlukasik](https://instagram.com/matejlukasik)
 - GitHub: [@matk0](https://github.com/matk0)
-
-And many more platforms - just search for @matejlukasik!
 
 ## Current Focus
 
