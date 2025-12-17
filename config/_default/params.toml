@@ -82,9 +82,8 @@ images = ["/avatar.png"]
 # Social config in home page
 [social]
   GitHub = "matk0"
-  X = "matejlukasik"
-  Instagram = "matejlukasik"
-  Email = "matej@occupationbliss.com"
+  Email = "matej.lukasik@icloud.com"
+  Nostr = "https://primal.net/p/nprofile1qqs94f0r32amxlufep35rx73unnq4gcastarcwfe0cuxtphrjcdcqgglx4je0"
 
 # Page global config
 [page]
