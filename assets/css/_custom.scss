@@ -1,0 +1,9 @@
+// Custom Nostr icon using CSS mask (fallback for when JS fails)
+i[data-svg-src*="nostr"] {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  -webkit-mask: url('/images/nostr.min.svg') no-repeat center / contain;
+  mask: url('/images/nostr.min.svg') no-repeat center / contain;
+}
