@@ -75,7 +75,7 @@ images = ["/avatar.png"]
     disclaimer = ""
   # Home page posts
   [home.posts]
-    enable = true
+    enable = false
     # special amount of posts in each home posts page
     paginate = 6
 
@@ -127,7 +127,7 @@ images = ["/avatar.png"]
     enable = false
   # Social share links in post page
   [page.share]
-    enable = true
+    enable = false
     X = true
     Threads = true
     Facebook = true

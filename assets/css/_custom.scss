@@ -7,3 +7,13 @@ i[data-svg-src*="nostr"] {
   -webkit-mask: url('/images/nostr.min.svg') no-repeat center / contain;
   mask: url('/images/nostr.min.svg') no-repeat center / contain;
 }
+
+// Fix home page content positioning
+.page.home .home-profile {
+  transform: translateY(0) !important;
+  padding-top: 2rem;
+}
+
+.page.home .single {
+  margin-top: 2rem;
+}
