@@ -13,7 +13,7 @@ title: ""
 <p style="margin-bottom: 0;">Generate a random number for any number set in a transparent fashion using Bitcoin blockchain.</p>
 </div>
 <div style="padding: 1.5rem; border-radius: 12px; background: #f8f9fa; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 1rem;">
-<h3 style="margin-top: 0;"><a href="https://doto-001.web.app/" target="_blank">Doto</a></h3>
+<h3 style="margin-top: 0;"><a href="https://doto-001.web.app/" target="_blank">doto</a></h3>
 <p style="margin-bottom: 0;">A memory game designed by my friend Martin and implemented by me. Playable vs. AI or another human player. Much fun.</p>
 </div>
 <div style="padding: 1.5rem; border-radius: 12px; background: #f8f9fa; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
