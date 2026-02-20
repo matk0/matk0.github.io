@@ -88,3 +88,9 @@ i[data-svg-src*="nostr"] {
   color: var(--global-font-secondary-color);
   margin-top: 0.5rem;
 }
+
+// Centered video
+.video-centered {
+  display: flex;
+  justify-content: center;
+}
