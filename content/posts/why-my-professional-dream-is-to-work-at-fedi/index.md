@@ -2,57 +2,73 @@
 title: "Why My Professional Dream Is to Work at Fedi"
 date: 2026-02-07
 draft: false
-description: ""
+description: "Cover love letter to Fedi"
 tags:
   - bitcoin
   - fedi
   - career
 featuredImage: "IMG_6131.jpeg"
 ---
-## Introduction
-I first heard of Fedi and Fedimint at the beginning of 2024 during the first wave of Obi's appearances on different podcasts. Although I could not understand the concept at first (I mean chaumian mints, envelopes, signatures, e-cash, federations, guardians, etc. -> 😭), I sensed there is something important there. I spent the next six months watching every podcast and lecture on Fedimint I could find. In the end, I understood.
 
-<div class="video-centered">
+## Prologue
+From all the pleasures life offers, finding meaning in your day-to-day work is one of the most profound. Knowing that your day's activities, however small or seemingly insignificant, contributed to your highest vision for the world, is deeply satisfying. Without it, life can still be great, but there will always be something missing, an itch that won't go away, however hard you scratch it with wordly means.
+
+That's how I felt for the last 20 years. I sought far and wide, followed mirages and ghosts, never finding the deep satisfaction I longed for. Then I discovered Bitcoin. As years went by, it clicked deeper and deeper until one day I realized: Earth is a FIAT prison planet and Bitcoin is a rare opportunity for the human race to liberate itself.
+
+**Bitcoin gave me the realistic vision: Liberation from FIAT tyranny. Fedimint is giving us the tactics. Fedi is the vehicle.**
+## Introduction
+I first heard of Fedi and Fedimint at the beginning of 2024 during the first wave of Obi's appearances on different podcasts. Although I could not understand the concept at first (I mean chaumian mints, envelopes, blind signatures, e-cash, federations, guardians, etc. -> 😭), I sensed there is something important there. I spent the next six months reading documentation and watching every podcast and lecture on Fedimint I could find. Eventually, I understood the technical parts as well as I could, but more importantly the strategy clicked: Stop trying to convince the developed world to adopt Bitcoin as money, and focus on the Global South, where the pain FIAT causes is felt much deeper and on a day-to-day basis. Where pain is felt the most, medicine is the easiest to swallow.
+
+<figure class="video-centered">
     <video controls width="30%">
       <source src="obi.mp4" type="video/mp4">
     </video>
-</div>
+    <figcaption>let me know if Obi wants this removed from the internet :-D</figcaption>
+</figure>
 
-Later in 2024, during BTC Prague, I saw the above at Satoshi Rockamoto event :-D It was one of those moments in life when I was truly swept away. Personal integrity is one of my highest values and here is Obi, singing "Never enough, until we are all free!". I though to my self: Wow, this is a CEO, that just goes on stage and sings his heart out about what he believes and then wakes up the next day, goes to work, and does it. At that moment, I knew I want to work at Fedi.
+Later in 2024, during BTC Prague, I watched the above at Satoshi Rockamoto event. It was one of those surreal life moments. I felt as if everything clicked together and I knew Obi is someone worth following. There he was singing: "Never enough, until we are all free!" I though to myself: "Wow, here is a CEO, that goes on stage, sings his heart out, wakes up the next day, and actually goes and works on his highest vision for the world." It doesn't get much better than that.
 
-Let me explain a little bit what I mean by personal integrity. There are a few better things in life then work hard, and at the end of the day be able to say: "What I did today had meaning." There is no greater meaning to work, than liberating humanity from FIAT slavery.
+At the time, I didn't see a path to working with you. Fedi's codebase deserves engineers who live and breathe low-level protocol work — that's not where my strengths lie. My knowledge of Bitcoin wasn't there either, and I had no proof-of-work. It just wasn't the right time.
 
-Yet at the time, I was not confident to land a job with you guys. I thought of myself as a programmer, and not a very good one. At the same time, I knew more about Bitcoin than 99% of humanity, but I wasn't confident in that knowledge either.
+## Who Am I?
+My name is Matej Lukášik and I am located in Slovakia. You can find my CV [here](/about/) but just shortly: Ten years ago I learned to program web-applications using Ruby on Rails and that's what I did professionally for the last ten years. The job makes for a good lifestyle, but I always felt there was something missing. I tried my hand at a bunch of my own startups but as I mentioned in the prologue, I could never find enough meaning in them to keep me going.
 
-I believe Fedi is the best shot we've got at global Bitcoin adoption. I kept talking about Bitcoin to people around me for the last 5 years. They don't care. Not enough pain yet. However, the global south knew nothing but pain over the last hundreds of years. They will be the ones to understand the problems Bitcoin solves and adopt it the fastest. I find it amusing that, when it comes to money, the "developed" west is driving gasoline powered clunkers and communities of the Global South that elect to use Fedi are showing up in star-powered spaceships.
+Here's something I've come to understand about myself: I'm a strong builder and shipper, but my gift isn't algorithms, data structures, or low-level optimization. It's seeing the whole picture — taking a product from concept to shipping, building integrations that open new markets, setting up teams and processes that scale. I spent ten years coding because that was the tool at hand, but what I was actually doing was building products and businesses.
 
-## Who am I?
-My name is Matej Lukášik and I am located in Slovakia. You can find my CV [here](/about/) but just shortly: Ten years ago I learned to program web-applications using Ruby on Rails and that's what I did professionally the last ten years. The job makes for a good lifestyle, but I always felt there was something missing. We all know the coders who were born to do it, but this is not me. I can do it, and I'm pretty decent at it, but it's not truly, truly me. And that's OK. Today, I'm still working as a senior Ruby on Rails developer, located in Slovakia,  but I am looking to transition. Actually, I want to make two transitions at the same time: I want to move my time and energy onto the Bitcoin network (Jeff's a GOAT) and as per "not truly, truly me", I want to code less. Funny thing is that with the advent of LLMs, claude code and openclaw, I find building more fun than ever. I just never enjoyed the nitty, gritty of coding, algorithm optimization and data structures wizardry.
+Today, I'm still working as a senior Ruby on Rails developer for a Swedish startup but I am looking to transition. I want to move my time and energy onto the Bitcoin network (Jeff's a GOAT) and into a role that uses the full range of what I've learned — not just the code. Funny thing is that with the advent of LLMs, I find building stuff more fun than ever. I just never enjoyed the nitty, gritty of coding as much as the question of what to build and why.
 
-And that brings me to Fedi. I see you have 7 open positions at the moment. I don't have the amount and depth of experience to apply to any of them in particular. However, let me present my self to you and maybe you think I'm a good fit for one of them, or you can create one just for me ;-)
+On the Bitcoin front, I've been investing heavily in education and community — more on that below.
 
-I asked openclaw to go through the positions and identify common themes. Here are a few comments on how am I doing on them.
-#### Mission Aligned Mindset
-Yes sir! Proud Bitcoin maxing, node running, GrapheneOS using, nostr onlying, matrix unplugged MF-er!
-#### AI-Enabled Productivity
+## Working Together?
 
-I am a programmer and it's been ten months since I written a line of code by hand. Just today I submitted a Github action, that nightly scans our error logs, creates GH issues out of what it finds, asks copilot to fix them and the solutions as PRs. I just started tinkering with OpenClaw.
+From the 7 open positions at Fedi, I think [Mini-Apps Lead](https://bitcoinerjobs.com/job/1948723-mini-apps-lead-fedi) is where I can create the most value.
 
-#### Global South / Emerging Markets Focus
-I lived in New Zealand for a year, South Korea for two years, and most recently I came back from Costa Rican jungle where I spent another two years. What I mean to say by that is that I have a lot of experience abroad, outside of my culture and can get along with almost anyone anywhere :-)
-#### Community-First DNA
+I'm not a traditional BD hire and I won't pretend otherwise. What I am is a developer, builder, startup founder and former CTO who has spent 10 years building, integrating, and shipping products — and who now brings that technical depth to the business side of growing an ecosystem.
+
+Here's what that looks like in practice:
+
+**I've built the kind of integrations Mini-Apps are made of.** At Datamolino, I built the QuickBooks Online integration that opened an entire app marketplace and created substantial new business opportunities. That wasn't just coding — it was evaluating a partner platform, understanding the commercial opportunity, and shipping an integration that worked reliably for thousands of users. At Primehammer, I designed API access for mobile apps and documented it with Swagger — the developer experience work that makes ecosystems actually usable.
+
+**I've scaled teams and introduced new technology into organizations.** As the first employee and CTO at Zeilenwerk, I grew the development team from 2 to 10, introduced React, React Native, and GraphQL, established development processes, and led projects from inception to completion. Building a Mini-Apps ecosystem requires the same muscle: evaluating new technology, onboarding partners, setting quality standards, and making sure everything ships.
+
+**I can evaluate a Mini-App's architecture in a partner meeting.** The posting says "you don't need to code, but you can read a spec." I don't just read specs — I write them. When a potential Mini-App partner presents their integration, I'll know immediately whether it's solid or fragile, whether their API design will scale, and what the real technical risks are. That's a lens most BD leads simply can't offer.
+
+**I use AI as infrastructure, not as a toy.** It's been ten months since I've written a line of code by hand. Just today I submitted a GitHub Action that scans our error logs nightly, creates GitHub issues from what it finds, asks Copilot to fix them, and submits the solutions as PRs. For Mini-Apps, I see AI-driven opportunity: automated partner pipeline tracking, developer ecosystem health monitoring, and agent-based discovery of integration opportunities we might not spot manually.
+
+**I'm building my Bitcoin proof-of-work every day:**
 - I lead [twentyone.world](https://www.dvadsatjeden.org/) meetups in my city Trnava, Slovakia.
-- I recently gave a self-organized [talk](https://www.malyberlin.sk/eventy/historia-penazi-od-musli-k-bitcoinu/) -> History of Money - From Shells to Bitcoin.
-- I wrote a [few articles](https://www.dvadsatjeden.org/author/matej/) for the community (in english [here](https://matejlukasik.com/)).
-That being said, my community actions spring from enthusiasm for the cause, rather than extroversion, or super strong need for social connection.
-#### Outcomes Over Process
-Yes
+- I recently gave a self-organized [talk](https://www.malyberlin.sk/eventy/historia-penazi-od-musli-k-bitcoinu/) — History of Money: From Shells to Bitcoin.
+- I write [articles](https://www.dvadsatjeden.org/author/matej/) for the Slovak Bitcoin community (in English [here](https://matejlukasik.com/)).
+- I completed [Dušan Matuška](https://x.com/dusan_matuska?lang=en)'s [Bitcoin Educator's Academy](https://www.amityage.com/bea) and am signed up for level 2 in May 2026.
+- I'm working through courses at [Plan B Academy](https://planb.academy/en)
+- I run my own node :-)
 
-####  Cross-Functional Operators 
+My community work springs from genuine enthusiasm for the cause. Which brings me to the part that needs no embellishment: mission alignment. I'm a Bitcoin maximalist, node runner, GrapheneOS user, Nostr native.
 
-If there ever was a title I could wear, "Jack of all trades" would be it. 
+Here's the honest pitch: I offer a decade of technical product experience, the ability to sit in a room with developers and partners and actually understand both sides
 
-As I stated above, it is not entirely clear to me, which one of your open positions I should pursue. However, I am a well articulated, technologically versed person, with a healthy dose of charisma. Maybe what we could do is setup a company wide openclaw server and systematically automatize processes across the organization. Everything, that can be automated, should be automated, so that machines do the repetive, tedious work and us humans can focus on creativity and most of all human connection.
+**, and a level of mission alignment that had me voluntarily studying Fedimint documentation while normal people were enjoying their summer.**
 
-What do you think?
+Whatever gaps remain between where I am and where the role needs me — I close them fast. I've been doing it my whole career with new technologies, and now I have AI making the learning curve feel like a gentle slope.
 
+Never enough, until we are all free! 😉

@@ -90,7 +90,19 @@ i[data-svg-src*="nostr"] {
 }
 
 // Centered video
-.video-centered {
-  display: flex;
-  justify-content: center;
+figure.video-centered {
+  display: block;
+  text-align: center;
+  margin: 1.5rem 0;
+
+  video {
+    display: block;
+    margin: 0 auto;
+  }
+
+  figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--global-font-secondary-color);
+  }
 }
