@@ -64,7 +64,7 @@ I'm not a traditional BD hire and I won't pretend otherwise. What I am is a deve
 
 I offer a decade of technical product experience, the ability to sit in a room with developers and partners and actually understand both sides. Whatever gaps remain between where I am and where the role needs me, I close them fast. I've been doing it my whole career with new technologies, and now, with LLMs at hand, understanding and applying new concepts has never been easier.
 
-I'd love to sit down and talk about how my experience could serve Fedi's mission. I have a lot of questions about where Mini-Apps are headed, and I've learned that asking good questions is what I do best. You can reach me at matej.lukasik@icloud.com.
+**I'd love to sit down and talk about how my experience could serve Fedi's mission.** I have a lot of questions about where Mini-Apps are headed, and I've learned that asking good questions is what I do best. You can reach me at matej.lukasik@icloud.com.
 
 PS: Never enough, until we are all free! 😉
 
