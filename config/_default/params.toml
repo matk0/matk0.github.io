@@ -73,7 +73,7 @@ images = ["/avatar.png"]
     # whether to show social links
     social = true
     # disclaimer (HTML format is supported)
-    disclaimer = ""
+    disclaimer = "<a href='/about/' style='color: #2563eb;'>learn more</a>"
   # Home page posts
   [home.posts]
     enable = false
