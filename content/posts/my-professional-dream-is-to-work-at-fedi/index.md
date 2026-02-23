@@ -15,7 +15,7 @@ From all the pleasures life offers, finding meaning in your day-to-day work has 
 
 That's how I felt for the last 20 years. I sought far and wide, followed mirages and ghosts, never finding the deep satisfaction I longed for. Then I discovered Bitcoin. As years went by, it clicked deeper and deeper until one day I realized: Earth is a FIAT prison planet and Bitcoin is a rare opportunity for the human race to liberate itself. Finally, a work proposition with all the meaning I could ask for.
 
-**Bitcoin gave me the realistic vision: Liberation from FIAT tyranny. Fedimint is giving us the tactics. Fedi is the vehicle.**
+**Bitcoin gave us the realistic vision: Liberation from FIAT tyranny. Fedimint is giving us the instruments. Fedi is the vehicle.**
 ## Introduction
 I first heard of Fedi and Fedimint at the beginning of 2024 during the first wave of Obi's appearances on different podcasts. Although I could not understand the concept at first (I mean chaumian mints, envelopes, blind signatures, e-cash, federations, guardians, etc. -> 😭), I sensed there is something important there. I spent the next six months reading documentation and watching every podcast and lecture on Fedimint I could find. Eventually, I understood the technical parts as well as I could, but more importantly **the strategy clicked**: *Stop trying to convince the developed world to adopt Bitcoin as money, and focus on the Global South, where the pain FIAT causes is felt much deeper and on a day-to-day basis.* **Where pain is felt the most, medicine is the easiest to swallow.**
 
