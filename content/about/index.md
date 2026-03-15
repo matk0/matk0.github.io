@@ -14,32 +14,30 @@ draft: false
 {{< carousel >}}
 profile.jpeg | Happy in Madeira
 memed-io-output.png | Laser focused!
-selling.jpeg | Selling homegrown mullberries for sats :-)
 hackathon.jpg | Working on pareto.space in Ticino
 camino.jpeg | Finished Camino de Santiago (the French route)
 {{< /carousel >}}
 
 I'm a builder with ten years of experience shipping web and mobile applications, scaling teams, and leading products from concept to completion.
 
-My technical foundation is Ruby, Ruby on Rails, React, Postgres, GraphQL — although these days, give me a Claude Code subscription and I'll build just about anything.
+My technical foundation is **Ruby on Rails, PostgreSQL, Redis, Hotwire (Turbo & Stimulus), Tailwind, React, and GraphQL**. I've built systems handling millions of data points and led teams from 2 to 10 engineers. I thrive in startups where I can take ownership and ship fast. I like freedom and autonomy, and strong technical cooperation. I spot what needs doing and ship it without waiting for permission.
 
-I'm currently **transitioning onto the Bitcoin network**. I lead local Bitcoin meetups, educate my community, and am deepening my knowledge of freedom technologies. I'm looking for a role that combines my technical depth with product and ecosystem thinking — where understanding both the business side and the engineering side is the actual job.
+I'm **very excited about AI and its potential to transform how we build software**. I use Claude Code daily and spend my free time tinkering with agentic workflows and [openclaw](https://openclaw.ai/). The intersection of AI, real products and agentic coding is where I want to be.
 
-I'm very **excited about the automation opportunities AI brings**. I spend way too much time tinkering with [openclaw](https://openclaw.ai/) 🫠
+I'm also passionate about Bitcoin and freedom technologies, leading local meetups and educating my community.
 
 ## Work Experience
 
 ### Senior Developer — Doconomy
 *05/2025 – Present | Remote, Sweden*
 
-  Contributing to Dreams Enterprise, a B2B2C Rails monolith serving multiple
-  partner banks with savings goals, sustainability features, and comprehensive partner
-  administration tools.
+Contributing to Dreams Enterprise, a **B2B2C Rails monolith serving multiple partner banks** and **hundreds of thousands of end users** — a mobile app with savings goals, sustainability features, and comprehensive partner administration tools.
 
-  - Designed and implemented a comprehensive Audit Trail system. 
-  - Built an image change tracking infrastructure using ActiveRecord reflections.
-  - Developed **business analytics dashboards** with metrics including user activity statistics, savings breakdowns by type, and goal creation trends with monthly/cumulative views.
-  - Built a production **error auto-fix workflow** integrating Datadog monitoring with  GitHub to automatically analyze errors and propose fixes using AI.
+- Built a production **AI-powered error auto-fix workflow** integrating Datadog monitoring with GitHub to automatically analyze errors and propose fixes.
+- Built an agent that uses best Ruby OOP practices to **automatically refactor legacy code**, improving maintainability and performance.
+- Designed and implemented a comprehensive Audit Trail system.
+- Built an image change tracking infrastructure using ActiveRecord reflections.
+- Developed **business analytics dashboards** with metrics including user activity statistics, savings breakdowns by type, and goal creation trends with monthly/cumulative views.
 
 ### Senior Developer — Createview.ai
 *01/2023 – 07/2024 | Remote, Norway*
@@ -47,7 +45,7 @@ I'm very **excited about the automation opportunities AI brings**. I spend way t
 Built an analytics platform for processing and visualizing data from underwater sensors — interactive charts, timeframe navigation, image browsing and filtering, and organization management.
 
 - Ran the entire Ruby on Rails development as a one-person team, **taking ideas from brief concepts to finished, production-ready features.**
-- Optimized queries handling millions of data points for performance and scalability.
+- **Optimized queries handling millions of data points** for performance and scalability — critical for real-time sensor visualization.
 - **Mentored junior developers** from minimal Rails experience to delivering meaningful contributions.
 
 ### CTO — Zeilenwerk GmbH
