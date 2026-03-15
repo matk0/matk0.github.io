@@ -20,7 +20,7 @@ camino.jpeg | Finished Camino de Santiago (the French route)
 
 I'm a builder with ten years of experience shipping web and mobile applications, scaling teams, and leading products from concept to completion.
 
-My technical foundation is **Ruby on Rails, PostgreSQL, Redis, Hotwire (Turbo & Stimulus), Tailwind, React, and GraphQL**. I've built systems handling millions of data points and led teams from 2 to 10 engineers. I thrive in startups where I can take ownership and ship fast. I like freedom and autonomy, and strong technical cooperation. I spot what needs doing and ship it without waiting for permission.
+My technical foundation is **Ruby on Rails, PostgreSQL, Redis, Hotwire, Tailwind, React, and GraphQL**. I've built systems handling millions of data points and led teams from 2 to 10 engineers. I thrive in startups where I can take ownership and ship fast. I like freedom and autonomy, and strong technical cooperation. I spot what needs doing and ship it without waiting for permission.
 
 I'm **very excited about AI and its potential to transform how we build software**. I use Claude Code daily and spend my free time tinkering with agentic workflows and [openclaw](https://openclaw.ai/). The intersection of AI, real products and agentic coding is where I want to be.
 
