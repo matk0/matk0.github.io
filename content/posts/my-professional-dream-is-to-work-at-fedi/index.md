@@ -1,7 +1,7 @@
 ---
 title: "My Professional Dream Is to Work at Fedi"
 date: 2026-02-07
-draft: false
+draft: true
 description: "My cover love letter to Fedi"
 tags:
   - bitcoin
