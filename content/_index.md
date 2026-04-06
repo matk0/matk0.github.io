@@ -2,6 +2,7 @@
 title: ""
 ---
 
+<!--
 <div style="clear: both; padding-top: 1rem;"></div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin: 2rem auto; max-width: 900px;">
@@ -26,16 +27,6 @@ title: ""
 </a>
 </div>
 
-<div style="flex: 1; min-width: 300px; max-width: 400px;">
-<h2 style="margin-top: 0;">Blog</h2>
-<a href="/bitcoin-key-to-renewable-energy/" style="display: block; padding: 1.5rem; border-radius: 12px; background: #f8f9fa; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 1rem; text-decoration: none; color: inherit;">
-<h3 style="margin-top: 0;">Bitcoin As the Key to Renewable Energy</h3>
-<p style="margin-bottom: 0;">How Bitcoin mining can stabilize the grid and accelerate the transition to renewable energy.</p>
-</a>
-<a href="/oslo-freedom-forum-2024/" style="display: block; padding: 1.5rem; border-radius: 12px; background: #f8f9fa; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-decoration: none; color: inherit;">
-<h3 style="margin-top: 0;">What Do Human Freedom and Bitcoin Have in Common? Everything.</h3>
-<p style="margin-bottom: 0;">An informal report from Oslo Freedom Forum 2024.</p>
-</a>
-</div>
 
 </div>
+-->

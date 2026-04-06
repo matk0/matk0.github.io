@@ -20,7 +20,7 @@ x:
   Prefix: https://x.com/
   Title: X
   Icon:
-    Class: fab fa-x-twitter fa-fw
+    Src: images/x.svg
 
 twitter:
   Alias: x
