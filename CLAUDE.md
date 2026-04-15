@@ -1,46 +1,38 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
 ## Project Overview
 
-Personal website for Matej Lukasik built with Hugo static site generator using the LoveIt theme. Deployed to GitHub Pages at matejlukasik.com.
+Bilingual marketing website for Matej Lukasik's AI agent consulting practice. Built with Astro 6, deployed on Cloudflare Pages. Serves English on matejlukasik.com and Slovak on matejlukasik.sk.
 
 ## Common Commands
 
 ```bash
-# Local development server with live reload
-hugo server
-
-# Build site for production
-hugo --gc --minify
-
-# Create new content
-hugo new posts/my-post.md
+npm run dev      # Start dev server (localhost:4321)
+npm run build    # Build for production
+npm run preview  # Preview production build locally
 ```
 
 ## Architecture
 
-**Configuration (split config):**
-- `config/_default/hugo.toml` - Base Hugo settings, theme selection, permalinks
-- `config/_default/params.toml` - Site params, author info, social links, home page profile
-- `config/_default/menus.toml` - Navigation menu items
+**Domain-based i18n:** Middleware (`src/middleware.ts`) detects hostname — `.sk` serves Slovak, everything else serves English. Language switcher links to the equivalent page on the other domain. No path prefixes.
 
-**Content:**
-- `content/_index.md` - Homepage content (currently features trandom.io project)
-- `content/about/` - About page
+**URL structure:**
+| EN (matejlukasik.com) | SK (matejlukasik.sk) |
+|---|---|
+| `/` | `/` |
+| `/services` | `/sluzby` |
+| `/about` | `/o-mne` |
+| `/contact` | `/kontakt` |
 
-**Customizations (overrides LoveIt theme):**
-- `layouts/partials/header.html` - Custom header (theme switcher removed)
-- `layouts/shortcodes/` - Custom shortcodes (x.html for X/Twitter embeds)
-- `assets/css/_custom.scss` - Custom CSS (Nostr icon styling)
-- `assets/data/social.yml` - Extended social media definitions (includes Nostr)
-- `assets/images/nostr.svg` - Custom Nostr icon
+**Key files:**
+- `src/i18n/` — Translation files (en.json, sk.json) and routing utilities
+- `src/middleware.ts` — Domain detection, wrong-language URL redirects
+- `src/layouts/Layout.astro` — HTML shell, meta tags, hreflang, analytics
+- `src/pages/api/contact.ts` — Contact form handler (Resend API)
+- `src/styles/global.css` — Tailwind theme, button styles, color palette
 
-**Static assets:** `static/` - Avatar, images served directly
+**Content:** All user-facing text is in `src/i18n/{en,sk}.json`. Components are translation-agnostic — they receive strings via props.
 
-## Deployment
+**Deployment:** Cloudflare Pages with Git integration. Auto-deploys on push to main. Environment variable: `RESEND_API_KEY`.
 
-GitHub Actions workflow (`.github/workflows/hugo.yml`) automatically builds and deploys to GitHub Pages on push to main. Uses Hugo extended v0.147.8.
-
-Build note: The workflow removes `themes/LoveIt/exampleSite` before building to avoid conflicts.
+**Archived:** Previous Hugo site is in `archive/`.

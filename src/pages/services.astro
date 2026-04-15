@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceSection from '../components/ServiceSection.astro';
+import CTABand from '../components/CTABand.astro';
+import { t } from '../i18n';
+
+const lang = 'en';
+const strings = t(lang);
+---
+
+<Layout
+  title="Services — Matej Lukasik"
+  description="AI consulting, agent implementation, and training for your team."
+  lang={lang}
+  currentPath="/services"
+>
+  <Hero
+    title={strings.services.heroTitle}
+    description={strings.services.heroDescription}
+  />
+
+  <ServiceSection
+    id="consulting"
+    icon="🎯"
+    title={strings.services.consulting.title}
+    subtitle={strings.services.consulting.subtitle}
+    description={strings.services.consulting.description}
+    includes={strings.services.consulting.includes}
+    ctaText={strings.services.consulting.cta}
+    ctaHref="/contact?service=consulting"
+    bg="white"
+  />
+
+  <ServiceSection
+    id="implementation"
+    icon="🔧"
+    title={strings.services.implementation.title}
+    subtitle={strings.services.implementation.subtitle}
+    description={strings.services.implementation.description}
+    includes={strings.services.implementation.includes}
+    ctaText={strings.services.implementation.cta}
+    ctaHref="/contact?service=implementation"
+    reversed
+    bg="alt"
+  />
+
+  <ServiceSection
+    id="training"
+    icon="📚"
+    title={strings.services.training.title}
+    subtitle={strings.services.training.subtitle}
+    description={strings.services.training.description}
+    includes={strings.services.training.includes}
+    ctaText={strings.services.training.cta}
+    ctaHref="/contact?service=training"
+    bg="white"
+  />
+
+  <CTABand title={strings.services.notSure.title} description={strings.services.notSure.description}>
+    <a href="/contact" class="btn-white">{strings.services.notSure.cta}</a>
+  </CTABand>
+</Layout>

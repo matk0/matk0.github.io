@@ -1,0 +1,119 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "bookCall": "Book a Call"
+  },
+  "home": {
+    "heroTitle": "AI agents for your team.",
+    "heroSubtitle": "Deployed in days, not months.",
+    "heroDescription": "You know AI could transform your business. I'll show you exactly how — and make it happen.",
+    "ctaPrimary": "Book a Free Call",
+    "ctaSecondary": "See My Services",
+    "painTitle": "AI is everywhere. Implementing it shouldn't be this hard.",
+    "pain1Title": "Too many tools, no strategy",
+    "pain1Description": "Every week there's a new AI tool. Without a clear plan, you're just collecting subscriptions.",
+    "pain2Title": "Expensive experiments that go nowhere",
+    "pain2Description": "Proof-of-concept projects that never make it to production. Budget spent, nothing to show.",
+    "pain3Title": "Your team doesn't know where to start",
+    "pain3Description": "AI feels overwhelming. Your people are willing, but they need guidance and the right setup.",
+    "servicesTitle": "How I Help",
+    "consultingTitle": "Consulting & Advisory",
+    "consultingDescription": "Assess workflows, identify high-impact automation opportunities, build your adoption roadmap.",
+    "implementationTitle": "Implementation",
+    "implementationDescription": "Design and deploy custom AI agents tailored to your processes. From single-task to multi-agent orchestration.",
+    "trainingTitle": "Training & Workshops",
+    "trainingDescription": "Hands-on sessions for your team. From prompt engineering to production agent workflows.",
+    "learnMore": "Learn more",
+    "trustTitle": "Built on open-source technology",
+    "trustDescription": "No vendor lock-in. Your data stays on your infrastructure. Full transparency in how your AI agents work.",
+    "ctaBandTitle": "Ready to bring AI to your team?",
+    "ctaBandDescription": "Most clients start with a 30-minute exploratory call. No commitment, no jargon."
+  },
+  "services": {
+    "heroTitle": "How I Help",
+    "heroDescription": "From strategy to execution — I meet you where you are.",
+    "consulting": {
+      "title": "Consulting & Advisory",
+      "subtitle": "Find out where AI makes sense — before you spend a crown.",
+      "description": "I assess your current workflows, identify the highest-impact automation opportunities, and build a concrete adoption roadmap. You get clarity on what's worth automating and what isn't.",
+      "includes": ["Workflow & process audit", "Automation opportunity mapping", "ROI estimation & prioritization", "Adoption roadmap with milestones"],
+      "cta": "Book a Consultation"
+    },
+    "implementation": {
+      "title": "Implementation",
+      "subtitle": "One API key. One server. An AI agent for every team member.",
+      "description": "I design and deploy custom AI agents tailored to your processes. Each employee gets their own agent, connected through a shared intelligence layer. A CEO agent orchestrates across the entire team.",
+      "includes": ["AI agent per employee via Slack", "CEO orchestrator for cross-team coordination", "Shared prompt library & company knowledge base", "Admin dashboard with usage analytics"],
+      "cta": "Start a Project"
+    },
+    "training": {
+      "title": "Training & Workshops",
+      "subtitle": "Build internal capability, not dependency.",
+      "description": "Hands-on sessions that teach your team how to work effectively with AI agents. From prompt engineering fundamentals to designing production agent workflows.",
+      "includes": ["Half-day intensive workshops", "Multi-week training programs", "Prompt engineering for business teams", "Ongoing support & office hours"],
+      "cta": "Request Training"
+    },
+    "notSure": {
+      "title": "Not sure where to start?",
+      "description": "Most clients start with a 30-minute exploratory call. No commitment, no jargon — just an honest conversation about what AI can do for your business.",
+      "cta": "Book a Free Call"
+    }
+  },
+  "about": {
+    "heroTitle": "Who Am I",
+    "heroDescription": "One person, one mission: making AI work for real teams.",
+    "bioName": "Matej Lukasik",
+    "bioTitle": "AI Agent Consultant",
+    "bioText": "I've seen too many companies burn money on AI pilots that go nowhere. Flashy demos that never make it to production. Consultants who leave behind a PDF and disappear.\n\nI fix that. I build AI agent systems that actually work — deployed on your infrastructure, integrated into your team's daily workflow, producing measurable results from week one.\n\nMy approach is simple: understand your business first, then build exactly what you need. No more, no less.",
+    "approachTitle": "My Approach",
+    "principle1Title": "Open-source first",
+    "principle1Description": "Built on open standards. No vendor lock-in, full transparency in how your agents work.",
+    "principle2Title": "Capability, not dependency",
+    "principle2Description": "I train your team alongside deployment. The goal is for you to own and evolve your AI systems independently.",
+    "principle3Title": "Start small, prove value",
+    "principle3Description": "No 6-month projects. I deploy fast, measure results, and expand only what works.",
+    "techTitle": "The Technology",
+    "techDescription": "I build on open-source multi-agent platforms. Each employee gets a personal AI agent accessible via Slack, orchestrated by a CEO agent that coordinates across the team. A shared MCP server provides company-wide prompts, tools, and knowledge. Everything runs on your infrastructure with a single API key. You maintain full control over your data.",
+    "ctaTitle": "Let's talk about what AI can do for your team.",
+    "ctaPrimary": "Book a Call",
+    "ctaSecondary": "Send a Message"
+  },
+  "contact": {
+    "heroTitle": "Get in Touch",
+    "heroDescription": "Whether you have a clear project or just questions — I'm here.",
+    "formTitle": "Send me a message",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@company.com",
+    "companyLabel": "Company (optional)",
+    "companyPlaceholder": "Your company name",
+    "serviceLabel": "What are you interested in?",
+    "serviceOptions": {
+      "consulting": "Consulting & Advisory",
+      "implementation": "Implementation",
+      "training": "Training & Workshops",
+      "notSure": "Not sure yet"
+    },
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your project or question...",
+    "submit": "Send Message",
+    "success": "Message sent! I'll get back to you within 24 hours.",
+    "error": "Something went wrong. Please try again or email me directly.",
+    "bookTitle": "Book a call",
+    "bookDescription": "Pick a time that works. 30 minutes, no strings attached.",
+    "directTitle": "Or reach out directly",
+    "email": "matej@matejlukasik.com",
+    "location": "Slovakia"
+  },
+  "footer": {
+    "description": "AI agent consulting for teams that want real results.",
+    "navigation": "Navigation",
+    "getInTouch": "Get in Touch",
+    "copyright": "Matej Lukasik. All rights reserved."
+  }
+}

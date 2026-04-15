@@ -1,0 +1,49 @@
+---
+import { t, getLocalizedPaths } from '../i18n';
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const strings = t(lang);
+const paths = getLocalizedPaths(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-primary-dark text-white/70">
+  <div class="container mx-auto px-4 sm:px-6 section-padding !pb-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <div>
+        <a href="/" class="text-xl font-bold text-white tracking-tight">matejlukasik</a>
+        <p class="mt-4 text-sm leading-relaxed max-w-xs">{strings.footer.description}</p>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{strings.footer.navigation}</h4>
+        <ul class="space-y-2">
+          <li><a href={paths.services} class="text-sm hover:text-white transition-colors">{strings.nav.services}</a></li>
+          <li><a href={paths.about} class="text-sm hover:text-white transition-colors">{strings.nav.about}</a></li>
+          <li><a href={paths.contact} class="text-sm hover:text-white transition-colors">{strings.nav.contact}</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{strings.footer.getInTouch}</h4>
+        <ul class="space-y-2">
+          <li>
+            <a href={`mailto:${strings.contact.email}`} class="text-sm hover:text-white transition-colors">
+              {strings.contact.email}
+            </a>
+          </li>
+          <li><span class="text-sm">{strings.contact.location}</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-8">
+      <p class="text-sm text-white/40">&copy; {year} {strings.footer.copyright}</p>
+    </div>
+  </div>
+</footer>

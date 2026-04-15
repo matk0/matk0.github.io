@@ -1,0 +1,24 @@
+{
+  "name": "matejlukasik-com",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^13.1.9",
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^6.1.6",
+    "tailwindcss": "^4.2.2",
+    "wrangler": "^4.82.2"
+  },
+  "overrides": {
+    "vite": "^7"
+  }
+}

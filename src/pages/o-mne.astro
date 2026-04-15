@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import CTABand from '../components/CTABand.astro';
+import { t } from '../i18n';
+
+const lang = 'sk';
+const strings = t(lang);
+---
+
+<Layout
+  title="O mne — Matej Lukasik"
+  description="AI agent konzultant. Moj pristup k nasadeniu AI agentov pre realne timy."
+  lang={lang}
+  currentPath="/o-mne"
+>
+  <Hero
+    title={strings.about.heroTitle}
+    description={strings.about.heroDescription}
+  />
+
+  <section class="section-padding bg-surface">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+        <div class="lg:col-span-2 flex flex-col items-center lg:items-start">
+          <div class="w-48 h-48 rounded-2xl overflow-hidden mb-6">
+            <img src="/avatar.png" alt="Matej Lukasik" class="w-full h-full object-cover" />
+          </div>
+          <h2 class="text-2xl font-bold text-heading">{strings.about.bioName}</h2>
+          <p class="text-primary font-medium">{strings.about.bioTitle}</p>
+        </div>
+        <div class="lg:col-span-3">
+          {strings.about.bioText.split('\n\n').map((paragraph) => (
+            <p class="text-body leading-relaxed mb-4 last:mb-0">{paragraph}</p>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-surface-alt">
+    <div class="container mx-auto">
+      <h2 class="text-2xl md:text-4xl font-bold text-heading text-center mb-12">{strings.about.approachTitle}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-surface rounded-2xl p-8 shadow-sm border border-border">
+          <div class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-2xl mb-5">🔓</div>
+          <h3 class="text-lg font-bold text-heading mb-2">{strings.about.principle1Title}</h3>
+          <p class="text-body text-sm leading-relaxed">{strings.about.principle1Description}</p>
+        </div>
+        <div class="bg-surface rounded-2xl p-8 shadow-sm border border-border">
+          <div class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-2xl mb-5">💪</div>
+          <h3 class="text-lg font-bold text-heading mb-2">{strings.about.principle2Title}</h3>
+          <p class="text-body text-sm leading-relaxed">{strings.about.principle2Description}</p>
+        </div>
+        <div class="bg-surface rounded-2xl p-8 shadow-sm border border-border">
+          <div class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-2xl mb-5">🚀</div>
+          <h3 class="text-lg font-bold text-heading mb-2">{strings.about.principle3Title}</h3>
+          <p class="text-body text-sm leading-relaxed">{strings.about.principle3Description}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-surface">
+    <div class="container mx-auto max-w-3xl text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-heading mb-6">{strings.about.techTitle}</h2>
+      <p class="text-body leading-relaxed">{strings.about.techDescription}</p>
+    </div>
+  </section>
+
+  <CTABand title={strings.about.ctaTitle}>
+    <a href="/kontakt" class="btn-white">{strings.about.ctaPrimary}</a>
+    <a href="/kontakt" class="btn-outline-white">{strings.about.ctaSecondary}</a>
+  </CTABand>
+</Layout>

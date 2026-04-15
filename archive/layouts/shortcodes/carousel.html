@@ -1,0 +1,67 @@
+{{- /* Carousel shortcode - auto-playing image slideshow */ -}}
+{{- /* Format: image.jpg | Caption text (caption is optional) */ -}}
+{{- $items := slice -}}
+{{- $id := printf "carousel-%d" (now.UnixNano) -}}
+{{- $interval := .Get "interval" | default "4000" -}}
+
+{{- /* Collect images from inner content (one per line) */ -}}
+{{- if .Inner -}}
+    {{- range split .Inner "\n" -}}
+        {{- $line := trim . " \t\r" -}}
+        {{- if $line -}}
+            {{- $parts := split $line "|" -}}
+            {{- $imgPath := trim (index $parts 0) " " -}}
+            {{- $caption := "" -}}
+            {{- if gt (len $parts) 1 -}}
+                {{- $caption = trim (index $parts 1) " " -}}
+            {{- end -}}
+            {{- $items = $items | append (dict "path" $imgPath "caption" $caption) -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+<div class="carousel" id="{{ $id }}" data-interval="{{ $interval }}">
+    <div class="carousel-inner">
+        {{- range $index, $item := $items -}}
+            {{- $src := $item.path -}}
+            {{- with dict "Path" $item.path "Resources" $.Page.Resources | partial "function/resource.html" -}}
+                {{- $src = .RelPermalink -}}
+            {{- end -}}
+            <div class="carousel-slide{{ if eq $index 0 }} active{{ end }}">
+                <img src="{{ $src | safeURL }}" alt="{{ $item.caption | default (printf "Slide %d" (add $index 1)) }}" />
+                {{- with $item.caption -}}
+                <div class="carousel-caption">{{ . }}</div>
+                {{- end -}}
+            </div>
+        {{- end -}}
+    </div>
+    <div class="carousel-dots">
+        {{- range $index, $_ := $items -}}
+            <span class="carousel-dot{{ if eq $index 0 }} active{{ end }}" data-index="{{ $index }}"></span>
+        {{- end -}}
+    </div>
+</div>
+
+<script>
+(function() {
+    const carousel = document.getElementById('{{ $id }}');
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    const interval = parseInt(carousel.dataset.interval);
+    let current = 0;
+
+    function showSlide(index) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+    }
+
+    setInterval(() => showSlide(current + 1), interval);
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => showSlide(i));
+    });
+})();
+</script>

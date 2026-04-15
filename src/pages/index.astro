@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import PainCard from '../components/PainCard.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import CTABand from '../components/CTABand.astro';
+import { t, getLocalizedPaths } from '../i18n';
+import type { Lang } from '../i18n';
+
+const lang = (Astro.locals as any).lang as Lang || 'en';
+const strings = t(lang);
+const paths = getLocalizedPaths(lang);
+---
+
+<Layout
+  title={`Matej Lukasik — ${strings.home.heroTitle}`}
+  description={strings.home.heroDescription}
+  lang={lang}
+  currentPath="/"
+>
+  <Hero
+    title={strings.home.heroTitle}
+    subtitle={strings.home.heroSubtitle}
+    description={strings.home.heroDescription}
+    size="large"
+  >
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href={paths.contact} class="btn-white">{strings.home.ctaPrimary}</a>
+      <a href={paths.services} class="btn-outline-white">{strings.home.ctaSecondary}</a>
+    </div>
+  </Hero>
+
+  <section class="section-padding bg-surface">
+    <div class="container mx-auto">
+      <h2 class="text-2xl md:text-4xl font-bold text-heading text-center mb-12 max-w-3xl mx-auto">
+        {strings.home.painTitle}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <PainCard icon="🧩" title={strings.home.pain1Title} description={strings.home.pain1Description} />
+        <PainCard icon="💸" title={strings.home.pain2Title} description={strings.home.pain2Description} />
+        <PainCard icon="🤷" title={strings.home.pain3Title} description={strings.home.pain3Description} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-surface-alt">
+    <div class="container mx-auto">
+      <h2 class="text-2xl md:text-4xl font-bold text-heading text-center mb-12">
+        {strings.home.servicesTitle}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <ServiceCard icon="🎯" title={strings.home.consultingTitle} description={strings.home.consultingDescription} href={`${paths.services}#consulting`} linkText={strings.home.learnMore} />
+        <ServiceCard icon="🔧" title={strings.home.implementationTitle} description={strings.home.implementationDescription} href={`${paths.services}#implementation`} linkText={strings.home.learnMore} />
+        <ServiceCard icon="📚" title={strings.home.trainingTitle} description={strings.home.trainingDescription} href={`${paths.services}#training`} linkText={strings.home.learnMore} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-surface">
+    <div class="container mx-auto text-center">
+      <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary-light text-primary text-sm font-medium">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+        {strings.home.trustTitle}
+      </div>
+      <p class="text-body mt-4 max-w-xl mx-auto text-sm">{strings.home.trustDescription}</p>
+    </div>
+  </section>
+
+  <CTABand title={strings.home.ctaBandTitle} description={strings.home.ctaBandDescription}>
+    <a href={paths.contact} class="btn-white">{strings.home.ctaPrimary}</a>
+  </CTABand>
+</Layout>

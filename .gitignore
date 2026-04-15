@@ -1,2 +1,8 @@
-public/
-resources/
+node_modules/
+dist/
+.astro/
+.env
+.wrangler/
+.DS_Store
+archive/themes/
+*.mp4

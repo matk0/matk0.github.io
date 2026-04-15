@@ -1,0 +1,72 @@
+---
+import { t, getAlternateUrl, getAlternateLang, getLocalizedPaths } from '../i18n';
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+const strings = t(lang);
+const altLang = getAlternateLang(lang);
+const altUrl = getAlternateUrl(lang, currentPath);
+const paths = getLocalizedPaths(lang);
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-lg border-b border-border">
+  <div class="container mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold text-heading tracking-tight">
+      matejlukasik
+    </a>
+
+    <div class="hidden md:flex items-center gap-8">
+      <a href={paths.services} class:list={["text-sm font-medium transition-colors hover:text-primary", currentPath === paths.services ? "text-primary" : "text-body"]}>
+        {strings.nav.services}
+      </a>
+      <a href={paths.about} class:list={["text-sm font-medium transition-colors hover:text-primary", currentPath === paths.about ? "text-primary" : "text-body"]}>
+        {strings.nav.about}
+      </a>
+      <a href={paths.contact} class:list={["text-sm font-medium transition-colors hover:text-primary", currentPath === paths.contact ? "text-primary" : "text-body"]}>
+        {strings.nav.contact}
+      </a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a
+        href={altUrl}
+        class="text-sm font-medium text-body hover:text-primary transition-colors px-2 py-1 rounded-lg hover:bg-primary-light"
+      >
+        {altLang.toUpperCase()}
+      </a>
+      <a href={paths.contact} class="hidden sm:inline-flex btn-primary !py-2 !px-4 !text-sm">
+        {strings.nav.bookCall}
+      </a>
+    </div>
+
+    <button id="mobile-menu-btn" class="md:hidden p-2 text-body hover:text-heading" aria-label="Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-surface">
+    <div class="container mx-auto px-4 py-4 flex flex-col gap-3">
+      <a href={paths.services} class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.services}</a>
+      <a href={paths.about} class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.about}</a>
+      <a href={paths.contact} class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.contact}</a>
+      <a href={paths.contact} class="btn-primary !text-sm mt-2">{strings.nav.bookCall}</a>
+    </div>
+  </div>
+</nav>
+
+<div class="h-16"></div>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

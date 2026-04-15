@@ -1,0 +1,53 @@
+{{- /* Gallery shortcode - displays images in a grid with lightbox support */ -}}
+{{- /* Format: image.jpg | Caption text (caption is optional) */ -}}
+{{- $items := slice -}}
+{{- $loading := resources.Get "svg/loading.svg" | minify -}}
+
+{{- /* Collect images from inner content (one per line) */ -}}
+{{- if .Inner -}}
+    {{- range split .Inner "\n" -}}
+        {{- $line := trim . " \t\r" -}}
+        {{- if $line -}}
+            {{- $parts := split $line "|" -}}
+            {{- $imgPath := trim (index $parts 0) " " -}}
+            {{- $caption := "" -}}
+            {{- if gt (len $parts) 1 -}}
+                {{- $caption = trim (index $parts 1) " " -}}
+            {{- end -}}
+            {{- $items = $items | append (dict "path" $imgPath "caption" $caption) -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- /* Get optional parameters */ -}}
+{{- $cols := .Get "cols" | default "3" -}}
+
+<div class="gallery gallery-cols-{{ $cols }}">
+    {{- range $index, $item := $items -}}
+        {{- $src := $item.path -}}
+        {{- $caption := $item.caption -}}
+        {{- $width := "" -}}
+        {{- $height := "" -}}
+
+        {{- /* Try to get image from page resources first */ -}}
+        {{- with dict "Path" $item.path "Resources" $.Page.Resources | partial "function/resource.html" -}}
+            {{- $src = .RelPermalink -}}
+            {{- $width = .Width -}}
+            {{- $height = .Height -}}
+        {{- end -}}
+
+        <a class="lightgallery gallery-item" href="{{ $src | safeURL }}" data-thumbnail="{{ $src | safeURL }}"{{ with $caption }} data-sub-html="<p>{{ . }}</p>"{{ end }}>
+            <img
+                class="lazyload"
+                src="{{ $loading.RelPermalink }}"
+                data-src="{{ $src | safeURL }}"
+                data-sizes="auto"
+                alt="{{ $caption | default (printf "Gallery image %d" (add $index 1)) }}"
+                {{- with $width }} width="{{ . }}"{{ end }}
+                {{- with $height }} height="{{ . }}"{{ end }} />
+            {{- with $caption -}}
+            <span class="gallery-item-caption">{{ . }}</span>
+            {{- end -}}
+        </a>
+    {{- end -}}
+</div>

@@ -1,0 +1,124 @@
+---
+import type { Lang } from '../i18n';
+import { t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  preselectedService?: string;
+}
+
+const { lang, preselectedService } = Astro.props;
+const strings = t(lang);
+---
+
+<form id="contact-form" class="space-y-5" method="POST" action="/api/contact">
+  <input type="hidden" name="lang" value={lang} />
+  <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
+
+  <div>
+    <label for="name" class="block text-sm font-medium text-heading mb-1.5">{strings.contact.nameLabel}</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      placeholder={strings.contact.namePlaceholder}
+      class="w-full px-4 py-3 rounded-xl border border-border bg-surface text-heading placeholder:text-body/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-sm"
+    />
+  </div>
+
+  <div>
+    <label for="email" class="block text-sm font-medium text-heading mb-1.5">{strings.contact.emailLabel}</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      placeholder={strings.contact.emailPlaceholder}
+      class="w-full px-4 py-3 rounded-xl border border-border bg-surface text-heading placeholder:text-body/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-sm"
+    />
+  </div>
+
+  <div>
+    <label for="company" class="block text-sm font-medium text-heading mb-1.5">{strings.contact.companyLabel}</label>
+    <input
+      type="text"
+      id="company"
+      name="company"
+      placeholder={strings.contact.companyPlaceholder}
+      class="w-full px-4 py-3 rounded-xl border border-border bg-surface text-heading placeholder:text-body/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-sm"
+    />
+  </div>
+
+  <div>
+    <label for="service" class="block text-sm font-medium text-heading mb-1.5">{strings.contact.serviceLabel}</label>
+    <select
+      id="service"
+      name="service"
+      class="w-full px-4 py-3 rounded-xl border border-border bg-surface text-heading focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-sm"
+    >
+      <option value="consulting" selected={preselectedService === 'consulting'}>{strings.contact.serviceOptions.consulting}</option>
+      <option value="implementation" selected={preselectedService === 'implementation'}>{strings.contact.serviceOptions.implementation}</option>
+      <option value="training" selected={preselectedService === 'training'}>{strings.contact.serviceOptions.training}</option>
+      <option value="notSure" selected={!preselectedService || preselectedService === 'notSure'}>{strings.contact.serviceOptions.notSure}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="message" class="block text-sm font-medium text-heading mb-1.5">{strings.contact.messageLabel}</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="4"
+      required
+      placeholder={strings.contact.messagePlaceholder}
+      class="w-full px-4 py-3 rounded-xl border border-border bg-surface text-heading placeholder:text-body/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-sm resize-none"
+    ></textarea>
+  </div>
+
+  <button type="submit" class="btn-primary w-full">
+    {strings.contact.submit}
+  </button>
+
+  <div id="form-success" class="hidden p-4 rounded-xl bg-green-50 text-green-800 text-sm">
+    {strings.contact.success}
+  </div>
+  <div id="form-error" class="hidden p-4 rounded-xl bg-red-50 text-red-800 text-sm">
+    {strings.contact.error}
+  </div>
+</form>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const successEl = document.getElementById('form-success');
+    const errorEl = document.getElementById('form-error');
+    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const originalText = submitBtn.textContent;
+
+    successEl?.classList.add('hidden');
+    errorEl?.classList.add('hidden');
+    submitBtn.disabled = true;
+    submitBtn.textContent = '...';
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body: data,
+      });
+      if (res.ok) {
+        successEl?.classList.remove('hidden');
+        form.reset();
+      } else {
+        errorEl?.classList.remove('hidden');
+      }
+    } catch {
+      errorEl?.classList.remove('hidden');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  });
+</script>

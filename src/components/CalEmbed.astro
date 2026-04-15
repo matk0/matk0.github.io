@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div>
+  <h3 class="text-xl font-bold text-heading mb-2">{title}</h3>
+  <p class="text-body text-sm mb-6">{description}</p>
+  <div class="rounded-xl border border-border overflow-hidden bg-surface-alt min-h-[400px]">
+    <div id="cal-embed" class="w-full"></div>
+  </div>
+</div>
+
+<script is:inline>
+  (function (C, A, L) {
+    let p = function (a, ar) { a.q.push(ar); };
+    let d = C.document;
+    C.Cal = C.Cal || function () { let cal = C.Cal; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); };
+  })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", { origin: "https://cal.eu" });
+  Cal("inline", {
+    elementOrSelector: "#cal-embed",
+    calLink: "matejlukasik/30min",
+    config: { layout: "month_view" },
+  });
+  Cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+</script>

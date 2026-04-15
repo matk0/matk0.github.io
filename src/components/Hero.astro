@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  size?: 'large' | 'small';
+}
+
+const { title, subtitle, description, size = 'small' } = Astro.props;
+const isLarge = size === 'large';
+---
+
+<section class="relative overflow-hidden bg-gradient-to-br from-primary-dark to-primary-dark">
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/10"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+  <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+  <div class:list={["container mx-auto px-4 sm:px-6 relative z-10 text-center", isLarge ? "py-24 md:py-36" : "py-16 md:py-24"]}>
+    {subtitle && (
+      <p class:list={["font-semibold text-accent mb-4", isLarge ? "text-lg md:text-xl" : "text-base"]}>
+        {subtitle}
+      </p>
+    )}
+    <h1 class:list={["font-bold text-white leading-tight", isLarge ? "text-4xl md:text-6xl max-w-4xl mx-auto" : "text-3xl md:text-5xl max-w-3xl mx-auto"]}>
+      {title}
+    </h1>
+    {description && (
+      <p class:list={["text-white/70 max-w-2xl mx-auto", isLarge ? "text-lg md:text-xl mt-6" : "text-base md:text-lg mt-4"]}>
+        {description}
+      </p>
+    )}
+    <div class:list={[isLarge ? "mt-10" : "mt-6"]}>
+      <slot />
+    </div>
+  </div>
+</section>
