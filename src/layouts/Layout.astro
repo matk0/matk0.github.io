@@ -16,6 +16,40 @@ const { title, description, lang, currentPath } = Astro.props;
 const canonicalURL = new URL(currentPath, DOMAINS[lang]);
 const alternateURL = getAlternateUrl(lang, currentPath);
 const altLang = getAlternateLang(lang);
+const ogImage = `${DOMAINS[lang]}/og.png`;
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Matej Lukášik",
+      "url": "https://matejlukasik.com",
+      "jobTitle": lang === 'sk' ? "AI Agent Konzultant" : "AI Agent Consultant",
+      "image": `${DOMAINS[lang]}/avatar.png`,
+      "sameAs": [
+        "https://www.linkedin.com/in/matej-lukasik",
+        "https://x.com/matejlukasik",
+        "https://github.com/matk0"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SK"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "name": "Matej Lukášik — AI Agent Consulting",
+      "url": "https://matejlukasik.com",
+      "description": lang === 'sk'
+        ? "AI agent konzulting pre timy, ktore chcu realne vysledky."
+        : "AI agent consulting for teams that want real results.",
+      "areaServed": "EU",
+      "provider": { "@type": "Person", "name": "Matej Lukášik" },
+      "availableLanguage": ["en", "sk"]
+    }
+  ]
+});
 ---
 
 <!DOCTYPE html>
@@ -29,11 +63,14 @@ const altLang = getAlternateLang(lang);
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content={lang === 'sk' ? 'sk_SK' : 'en_US'} />
     <meta property="og:site_name" content="Matej Lukášik" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={jsonLd} />
     <link rel="canonical" href={canonicalURL.href} />
     <link rel="alternate" hreflang={altLang} href={alternateURL} />
     <link rel="alternate" hreflang={lang} href={canonicalURL.href} />

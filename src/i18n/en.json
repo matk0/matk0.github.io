@@ -114,6 +114,12 @@
     "description": "AI agent consulting for teams that want real results.",
     "navigation": "Navigation",
     "getInTouch": "Get in Touch",
-    "copyright": "Matej Lukášik. All rights reserved."
+    "copyright": "Matej Lukášik. All rights reserved.",
+    "followMe": "Follow Me"
+  },
+  "notFound": {
+    "title": "Lost in the machine",
+    "description": "Even AI agents can't find this page. It might have been moved, deleted, or never existed in the first place.",
+    "backHome": "Back to Homepage"
   }
 }

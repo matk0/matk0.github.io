@@ -114,6 +114,12 @@
     "description": "AI agent konzulting pre timy, ktore chcu realne vysledky.",
     "navigation": "Navigacia",
     "getInTouch": "Kontakt",
-    "copyright": "Matej Lukášik. Vsetky prava vyhradene."
+    "copyright": "Matej Lukášik. Vsetky prava vyhradene.",
+    "followMe": "Sledujte ma"
+  },
+  "notFound": {
+    "title": "Stratene v matrixe",
+    "description": "Ani AI agenti tuto stranku nenasli. Mozno bola presunutá, zmazana, alebo nikdy neexistovala.",
+    "backHome": "Spat na hlavnu stranku"
   }
 }

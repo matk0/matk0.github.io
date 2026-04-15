@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { t } from '../i18n';
+import type { Lang } from '../i18n';
+
+const lang = (Astro.locals as any).lang as Lang || 'en';
+const strings = t(lang);
+---
+
+<Layout
+  title={`404 — ${strings.notFound.title}`}
+  description={strings.notFound.description}
+  lang={lang}
+  currentPath="/404"
+>
+  <section class="section-padding min-h-[60vh] flex items-center justify-center">
+    <div class="text-center max-w-lg mx-auto">
+      <p class="text-8xl font-bold gradient-text-dark mb-6" style="font-family: var(--font-heading);">404</p>
+      <h1 class="text-2xl md:text-3xl font-bold text-heading mb-4">{strings.notFound.title}</h1>
+      <p class="text-body mb-8">{strings.notFound.description}</p>
+      <a href="/" class="btn-primary">{strings.notFound.backHome}</a>
+    </div>
+  </section>
+</Layout>

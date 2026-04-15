@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, locals }) => {
   const formData = await request.formData();
 
   const honeypot = formData.get('website');
@@ -30,7 +30,9 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
 
-  const RESEND_API_KEY = import.meta.env.RESEND_API_KEY;
+  const runtime = (locals as any).runtime;
+  const RESEND_API_KEY = runtime?.env?.RESEND_API_KEY || import.meta.env.RESEND_API_KEY;
+
   if (RESEND_API_KEY) {
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -39,7 +41,7 @@ export const POST: APIRoute = async ({ request }) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Matej Lukášik <noreply@matejlukasik.com>',
+        from: 'Matej Lukášik <matej@matejlukasik.com>',
         to: ['matej@matejlukasik.com'],
         reply_to: email,
         subject: `New inquiry from ${name} — ${service}`,
