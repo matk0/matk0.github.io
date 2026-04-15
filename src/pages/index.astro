@@ -13,7 +13,7 @@ const paths = getLocalizedPaths(lang);
 ---
 
 <Layout
-  title={`Matej Lukasik — ${strings.home.heroTitle}`}
+  title={`Matej Lukášik — ${strings.home.heroTitle}`}
   description={strings.home.heroDescription}
   lang={lang}
   currentPath="/"
@@ -30,35 +30,47 @@ const paths = getLocalizedPaths(lang);
     </div>
   </Hero>
 
-  <section class="section-padding bg-surface">
+  <section class="section-padding bg-surface bg-dots relative">
     <div class="container mx-auto">
-      <h2 class="text-2xl md:text-4xl font-bold text-heading text-center mb-12 max-w-3xl mx-auto">
+      <h2 class="text-2xl md:text-4xl font-bold text-heading text-center mb-12 max-w-3xl mx-auto reveal">
         {strings.home.painTitle}
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <PainCard icon="🧩" title={strings.home.pain1Title} description={strings.home.pain1Description} />
-        <PainCard icon="💸" title={strings.home.pain2Title} description={strings.home.pain2Description} />
-        <PainCard icon="🤷" title={strings.home.pain3Title} description={strings.home.pain3Description} />
+        <div class="reveal reveal-delay-1">
+          <PainCard icon="🧩" title={strings.home.pain1Title} description={strings.home.pain1Description} />
+        </div>
+        <div class="reveal reveal-delay-2">
+          <PainCard icon="💸" title={strings.home.pain2Title} description={strings.home.pain2Description} />
+        </div>
+        <div class="reveal reveal-delay-3">
+          <PainCard icon="🤷" title={strings.home.pain3Title} description={strings.home.pain3Description} />
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section-padding bg-surface-alt">
+  <section class="section-padding bg-surface-alt relative">
     <div class="container mx-auto">
-      <h2 class="text-2xl md:text-4xl font-bold text-heading text-center mb-12">
-        {strings.home.servicesTitle}
+      <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 reveal">
+        <span class="gradient-text-dark">{strings.home.servicesTitle}</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <ServiceCard icon="🎯" title={strings.home.consultingTitle} description={strings.home.consultingDescription} href={`${paths.services}#consulting`} linkText={strings.home.learnMore} />
-        <ServiceCard icon="🔧" title={strings.home.implementationTitle} description={strings.home.implementationDescription} href={`${paths.services}#implementation`} linkText={strings.home.learnMore} />
-        <ServiceCard icon="📚" title={strings.home.trainingTitle} description={strings.home.trainingDescription} href={`${paths.services}#training`} linkText={strings.home.learnMore} />
+        <div class="reveal reveal-delay-1">
+          <ServiceCard icon="🎯" title={strings.home.consultingTitle} description={strings.home.consultingDescription} href={`${paths.services}#consulting`} linkText={strings.home.learnMore} />
+        </div>
+        <div class="reveal reveal-delay-2">
+          <ServiceCard icon="🔧" title={strings.home.implementationTitle} description={strings.home.implementationDescription} href={`${paths.services}#implementation`} linkText={strings.home.learnMore} />
+        </div>
+        <div class="reveal reveal-delay-3">
+          <ServiceCard icon="📚" title={strings.home.trainingTitle} description={strings.home.trainingDescription} href={`${paths.services}#training`} linkText={strings.home.learnMore} />
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section-padding bg-surface">
-    <div class="container mx-auto text-center">
-      <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary-light text-primary text-sm font-medium">
+  <section class="section-padding bg-surface relative">
+    <div class="container mx-auto text-center reveal">
+      <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary-light text-primary text-sm font-medium" style="animation: pulse-glow 3s ease-in-out infinite;">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>

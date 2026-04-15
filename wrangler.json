@@ -1,0 +1,11 @@
+{
+  "name": "matejlukasik-com",
+  "compatibility_date": "2026-04-15",
+  "routes": [
+    { "pattern": "matejlukasik.com/*", "zone_name": "matejlukasik.com" },
+    { "pattern": "www.matejlukasik.com/*", "zone_name": "matejlukasik.com" },
+    { "pattern": "matejlukasik.sk/*", "zone_name": "matejlukasik.sk" },
+    { "pattern": "www.matejlukasik.sk/*", "zone_name": "matejlukasik.sk" }
+  ],
+  "observability": { "enabled": true }
+}

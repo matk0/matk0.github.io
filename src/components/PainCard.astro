@@ -8,8 +8,8 @@ interface Props {
 const { title, description, icon } = Astro.props;
 ---
 
-<div class="flex flex-col items-center text-center p-6">
-  <div class="w-14 h-14 rounded-2xl bg-primary-light flex items-center justify-center text-2xl mb-4">
+<div class="flex flex-col items-center text-center p-8 rounded-2xl hover:bg-surface-alt/50 transition-all duration-300 group">
+  <div class="w-16 h-16 rounded-2xl bg-primary-light flex items-center justify-center text-2xl mb-5 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-300">
     {icon}
   </div>
   <h3 class="text-lg font-bold text-heading mb-2">{title}</h3>

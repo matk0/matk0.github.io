@@ -66,7 +66,7 @@
   "about": {
     "heroTitle": "Kto som",
     "heroDescription": "Jeden clovek, jedna misia: aby AI fungoval pre realne timy.",
-    "bioName": "Matej Lukasik",
+    "bioName": "Matej Lukášik",
     "bioTitle": "AI Agent Konzultant",
     "bioText": "Videl som prilis vela firiem, ktore spalili peniaze na AI pilotoch, ktore nikam neviedli. Leskle dema, ktore sa nikdy nedostali do produkcie. Konzultanti, ktori zanechali PDF a zmizli.\n\nTo menim. Budujem systemy AI agentov, ktore naozaj funguju — nasadene na vasej infrastrukture, integrovane do denneho workflow vasho timu, s meratelnyni vysledkami od prveho tyzdna.\n\nMoj pristup je jednoduchy: najprv pochopit vase podnikanie, potom postavit presne to, co potrebujete. Nic viac, nic menej.",
     "approachTitle": "Moj pristup",
@@ -114,6 +114,6 @@
     "description": "AI agent konzulting pre timy, ktore chcu realne vysledky.",
     "navigation": "Navigacia",
     "getInTouch": "Kontakt",
-    "copyright": "Matej Lukasik. Vsetky prava vyhradene."
+    "copyright": "Matej Lukášik. Vsetky prava vyhradene."
   }
 }

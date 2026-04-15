@@ -66,7 +66,7 @@
   "about": {
     "heroTitle": "Who Am I",
     "heroDescription": "One person, one mission: making AI work for real teams.",
-    "bioName": "Matej Lukasik",
+    "bioName": "Matej Lukášik",
     "bioTitle": "AI Agent Consultant",
     "bioText": "I've seen too many companies burn money on AI pilots that go nowhere. Flashy demos that never make it to production. Consultants who leave behind a PDF and disappear.\n\nI fix that. I build AI agent systems that actually work — deployed on your infrastructure, integrated into your team's daily workflow, producing measurable results from week one.\n\nMy approach is simple: understand your business first, then build exactly what you need. No more, no less.",
     "approachTitle": "My Approach",
@@ -114,6 +114,6 @@
     "description": "AI agent consulting for teams that want real results.",
     "navigation": "Navigation",
     "getInTouch": "Get in Touch",
-    "copyright": "Matej Lukasik. All rights reserved."
+    "copyright": "Matej Lukášik. All rights reserved."
   }
 }

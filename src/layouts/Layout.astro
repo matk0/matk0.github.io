@@ -30,7 +30,7 @@ const altLang = getAlternateLang(lang);
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:locale" content={lang === 'sk' ? 'sk_SK' : 'en_US'} />
-    <meta property="og:site_name" content="Matej Lukasik" />
+    <meta property="og:site_name" content="Matej Lukášik" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -39,7 +39,7 @@ const altLang = getAlternateLang(lang);
     <link rel="alternate" hreflang={lang} href={canonicalURL.href} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <script async src="https://plausible.io/js/script.js" data-domain="matejlukasik.com,matejlukasik.sk" is:inline></script>
     <script is:inline>
       window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)};
@@ -59,6 +59,35 @@ const altLang = getAlternateLang(lang);
             const isBookCall = link.textContent?.toLowerCase().includes('call') || link.textContent?.toLowerCase().includes('hovor');
             plausible(isBookCall ? 'clicked_book_call' : 'clicked_service_cta');
           }
+        });
+      });
+
+      // Scroll reveal
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      // 3D card tilt
+      document.querySelectorAll('[data-tilt]').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = (y - centerY) / centerY * -4;
+          const rotateY = (x - centerX) / centerX * 4;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
         });
       });
     </script>

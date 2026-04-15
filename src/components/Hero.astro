@@ -10,27 +10,90 @@ const { title, subtitle, description, size = 'small' } = Astro.props;
 const isLarge = size === 'large';
 ---
 
-<section class="relative overflow-hidden bg-gradient-to-br from-primary-dark to-primary-dark">
-  <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/10"></div>
-  <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-  <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+<section class:list={["relative overflow-hidden wave-divider", isLarge ? "hero-aurora" : "bg-gradient-to-br from-primary-dark to-primary-dark"]}>
+  {isLarge ? (
+    <>
+      <div class="aurora-bg"></div>
+      <div class="aurora-orb aurora-orb-1"></div>
+      <div class="aurora-orb aurora-orb-2"></div>
+      <div class="aurora-orb aurora-orb-3"></div>
+    </>
+  ) : (
+    <>
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/10"></div>
+      <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+    </>
+  )}
 
-  <div class:list={["container mx-auto px-4 sm:px-6 relative z-10 text-center", isLarge ? "py-24 md:py-36" : "py-16 md:py-24"]}>
+  <div class:list={["container mx-auto px-4 sm:px-6 relative z-10 text-center", isLarge ? "py-28 md:py-40" : "py-16 md:py-24"]}>
     {subtitle && (
-      <p class:list={["font-semibold text-accent mb-4", isLarge ? "text-lg md:text-xl" : "text-base"]}>
+      <p class:list={["font-semibold text-accent mb-4 reveal", isLarge ? "text-lg md:text-xl" : "text-base"]}>
         {subtitle}
       </p>
     )}
-    <h1 class:list={["font-bold text-white leading-tight", isLarge ? "text-4xl md:text-6xl max-w-4xl mx-auto" : "text-3xl md:text-5xl max-w-3xl mx-auto"]}>
+    <h1 class:list={["font-bold leading-tight reveal reveal-delay-1", isLarge ? "text-4xl md:text-7xl max-w-4xl mx-auto gradient-text" : "text-3xl md:text-5xl max-w-3xl mx-auto text-white"]}>
       {title}
     </h1>
     {description && (
-      <p class:list={["text-white/70 max-w-2xl mx-auto", isLarge ? "text-lg md:text-xl mt-6" : "text-base md:text-lg mt-4"]}>
+      <p class:list={["text-white/70 max-w-2xl mx-auto reveal reveal-delay-2", isLarge ? "text-lg md:text-xl mt-6" : "text-base md:text-lg mt-4"]}>
         {description}
       </p>
     )}
-    <div class:list={[isLarge ? "mt-10" : "mt-6"]}>
+    <div class:list={["reveal reveal-delay-3", isLarge ? "mt-10" : "mt-6"]}>
       <slot />
     </div>
   </div>
 </section>
+
+<style>
+  .hero-aurora {
+    background: var(--color-primary-dark);
+    position: relative;
+  }
+
+  .aurora-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 120%, rgba(109, 74, 255, 0.3), transparent),
+      radial-gradient(ellipse 60% 40% at 70% 20%, rgba(147, 109, 255, 0.2), transparent),
+      radial-gradient(ellipse 50% 60% at 20% 60%, rgba(109, 74, 255, 0.15), transparent);
+    background-size: 200% 200%;
+    animation: aurora 15s ease infinite;
+  }
+
+  .aurora-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+  }
+
+  .aurora-orb-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(109, 74, 255, 0.5), transparent 70%);
+    top: -20%;
+    right: -10%;
+    animation: float 12s ease-in-out infinite;
+  }
+
+  .aurora-orb-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(147, 109, 255, 0.4), transparent 70%);
+    bottom: -15%;
+    left: -5%;
+    animation: floatSlow 14s ease-in-out infinite;
+  }
+
+  .aurora-orb-3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(91, 61, 230, 0.3), transparent 70%);
+    top: 30%;
+    left: 40%;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+</style>
