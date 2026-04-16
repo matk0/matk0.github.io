@@ -53,8 +53,8 @@
         "description": "Vas tim to riadi samostatne. Kompletna dokumentacia, skolenie a ja som v pohotovosti, ak ma potrebujete."
       }
     ],
-    "trustTitle": "Postavene na open-source technologii",
-    "trustDescription": "Ziadne vendor lock-in. Vase data zostavaju na vasej infrastrukture. Plna transparentnost v tom, ako vasi AI agenti funguju.",
+    "trustTitle": "Postavene na expertize, nie na hype",
+    "trustDescription": "Odporucam technologiu, ktora je spravna pre vase potreby — nie tu, ktora mi zarobi najviac. Dostanete uprimne poradenstvo a plnu transparentnost.",
     "ctaBandTitle": "Ste pripraveni priniest AI do vasho timu?",
     "ctaBandDescription": "Vacsina klientov zacina 30-minutovou konzultaciou. Bez zavazkov, bez zargonu."
   },
@@ -93,16 +93,16 @@
     "heroDescription": "Jeden clovek, jedna misia: aby AI fungoval pre realne timy.",
     "bioName": "Matej Lukášik",
     "bioTitle": "AI Agent Konzultant",
-    "bioText": "Videl som prilis vela firiem, ktore spalili peniaze na AI pilotoch, ktore nikam neviedli. Leskle dema, ktore sa nikdy nedostali do produkcie. Konzultanti, ktori zanechali PDF a zmizli.\n\nTo menim. Budujem systemy AI agentov, ktore naozaj funguju — nasadene na vasej infrastrukture, integrovane do denneho workflow vasho timu, s meratelnyni vysledkami od prveho tyzdna.\n\nMoj pristup je jednoduchy: najprv pochopit vase podnikanie, potom postavit presne to, co potrebujete. Nic viac, nic menej.",
+    "bioText": "Videl som prilis vela firiem, ktore spalili peniaze na AI pilotoch, ktore nikam neviedli. Leskle dema, ktore sa nikdy nedostali do produkcie. Konzultanti, ktori zanechali PDF a zmizli.\n\nTo menim. Budujem systemy AI agentov, ktore naozaj funguju — integrovane do denneho workflow vasho timu, s meratelnyni vysledkami od prveho tyzdna.\n\nMoj pristup je jednoduchy: najprv pochopit vase podnikanie, potom postavit presne to, co potrebujete. Nic viac, nic menej.",
     "approachTitle": "Moj pristup",
-    "principle1Title": "Open-source na prvom mieste",
-    "principle1Description": "Postavene na otvorenyh standardoch. Ziadne vendor lock-in, plna transparentnost v tom, ako vasi agenti funguju.",
+    "principle1Title": "Spravny nastroj na spravnu ulohu",
+    "principle1Description": "Open-source alebo spravovane, self-hosted alebo cloud — odporucam to, co vyhovuje vasmu timu, rozpoctu a poziadavkam.",
     "principle2Title": "Schopnost, nie zavislost",
     "principle2Description": "Vas tim skolim sucasne s nasadenim. Cielom je, aby ste svoje AI systemy vlastnili a rozvijali samostatne.",
     "principle3Title": "Zacat malo, dokazat hodnotu",
     "principle3Description": "Ziadne 6-mesacne projekty. Nasadzujem rychlo, meriam vysledky a rozsirujem len to, co funguje.",
     "techTitle": "Technologia",
-    "techDescription": "Staviam na open-source multi-agentovych platformach. Kazdy zamestnanec dostane osobneho AI agenta pristupneho cez Slack, orchestrovaneho CEO agentom, ktory koordinuje napriec timom. Zdielany MCP server poskytuje firemne prompty, nastroje a znalosti. Vsetko bezi na vasej infrastrukture s jednym API klucom. Zachovavate plnu kontrolu nad vasimi datami.",
+    "techDescription": "Kazdy zamestnanec dostane osobneho AI agenta pristupneho cez Slack, orchestrovaneho CEO agentom, ktory koordinuje napriec timom. Zdielany server poskytuje firemne prompty, nastroje a znalosti. Ci uz self-hosted alebo v cloude, zachovavate plnu kontrolu nad vasimi datami a vyberiate si nastavenie, ktore vam vyhovuje.",
     "ctaTitle": "Porozpravajme sa o tom, co moze AI urobit pre vas tim.",
     "ctaPrimary": "Dohodnut hovor",
     "ctaSecondary": "Napisat spravu"

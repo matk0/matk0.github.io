@@ -53,8 +53,8 @@
         "description": "Your team runs it independently. Full documentation, training, and I'm on standby if you need me."
       }
     ],
-    "trustTitle": "Built on open-source technology",
-    "trustDescription": "No vendor lock-in. Your data stays on your infrastructure. Full transparency in how your AI agents work.",
+    "trustTitle": "Built on expertise, not hype",
+    "trustDescription": "I recommend the right technology for your needs — not the one that pays me the most. You get honest guidance and full transparency.",
     "ctaBandTitle": "Ready to bring AI to your team?",
     "ctaBandDescription": "Most clients start with a 30-minute exploratory call. No commitment, no jargon."
   },
@@ -93,16 +93,16 @@
     "heroDescription": "One person, one mission: making AI work for real teams.",
     "bioName": "Matej Lukášik",
     "bioTitle": "AI Agent Consultant",
-    "bioText": "I've seen too many companies burn money on AI pilots that go nowhere. Flashy demos that never make it to production. Consultants who leave behind a PDF and disappear.\n\nI fix that. I build AI agent systems that actually work — deployed on your infrastructure, integrated into your team's daily workflow, producing measurable results from week one.\n\nMy approach is simple: understand your business first, then build exactly what you need. No more, no less.",
+    "bioText": "I've seen too many companies burn money on AI pilots that go nowhere. Flashy demos that never make it to production. Consultants who leave behind a PDF and disappear.\n\nI fix that. I build AI agent systems that actually work — integrated into your team's daily workflow, producing measurable results from week one.\n\nMy approach is simple: understand your business first, then build exactly what you need. No more, no less.",
     "approachTitle": "My Approach",
-    "principle1Title": "Open-source first",
-    "principle1Description": "Built on open standards. No vendor lock-in, full transparency in how your agents work.",
+    "principle1Title": "Right tool for the job",
+    "principle1Description": "Open-source or managed, self-hosted or cloud — I recommend what fits your team, budget, and compliance needs.",
     "principle2Title": "Capability, not dependency",
     "principle2Description": "I train your team alongside deployment. The goal is for you to own and evolve your AI systems independently.",
     "principle3Title": "Start small, prove value",
     "principle3Description": "No 6-month projects. I deploy fast, measure results, and expand only what works.",
     "techTitle": "The Technology",
-    "techDescription": "I build on open-source multi-agent platforms. Each employee gets a personal AI agent accessible via Slack, orchestrated by a CEO agent that coordinates across the team. A shared MCP server provides company-wide prompts, tools, and knowledge. Everything runs on your infrastructure with a single API key. You maintain full control over your data.",
+    "techDescription": "Each employee gets a personal AI agent accessible via Slack, orchestrated by a CEO agent that coordinates across the team. A shared server provides company-wide prompts, tools, and knowledge. Whether self-hosted or cloud-managed, you maintain full control over your data and choose the setup that fits your needs.",
     "ctaTitle": "Let's talk about what AI can do for your team.",
     "ctaPrimary": "Book a Call",
     "ctaSecondary": "Send a Message"
