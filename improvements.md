@@ -27,8 +27,8 @@ Branded bilingual 404 with personality copy and homepage link.
 ### 7. Blog / Resources page
 Add a `/resources` page for videos, guides, and downloads. Even before the first video, the presentation PDF as a downloadable starts building the content funnel.
 
-### 8. FAQ section on the contact page
-"How much does it cost?", "How long does implementation take?", "Do I need technical staff?", "What industries do you work with?" — preemptively qualifies leads and reduces back-and-forth.
+### 8. FAQ section on the contact page ✅
+Accordion FAQ with 4 questions (cost, timeline, technical requirements, industries). Bilingual.
 
 ### 9. Structured data (JSON-LD) ✅
 Person + ProfessionalService schema on all pages.

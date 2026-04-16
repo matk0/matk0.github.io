@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import ContactForm from '../components/ContactForm.astro';
 import CalEmbed from '../components/CalEmbed.astro';
+import FAQ from '../components/FAQ.astro';
 import { t } from '../i18n';
 
 const lang = 'sk';
@@ -55,4 +56,6 @@ const service = Astro.url.searchParams.get('service') || undefined;
       </div>
     </div>
   </section>
+
+  <FAQ title={strings.contact.faqTitle} items={strings.contact.faq} />
 </Layout>

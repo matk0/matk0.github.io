@@ -20,14 +20,17 @@ const paths = getLocalizedPaths(lang);
       matejlukasik
     </a>
 
-    <div class="hidden md:flex items-center gap-8">
-      <a href={paths.services} class:list={["text-sm font-medium transition-colors hover:text-primary", currentPath === paths.services ? "text-primary" : "text-body"]}>
+    <div class="hidden md:flex items-center gap-1">
+      <a href={paths.services} class:list={["nav-pill", currentPath === paths.services && "nav-pill-active"]}>
         {strings.nav.services}
       </a>
-      <a href={paths.about} class:list={["text-sm font-medium transition-colors hover:text-primary", currentPath === paths.about ? "text-primary" : "text-body"]}>
+      <a href={paths.about} class:list={["nav-pill", currentPath === paths.about && "nav-pill-active"]}>
         {strings.nav.about}
       </a>
-      <a href={paths.contact} class:list={["text-sm font-medium transition-colors hover:text-primary", currentPath === paths.contact ? "text-primary" : "text-body"]}>
+      <a href={`${paths.contact}#faq`} class:list={["nav-pill", currentPath === paths.contact && "nav-pill-active"]}>
+        {strings.nav.faq}
+      </a>
+      <a href={paths.contact} class:list={["nav-pill", currentPath === paths.contact && "nav-pill-active"]}>
         {strings.nav.contact}
       </a>
     </div>
@@ -55,6 +58,7 @@ const paths = getLocalizedPaths(lang);
     <div class="container mx-auto px-4 py-4 flex flex-col gap-3">
       <a href={paths.services} class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.services}</a>
       <a href={paths.about} class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.about}</a>
+      <a href={`${paths.contact}#faq`} class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.faq}</a>
       <a href={paths.contact} class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.contact}</a>
       <a href={paths.contact} class="btn-primary !text-sm mt-2">{strings.nav.bookCall}</a>
     </div>

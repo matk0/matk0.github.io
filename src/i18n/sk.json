@@ -5,10 +5,12 @@
     "services": "Sluzby",
     "about": "O mne",
     "contact": "Kontakt",
-    "bookCall": "Dohodnut hovor"
+    "bookCall": "Dohodnut hovor",
+    "faq": "FAQ"
   },
   "home": {
     "heroTitle": "AI agenti pre vas tim.",
+    "heroTypewords": ["vysoko efektivni", "bezpecni", "vyrazne usporne", "spolahlivi", "transparentni", "pripraveni na produkciu", "dokladne otestovani"],
     "heroSubtitle": "Nasadeni za dni, nie mesiace.",
     "heroDescription": "Viete, ze AI moze zmenit vase podnikanie. Ukazem vam presne ako — a zariadim to.",
     "ctaPrimary": "Bezplatna konzultacia",
@@ -108,7 +110,26 @@
     "bookDescription": "Vyberte si cas, ktory vam vyhovuje. 30 minut, bez zavazkov.",
     "directTitle": "Alebo ma kontaktujte priamo",
     "email": "matej@matejlukasik.com",
-    "location": "Slovensko"
+    "location": "Slovensko",
+    "faqTitle": "Casto kladene otazky",
+    "faq": [
+      {
+        "question": "Kolko to stoji?",
+        "answer": "Zavisi od rozsahu. Konzultacna zakazka zacina na niekolkych tisickach eur. Po prvom hovore vam dam jasnu cenovu ponuku — ziadne prekvapenia."
+      },
+      {
+        "question": "Ako dlho trva implementacia?",
+        "answer": "Vacsina projektov ide od startu po funkcneho agenta za 2–6 tyzdnov. Jednoducha automatizacia moze bezat za par dni. Zlozitejsie systemy trvaju dlhsie, ale pokrok uvidite kazdy tyzden."
+      },
+      {
+        "question": "Potrebujem technicky tim?",
+        "answer": "Nie nutne. Technicku stranku riesim ja. Mat niekoho technickeho vo vasom time pomaha s dlhodobou udrzbu, ale nie je to podmienka na zaciatok."
+      },
+      {
+        "question": "S akymi odvetviami pracujete?",
+        "answer": "S kazdym timom, kde sa opakuje znalostna praca — financie, pravo, operacie, zakaznicka podpora, HR. Ak vasi ludia travia cas na ulohach, ktore maju vzory, AI agenti vam pomozu."
+      }
+    ]
   },
   "footer": {
     "description": "AI agent konzulting pre timy, ktore chcu realne vysledky.",

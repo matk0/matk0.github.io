@@ -5,10 +5,12 @@
     "services": "Services",
     "about": "About",
     "contact": "Contact",
-    "bookCall": "Book a Call"
+    "bookCall": "Book a Call",
+    "faq": "FAQ"
   },
   "home": {
     "heroTitle": "AI agents for your team.",
+    "heroTypewords": ["highly effective", "secure", "massively cost-saving", "reliable", "transparent", "production-ready", "thoroughly tested"],
     "heroSubtitle": "Deployed in days, not months.",
     "heroDescription": "You know AI could transform your business. I'll show you exactly how — and make it happen.",
     "ctaPrimary": "Book a Free Call",
@@ -108,7 +110,26 @@
     "bookDescription": "Pick a time that works. 30 minutes, no strings attached.",
     "directTitle": "Or reach out directly",
     "email": "matej@matejlukasik.com",
-    "location": "Slovakia"
+    "location": "Slovakia",
+    "faqTitle": "Frequently Asked Questions",
+    "faq": [
+      {
+        "question": "How much does it cost?",
+        "answer": "It depends on scope. A focused consulting engagement starts at a few thousand euros. I'll give you a clear quote after our first call — no surprises."
+      },
+      {
+        "question": "How long does implementation take?",
+        "answer": "Most projects go from kickoff to a working agent in 2–6 weeks. A simple automation can be live in days. Complex multi-agent systems take longer, but you'll see progress every week."
+      },
+      {
+        "question": "Do I need technical staff?",
+        "answer": "Not necessarily. I handle the technical side. Having someone technical on your team helps with long-term maintenance, but it's not a prerequisite to get started."
+      },
+      {
+        "question": "What industries do you work with?",
+        "answer": "Any team with repetitive knowledge work — finance, legal, operations, customer support, HR. If your people spend time on tasks that follow patterns, AI agents can help."
+      }
+    ]
   },
   "footer": {
     "description": "AI agent consulting for teams that want real results.",
