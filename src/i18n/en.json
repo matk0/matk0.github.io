@@ -137,10 +137,6 @@
     "faqTitle": "Frequently Asked Questions",
     "faq": [
       {
-        "question": "How much does it cost?",
-        "answer": "It depends on scope. A focused consulting engagement starts at a few thousand euros. I'll give you a clear quote after our first call — no surprises."
-      },
-      {
         "question": "How long does implementation take?",
         "answer": "Most projects go from kickoff to a working agent in 2–6 weeks. A simple automation can be live in days. Complex multi-agent systems take longer, but you'll see progress every week."
       },

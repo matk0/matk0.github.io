@@ -19,10 +19,10 @@ export function getAlternateLang(lang: Lang): Lang {
 
 const PATH_MAP: Record<string, Record<Lang, string>> = {
   '/': { en: '/', sk: '/' },
-  '/services': { en: '/services', sk: '/sluzby' },
-  '/sluzby': { en: '/services', sk: '/sluzby' },
-  '/about': { en: '/about', sk: '/o-mne' },
-  '/o-mne': { en: '/about', sk: '/o-mne' },
+  '/services': { en: '/', sk: '/' },
+  '/sluzby': { en: '/', sk: '/' },
+  '/about': { en: '/', sk: '/' },
+  '/o-mne': { en: '/', sk: '/' },
   '/contact': { en: '/contact', sk: '/kontakt' },
   '/kontakt': { en: '/contact', sk: '/kontakt' },
 };
@@ -42,8 +42,8 @@ export function getExpectedPath(lang: Lang, currentPath: string): string | null 
 
 export function getLocalizedPaths(lang: Lang) {
   return {
-    services: lang === 'sk' ? '/sluzby' : '/services',
-    about: lang === 'sk' ? '/o-mne' : '/about',
+    services: '/#services',
+    about: '/#about',
     contact: lang === 'sk' ? '/kontakt' : '/contact',
   };
 }

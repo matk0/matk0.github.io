@@ -21,13 +21,13 @@ const paths = getLocalizedPaths(lang);
     </a>
 
     <div class="hidden md:flex items-center gap-1">
-      <a href={paths.services} class:list={["nav-pill", currentPath === paths.services && "nav-pill-active"]}>
+      <a href="/#services" class="nav-pill">
         {strings.nav.services}
       </a>
-      <a href={paths.about} class:list={["nav-pill", currentPath === paths.about && "nav-pill-active"]}>
+      <a href="/#about" class="nav-pill">
         {strings.nav.about}
       </a>
-      <a href={`${paths.contact}#faq`} class:list={["nav-pill", currentPath === paths.contact && "nav-pill-active"]}>
+      <a href="/#faq" class="nav-pill">
         {strings.nav.faq}
       </a>
       <a href={paths.contact} class:list={["nav-pill", currentPath === paths.contact && "nav-pill-active"]}>
@@ -56,9 +56,9 @@ const paths = getLocalizedPaths(lang);
 
   <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-surface">
     <div class="container mx-auto px-4 py-4 flex flex-col gap-3">
-      <a href={paths.services} class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.services}</a>
-      <a href={paths.about} class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.about}</a>
-      <a href={`${paths.contact}#faq`} class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.faq}</a>
+      <a href="/#services" class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.services}</a>
+      <a href="/#about" class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.about}</a>
+      <a href="/#faq" class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.faq}</a>
       <a href={paths.contact} class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.contact}</a>
       <a href={paths.contact} class="btn-primary !text-sm mt-2">{strings.nav.bookCall}</a>
     </div>

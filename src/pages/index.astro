@@ -3,8 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import PainCard from '../components/PainCard.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import ServiceSection from '../components/ServiceSection.astro';
 import ProcessTimeline from '../components/ProcessTimeline.astro';
 import CTABand from '../components/CTABand.astro';
+import FAQ from '../components/FAQ.astro';
 import { t, getLocalizedPaths } from '../i18n';
 import type { Lang } from '../i18n';
 
@@ -28,7 +30,7 @@ const paths = getLocalizedPaths(lang);
   >
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a href={paths.contact} class="btn-white">{strings.home.ctaPrimary}</a>
-      <a href={paths.services} class="btn-outline-white">{strings.home.ctaSecondary}</a>
+      <a href="#services" class="btn-outline-white">{strings.home.ctaSecondary}</a>
     </div>
   </Hero>
 
@@ -51,28 +53,107 @@ const paths = getLocalizedPaths(lang);
     </div>
   </section>
 
-  <section class="section-padding bg-surface-alt relative">
+  <section id="services" class="section-padding bg-surface-alt relative">
     <div class="container mx-auto">
       <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 reveal">
         <span class="gradient-text-dark">{strings.home.servicesTitle}</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="reveal reveal-delay-1">
-          <ServiceCard icon="🎯" title={strings.home.consultingTitle} description={strings.home.consultingDescription} href={`${paths.services}#consulting`} linkText={strings.home.learnMore} />
+          <ServiceCard icon="🎯" title={strings.home.consultingTitle} description={strings.home.consultingDescription} href="#consulting" linkText={strings.home.learnMore} />
         </div>
         <div class="reveal reveal-delay-2">
-          <ServiceCard icon="🔧" title={strings.home.implementationTitle} description={strings.home.implementationDescription} href={`${paths.services}#implementation`} linkText={strings.home.learnMore} />
+          <ServiceCard icon="🔧" title={strings.home.implementationTitle} description={strings.home.implementationDescription} href="#implementation" linkText={strings.home.learnMore} />
         </div>
         <div class="reveal reveal-delay-3">
-          <ServiceCard icon="📚" title={strings.home.trainingTitle} description={strings.home.trainingDescription} href={`${paths.services}#training`} linkText={strings.home.learnMore} />
+          <ServiceCard icon="📚" title={strings.home.trainingTitle} description={strings.home.trainingDescription} href="#training" linkText={strings.home.learnMore} />
         </div>
       </div>
     </div>
   </section>
 
+  <ServiceSection
+    id="consulting"
+    icon="🎯"
+    title={strings.services.consulting.title}
+    subtitle={strings.services.consulting.subtitle}
+    description={strings.services.consulting.description}
+    includes={strings.services.consulting.includes}
+    ctaText={strings.services.consulting.cta}
+    ctaHref={`${paths.contact}?service=consulting`}
+    bg="white"
+  />
+
+  <ServiceSection
+    id="implementation"
+    icon="🔧"
+    title={strings.services.implementation.title}
+    subtitle={strings.services.implementation.subtitle}
+    description={strings.services.implementation.description}
+    includes={strings.services.implementation.includes}
+    ctaText={strings.services.implementation.cta}
+    ctaHref={`${paths.contact}?service=implementation`}
+    reversed
+    bg="alt"
+  />
+
+  <ServiceSection
+    id="training"
+    icon="📚"
+    title={strings.services.training.title}
+    subtitle={strings.services.training.subtitle}
+    description={strings.services.training.description}
+    includes={strings.services.training.includes}
+    ctaText={strings.services.training.cta}
+    ctaHref={`${paths.contact}?service=training`}
+    bg="white"
+  />
+
   <ProcessTimeline title={strings.home.processTitle} steps={strings.home.processSteps} />
 
-  <section class="section-padding bg-surface-alt relative">
+  <section id="about" class="section-padding bg-surface">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+        <div class="lg:col-span-2 flex flex-col items-center lg:items-start reveal">
+          <div class="w-48 h-48 rounded-2xl overflow-hidden mb-6">
+            <img src="/avatar.png" alt="Matej Lukášik" class="w-full h-full object-cover" />
+          </div>
+          <h2 class="text-2xl font-bold text-heading">{strings.about.bioName}</h2>
+          <p class="text-primary font-medium">{strings.about.bioTitle}</p>
+        </div>
+        <div class="lg:col-span-3 reveal reveal-delay-1">
+          {strings.about.bioText.split('\n\n').map((paragraph) => (
+            <p class="text-body leading-relaxed mb-4 last:mb-0">{paragraph}</p>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-surface-alt">
+    <div class="container mx-auto">
+      <h2 class="text-2xl md:text-4xl font-bold text-heading text-center mb-12 reveal">{strings.about.approachTitle}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-surface rounded-2xl p-8 shadow-sm border border-border reveal reveal-delay-1">
+          <div class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-2xl mb-5">🔓</div>
+          <h3 class="text-lg font-bold text-heading mb-2">{strings.about.principle1Title}</h3>
+          <p class="text-body text-sm leading-relaxed">{strings.about.principle1Description}</p>
+        </div>
+        <div class="bg-surface rounded-2xl p-8 shadow-sm border border-border reveal reveal-delay-2">
+          <div class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-2xl mb-5">💪</div>
+          <h3 class="text-lg font-bold text-heading mb-2">{strings.about.principle2Title}</h3>
+          <p class="text-body text-sm leading-relaxed">{strings.about.principle2Description}</p>
+        </div>
+        <div class="bg-surface rounded-2xl p-8 shadow-sm border border-border reveal reveal-delay-3">
+          <div class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-2xl mb-5">🚀</div>
+          <h3 class="text-lg font-bold text-heading mb-2">{strings.about.principle3Title}</h3>
+          <p class="text-body text-sm leading-relaxed">{strings.about.principle3Description}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-surface relative">
     <div class="container mx-auto text-center reveal">
       <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary-light text-primary text-sm font-medium" style="animation: pulse-glow 3s ease-in-out infinite;">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,6 +164,8 @@ const paths = getLocalizedPaths(lang);
       <p class="text-body mt-4 max-w-xl mx-auto text-sm">{strings.home.trustDescription}</p>
     </div>
   </section>
+
+  <FAQ title={strings.contact.faqTitle} items={strings.contact.faq} />
 
   <CTABand title={strings.home.ctaBandTitle} description={strings.home.ctaBandDescription}>
     <a href={paths.contact} class="btn-white">{strings.home.ctaPrimary}</a>
