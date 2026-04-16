@@ -30,6 +30,29 @@
     "trainingTitle": "Training & Workshops",
     "trainingDescription": "Hands-on sessions for your team. From prompt engineering to production agent workflows.",
     "learnMore": "Learn more",
+    "processTitle": "How It Works",
+    "processSteps": [
+      {
+        "label": "01",
+        "title": "Discovery Call",
+        "description": "30 minutes, free. We figure out where you are, where you want to be, and whether AI agents are the right move."
+      },
+      {
+        "label": "02",
+        "title": "Your Roadmap",
+        "description": "I propose a clear plan tailored to your team and goals. No guesswork — you know exactly what happens, when, and why."
+      },
+      {
+        "label": "03",
+        "title": "Execution",
+        "description": "Agents built, team trained, workflows transformed. You see progress every week, not a big reveal at the end."
+      },
+      {
+        "label": "04",
+        "title": "Handoff",
+        "description": "Your team runs it independently. Full documentation, training, and I'm on standby if you need me."
+      }
+    ],
     "trustTitle": "Built on open-source technology",
     "trustDescription": "No vendor lock-in. Your data stays on your infrastructure. Full transparency in how your AI agents work.",
     "ctaBandTitle": "Ready to bring AI to your team?",

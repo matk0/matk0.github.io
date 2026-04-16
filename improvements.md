@@ -13,8 +13,8 @@ Meta tags added. Still needs actual `public/og.png` image (1200x630px) — creat
 ### 3. Email capture / lead magnet
 The only conversion paths are "book a call" and "send a message." Many visitors aren't ready for that. A lighter ask — "Get my free AI Agent Implementation Checklist" with an email field — captures warm leads to nurture.
 
-### 4. "How it works" process section
-Visitors don't know what happens after they book a call. A 3-4 step visual timeline (Discovery Call → Audit → Implementation → Handoff) reduces anxiety and makes the next step concrete.
+### 4. "How it works" process section ✅
+4-step vertical timeline on homepage: Discovery Call → Your Roadmap → Execution → Handoff. Bilingual.
 
 ### 5. Social links ✅
 Added to footer (LinkedIn, X, GitHub).

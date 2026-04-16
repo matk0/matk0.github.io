@@ -30,6 +30,29 @@
     "trainingTitle": "Skolenia a workshopy",
     "trainingDescription": "Prakticke skolenia pre vas tim. Od prompt engineeringu po produkcne agentove workflows.",
     "learnMore": "Viac info",
+    "processTitle": "Ako to funguje",
+    "processSteps": [
+      {
+        "label": "01",
+        "title": "Uvodni hovor",
+        "description": "30 minut, zadarmo. Zistime, kde ste, kam chcete ist a ci su AI agenti spravny krok."
+      },
+      {
+        "label": "02",
+        "title": "Vas plan",
+        "description": "Navrhnem jasny plan sity na mieru vasmu timu a cielom. Ziadne hadanie — presne viete, co sa udeje, kedy a preco."
+      },
+      {
+        "label": "03",
+        "title": "Realizacia",
+        "description": "Agenti nasadeni, tim vyskoleny, pracovne postupy transformovane. Pokrok vidite kazdy tyzden, nie velke odhalenie na konci."
+      },
+      {
+        "label": "04",
+        "title": "Odovzdanie",
+        "description": "Vas tim to riadi samostatne. Kompletna dokumentacia, skolenie a ja som v pohotovosti, ak ma potrebujete."
+      }
+    ],
     "trustTitle": "Postavene na open-source technologii",
     "trustDescription": "Ziadne vendor lock-in. Vase data zostavaju na vasej infrastrukture. Plna transparentnost v tom, ako vasi AI agenti funguju.",
     "ctaBandTitle": "Ste pripraveni priniest AI do vasho timu?",
