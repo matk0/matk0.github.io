@@ -1,20 +1,22 @@
 import { defineMiddleware } from 'astro:middleware';
-import type { Lang } from './i18n';
-import { getExpectedPath } from './i18n';
+import { getExpectedPath, getLangFromUrl, isLang, isProductionHost, LOCAL_LANG_COOKIE } from './i18n';
 
-function getLangFromHost(hostname: string): Lang {
-  if (hostname.endsWith('.sk')) return 'sk';
-  return 'en';
-}
-
-export const onRequest = defineMiddleware(async ({ url, locals, redirect }, next) => {
+export const onRequest = defineMiddleware(async ({ url, locals, redirect, cookies }, next) => {
   if (url.pathname.startsWith('/api/')) return next();
 
-  const lang = getLangFromHost(url.hostname);
+  const lang = getLangFromUrl(url, cookies.get(LOCAL_LANG_COOKIE)?.value);
   (locals as any).lang = lang;
 
+  const requestedLang = url.searchParams.get('lang');
+  if (!isProductionHost(url.hostname) && isLang(requestedLang)) {
+    cookies.set(LOCAL_LANG_COOKIE, requestedLang, {
+      path: '/',
+      sameSite: 'lax',
+    });
+  }
+
   const expected = getExpectedPath(lang, url.pathname);
-  if (expected !== null && expected !== url.pathname) {
+  if (isProductionHost(url.hostname) && expected !== null && expected !== url.pathname) {
     return redirect(expected, 301);
   }
 

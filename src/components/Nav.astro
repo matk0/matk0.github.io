@@ -5,19 +5,20 @@ import type { Lang } from '../i18n';
 interface Props {
   lang: Lang;
   currentPath: string;
+  currentUrl?: URL;
 }
 
-const { lang, currentPath } = Astro.props;
+const { lang, currentPath, currentUrl } = Astro.props;
 const strings = t(lang);
 const altLang = getAlternateLang(lang);
-const altUrl = getAlternateUrl(lang, currentPath);
+const altUrl = getAlternateUrl(lang, currentPath, currentUrl);
 const paths = getLocalizedPaths(lang);
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-xl saturate-150 border-b border-border/50 shadow-sm shadow-black/[0.03]">
   <div class="container mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
     <a href="/" class="text-xl font-bold text-heading tracking-tight" style="font-family: var(--font-heading);">
-      matejlukasik
+      matejlukášik
     </a>
 
     <div class="hidden md:flex items-center gap-1">
@@ -45,13 +46,13 @@ const paths = getLocalizedPaths(lang);
       <a href={paths.contact} class="hidden sm:inline-flex btn-primary !py-2 !px-4 !text-sm">
         {strings.nav.bookCall}
       </a>
-    </div>
 
-    <button id="mobile-menu-btn" class="md:hidden p-2 text-body hover:text-heading" aria-label="Menu">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-body hover:text-heading" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
   </div>
 
   <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-surface">

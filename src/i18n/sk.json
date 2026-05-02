@@ -2,55 +2,62 @@
   "lang": "sk",
   "dir": "ltr",
   "nav": {
-    "services": "Sluzby",
+    "services": "Služby",
     "about": "O mne",
     "contact": "Kontakt",
-    "bookCall": "Dohodnut hovor",
+    "bookCall": "Konzultácia zdarma",
     "faq": "FAQ"
   },
   "home": {
-    "heroTitle": "AI agenti pre vas tim.",
-    "heroTypewords": ["vysoko efektivni", "uplne bezpecni", "vyrazne usporne", "maximalne spolahlivi", "plne transparentni", "pripraveni na produkciu", "dokladne otestovani"],
-    "heroSubtitle": "Nasadeni za dni, nie mesiace.",
-    "heroDescription": "Viete, ze AI moze zmenit vase podnikanie. Ukazem vam presne ako — a zariadim to.",
-    "ctaPrimary": "Bezplatna konzultacia",
-    "ctaSecondary": "Moje sluzby",
-    "painTitle": "AI je vsade. Implementovat ho nemusi byt take tazke.",
-    "pain1Title": "Prilis vela nastrojov, ziadna strategia",
-    "pain1Description": "Kazdy tyzden novy AI nastroj. Bez jasneho planu len zbierame predplatne.",
-    "pain2Title": "Drahe experimenty bez vysledkov",
-    "pain2Description": "Proof-of-concept projekty, ktore sa nikdy nedostanu do produkcie. Penaze minutne, vysledky ziadne.",
-    "pain3Title": "Vas tim nevie, kde zacat",
-    "pain3Description": "AI posobi prehlcujuco. Vasi ludia su ochotni, ale potrebuju vedenie a spravne nastavenie.",
-    "servicesTitle": "Ako pomozem",
-    "consultingTitle": "Konzultacie a poradenstvo",
-    "consultingDescription": "Zhodnotim vase procesy, identifikujem prilezitosti na automatizaciu a vytvorim plan nasadenia.",
-    "implementationTitle": "Implementacia",
-    "implementationDescription": "Navrhem a nasadim AI agentov presne pre vase procesy. Od jednoduchych automatizacii po multi-agentovu orchestraciu.",
-    "trainingTitle": "Skolenia a workshopy",
-    "trainingDescription": "Prakticke skolenia pre vas tim. Od prompt engineeringu po produkcne agentove workflows.",
+    "heroTitle": "AI agenti pre Váš tím.",
+    "heroTypewords": [
+      "Vysoko efektívni",
+      "Úplne bezpeční",
+      "Výrazne úsporní",
+      "Maximálne spoľahliví",
+      "Plne transparentní",
+      "Pripravení na produkciu",
+      "Dôkladne otestovaní"
+    ],
+    "heroDescription": "Viete, že AI potrebujete. Spolu nájdeme, kde začať, čo má pre Vás najväčší zmysel a spustíme prvé užitočné riešenie.",
+    "ctaPrimary": "Bezplatná konzultácia",
+    "ctaSecondary": "Moje služby",
+    "painTitle": "AI má zmysel až vtedy, keď rieši skutočný problém vo Vašom podnikaní.",
+    "pain1Title": "Chýba Vám jasný prvý krok",
+    "pain1Description": "Možností je veľa. Skôr než vyberiete nástroj, treba pomenovať problém, ktorý má pre firmu najväčší zmysel vyriešiť.",
+    "pain2Title": "Hodnota musí byť merateľná",
+    "pain2Description": "AI agenti nemôžu byť len ďalší experiment bez jednoznačných výsledkov. Dopredu definujeme a nastavíme: koľko času ušetrí, ktoré náklady zníži alebo presne akú hodnotu prinesie zákazníkom.",
+    "pain3Title": "Bezpečnosť na prvom mieste",
+    "pain3Description": "Čím viac dát agentom poskytnete, tým budú užitočnejší. Ale na to aby ste im mohli dôverovať, si potrebujete nastaviť jasné pravidlá a polititky tak aby Vaše dáta ostali bezpečné a riziko úniku minimálne.",
+    "servicesTitle": "Ako Vám viem pomôcť?",
+    "consultingTitle": "Konzultácie a AI stratégia",
+    "consultingDescription": "Ak ešte neviete, kde začať, pomôžem vám zmapovať príležitosti, vybrať správny prvý projekt a pripraviť plán nasadenia.",
+    "implementationTitle": "Implementácia AI riešení",
+    "implementationDescription": "Ak už máte jasný problém, navrhnem a postavím praktické AI riešenie, ktoré zapadne do vašich procesov a nástrojov.",
+    "trainingTitle": "Školenia a adopcia v tíme",
+    "trainingDescription": "Ak chcete, aby AI používal aj Váš tím, je treba ho vo zvolených nástrojoch kvalitne zaškoliť. Agentické AI je revolučnou technológiou, ktorá zmení svet, preto je dôležité k nasadeniu pristúpiť citlivo a každému dať priestor a čas sa s novými pomôckami naučiť správne pracovať.",
     "learnMore": "Viac info",
-    "processTitle": "Ako to funguje",
+    "processTitle": "Ako to funguje?",
     "processSteps": [
       {
         "label": "01",
-        "title": "Uvodni hovor",
-        "description": "30 minut, zadarmo. Zistime, kde ste, kam chcete ist a ci su AI agenti spravny krok."
+        "title": "Uvodný rozhovor",
+        "description": "30 minút zdarma. Zistíme ako na tom ste, čo by ste chceli dosiahnuť a či je Agentické AI pre Vás ten správny krok."
       },
       {
         "label": "02",
-        "title": "Vas plan",
-        "description": "Navrhnem jasny plan sity na mieru vasmu timu a cielom. Ziadne hadanie — presne viete, co sa udeje, kedy a preco."
+        "title": "Váš plán a cenová ponuka",
+        "description": "Navrhnem jasný a Vašemu tímu na mieru šitý plán."
       },
       {
         "label": "03",
-        "title": "Realizacia",
-        "description": "Agenti nasadeni, tim vyskoleny, pracovne postupy transformovane. Pokrok vidite kazdy tyzden, nie velke odhalenie na konci."
+        "title": "Realizácia",
+        "description": "Začneme spolu realizovať Vami schválený plán. Základnými krokmi sú nasadenie technológií do Vašej firmy, vyškolenie personálu a pomoc s prvými automatizovanými postupmi. Naším spoločným a jasne merateľným cieľom musí byť časová a finančná úspora."
       },
       {
         "label": "04",
         "title": "Odovzdanie",
-        "description": "Vas tim to riadi samostatne. Kompletna dokumentacia, skolenie a ja som v pohotovosti, ak ma potrebujete."
+        "description": "Po dosiahnutí pozitívnych a uspokojivých výsledkov prechádzame k odovzaniu všetkých činností Vášmu tímu. Možnosť dlhodobej podpory je vždy otvorená. Mojím cieľom v tejto fáze je aby ste boli pohodlne samostatní, no neváhali sa na mňa kedykoľvek obrátiť so žiadosťou o pomoc."
       }
     ],
     "trustTitle": "Postavene na expertize, nie na hype",
@@ -65,21 +72,36 @@
       "title": "Konzultacie a poradenstvo",
       "subtitle": "Zistite, kde ma AI zmysel — skor, nez minete jedinu korunu.",
       "description": "Zhodnotim vase sucasne procesy, identifikujem prilezitosti s najvacsim dopadom a vytvorim konkretny plan nasadenia. Ziskate jasno v tom, co sa oplati automatizovat a co nie.",
-      "includes": ["Audit procesov a workflows", "Mapovanie prilezitosti na automatizaciu", "Odhad ROI a prioritizacia", "Plan nasadenia s milnikmi"],
+      "includes": [
+        "Audit procesov a workflows",
+        "Mapovanie prilezitosti na automatizaciu",
+        "Odhad ROI a prioritizacia",
+        "Plan nasadenia s milnikmi"
+      ],
       "cta": "Objednat konzultaciu"
     },
     "implementation": {
       "title": "Implementacia",
       "subtitle": "Jeden API kluc. Jeden server. AI agent pre kazdeho clena timu.",
       "description": "Navrhem a nasadim AI agentov presne pre vase procesy. Kazdy zamestnanec dostane vlastneho agenta, prepojenho cez zdielanu inteligentnu vrstvu. CEO agent koordinuje napriec celym timom.",
-      "includes": ["AI agent pre kazdeho zamestnanca cez Slack", "CEO orchestrator pre koordinaciu napriec timami", "Zdielana kniznica promptov a firemna znalostna baza", "Admin dashboard s analytikou pouzitia"],
+      "includes": [
+        "AI agent pre kazdeho zamestnanca cez Slack",
+        "CEO orchestrator pre koordinaciu napriec timami",
+        "Zdielana kniznica promptov a firemna znalostna baza",
+        "Admin dashboard s analytikou pouzitia"
+      ],
       "cta": "Spustit projekt"
     },
     "training": {
       "title": "Skolenia a workshopy",
       "subtitle": "Budujem schopnosti, nie zavislost.",
       "description": "Prakticke skolenia, ktore nauca vas tim efektivne pracovat s AI agentmi. Od zakladov prompt engineeringu po navrhovanie produkcnych agentovych workflows.",
-      "includes": ["Poldenove intenzivne workshopy", "Viac-tyzdnove trenovacie programy", "Prompt engineering pre business timy", "Priebezna podpora a konzultacie"],
+      "includes": [
+        "Poldenove intenzivne workshopy",
+        "Viac-tyzdnove trenovacie programy",
+        "Prompt engineering pre business timy",
+        "Priebezna podpora a konzultacie"
+      ],
       "cta": "Objednat skolenie"
     },
     "notSure": {
@@ -92,7 +114,7 @@
     "heroTitle": "Kto som",
     "heroDescription": "Jeden clovek, jedna misia: aby AI fungoval pre realne timy.",
     "bioName": "Matej Lukášik",
-    "bioTitle": "AI Agent Konzultant",
+    "bioTitle": "Konzultant pre agentickú AI",
     "bioText": "Videl som prilis vela firiem, ktore spalili peniaze na AI pilotoch, ktore nikam neviedli. Leskle dema, ktore sa nikdy nedostali do produkcie. Konzultanti, ktori zanechali PDF a zmizli.\n\nTo menim. Budujem systemy AI agentov, ktore naozaj funguju — integrovane do denneho workflow vasho timu, s meratelnyni vysledkami od prveho tyzdna.\n\nMoj pristup je jednoduchy: najprv pochopit vase podnikanie, potom postavit presne to, co potrebujete. Nic viac, nic menej.",
     "approachTitle": "Moj pristup",
     "principle1Title": "Spravny nastroj na spravnu ulohu",

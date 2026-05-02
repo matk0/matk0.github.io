@@ -23,7 +23,6 @@ const paths = getLocalizedPaths(lang);
 >
   <Hero
     title={strings.home.heroTitle}
-    subtitle={strings.home.heroSubtitle}
     description={strings.home.heroDescription}
     typewords={strings.home.heroTypewords}
     size="large"
@@ -41,13 +40,13 @@ const paths = getLocalizedPaths(lang);
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="reveal reveal-delay-1">
-          <PainCard icon="🧩" title={strings.home.pain1Title} description={strings.home.pain1Description} />
+          <PainCard imageSrc="/images/pain-clarity.webp" title={strings.home.pain1Title} description={strings.home.pain1Description} />
         </div>
         <div class="reveal reveal-delay-2">
-          <PainCard icon="💸" title={strings.home.pain2Title} description={strings.home.pain2Description} />
+          <PainCard imageSrc="/images/pain-value.webp" title={strings.home.pain2Title} description={strings.home.pain2Description} />
         </div>
         <div class="reveal reveal-delay-3">
-          <PainCard icon="🤷" title={strings.home.pain3Title} description={strings.home.pain3Description} />
+          <PainCard imageSrc="/images/pain-security.webp" title={strings.home.pain3Title} description={strings.home.pain3Description} />
         </div>
       </div>
     </div>
@@ -59,14 +58,14 @@ const paths = getLocalizedPaths(lang);
         <span class="gradient-text-dark">{strings.home.servicesTitle}</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="reveal reveal-delay-1">
-          <ServiceCard icon="🎯" title={strings.home.consultingTitle} description={strings.home.consultingDescription} href="#consulting" linkText={strings.home.learnMore} />
+        <div class="reveal reveal-delay-1 h-full">
+          <ServiceCard imageSrc="/images/service-strategy.webp" title={strings.home.consultingTitle} description={strings.home.consultingDescription} href="#consulting" linkText={strings.home.learnMore} />
         </div>
-        <div class="reveal reveal-delay-2">
-          <ServiceCard icon="🔧" title={strings.home.implementationTitle} description={strings.home.implementationDescription} href="#implementation" linkText={strings.home.learnMore} />
+        <div class="reveal reveal-delay-2 h-full">
+          <ServiceCard imageSrc="/images/service-implementation.webp" title={strings.home.implementationTitle} description={strings.home.implementationDescription} href="#implementation" linkText={strings.home.learnMore} />
         </div>
-        <div class="reveal reveal-delay-3">
-          <ServiceCard icon="📚" title={strings.home.trainingTitle} description={strings.home.trainingDescription} href="#training" linkText={strings.home.learnMore} />
+        <div class="reveal reveal-delay-3 h-full">
+          <ServiceCard imageSrc="/images/service-training.webp" title={strings.home.trainingTitle} description={strings.home.trainingDescription} href="#training" linkText={strings.home.learnMore} />
         </div>
       </div>
     </div>
@@ -74,7 +73,7 @@ const paths = getLocalizedPaths(lang);
 
   <ServiceSection
     id="consulting"
-    icon="🎯"
+    imageSrc="/images/service-strategy.webp"
     title={strings.services.consulting.title}
     subtitle={strings.services.consulting.subtitle}
     description={strings.services.consulting.description}
@@ -86,7 +85,7 @@ const paths = getLocalizedPaths(lang);
 
   <ServiceSection
     id="implementation"
-    icon="🔧"
+    imageSrc="/images/service-implementation.webp"
     title={strings.services.implementation.title}
     subtitle={strings.services.implementation.subtitle}
     description={strings.services.implementation.description}
@@ -99,7 +98,7 @@ const paths = getLocalizedPaths(lang);
 
   <ServiceSection
     id="training"
-    icon="📚"
+    imageSrc="/images/service-training.webp"
     title={strings.services.training.title}
     subtitle={strings.services.training.subtitle}
     description={strings.services.training.description}
@@ -113,41 +112,22 @@ const paths = getLocalizedPaths(lang);
 
   <section id="about" class="section-padding bg-surface">
     <div class="container mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-        <div class="lg:col-span-2 flex flex-col items-center lg:items-start reveal">
-          <div class="w-48 h-48 rounded-2xl overflow-hidden mb-6">
-            <img src="/avatar.png" alt="Matej Lukášik" class="w-full h-full object-cover" />
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div class="reveal">
+          <div class="w-full max-w-[560px] mx-auto lg:mx-0">
+            <div class="aspect-[4/5] max-h-[680px] rounded-2xl overflow-hidden bg-primary-light border border-border shadow-sm">
+              <img src="/images/about-matej.webp" alt="Matej Lukášik" class="w-full h-full object-cover" />
+            </div>
+            <div class="mt-6 lg:mt-8 text-center lg:text-left">
+              <h2 class="text-4xl md:text-5xl font-bold text-heading">{strings.about.bioName}</h2>
+              <p class="mt-3 text-lg md:text-xl text-primary font-semibold">{strings.about.bioTitle}</p>
+            </div>
           </div>
-          <h2 class="text-2xl font-bold text-heading">{strings.about.bioName}</h2>
-          <p class="text-primary font-medium">{strings.about.bioTitle}</p>
         </div>
-        <div class="lg:col-span-3 reveal reveal-delay-1">
+        <div class="reveal reveal-delay-1 max-w-2xl">
           {strings.about.bioText.split('\n\n').map((paragraph) => (
-            <p class="text-body leading-relaxed mb-4 last:mb-0">{paragraph}</p>
+            <p class="text-body text-lg leading-relaxed mb-5 last:mb-0">{paragraph}</p>
           ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-padding bg-surface-alt">
-    <div class="container mx-auto">
-      <h2 class="text-2xl md:text-4xl font-bold text-heading text-center mb-12 reveal">{strings.about.approachTitle}</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-surface rounded-2xl p-8 shadow-sm border border-border reveal reveal-delay-1">
-          <div class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-2xl mb-5">🔓</div>
-          <h3 class="text-lg font-bold text-heading mb-2">{strings.about.principle1Title}</h3>
-          <p class="text-body text-sm leading-relaxed">{strings.about.principle1Description}</p>
-        </div>
-        <div class="bg-surface rounded-2xl p-8 shadow-sm border border-border reveal reveal-delay-2">
-          <div class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-2xl mb-5">💪</div>
-          <h3 class="text-lg font-bold text-heading mb-2">{strings.about.principle2Title}</h3>
-          <p class="text-body text-sm leading-relaxed">{strings.about.principle2Description}</p>
-        </div>
-        <div class="bg-surface rounded-2xl p-8 shadow-sm border border-border reveal reveal-delay-3">
-          <div class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-2xl mb-5">🚀</div>
-          <h3 class="text-lg font-bold text-heading mb-2">{strings.about.principle3Title}</h3>
-          <p class="text-body text-sm leading-relaxed">{strings.about.principle3Description}</p>
         </div>
       </div>
     </div>

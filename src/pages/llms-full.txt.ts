@@ -23,8 +23,6 @@ function render(lang: Lang): string {
   sections.push('');
   sections.push(`## ${s.home.heroTitle}`);
   sections.push('');
-  sections.push(`*${s.home.heroSubtitle}*`);
-  sections.push('');
   sections.push(s.home.heroDescription);
   sections.push('');
 

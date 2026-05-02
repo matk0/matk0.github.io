@@ -2,16 +2,24 @@
 interface Props {
   title: string;
   description: string;
-  icon: string;
+  icon?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
-const { title, description, icon } = Astro.props;
+const { title, description, icon, imageSrc, imageAlt = '' } = Astro.props;
 ---
 
-<div class="flex flex-col items-center text-center p-8 rounded-2xl hover:bg-surface-alt/50 transition-all duration-300 group">
-  <div class="w-16 h-16 rounded-2xl bg-primary-light flex items-center justify-center text-2xl mb-5 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-300">
-    {icon}
-  </div>
+<div class="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-surface-alt/50 transition-all duration-300 group">
+  {imageSrc ? (
+    <div class="w-full aspect-[4/3] rounded-2xl bg-primary-light overflow-hidden mb-6 shadow-sm border border-border/60 group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-300">
+      <img src={imageSrc} alt={imageAlt} class="w-full h-full object-cover" loading="lazy" />
+    </div>
+  ) : (
+    <div class="w-16 h-16 rounded-2xl bg-primary-light flex items-center justify-center text-2xl mb-5 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-300">
+      {icon}
+    </div>
+  )}
   <h3 class="text-lg font-bold text-heading mb-2">{title}</h3>
   <p class="text-body text-sm leading-relaxed max-w-xs">{description}</p>
 </div>

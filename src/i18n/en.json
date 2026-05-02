@@ -11,7 +11,6 @@
   "home": {
     "heroTitle": "AI agents for your team.",
     "heroTypewords": ["highly effective", "fully secure", "massively cost-saving", "rock solid", "fully transparent", "production ready", "thoroughly tested"],
-    "heroSubtitle": "Deployed in days, not months.",
     "heroDescription": "You know AI could transform your business. I'll show you exactly how — and make it happen.",
     "ctaPrimary": "Book a Free Call",
     "ctaSecondary": "See My Services",
@@ -92,7 +91,7 @@
     "heroTitle": "Who Am I",
     "heroDescription": "One person, one mission: making AI work for real teams.",
     "bioName": "Matej Lukášik",
-    "bioTitle": "AI Agent Consultant",
+    "bioTitle": "Agentic AI Consultant",
     "bioText": "I've seen too many companies burn money on AI pilots that go nowhere. Flashy demos that never make it to production. Consultants who leave behind a PDF and disappear.\n\nI fix that. I build AI agent systems that actually work — integrated into your team's daily workflow, producing measurable results from week one.\n\nMy approach is simple: understand your business first, then build exactly what you need. No more, no less.",
     "approachTitle": "My Approach",
     "principle1Title": "Right tool for the job",
