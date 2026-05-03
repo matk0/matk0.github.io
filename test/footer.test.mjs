@@ -4,6 +4,7 @@ import { test } from 'node:test';
 
 const footer = readFileSync(new URL('../src/components/Footer.astro', import.meta.url), 'utf8');
 const i18n = readFileSync(new URL('../src/i18n/index.ts', import.meta.url), 'utf8');
+const layout = readFileSync(new URL('../src/layouts/Layout.astro', import.meta.url), 'utf8');
 const en = JSON.parse(readFileSync(new URL('../src/i18n/en.json', import.meta.url), 'utf8'));
 const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
 
@@ -13,12 +14,14 @@ test('footer uses the same logotype as the navigation', () => {
   assert.doesNotMatch(footer, /matejlukasik<\/a>/);
 });
 
-test('footer has a direct booking CTA and privacy route', () => {
-  assert.match(footer, /focus=calendar/);
+test('footer has privacy route without location or booking CTA', () => {
   assert.match(footer, /strings\.footer\.privacy/);
   assert.match(i18n, /privacy: lang === 'sk' \? '\/sukromie' : '\/privacy'/);
   assert.equal(existsSync(new URL('../src/pages/privacy.astro', import.meta.url)), true);
   assert.equal(existsSync(new URL('../src/pages/sukromie.astro', import.meta.url)), true);
+  assert.doesNotMatch(footer, /strings\.contact\.location/);
+  assert.doesNotMatch(footer, /strings\.nav\.bookCall/);
+  assert.doesNotMatch(footer, /focus=calendar/);
 });
 
 test('footer copy is specific to small and medium businesses', () => {
@@ -32,9 +35,12 @@ test('footer copy is specific to small and medium businesses', () => {
   );
 });
 
-test('footer only shows curated professional social profiles', () => {
+test('footer shows selected professional and publishing profiles', () => {
   assert.match(footer, /linkedin\.com\/in\/matej-lukasik/);
+  assert.match(footer, /x\.com\/matejlukasik/);
   assert.match(footer, /github\.com\/matk0/);
-  assert.doesNotMatch(footer, /x\.com\/matejlukasik/);
-  assert.doesNotMatch(footer, /youtube\.com\/@matejlukasik/);
+  assert.match(footer, /youtube\.com\/@matejlukasik/);
+  assert.match(footer, /aria-label="X"/);
+  assert.match(footer, /aria-label="YouTube"/);
+  assert.match(layout, /x\.com\/matejlukasik/);
 });

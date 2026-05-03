@@ -38,7 +38,7 @@ test('Slovak tools FAQ names concrete categories and tools', () => {
   assert.match(toolsFaq.answer, /n8n/);
   assert.match(toolsFaq.answer, /CrewAI/);
   assert.match(toolsFaq.answer, /LangChain\/LangGraph/);
-  assert.match(toolsFaq.answer, /frontier modely ako OpenAI a Anthropic/);
+  assert.match(toolsFaq.answer, /frontier modely (ako|od) OpenAI a Anthropic/);
   assert.match(toolsFaq.answer, /otvorené modely ako Mistral a Llama/);
   assert.match(toolsFaq.answer, /Codex/);
   assert.match(toolsFaq.answer, /Claude Code/);

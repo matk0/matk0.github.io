@@ -63,7 +63,7 @@
     "trustTitle": "Postavené na praktickej hodnote, nie na hype",
     "trustDescription": "Odporúčam technológiu a spôsob nasadenia, ktoré sedia Vášmu problému, tímu, rozpočtu a bezpečnostným požiadavkám.",
     "ctaBandTitle": "Ste pripravení nájsť prvý užitočný AI projekt?",
-    "ctaBandDescription": "Väčšina klientov začína 30-minútovou konzultáciou. Bez záväzkov, bez žargónu."
+    "ctaBandDescription": "Väčšina klientov začína 30-minútovou konzultáciou. Bez záväzkov, bez zbytočného hypu."
   },
   "services": {
     "heroTitle": "Ako pomôžem",
@@ -178,7 +178,7 @@
       },
       {
         "question": "S akými nástrojmi pracujete?",
-        "answer": "Nástroj vyberám podľa problému, dát a bezpečnostných požiadaviek. Pri automatizácii workflowov používam n8n, CrewAI alebo LangChain/LangGraph. Pri modeloch volím podľa potreby frontier modely ako OpenAI a Anthropic, alebo otvorené modely ako Mistral a Llama. Pri uzavretých agentických nástrojoch dávajú zmysel Codex a Claude Code. Ak potrebujete viac kontroly alebo self-hosting, môžeme pracovať aj s open-source agentmi ako OpenClaw alebo Hermes Agent. Cieľom nie je použiť čo najviac nástrojov, ale zvoliť stack, ktorý je bezpečný, udržateľný a prináša merateľnú hodnotu."
+        "answer": "Nástroje vyberám podľa problému, dát a bezpečnostných požiadaviek. Pri automatizácii workflowov používam n8n, CrewAI alebo LangChain/LangGraph. Pri modeloch volím podľa potreby frontier modely od OpenAI a Anthropic, alebo otvorené modely ako Mistral a Llama. Pri komerčných agentických nástrojoch dávajú zmysel Codex a Claude Code. Ak potrebujete viac kontroly alebo self-hosting, môžeme pracovať aj s open-source agentmi ako OpenClaw alebo Hermes Agent. Cieľom nie je použiť čo najviac nástrojov, ale zvoliť stack, ktorý je bezpečný, udržateľný a prináša merateľnú hodnotu."
       },
       {
         "question": "Čo sa stane po odovzdaní riešenia?",
