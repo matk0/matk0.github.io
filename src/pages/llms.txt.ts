@@ -20,6 +20,15 @@ Matej comes from a Ruby/Rails engineering background and now focuses on agentic 
 3. Execution — agents built, team trained, weekly progress visible (no big-reveal).
 4. Handoff — documentation, training, client team runs it independently.
 
+## Common first engagement
+
+**AI opportunity and risk audit** — In 1–2 weeks, maps where AI makes sense in the company, which workflow to tackle first, what risks need controls, and how success will be measured.
+
+## Research
+
+- [Agent Threat Atlas](https://atlas.matejlukasik.sk/): Daily agentic AI incidents mapped to threat categories and prevention principles.
+- [Threat categories](https://atlas.matejlukasik.sk/threats): Practical risk categories for teams deploying AI agents.
+
 ## Principles
 
 - Right tool for the job (open-source vs. managed, self-hosted vs. cloud — recommended on fit, not commission).
@@ -63,6 +72,15 @@ Matej ma pozadie v Ruby/Rails inzinierstve a teraz sa venuje agentickej AI. Prac
 2. Plan — nasadeny na mieru s jasnymi milnikmi, ziadne hadanie.
 3. Realizacia — agenti nasadeni, tim vyskoleny, pokrok kazdy tyzden (ziadne velke odhalenie na konci).
 4. Odovzdanie — dokumentacia, skolenie, klientsky tim to riadi samostatne.
+
+## Najcastejsi prvy krok
+
+**Audit AI prilezitosti a rizik** — Za 1–2 tyzdne zmapuje, kde ma AI vo firme zmysel, ktory workflow riesit ako prvy, ake rizika treba osetrit a ako sa bude merat uspech.
+
+## Vyskum
+
+- [Agent Threat Atlas](https://atlas.matejlukasik.sk/): Denne incidenty agentickej AI mapovane na kategorie hrozieb a preventivne principy.
+- [Kategorie hrozieb](https://atlas.matejlukasik.sk/threats): Prakticke kategorie rizik pre timy nasadzujuce AI agentov.
 
 ## Principy
 

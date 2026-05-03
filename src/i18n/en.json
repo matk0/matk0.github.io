@@ -21,6 +21,7 @@
     "pain2Description": "AI agents should not become another vague experiment. We define upfront how they save time, reduce cost, improve quality, or create customer value.",
     "pain3Title": "Adoption must be safe",
     "pain3Description": "Data access, rules, permissions, and rollout matter. Your team needs AI systems they can use confidently without putting company data at risk.",
+    "pain3AtlasText": "See the public Agent Threat Atlas",
     "servicesTitle": "How I Help",
     "consultingTitle": "AI consulting and strategy",
     "consultingDescription": "If you know AI matters but do not know where to start, I map opportunities, pick the first project worth doing, and define how success will be measured.",
@@ -52,6 +53,17 @@
         "description": "Once it works, your team takes ownership. Long-term support stays available if you want it."
       }
     ],
+    "firstStepOffer": {
+      "eyebrow": "Most common first step",
+      "title": "AI opportunity and risk audit",
+      "description": "In 1–2 weeks we map where AI makes sense in your company, which workflow to tackle first, what risks need controls, and how success will be measured.",
+      "cta": "Book a Free Call"
+    },
+    "atlasProofEyebrow": "Security research",
+    "atlasProofTitle": "AI agent security is not an abstract risk.",
+    "atlasProofDescription": "I maintain a public atlas of agentic AI incidents, mapping real failures to threat categories and prevention principles teams can use before rollout.",
+    "atlasProofCta": "Open Agent Threat Atlas",
+    "atlasProofSecondaryCta": "Browse threat categories",
     "trustTitle": "Built on practical value, not hype",
     "trustDescription": "I recommend the technology and rollout path that fit your business problem, team, budget, and safety needs.",
     "ctaBandTitle": "Ready to find your first useful AI project?",
@@ -102,6 +114,8 @@
     "principle3Description": "No 6-month projects. I deploy fast, measure results, and expand only what works.",
     "techTitle": "The Technology",
     "techDescription": "The right setup depends on the workflow. Sometimes that means a lightweight automation, sometimes a RAG system, sometimes a custom AI agent connected to your existing tools. The common thread is clear rules, controlled access, measurable outcomes, and a team that knows how to use it.",
+    "atlasText": "I ground safety decisions in real incidents, threat categories, and controls, not vague caution.",
+    "atlasLink": "Explore Agent Threat Atlas",
     "ctaTitle": "Let's talk about the first AI workflow worth solving.",
     "ctaPrimary": "Book a Call",
     "ctaSecondary": "Send a Message"
@@ -147,7 +161,9 @@
       },
       {
         "question": "How do you handle data safety?",
-        "answer": "We start with data, permissions, and rollout boundaries. The first version should use the minimum access needed, clear rules for sensitive data, and human review where risk is higher. We move slower where safety matters."
+        "answer": "We start with data, permissions, and rollout boundaries. The first version should use the minimum access needed, clear rules for sensitive data, and human review where risk is higher. We move slower where safety matters.",
+        "linkText": "Open Agent Threat Atlas",
+        "linkHref": "https://atlas.matejlukasik.sk/"
       },
       {
         "question": "Do we need our own technical team?",
@@ -169,6 +185,8 @@
     "getInTouch": "Get in Touch",
     "copyright": "Matej Lukášik. All rights reserved.",
     "followMe": "Profiles",
+    "research": "Research",
+    "agentThreatAtlas": "Agent Threat Atlas",
     "privacy": "Privacy"
   },
   "notFound": {

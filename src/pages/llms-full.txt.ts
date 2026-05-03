@@ -58,6 +58,18 @@ function render(lang: Lang): string {
     sections.push('');
   }
 
+  sections.push(`## ${s.home.firstStepOffer.eyebrow}`);
+  sections.push('');
+  sections.push(`### ${s.home.firstStepOffer.title}`);
+  sections.push(s.home.firstStepOffer.description);
+  sections.push('');
+
+  sections.push(`## ${s.home.atlasProofTitle}`);
+  sections.push(s.home.atlasProofDescription);
+  sections.push(`Agent Threat Atlas: https://atlas.matejlukasik.sk/`);
+  sections.push(`Threat categories: https://atlas.matejlukasik.sk/threats`);
+  sections.push('');
+
   sections.push(`## ${s.home.trustTitle}`);
   sections.push(s.home.trustDescription);
   sections.push('');
@@ -114,6 +126,9 @@ function render(lang: Lang): string {
 
   sections.push(`## ${s.about.techTitle}`);
   sections.push(s.about.techDescription);
+  sections.push('');
+  sections.push(s.about.atlasText);
+  sections.push(`Agent Threat Atlas: https://atlas.matejlukasik.sk/`);
   sections.push('');
 
   sections.push('---');

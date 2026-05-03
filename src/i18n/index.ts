@@ -13,6 +13,9 @@ export const DOMAINS: Record<Lang, string> = {
   sk: 'https://matejlukasik.sk',
 };
 
+export const ATLAS_URL = 'https://atlas.matejlukasik.sk/';
+export const ATLAS_THREATS_URL = 'https://atlas.matejlukasik.sk/threats';
+
 export const LOCAL_LANG_COOKIE = 'lang';
 
 const PRODUCTION_HOSTS = new Set(

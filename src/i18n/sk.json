@@ -29,6 +29,7 @@
     "pain2Description": "AI agenti nemôžu byť len ďalší experiment bez jednoznačných výsledkov. Dopredu definujeme a nastavíme: koľko času ušetrí, ktoré náklady zníži alebo presne akú hodnotu prinesie zákazníkom.",
     "pain3Title": "Adopcia musí byť bezpečná",
     "pain3Description": "Prístup k dátam, pravidlá, oprávnenia a postupné nasadenie sú rovnako dôležité ako samotný nástroj. Tím potrebuje AI riešenie, ktorému rozumie a vie ho bezpečne používať.",
+    "pain3AtlasText": "Pozrite si verejný Agent Threat Atlas",
     "servicesTitle": "Ako Vám viem pomôcť?",
     "consultingTitle": "Konzultácie a AI stratégia",
     "consultingDescription": "Ak ešte neviete, kde začať, pomôžem Vám zmapovať príležitosti, vybrať správny prvý projekt a určiť ako budeme merať úspech.",
@@ -60,6 +61,17 @@
         "description": "Keď riešenie funguje, preberá ho Váš tím. Ak chcete pokračovať ďalej, dlhodobá podpora ostáva otvorená."
       }
     ],
+    "firstStepOffer": {
+      "eyebrow": "Najčastejší prvý krok",
+      "title": "Audit AI príležitostí a rizík",
+      "description": "Za 1–2 týždne zmapujeme, kde má AI vo Vašej firme zmysel, ktorý workflow riešiť ako prvý, aké riziká treba ošetriť a ako budeme merať úspech.",
+      "cta": "Bezplatná konzultácia"
+    },
+    "atlasProofEyebrow": "Bezpečnostný výskum",
+    "atlasProofTitle": "Bezpečnosť AI agentov nie je abstraktné riziko.",
+    "atlasProofDescription": "Vediem verejný atlas incidentov agentickej AI, kde mapujem reálne zlyhania na kategórie hrozieb a preventívne princípy pre tímy pred nasadením.",
+    "atlasProofCta": "Otvoriť Agent Threat Atlas",
+    "atlasProofSecondaryCta": "Pozrieť kategórie hrozieb",
     "trustTitle": "Postavené na praktickej hodnote, nie na hype",
     "trustDescription": "Odporúčam technológiu a spôsob nasadenia, ktoré sedia Vášmu problému, tímu, rozpočtu a bezpečnostným požiadavkám.",
     "ctaBandTitle": "Ste pripravení nájsť prvý užitočný AI projekt?",
@@ -125,6 +137,8 @@
     "principle3Description": "Najprv overíme jeden užitočný use case. Meriame výsledky a rozširujeme len to, čo funguje.",
     "techTitle": "Technológia",
     "techDescription": "Správne technické riešenie závisí od workflowu. Niekedy stačí ľahká automatizácia, inokedy RAG systém alebo vlastný AI agent napojený na existujúce nástroje. Spoločné sú jasné pravidlá, kontrolovaný prístup, merateľné výsledky a tím, ktorý vie riešenie používať.",
+    "atlasText": "Bezpečnostné rozhodnutia neopieram o pocit, ale o reálne incidenty, kategórie hrozieb a kontroly.",
+    "atlasLink": "Otvoriť Agent Threat Atlas",
     "ctaTitle": "Porozprávajme sa o prvom AI workflowe, ktorý má zmysel riešiť.",
     "ctaPrimary": "Dohodnúť hovor",
     "ctaSecondary": "Napísať správu"
@@ -170,7 +184,9 @@
       },
       {
         "question": "Ako riešite bezpečnosť dát?",
-        "answer": "Začíname dátami, oprávneniami a hranicami nasadenia. Prvá verzia má používať iba minimálny potrebný prístup, jasné pravidlá pre citlivé dáta a ľudskú kontrolu tam, kde je riziko vyššie. Pri bezpečnosti je lepšie ísť pomalšie a istejšie."
+        "answer": "Začíname dátami, oprávneniami a hranicami nasadenia. Prvá verzia má používať iba minimálny potrebný prístup, jasné pravidlá pre citlivé dáta a ľudskú kontrolu tam, kde je riziko vyššie. Pri bezpečnosti je lepšie ísť pomalšie a istejšie.",
+        "linkText": "Otvoriť Agent Threat Atlas",
+        "linkHref": "https://atlas.matejlukasik.sk/"
       },
       {
         "question": "Potrebujeme vlastný technický tím?",
@@ -192,6 +208,8 @@
     "getInTouch": "Kontakt",
     "copyright": "Matej Lukášik. Všetky práva vyhradené.",
     "followMe": "Profily",
+    "research": "Výskum",
+    "agentThreatAtlas": "Agent Threat Atlas",
     "privacy": "Ochrana osobných údajov"
   },
   "notFound": {

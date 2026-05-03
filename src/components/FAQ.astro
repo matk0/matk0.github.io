@@ -2,6 +2,8 @@
 interface FAQItem {
   question: string;
   answer: string;
+  linkText?: string;
+  linkHref?: string;
 }
 
 interface Props {
@@ -25,7 +27,13 @@ const { title, items } = Astro.props;
             </svg>
           </summary>
           <div class="px-6 pb-5 text-body text-sm leading-relaxed">
-            {item.answer}
+            <p>{item.answer}</p>
+            {item.linkHref && item.linkText && (
+              <a href={item.linkHref} target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center font-semibold text-primary hover:text-primary-hover transition-colors">
+                {item.linkText}
+                <span aria-hidden="true" class="ml-1">→</span>
+              </a>
+            )}
           </div>
         </details>
       ))}

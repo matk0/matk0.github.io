@@ -37,7 +37,7 @@ test('booking CTAs target the calendar booking form', () => {
   assert.match(nav, /const bookingHref = `\$\{paths\.contact\}\?focus=calendar`;/);
   assert.match(index, /const bookingHref = `\$\{paths\.contact\}\?focus=calendar`;/);
   assert.equal(nav.match(/href=\{bookingHref\}/g)?.length, 2);
-  assert.equal(index.match(/href=\{bookingHref\}/g)?.length, 2);
+  assert.equal(index.match(/href=\{bookingHref\}/g)?.length, 3);
 });
 
 test('targeted calendar booking form flashes without an anchor jump', () => {

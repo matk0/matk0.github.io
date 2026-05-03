@@ -1,0 +1,42 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { test } from 'node:test';
+
+const index = readFileSync(new URL('../src/pages/index.astro', import.meta.url), 'utf8');
+const footer = readFileSync(new URL('../src/components/Footer.astro', import.meta.url), 'utf8');
+const faq = readFileSync(new URL('../src/components/FAQ.astro', import.meta.url), 'utf8');
+const i18n = readFileSync(new URL('../src/i18n/index.ts', import.meta.url), 'utf8');
+const en = JSON.parse(readFileSync(new URL('../src/i18n/en.json', import.meta.url), 'utf8'));
+const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
+
+test('i18n exposes Agent Threat Atlas URLs', () => {
+  assert.match(i18n, /ATLAS_URL = 'https:\/\/atlas\.matejlukasik\.sk\/'/);
+  assert.match(i18n, /ATLAS_THREATS_URL = 'https:\/\/atlas\.matejlukasik\.sk\/threats'/);
+});
+
+test('homepage links security proof points to Agent Threat Atlas', () => {
+  assert.match(index, /ATLAS_URL/);
+  assert.match(index, /ATLAS_THREATS_URL/);
+  assert.match(index, /strings\.home\.atlasProofTitle/);
+  assert.match(index, /strings\.home\.pain3AtlasText/);
+  assert.ok(index.indexOf('<ProcessTimeline') < index.indexOf('<FirstStepOffer'));
+  assert.ok(index.indexOf('<FirstStepOffer') < index.indexOf('<FAQ'));
+});
+
+test('Slovak copy connects security concern to Agent Threat Atlas', () => {
+  assert.equal(sk.home.atlasProofTitle, 'Bezpečnosť AI agentov nie je abstraktné riziko.');
+  assert.equal(sk.home.atlasProofCta, 'Otvoriť Agent Threat Atlas');
+  assert.equal(sk.home.pain3AtlasText, 'Pozrite si verejný Agent Threat Atlas');
+  assert.equal(sk.contact.faq[3].linkHref, 'https://atlas.matejlukasik.sk/');
+  assert.equal(sk.contact.faq[3].linkText, 'Otvoriť Agent Threat Atlas');
+
+  assert.equal(en.home.atlasProofCta, 'Open Agent Threat Atlas');
+  assert.equal(en.contact.faq[3].linkHref, 'https://atlas.matejlukasik.sk/');
+});
+
+test('FAQ and footer render optional Atlas links', () => {
+  assert.match(faq, /item\.linkHref/);
+  assert.match(faq, /item\.linkText/);
+  assert.match(footer, /strings\.footer\.research/);
+  assert.match(footer, /ATLAS_URL/);
+});

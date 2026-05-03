@@ -1,5 +1,5 @@
 ---
-import { t, getLocalizedPaths } from '../i18n';
+import { t, getLocalizedPaths, ATLAS_URL } from '../i18n';
 import type { Lang } from '../i18n';
 
 interface Props {
@@ -14,7 +14,7 @@ const year = new Date().getFullYear();
 
 <footer class="bg-primary-dark text-white/70">
   <div class="container mx-auto px-4 sm:px-6 section-padding !pb-8">
-    <div class="grid grid-cols-1 md:grid-cols-[1.35fr_0.85fr_1.1fr_0.8fr] gap-10 lg:gap-14 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-[1.25fr_0.75fr_0.9fr_0.9fr_0.75fr] gap-10 lg:gap-12 mb-12">
       <div>
         <a href="/" class="inline-flex items-center" aria-label="Matej Lukášik">
           <img src="/logo.svg" alt="Matej Lukášik" width="48" height="48" class="block h-12 w-12" />
@@ -38,6 +38,17 @@ const year = new Date().getFullYear();
           <li>
             <a href={`mailto:${strings.contact.email}`} class="text-sm hover:text-white transition-colors">
               {strings.contact.email}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{strings.footer.research}</h4>
+        <ul class="space-y-2">
+          <li>
+            <a href={ATLAS_URL} target="_blank" rel="noopener noreferrer" class="text-sm hover:text-white transition-colors">
+              {strings.footer.agentThreatAtlas}
             </a>
           </li>
         </ul>

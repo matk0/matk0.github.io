@@ -5,9 +5,11 @@ interface Props {
   icon?: string;
   imageSrc?: string;
   imageAlt?: string;
+  linkHref?: string;
+  linkText?: string;
 }
 
-const { title, description, icon, imageSrc, imageAlt = '' } = Astro.props;
+const { title, description, icon, imageSrc, imageAlt = '', linkHref, linkText } = Astro.props;
 ---
 
 <div class="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-surface-alt/50 transition-all duration-300 group">
@@ -22,4 +24,10 @@ const { title, description, icon, imageSrc, imageAlt = '' } = Astro.props;
   )}
   <h3 class="text-lg font-bold text-heading mb-2">{title}</h3>
   <p class="text-body text-sm leading-relaxed max-w-xs">{description}</p>
+  {linkHref && linkText && (
+    <a href={linkHref} target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-sm font-semibold text-primary hover:text-primary-hover transition-colors">
+      {linkText}
+      <span aria-hidden="true" class="ml-1">→</span>
+    </a>
+  )}
 </div>

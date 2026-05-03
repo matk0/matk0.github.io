@@ -35,6 +35,19 @@ test('slovak process copy frames the collaboration clearly', () => {
   assert.ok(sk.home.processSteps[2].description.includes('meriame jeho dopad'));
 });
 
+test('homepage names the common first paid engagement after the free call', () => {
+  assert.equal(sk.home.firstStepOffer.eyebrow, 'Najčastejší prvý krok');
+  assert.equal(sk.home.firstStepOffer.title, 'Audit AI príležitostí a rizík');
+  assert.equal(
+    sk.home.firstStepOffer.description,
+    'Za 1–2 týždne zmapujeme, kde má AI vo Vašej firme zmysel, ktorý workflow riešiť ako prvý, aké riziká treba ošetriť a ako budeme merať úspech.',
+  );
+  assert.equal(sk.home.firstStepOffer.cta, sk.home.ctaPrimary);
+
+  assert.equal(en.home.firstStepOffer.title, 'AI opportunity and risk audit');
+  assert.match(en.home.firstStepOffer.description, /1–2 weeks/);
+});
+
 test('service pages avoid premature architecture promises', () => {
   const combinedCopy = JSON.stringify({ en, sk });
   const bannedPhrases = [

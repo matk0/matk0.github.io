@@ -5,9 +5,10 @@ import PainCard from '../components/PainCard.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import ServiceSection from '../components/ServiceSection.astro';
 import ProcessTimeline from '../components/ProcessTimeline.astro';
+import FirstStepOffer from '../components/FirstStepOffer.astro';
 import CTABand from '../components/CTABand.astro';
 import FAQ from '../components/FAQ.astro';
-import { t, getLocalizedPaths } from '../i18n';
+import { t, getLocalizedPaths, ATLAS_URL, ATLAS_THREATS_URL } from '../i18n';
 import type { Lang } from '../i18n';
 
 const lang = (Astro.locals as any).lang as Lang || 'en';
@@ -47,7 +48,31 @@ const bookingHref = `${paths.contact}?focus=calendar`;
           <PainCard imageSrc="/images/pain-value.webp" title={strings.home.pain2Title} description={strings.home.pain2Description} />
         </div>
         <div class="reveal reveal-delay-3">
-          <PainCard imageSrc="/images/pain-security.webp" title={strings.home.pain3Title} description={strings.home.pain3Description} />
+          <PainCard
+            imageSrc="/images/pain-security.webp"
+            title={strings.home.pain3Title}
+            description={strings.home.pain3Description}
+            linkHref={ATLAS_URL}
+            linkText={strings.home.pain3AtlasText}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-surface-alt relative">
+    <div class="container mx-auto">
+      <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-12 items-center">
+        <div class="reveal">
+          <p class="text-sm font-semibold uppercase tracking-wider text-primary mb-3">{strings.home.atlasProofEyebrow}</p>
+          <h2 class="text-2xl md:text-4xl font-bold text-heading mb-4">{strings.home.atlasProofTitle}</h2>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <p class="text-body text-base md:text-lg leading-relaxed mb-6">{strings.home.atlasProofDescription}</p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href={ATLAS_URL} target="_blank" rel="noopener noreferrer" class="btn-primary">{strings.home.atlasProofCta}</a>
+            <a href={ATLAS_THREATS_URL} target="_blank" rel="noopener noreferrer" class="btn-secondary">{strings.home.atlasProofSecondaryCta}</a>
+          </div>
         </div>
       </div>
     </div>
@@ -111,6 +136,8 @@ const bookingHref = `${paths.contact}?focus=calendar`;
 
   <ProcessTimeline title={strings.home.processTitle} steps={strings.home.processSteps} />
 
+  <FirstStepOffer offer={strings.home.firstStepOffer} href={bookingHref} />
+
   <section id="about" class="section-padding bg-surface">
     <div class="container mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -129,6 +156,13 @@ const bookingHref = `${paths.contact}?focus=calendar`;
           {strings.about.bioText.split('\n\n').map((paragraph) => (
             <p class="text-body text-lg leading-relaxed mb-5 last:mb-0">{paragraph}</p>
           ))}
+          <div class="mt-8 rounded-2xl border border-border bg-surface-alt p-6">
+            <p class="text-heading font-semibold mb-3">{strings.about.atlasText}</p>
+            <a href={ATLAS_URL} target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-primary hover:text-primary-hover transition-colors">
+              {strings.about.atlasLink}
+              <span aria-hidden="true" class="ml-1">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
