@@ -278,6 +278,14 @@
   .tilt-card:hover {
     box-shadow: 0 20px 40px rgba(109, 74, 255, 0.12), 0 0 0 1px rgba(109, 74, 255, 0.08);
   }
+
+  .contact-form-flash {
+    animation: contactFormFlash 1.4s ease-out;
+  }
+
+  .booking-calendar-flash {
+    animation: bookingCalendarFlash 1.4s ease-out;
+  }
 }
 
 /* --- Aurora hero gradient --- */
@@ -327,6 +335,36 @@
 @keyframes pulse-glow {
   0%, 100% { box-shadow: 0 0 20px rgba(109, 74, 255, 0.15); }
   50% { box-shadow: 0 0 40px rgba(109, 74, 255, 0.3); }
+}
+
+@keyframes contactFormFlash {
+  0%, 100% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  20% {
+    background-color: rgba(109, 74, 255, 0.1);
+    box-shadow: 0 0 0 4px rgba(109, 74, 255, 0.12);
+  }
+  55% {
+    background-color: rgba(109, 74, 255, 0.06);
+    box-shadow: 0 0 0 8px rgba(109, 74, 255, 0);
+  }
+}
+
+@keyframes bookingCalendarFlash {
+  0%, 100% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  20% {
+    background-color: rgba(109, 74, 255, 0.1);
+    box-shadow: 0 0 0 4px rgba(109, 74, 255, 0.12);
+  }
+  55% {
+    background-color: rgba(109, 74, 255, 0.06);
+    box-shadow: 0 0 0 8px rgba(109, 74, 255, 0);
+  }
 }
 
 .animate-fade-in-up {

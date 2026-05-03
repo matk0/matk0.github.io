@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const lang = 'en';
+---
+
+<Layout
+  title="Privacy — Matej Lukášik"
+  description="How this site handles contact form, booking, and analytics data."
+  lang={lang}
+  currentPath="/privacy"
+>
+  <section class="section-padding bg-surface">
+    <div class="container mx-auto max-w-3xl">
+      <h1 class="text-4xl md:text-5xl font-bold text-heading mb-8">Privacy</h1>
+      <div class="space-y-6 text-body text-lg leading-relaxed">
+        <p>
+          This site collects only the information you choose to send through the contact form or booking flow.
+        </p>
+        <p>
+          Contact form submissions include your name, email, selected service, message, and language. They are sent to Matej Lukášik by email and used only to respond to your inquiry.
+        </p>
+        <p>
+          Meeting bookings are handled by Cal.com. Analytics are used only to understand aggregate site traffic and improve the website.
+        </p>
+        <p>
+          To ask about your data or request deletion, email <a href="mailto:matej@matejlukasik.com" class="text-primary font-medium hover:text-primary-hover">matej@matejlukasik.com</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

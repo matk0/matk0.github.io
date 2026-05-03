@@ -11,7 +11,23 @@ const { lang, preselectedService } = Astro.props;
 const strings = t(lang);
 ---
 
-<form id="contact-form" class="space-y-5" method="POST" action="/api/contact">
+<script is:inline>
+  const contactFormSearchParams = new URLSearchParams(window.location.search);
+
+  if (
+    window.location.hash === '#contact-form' ||
+    contactFormSearchParams.get('focus') === 'contact-form'
+  ) {
+    history.scrollRestoration = 'manual';
+  }
+
+  if (window.location.hash === '#contact-form') {
+    document.documentElement.dataset.contactFormIntent = 'true';
+    history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+  }
+</script>
+
+<form id="contact-form" class="space-y-5 rounded-2xl p-4 -m-4" method="POST" action="/api/contact">
   <input type="hidden" name="lang" value={lang} />
   <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
 
@@ -35,17 +51,6 @@ const strings = t(lang);
       name="email"
       required
       placeholder={strings.contact.emailPlaceholder}
-      class="w-full px-4 py-3 rounded-xl border border-border bg-surface text-heading placeholder:text-body/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-sm"
-    />
-  </div>
-
-  <div>
-    <label for="company" class="block text-sm font-medium text-heading mb-1.5">{strings.contact.companyLabel}</label>
-    <input
-      type="text"
-      id="company"
-      name="company"
-      placeholder={strings.contact.companyPlaceholder}
       class="w-full px-4 py-3 rounded-xl border border-border bg-surface text-heading placeholder:text-body/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-sm"
     />
   </div>
@@ -88,14 +93,55 @@ const strings = t(lang);
   </div>
 </form>
 
-<script>
-  const form = document.getElementById('contact-form') as HTMLFormElement;
+<script is:inline>
+  const form = document.getElementById('contact-form');
+  const nameInput = document.getElementById('name');
+  const shouldFocusForm =
+    document.documentElement.dataset.contactFormIntent === 'true' ||
+    new URLSearchParams(window.location.search).get('focus') === 'contact-form';
+
+  const removeContactFormHash = () => {
+    if (window.location.hash === '#contact-form') {
+      history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    }
+  };
+
+  const focusContactForm = () => {
+    if (!form) return;
+
+    removeContactFormHash();
+    window.scrollTo(0, 0);
+    form.classList.remove('contact-form-flash');
+    void form.offsetWidth;
+    form.classList.add('contact-form-flash');
+    nameInput?.focus({ preventScroll: true });
+  };
+
+  const queueContactFormFocus = () => {
+    requestAnimationFrame(() => {
+      focusContactForm();
+      setTimeout(focusContactForm, 0);
+    });
+  };
+
+  if (shouldFocusForm) {
+    queueContactFormFocus();
+    window.addEventListener('load', queueContactFormFocus, { once: true });
+  }
+
+  window.addEventListener('hashchange', () => {
+    if (window.location.hash !== '#contact-form') return;
+
+    document.documentElement.dataset.contactFormIntent = 'true';
+    queueContactFormFocus();
+  });
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
     const successEl = document.getElementById('form-success');
     const errorEl = document.getElementById('form-error');
-    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
 
     successEl?.classList.add('hidden');

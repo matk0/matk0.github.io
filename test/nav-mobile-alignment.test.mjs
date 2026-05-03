@@ -4,6 +4,12 @@ import { test } from 'node:test';
 
 const nav = readFileSync(new URL('../src/components/Nav.astro', import.meta.url), 'utf8');
 
+test('top navigation uses the mlx logotype asset', () => {
+  assert.match(nav, /href="\/"/);
+  assert.match(nav, /src="\/logo\.svg"/);
+  assert.match(nav, /alt="Matej Lukášik"/);
+});
+
 test('mobile language picker is grouped with the hamburger menu', () => {
   const actionGroup = /<div class="[^"]*\bflex\b[^"]*\bitems-center\b[^"]*\bgap-3\b[^"]*">/.exec(nav);
 

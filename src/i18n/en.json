@@ -11,79 +11,79 @@
   "home": {
     "heroTitle": "AI agents for your team.",
     "heroTypewords": ["highly effective", "fully secure", "massively cost-saving", "rock solid", "fully transparent", "production ready", "thoroughly tested"],
-    "heroDescription": "You know AI could transform your business. I'll show you exactly how — and make it happen.",
+    "heroDescription": "You know you need AI. Together we find where to start, what creates the most value, and launch the first useful solution.",
     "ctaPrimary": "Book a Free Call",
     "ctaSecondary": "See My Services",
-    "painTitle": "AI is everywhere. Implementing it shouldn't be this hard.",
-    "pain1Title": "Too many tools, no strategy",
-    "pain1Description": "Every week there's a new AI tool. Without a clear plan, you're just collecting subscriptions.",
-    "pain2Title": "Expensive experiments that go nowhere",
-    "pain2Description": "Proof-of-concept projects that never make it to production. Budget spent, nothing to show.",
-    "pain3Title": "Your team doesn't know where to start",
-    "pain3Description": "AI feels overwhelming. Your people are willing, but they need guidance and the right setup.",
+    "painTitle": "AI only makes sense when it solves a real business problem.",
+    "pain1Title": "You need a clear first step",
+    "pain1Description": "There are many options. Before choosing a tool, we name the business problem worth solving first.",
+    "pain2Title": "Value must be measurable",
+    "pain2Description": "AI agents should not become another vague experiment. We define upfront how they save time, reduce cost, improve quality, or create customer value.",
+    "pain3Title": "Adoption must be safe",
+    "pain3Description": "Data access, rules, permissions, and rollout matter. Your team needs AI systems they can use confidently without putting company data at risk.",
     "servicesTitle": "How I Help",
-    "consultingTitle": "Consulting & Advisory",
-    "consultingDescription": "Assess workflows, identify high-impact automation opportunities, build your adoption roadmap.",
-    "implementationTitle": "Implementation",
-    "implementationDescription": "Design and deploy custom AI agents tailored to your processes. From single-task to multi-agent orchestration.",
-    "trainingTitle": "Training & Workshops",
-    "trainingDescription": "Hands-on sessions for your team. From prompt engineering to production agent workflows.",
+    "consultingTitle": "AI consulting and strategy",
+    "consultingDescription": "If you know AI matters but do not know where to start, I map opportunities, pick the first project worth doing, and define how success will be measured.",
+    "implementationTitle": "AI solution implementation",
+    "implementationDescription": "If you have a clear problem, I design and build a practical AI workflow or agent that fits your process, tools, and safety constraints.",
+    "trainingTitle": "Team training and adoption",
+    "trainingDescription": "If the solution needs to stick, I train your team to use it confidently, understand its boundaries, and improve the workflow over time.",
     "learnMore": "Learn more",
     "processTitle": "How It Works",
     "processSteps": [
       {
         "label": "01",
         "title": "Discovery Call",
-        "description": "30 minutes, free. We figure out where you are, where you want to be, and whether AI agents are the right move."
+        "description": "30 minutes, free. We clarify where you are, what you want to improve, and whether AI is the right next step."
       },
       {
         "label": "02",
         "title": "Your Roadmap",
-        "description": "I propose a clear plan tailored to your team and goals. No guesswork — you know exactly what happens, when, and why."
+        "description": "I propose a clear plan with the first use case, success metric, safety rules, and rollout path."
       },
       {
         "label": "03",
         "title": "Execution",
-        "description": "Agents built, team trained, workflows transformed. You see progress every week, not a big reveal at the end."
+        "description": "We build the approved workflow, test it on real tasks, train the first users, and measure whether it saves time, reduces cost, improves quality, or creates customer value."
       },
       {
         "label": "04",
         "title": "Handoff",
-        "description": "Your team runs it independently. Full documentation, training, and I'm on standby if you need me."
+        "description": "Once it works, your team takes ownership. Long-term support stays available if you want it."
       }
     ],
-    "trustTitle": "Built on expertise, not hype",
-    "trustDescription": "I recommend the right technology for your needs — not the one that pays me the most. You get honest guidance and full transparency.",
-    "ctaBandTitle": "Ready to bring AI to your team?",
-    "ctaBandDescription": "Most clients start with a 30-minute exploratory call. No commitment, no jargon."
+    "trustTitle": "Built on practical value, not hype",
+    "trustDescription": "I recommend the technology and rollout path that fit your business problem, team, budget, and safety needs.",
+    "ctaBandTitle": "Ready to find your first useful AI project?",
+    "ctaBandDescription": "Most clients start with a 30-minute consultation. No commitment, no jargon."
   },
   "services": {
     "heroTitle": "How I Help",
-    "heroDescription": "From strategy to execution — I meet you where you are.",
+    "heroDescription": "From first AI use case to safe rollout.",
     "consulting": {
-      "title": "Consulting & Advisory",
-      "subtitle": "Find out where AI makes sense — before you spend a crown.",
-      "description": "I assess your current workflows, identify the highest-impact automation opportunities, and build a concrete adoption roadmap. You get clarity on what's worth automating and what isn't.",
-      "includes": ["Workflow & process audit", "Automation opportunity mapping", "ROI estimation & prioritization", "Adoption roadmap with milestones"],
+      "title": "AI consulting and strategy",
+      "subtitle": "Find the AI project worth doing before you spend serious time or money.",
+      "description": "I assess your current workflows, identify the highest-impact AI opportunities, and build a concrete adoption roadmap. You get clarity on what is worth automating, what should wait, and how value will be measured.",
+      "includes": ["Workflow and process audit", "AI opportunity mapping", "ROI and feasibility prioritization", "Adoption roadmap with success metrics"],
       "cta": "Book a Consultation"
     },
     "implementation": {
-      "title": "Implementation",
-      "subtitle": "One API key. One server. An AI agent for every team member.",
-      "description": "I design and deploy custom AI agents tailored to your processes. Each employee gets their own agent, connected through a shared intelligence layer. A CEO agent orchestrates across the entire team.",
-      "includes": ["AI agent per employee via Slack", "CEO orchestrator for cross-team coordination", "Shared prompt library & company knowledge base", "Admin dashboard with usage analytics"],
+      "title": "AI solution implementation",
+      "subtitle": "Build the first useful workflow and prove it on real work.",
+      "description": "I design and implement practical AI workflows, agents, and integrations around a clear business problem. The goal is a safe, measurable system your team can actually use.",
+      "includes": ["AI agent prototypes and production implementations", "Workflow automation and integrations", "RAG and knowledge workflows where useful", "Evals, monitoring, and safe rollout support"],
       "cta": "Start a Project"
     },
     "training": {
-      "title": "Training & Workshops",
-      "subtitle": "Build internal capability, not dependency.",
-      "description": "Hands-on sessions that teach your team how to work effectively with AI agents. From prompt engineering fundamentals to designing production agent workflows.",
-      "includes": ["Half-day intensive workshops", "Multi-week training programs", "Prompt engineering for business teams", "Ongoing support & office hours"],
+      "title": "Team training and adoption",
+      "subtitle": "Help the team use AI confidently, not just watch a demo.",
+      "description": "Practical workshops and rollout support that help your team use the new workflow well, understand its limits, and build safe AI habits.",
+      "includes": ["Hands-on AI workflow training", "Prompting and review habits for business teams", "Rules for data safety and tool boundaries", "Ongoing adoption support"],
       "cta": "Request Training"
     },
     "notSure": {
       "title": "Not sure where to start?",
-      "description": "Most clients start with a 30-minute exploratory call. No commitment, no jargon — just an honest conversation about what AI can do for your business.",
+      "description": "Most clients start with a 30-minute consultation. No commitment, no jargon — just an honest conversation about where AI might create measurable value.",
       "cta": "Book a Free Call"
     }
   },
@@ -91,8 +91,8 @@
     "heroTitle": "Who Am I",
     "heroDescription": "One person, one mission: making AI work for real teams.",
     "bioName": "Matej Lukášik",
-    "bioTitle": "Agentic AI Consultant",
-    "bioText": "I've seen too many companies burn money on AI pilots that go nowhere. Flashy demos that never make it to production. Consultants who leave behind a PDF and disappear.\n\nI fix that. I build AI agent systems that actually work — integrated into your team's daily workflow, producing measurable results from week one.\n\nMy approach is simple: understand your business first, then build exactly what you need. No more, no less.",
+    "bioTitle": "Agentic AI Consultant for SMBs",
+    "bioText": "I help small and medium-sized businesses turn AI urgency into practical, safe, measurable AI agent workflows.\n\nMy work starts with a real business problem, not a tool. Together we identify the right first workflow, define how value will be measured, and build a safe path from experiment to production.\n\nI combine 10+ years of software engineering experience with hands-on work in LLM systems, RAG, evals, LLMOps, automation, and agentic workflows.",
     "approachTitle": "My Approach",
     "principle1Title": "Right tool for the job",
     "principle1Description": "Open-source or managed, self-hosted or cloud — I recommend what fits your team, budget, and compliance needs.",
@@ -101,8 +101,8 @@
     "principle3Title": "Start small, prove value",
     "principle3Description": "No 6-month projects. I deploy fast, measure results, and expand only what works.",
     "techTitle": "The Technology",
-    "techDescription": "Each employee gets a personal AI agent accessible via Slack, orchestrated by a CEO agent that coordinates across the team. A shared server provides company-wide prompts, tools, and knowledge. Whether self-hosted or cloud-managed, you maintain full control over your data and choose the setup that fits your needs.",
-    "ctaTitle": "Let's talk about what AI can do for your team.",
+    "techDescription": "The right setup depends on the workflow. Sometimes that means a lightweight automation, sometimes a RAG system, sometimes a custom AI agent connected to your existing tools. The common thread is clear rules, controlled access, measurable outcomes, and a team that knows how to use it.",
+    "ctaTitle": "Let's talk about the first AI workflow worth solving.",
     "ctaPrimary": "Book a Call",
     "ctaSecondary": "Send a Message"
   },
@@ -114,13 +114,11 @@
     "namePlaceholder": "Your name",
     "emailLabel": "Email",
     "emailPlaceholder": "you@company.com",
-    "companyLabel": "Company (optional)",
-    "companyPlaceholder": "Your company name",
     "serviceLabel": "What are you interested in?",
     "serviceOptions": {
-      "consulting": "Consulting & Advisory",
-      "implementation": "Implementation",
-      "training": "Training & Workshops",
+      "consulting": "AI consulting and strategy",
+      "implementation": "AI solution implementation",
+      "training": "Team training and adoption",
       "notSure": "Not sure yet"
     },
     "messageLabel": "Message",
@@ -136,25 +134,42 @@
     "faqTitle": "Frequently Asked Questions",
     "faq": [
       {
-        "question": "How long does implementation take?",
-        "answer": "Most projects go from kickoff to a working agent in 2–6 weeks. A simple automation can be live in days. Complex multi-agent systems take longer, but you'll see progress every week."
+        "question": "We do not know where to start with AI. Is it worth getting in touch?",
+        "answer": "Yes. This is the most common starting point. On the first call we look at your processes, data, and the places where the team loses time. The goal is a clear first use case, not a list of tools."
       },
       {
-        "question": "Do I need technical staff?",
-        "answer": "Not necessarily. I handle the technical side. Having someone technical on your team helps with long-term maintenance, but it's not a prerequisite to get started."
+        "question": "How long does the first rollout take?",
+        "answer": "Most first projects move from kickoff to a working workflow in 2–6 weeks. A simple automation can be live in days. More complex systems take longer, but you should see progress every week."
       },
       {
-        "question": "What industries do you work with?",
-        "answer": "Any team with repetitive knowledge work — finance, legal, operations, customer support, HR. If your people spend time on tasks that follow patterns, AI agents can help."
+        "question": "How do we know whether AI is creating real value?",
+        "answer": "Before building, we define the metric: time saved, shorter cycle time, fewer errors, better quality, or faster customer response. If value cannot be measured, we narrow the project or postpone it."
+      },
+      {
+        "question": "How do you handle data safety?",
+        "answer": "We start with data, permissions, and rollout boundaries. The first version should use the minimum access needed, clear rules for sensitive data, and human review where risk is higher. We move slower where safety matters."
+      },
+      {
+        "question": "Do we need our own technical team?",
+        "answer": "Not necessarily. I can handle the technical side. Someone technical on your team helps with long-term maintenance and ownership, but the first project can start without an internal developer."
+      },
+      {
+        "question": "What tools do you work with?",
+        "answer": "The tool depends on the problem, data, and safety requirements. For workflow automation I use n8n, CrewAI, or LangChain/LangGraph. For models I choose between frontier models such as OpenAI and Anthropic, or open models such as Mistral and Llama. For closed-source agentic coding tools, Codex and Claude Code can make sense. For more controlled or self-hosted agents, OpenClaw or Hermes Agent may fit. The goal is not to use more tools, but to choose a stack that is safe, maintainable, and creates measurable value."
+      },
+      {
+        "question": "What happens after handoff?",
+        "answer": "Once the workflow works, your team gets the operating rules, training, and enough context to use it safely. The goal is capability, not dependency. If useful, we can keep improving the workflow together."
       }
     ]
   },
   "footer": {
-    "description": "AI agent consulting for teams that want real results.",
+    "description": "Agentic AI for small and medium-sized businesses that want safe, measurable results.",
     "navigation": "Navigation",
     "getInTouch": "Get in Touch",
     "copyright": "Matej Lukášik. All rights reserved.",
-    "followMe": "Follow Me"
+    "followMe": "Profiles",
+    "privacy": "Privacy"
   },
   "notFound": {
     "title": "Lost in the machine",

@@ -13,6 +13,7 @@ import type { Lang } from '../i18n';
 const lang = (Astro.locals as any).lang as Lang || 'en';
 const strings = t(lang);
 const paths = getLocalizedPaths(lang);
+const bookingHref = `${paths.contact}?focus=calendar`;
 ---
 
 <Layout
@@ -28,8 +29,8 @@ const paths = getLocalizedPaths(lang);
     size="large"
   >
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href={paths.contact} class="btn-white">{strings.home.ctaPrimary}</a>
       <a href="#services" class="btn-outline-white">{strings.home.ctaSecondary}</a>
+      <a href={bookingHref} class="btn-white">{strings.home.ctaPrimary}</a>
     </div>
   </Hero>
 
@@ -79,7 +80,7 @@ const paths = getLocalizedPaths(lang);
     description={strings.services.consulting.description}
     includes={strings.services.consulting.includes}
     ctaText={strings.services.consulting.cta}
-    ctaHref={`${paths.contact}?service=consulting`}
+    ctaHref={`${paths.contact}?service=consulting&focus=contact-form`}
     bg="white"
   />
 
@@ -91,7 +92,7 @@ const paths = getLocalizedPaths(lang);
     description={strings.services.implementation.description}
     includes={strings.services.implementation.includes}
     ctaText={strings.services.implementation.cta}
-    ctaHref={`${paths.contact}?service=implementation`}
+    ctaHref={`${paths.contact}?service=implementation&focus=contact-form`}
     reversed
     bg="alt"
   />
@@ -104,7 +105,7 @@ const paths = getLocalizedPaths(lang);
     description={strings.services.training.description}
     includes={strings.services.training.includes}
     ctaText={strings.services.training.cta}
-    ctaHref={`${paths.contact}?service=training`}
+    ctaHref={`${paths.contact}?service=training&focus=contact-form`}
     bg="white"
   />
 
@@ -114,11 +115,11 @@ const paths = getLocalizedPaths(lang);
     <div class="container mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div class="reveal">
-          <div class="w-full max-w-[560px] mx-auto lg:mx-0">
+          <div class="w-full max-w-[560px] mx-auto">
             <div class="aspect-[4/5] max-h-[680px] rounded-2xl overflow-hidden bg-primary-light border border-border shadow-sm">
               <img src="/images/about-matej.webp" alt="Matej Lukášik" class="w-full h-full object-cover" />
             </div>
-            <div class="mt-6 lg:mt-8 text-center lg:text-left">
+            <div class="mt-6 lg:mt-8 text-center">
               <h2 class="text-4xl md:text-5xl font-bold text-heading">{strings.about.bioName}</h2>
               <p class="mt-3 text-lg md:text-xl text-primary font-semibold">{strings.about.bioTitle}</p>
             </div>
@@ -136,6 +137,6 @@ const paths = getLocalizedPaths(lang);
   <FAQ title={strings.contact.faqTitle} items={strings.contact.faq} />
 
   <CTABand title={strings.home.ctaBandTitle} description={strings.home.ctaBandDescription}>
-    <a href={paths.contact} class="btn-white">{strings.home.ctaPrimary}</a>
+    <a href={bookingHref} class="btn-white">{strings.home.ctaPrimary}</a>
   </CTABand>
 </Layout>

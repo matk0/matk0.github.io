@@ -10,7 +10,6 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
   const name = formData.get('name')?.toString().trim();
   const email = formData.get('email')?.toString().trim();
-  const company = formData.get('company')?.toString().trim() || '';
   const service = formData.get('service')?.toString().trim() || '';
   const message = formData.get('message')?.toString().trim();
   const lang = formData.get('lang')?.toString().trim() || 'en';
@@ -48,7 +47,6 @@ export const POST: APIRoute = async ({ request, locals }) => {
         html: `<h2>New contact form submission</h2>
                <p><strong>Name:</strong> ${name}</p>
                <p><strong>Email:</strong> ${email}</p>
-               <p><strong>Company:</strong> ${company || 'N/A'}</p>
                <p><strong>Service:</strong> ${service}</p>
                <p><strong>Language:</strong> ${lang}</p>
                <hr />
@@ -65,7 +63,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
   } else {
     console.log('Contact form submission (no RESEND_API_KEY):', {
-      name, email, company, service, message, lang,
+      name, email, service, message, lang,
       timestamp: new Date().toISOString(),
     });
   }

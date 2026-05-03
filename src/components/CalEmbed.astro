@@ -7,13 +7,24 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<div>
+<div id="booking-calendar" class="rounded-2xl p-4 -m-4">
   <h3 class="text-xl font-bold text-heading mb-2">{title}</h3>
   <p class="text-body text-sm mb-6">{description}</p>
   <div class="rounded-xl border border-border overflow-hidden bg-surface-alt min-h-[400px]">
     <div id="cal-embed" class="w-full"></div>
   </div>
 </div>
+
+<script is:inline>
+  const bookingCalendar = document.getElementById('booking-calendar');
+  const shouldFlashCalendar = new URLSearchParams(window.location.search).get('focus') === 'calendar';
+
+  if (bookingCalendar && shouldFlashCalendar) {
+    requestAnimationFrame(() => {
+      bookingCalendar.classList.add('booking-calendar-flash');
+    });
+  }
+</script>
 
 <script is:inline>
   (function (C, A, L) {

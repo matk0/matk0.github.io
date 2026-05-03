@@ -10,15 +10,17 @@ test('layout uses the ml SVG favicon', () => {
   assert.match(layout, /<link rel="icon" type="image\/svg\+xml" href="\/favicon\.svg" \/>/);
 });
 
-test('favicon SVG uses ml initials in the logo font', () => {
+test('favicon SVG uses the mlx mark in Clash Grotesk styling', () => {
   const faviconPath = new URL('../public/favicon.svg', import.meta.url);
 
   assert.ok(existsSync(faviconPath), 'expected public/favicon.svg');
 
   const svg = readFileSync(faviconPath, 'utf8');
-  assert.match(svg, /Space Grotesk/);
-  assert.match(svg, /fill="#1B1340"/);
-  assert.match(svg, />ml</);
+  assert.match(svg, /Clash Grotesk/);
+  assert.match(svg, /#1B1340/);
+  assert.match(svg, /#9F8CFF/);
+  assert.match(svg, /data:image\/png;base64/);
+  assert.match(svg, /exponential-x/);
 });
 
 test('fallback favicon PNGs are real PNGs at expected sizes', async () => {

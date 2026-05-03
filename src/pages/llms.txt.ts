@@ -43,8 +43,6 @@ Matej comes from a Ruby/Rails engineering background and now focuses on agentic 
 - Location: Slovakia (serves EU)
 - LinkedIn: https://www.linkedin.com/in/matej-lukasik
 - GitHub: https://github.com/matk0
-- YouTube: https://youtube.com/@matejlukasik
-- X: https://x.com/matejlukasik
 `;
 
 const SK = `# Matej Lukášik — AI agent konzulting
@@ -89,8 +87,6 @@ Matej ma pozadie v Ruby/Rails inzinierstve a teraz sa venuje agentickej AI. Prac
 - Lokacia: Slovensko (poskytuje sluzby v EU)
 - LinkedIn: https://www.linkedin.com/in/matej-lukasik
 - GitHub: https://github.com/matk0
-- YouTube: https://youtube.com/@matejlukasik
-- X: https://x.com/matejlukasik
 `;
 
 export const GET: APIRoute = ({ locals }) => {

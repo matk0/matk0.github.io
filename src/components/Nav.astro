@@ -13,12 +13,13 @@ const strings = t(lang);
 const altLang = getAlternateLang(lang);
 const altUrl = getAlternateUrl(lang, currentPath, currentUrl);
 const paths = getLocalizedPaths(lang);
+const bookingHref = `${paths.contact}?focus=calendar`;
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-xl saturate-150 border-b border-border/50 shadow-sm shadow-black/[0.03]">
   <div class="container mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-    <a href="/" class="text-xl font-bold text-heading tracking-tight" style="font-family: var(--font-heading);">
-      matejlukášik
+    <a href="/" class="inline-flex items-center rounded-xl" aria-label="Matej Lukášik">
+      <img src="/logo.svg" alt="Matej Lukášik" width="40" height="40" class="block h-10 w-10" />
     </a>
 
     <div class="hidden md:flex items-center gap-1">
@@ -43,7 +44,7 @@ const paths = getLocalizedPaths(lang);
       >
         {altLang.toUpperCase()}
       </a>
-      <a href={paths.contact} class="hidden sm:inline-flex btn-primary !py-2 !px-4 !text-sm">
+      <a href={bookingHref} class="hidden sm:inline-flex btn-primary !py-2 !px-4 !text-sm">
         {strings.nav.bookCall}
       </a>
 
@@ -61,7 +62,7 @@ const paths = getLocalizedPaths(lang);
       <a href="/#about" class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.about}</a>
       <a href="/#faq" class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.faq}</a>
       <a href={paths.contact} class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.contact}</a>
-      <a href={paths.contact} class="btn-primary !text-sm mt-2">{strings.nav.bookCall}</a>
+      <a href={bookingHref} class="btn-primary !text-sm mt-2">{strings.nav.bookCall}</a>
     </div>
   </div>
 </nav>

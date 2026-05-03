@@ -64,6 +64,8 @@ const PATH_MAP: Record<string, Record<Lang, string>> = {
   '/o-mne': { en: '/', sk: '/' },
   '/contact': { en: '/contact', sk: '/kontakt' },
   '/kontakt': { en: '/contact', sk: '/kontakt' },
+  '/privacy': { en: '/privacy', sk: '/sukromie' },
+  '/sukromie': { en: '/privacy', sk: '/sukromie' },
 };
 
 export function getAlternateUrl(lang: Lang, currentPath: string, currentUrl?: URL): string {
@@ -94,5 +96,6 @@ export function getLocalizedPaths(lang: Lang) {
     services: '/#services',
     about: '/#about',
     contact: lang === 'sk' ? '/kontakt' : '/contact',
+    privacy: lang === 'sk' ? '/sukromie' : '/privacy',
   };
 }

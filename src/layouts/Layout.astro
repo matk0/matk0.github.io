@@ -26,13 +26,11 @@ const jsonLd = JSON.stringify({
       "@type": "Person",
       "name": "Matej Lukášik",
       "url": "https://matejlukasik.com",
-      "jobTitle": lang === 'sk' ? "Konzultant pre agentickú AI" : "Agentic AI Consultant",
+      "jobTitle": lang === 'sk' ? "Konzultant pre agentickú AI" : "Agentic AI Consultant for SMBs",
       "image": `${DOMAINS[lang]}/avatar.png`,
       "sameAs": [
         "https://www.linkedin.com/in/matej-lukasik",
-        "https://x.com/matejlukasik",
-        "https://github.com/matk0",
-        "https://youtube.com/@matejlukasik"
+        "https://github.com/matk0"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -41,11 +39,11 @@ const jsonLd = JSON.stringify({
     },
     {
       "@type": "ProfessionalService",
-      "name": "Matej Lukášik — AI Agent Consulting",
+      "name": "Matej Lukášik — Agentic AI Consulting",
       "url": "https://matejlukasik.com",
       "description": lang === 'sk'
-        ? "AI agent konzulting pre timy, ktore chcu realne vysledky."
-        : "AI agent consulting for teams that want real results.",
+        ? "Agentická AI pre malé a stredné firmy, ktoré chcú bezpečné a merateľné výsledky."
+        : "Agentic AI for small and medium-sized businesses that want safe, measurable results.",
       "areaServed": "EU",
       "provider": { "@type": "Person", "name": "Matej Lukášik" },
       "availableLanguage": ["en", "sk"]

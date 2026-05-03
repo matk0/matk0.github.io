@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const lang = 'sk';
+---
+
+<Layout
+  title="Ochrana osobných údajov — Matej Lukášik"
+  description="Ako táto stránka pracuje s údajmi z kontaktného formulára, rezervácie hovoru a analytiky."
+  lang={lang}
+  currentPath="/sukromie"
+>
+  <section class="section-padding bg-surface">
+    <div class="container mx-auto max-w-3xl">
+      <h1 class="text-4xl md:text-5xl font-bold text-heading mb-8">Ochrana osobných údajov</h1>
+      <div class="space-y-6 text-body text-lg leading-relaxed">
+        <p>
+          Táto stránka zbiera len údaje, ktoré sami odošlete cez kontaktný formulár alebo rezerváciu hovoru.
+        </p>
+        <p>
+          Kontaktný formulár odosiela meno, email, zvolenú službu, správu a jazyk. Údaje prídu emailom Matejovi Lukášikovi a slúžia iba na odpoveď na Vašu otázku alebo dopyt.
+        </p>
+        <p>
+          Rezervácie hovorov spracúva Cal.com. Analytika sa používa iba na pochopenie návštevnosti stránky a jej zlepšovanie.
+        </p>
+        <p>
+          Ak sa chcete opýtať na svoje údaje alebo požiadať o ich vymazanie, napíšte na <a href="mailto:matej@matejlukasik.com" class="text-primary font-medium hover:text-primary-hover">matej@matejlukasik.com</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
