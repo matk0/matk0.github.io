@@ -36,6 +36,8 @@ test('footer copy is specific to small and medium businesses', () => {
 });
 
 test('footer shows selected professional and publishing profiles', () => {
+  assert.equal(sk.footer.followMe, 'Sociálne médiá');
+  assert.equal(en.footer.followMe, 'Social Media');
   assert.match(footer, /linkedin\.com\/in\/matej-lukasik/);
   assert.match(footer, /x\.com\/matejlukasik/);
   assert.match(footer, /github\.com\/matk0/);

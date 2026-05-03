@@ -14,11 +14,13 @@ test('i18n exposes Agent Threat Atlas URLs', () => {
   assert.match(i18n, /ATLAS_THREATS_URL = 'https:\/\/atlas\.matejlukasik\.sk\/threats'/);
 });
 
-test('homepage links security proof points to Agent Threat Atlas', () => {
+test('homepage keeps lightweight security links to Agent Threat Atlas', () => {
   assert.match(index, /ATLAS_URL/);
-  assert.match(index, /ATLAS_THREATS_URL/);
-  assert.match(index, /strings\.home\.atlasProofTitle/);
   assert.match(index, /strings\.home\.pain3AtlasText/);
+  assert.doesNotMatch(index, /strings\.home\.atlasProofTitle/);
+  assert.doesNotMatch(index, /strings\.about\.atlasText/);
+  assert.doesNotMatch(index, /strings\.about\.atlasLink/);
+  assert.doesNotMatch(index, /ATLAS_THREATS_URL/);
   assert.ok(index.indexOf('<ProcessTimeline') < index.indexOf('<FirstStepOffer'));
   assert.ok(index.indexOf('<FirstStepOffer') < index.indexOf('<FAQ'));
 });
@@ -29,9 +31,15 @@ test('Slovak copy connects security concern to Agent Threat Atlas', () => {
   assert.equal(sk.home.pain3AtlasText, 'Pozrite si verejný Agent Threat Atlas');
   assert.equal(sk.contact.faq[3].linkHref, 'https://atlas.matejlukasik.sk/');
   assert.equal(sk.contact.faq[3].linkText, 'Otvoriť Agent Threat Atlas');
+  assert.equal(sk.footer.research, 'Projekty');
+  assert.equal(sk.about.atlasText, undefined);
+  assert.equal(sk.about.atlasLink, undefined);
 
   assert.equal(en.home.atlasProofCta, 'Open Agent Threat Atlas');
   assert.equal(en.contact.faq[3].linkHref, 'https://atlas.matejlukasik.sk/');
+  assert.equal(en.footer.research, 'Projects');
+  assert.equal(en.about.atlasText, undefined);
+  assert.equal(en.about.atlasLink, undefined);
 });
 
 test('FAQ and footer render optional Atlas links', () => {

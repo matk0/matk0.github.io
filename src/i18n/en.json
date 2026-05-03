@@ -114,8 +114,6 @@
     "principle3Description": "No 6-month projects. I deploy fast, measure results, and expand only what works.",
     "techTitle": "The Technology",
     "techDescription": "The right setup depends on the workflow. Sometimes that means a lightweight automation, sometimes a RAG system, sometimes a custom AI agent connected to your existing tools. The common thread is clear rules, controlled access, measurable outcomes, and a team that knows how to use it.",
-    "atlasText": "I ground safety decisions in real incidents, threat categories, and controls, not vague caution.",
-    "atlasLink": "Explore Agent Threat Atlas",
     "ctaTitle": "Let's talk about the first AI workflow worth solving.",
     "ctaPrimary": "Book a Call",
     "ctaSecondary": "Send a Message"
@@ -184,8 +182,8 @@
     "navigation": "Navigation",
     "getInTouch": "Get in Touch",
     "copyright": "Matej Lukášik. All rights reserved.",
-    "followMe": "Profiles",
-    "research": "Research",
+    "followMe": "Social Media",
+    "research": "Projects",
     "agentThreatAtlas": "Agent Threat Atlas",
     "privacy": "Privacy"
   },

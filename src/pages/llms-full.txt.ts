@@ -127,9 +127,6 @@ function render(lang: Lang): string {
   sections.push(`## ${s.about.techTitle}`);
   sections.push(s.about.techDescription);
   sections.push('');
-  sections.push(s.about.atlasText);
-  sections.push(`Agent Threat Atlas: https://atlas.matejlukasik.sk/`);
-  sections.push('');
 
   sections.push('---');
   sections.push('');

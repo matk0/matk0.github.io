@@ -137,8 +137,6 @@
     "principle3Description": "Najprv overíme jeden užitočný use case. Meriame výsledky a rozširujeme len to, čo funguje.",
     "techTitle": "Technológia",
     "techDescription": "Správne technické riešenie závisí od workflowu. Niekedy stačí ľahká automatizácia, inokedy RAG systém alebo vlastný AI agent napojený na existujúce nástroje. Spoločné sú jasné pravidlá, kontrolovaný prístup, merateľné výsledky a tím, ktorý vie riešenie používať.",
-    "atlasText": "Bezpečnostné rozhodnutia neopieram o pocit, ale o reálne incidenty, kategórie hrozieb a kontroly.",
-    "atlasLink": "Otvoriť Agent Threat Atlas",
     "ctaTitle": "Porozprávajme sa o prvom AI workflowe, ktorý má zmysel riešiť.",
     "ctaPrimary": "Dohodnúť hovor",
     "ctaSecondary": "Napísať správu"
@@ -207,8 +205,8 @@
     "navigation": "Navigácia",
     "getInTouch": "Kontakt",
     "copyright": "Matej Lukášik. Všetky práva vyhradené.",
-    "followMe": "Profily",
-    "research": "Výskum",
+    "followMe": "Sociálne médiá",
+    "research": "Projekty",
     "agentThreatAtlas": "Agent Threat Atlas",
     "privacy": "Ochrana osobných údajov"
   },
