@@ -16,7 +16,7 @@ interface Props {
 const { id, title, subtitle, description, includes, ctaText, ctaHref, imageSrc, imageAlt = '', reversed = false, bg = 'white' } = Astro.props;
 ---
 
-<section id={id} class:list={["section-padding relative", bg === 'alt' ? "bg-surface-alt" : "bg-surface bg-dots"]}>
+<section id={id} class:list={["section-padding relative", bg === 'alt' ? "bg-surface-alt" : "bg-surface bg-dots"]} data-analytics-section={id}>
   <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
     <div class:list={["reveal", reversed && "lg:order-2"]}>
       <h2 class="text-2xl md:text-3xl font-bold text-heading mb-3">{title}</h2>
@@ -32,7 +32,16 @@ const { id, title, subtitle, description, includes, ctaText, ctaHref, imageSrc, 
           </li>
         ))}
       </ul>
-      <a href={ctaHref} class="btn-primary">{ctaText}</a>
+      <a
+        href={ctaHref}
+        class="btn-primary"
+        data-analytics-event="service_cta_clicked"
+        data-analytics-service={id}
+        data-analytics-position="service_section"
+        data-analytics-target="contact_form"
+      >
+        {ctaText}
+      </a>
     </div>
     <div class:list={["reveal reveal-delay-2", reversed && "lg:order-1"]}>
       <div class="rounded-2xl bg-gradient-to-br from-primary-light to-surface-alt p-4 md:p-6 flex items-center justify-center min-h-[300px] relative overflow-hidden group border border-border/60 shadow-sm">

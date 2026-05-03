@@ -30,12 +30,16 @@ const bookingHref = `${paths.contact}?focus=calendar`;
     size="large"
   >
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#services" class="btn-outline-white">{strings.home.ctaSecondary}</a>
-      <a href={bookingHref} class="btn-white">{strings.home.ctaPrimary}</a>
+      <a href="#services" class="btn-outline-white" data-analytics-event="services_intent_clicked" data-analytics-position="hero">
+        {strings.home.ctaSecondary}
+      </a>
+      <a href={bookingHref} class="btn-white" data-analytics-event="booking_intent_clicked" data-analytics-position="hero" data-analytics-target="calendar">
+        {strings.home.ctaPrimary}
+      </a>
     </div>
   </Hero>
 
-  <section class="section-padding bg-surface bg-dots relative">
+  <section class="section-padding bg-surface bg-dots relative" data-analytics-section="pain_points">
     <div class="container mx-auto">
       <h2 class="text-2xl md:text-4xl font-bold text-heading text-center mb-12 max-w-3xl mx-auto reveal">
         {strings.home.painTitle}
@@ -60,7 +64,7 @@ const bookingHref = `${paths.contact}?focus=calendar`;
     </div>
   </section>
 
-  <section id="services" class="section-padding bg-surface-alt relative">
+  <section id="services" class="section-padding bg-surface-alt relative" data-analytics-section="services">
     <div class="container mx-auto">
       <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 reveal">
         <span class="gradient-text-dark">{strings.home.servicesTitle}</span>
@@ -120,7 +124,7 @@ const bookingHref = `${paths.contact}?focus=calendar`;
 
   <FirstStepOffer offer={strings.home.firstStepOffer} href={bookingHref} />
 
-  <section id="about" class="section-padding bg-surface">
+  <section id="about" class="section-padding bg-surface" data-analytics-section="about">
     <div class="container mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div class="reveal">
@@ -146,6 +150,8 @@ const bookingHref = `${paths.contact}?focus=calendar`;
   <FAQ title={strings.contact.faqTitle} items={strings.contact.faq} />
 
   <CTABand title={strings.home.ctaBandTitle} description={strings.home.ctaBandDescription}>
-    <a href={bookingHref} class="btn-white">{strings.home.ctaPrimary}</a>
+    <a href={bookingHref} class="btn-white" data-analytics-event="booking_intent_clicked" data-analytics-position="final_cta" data-analytics-target="calendar">
+      {strings.home.ctaPrimary}
+    </a>
   </CTABand>
 </Layout>

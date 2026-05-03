@@ -39,4 +39,46 @@ const { title, description } = Astro.props;
     config: { layout: "month_view" },
   });
   Cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+  const trackCalendarEvent = (eventName, props = {}) => {
+    window.trackSiteEvent?.(eventName, {
+      source: new URLSearchParams(window.location.search).get('focus') === 'calendar' ? 'booking_cta' : 'contact_page',
+      ...props,
+    });
+  };
+
+  Cal("on", {
+    action: "bookerViewed",
+    callback: (event) => {
+      const details = event.detail?.data || {};
+
+      trackCalendarEvent('cal_booker_viewed', {
+        eventSlug: details.eventSlug || 'unknown',
+        slotsLoaded: details.slotsLoaded,
+      });
+    },
+  });
+
+  Cal("on", {
+    action: "bookerReady",
+    callback: (event) => {
+      const details = event.detail?.data || {};
+
+      trackCalendarEvent('cal_booker_ready', {
+        eventSlug: details.eventSlug || 'unknown',
+      });
+    },
+  });
+
+  Cal("on", {
+    action: "bookingSuccessfulV2",
+    callback: (event) => {
+      const details = event.detail?.data || {};
+
+      trackCalendarEvent('booking_successful', {
+        status: details.status || 'unknown',
+        paymentRequired: details.paymentRequired,
+        isRecurring: details.isRecurring,
+      });
+    },
+  });
 </script>

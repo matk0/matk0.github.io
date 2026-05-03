@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title, description, imageSrc, imageAlt = '', href, linkText } = Astro.props;
+const analyticsService = href.startsWith('#') ? href.slice(1) : 'unknown';
 ---
 
 <div class="tilt-card h-full flex flex-col bg-surface rounded-2xl p-6 border border-border hover:border-primary/20 transition-all duration-300 group relative overflow-hidden" data-tilt>
@@ -19,7 +20,13 @@ const { title, description, imageSrc, imageAlt = '', href, linkText } = Astro.pr
     </div>
     <h3 class="text-xl font-bold text-heading mb-3">{title}</h3>
     <p class="text-body text-sm leading-relaxed mb-5">{description}</p>
-    <a href={href} class="mt-auto inline-flex items-center text-sm font-semibold text-primary hover:text-primary-hover transition-colors gap-1">
+    <a
+      href={href}
+      class="mt-auto inline-flex items-center text-sm font-semibold text-primary hover:text-primary-hover transition-colors gap-1"
+      data-analytics-event="service_card_clicked"
+      data-analytics-service={analyticsService}
+      data-analytics-position="services_grid"
+    >
       {linkText}
       <svg class="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

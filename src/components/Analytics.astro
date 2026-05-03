@@ -1,0 +1,152 @@
+<script is:inline>
+  (() => {
+    const allowedEventNames = new Set([
+      'services_intent_clicked',
+      'booking_intent_clicked',
+      'service_card_clicked',
+      'service_cta_clicked',
+      'section_viewed',
+      'scroll_depth_reached',
+      'faq_opened',
+      'mailto_clicked',
+      'external_link_clicked',
+      'contact_form_started',
+      'contact_form_submitted',
+      'contact_form_succeeded',
+      'contact_form_failed',
+      'cal_booker_viewed',
+      'cal_booker_ready',
+      'booking_successful',
+    ]);
+
+    const blockedPropKeys = new Set([
+      'email',
+      'message',
+      'name',
+      'uid',
+      'videoCallUrl',
+      'startTime',
+      'endTime',
+    ]);
+
+    const toSnakeCase = (key) => key.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
+
+    const normalizeValue = (value) => {
+      if (value === undefined || value === null) return '';
+      if (typeof value === 'boolean') return value ? 'true' : 'false';
+      return String(value).slice(0, 120);
+    };
+
+    const sanitizeProps = (props = {}) => {
+      const cleanProps = {
+        lang: document.documentElement.lang || 'unknown',
+        path: window.location.pathname,
+      };
+
+      Object.entries(props).forEach(([key, value]) => {
+        if (!key || blockedPropKeys.has(key)) return;
+
+        const normalizedValue = normalizeValue(value);
+        if (!normalizedValue) return;
+
+        cleanProps[toSnakeCase(key)] = normalizedValue;
+      });
+
+      return cleanProps;
+    };
+
+    const datasetProps = (element) => {
+      const props = {};
+
+      Object.entries(element.dataset).forEach(([key, value]) => {
+        if (!key.startsWith('analytics') || key === 'analyticsEvent') return;
+
+        const propName = key.replace(/^analytics/, '');
+        if (!propName) return;
+
+        props[propName.charAt(0).toLowerCase() + propName.slice(1)] = value;
+      });
+
+      return props;
+    };
+
+    window.trackSiteEvent = (name, props = {}, options = {}) => {
+      if (!allowedEventNames.has(name)) return;
+
+      const cleanProps = sanitizeProps(props);
+
+      if (typeof plausible === 'function') {
+        plausible(name, { ...options, props: cleanProps });
+      }
+    };
+
+    document.addEventListener('click', (event) => {
+      if (!(event.target instanceof Element)) return;
+
+      const target = event.target.closest('[data-analytics-event]');
+      if (!target || target.tagName.toLowerCase() === 'details') return;
+
+      window.trackSiteEvent(target.dataset.analyticsEvent, datasetProps(target));
+    });
+
+    document.querySelectorAll('details[data-analytics-event]').forEach((detail) => {
+      detail.addEventListener('toggle', () => {
+        if (!detail.open) return;
+
+        window.trackSiteEvent(detail.dataset.analyticsEvent, datasetProps(detail));
+      });
+    });
+
+    if ('IntersectionObserver' in window) {
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          sectionObserver.unobserve(entry.target);
+          window.trackSiteEvent(
+            'section_viewed',
+            { section: entry.target.dataset.analyticsSection },
+            { interactive: false }
+          );
+        });
+      }, { threshold: 0.45 });
+
+      document.querySelectorAll('[data-analytics-section]').forEach((section) => {
+        sectionObserver.observe(section);
+      });
+    }
+
+    const scrollDepths = [25, 50, 75, 100];
+    const reachedDepths = new Set();
+    let scrollPending = false;
+
+    const trackScrollDepth = () => {
+      scrollPending = false;
+
+      const documentHeight = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight
+      );
+      const viewportBottom = window.scrollY + window.innerHeight;
+      const currentDepth = documentHeight <= window.innerHeight
+        ? 100
+        : Math.min(100, Math.floor((viewportBottom / documentHeight) * 100));
+
+      scrollDepths.forEach((depth) => {
+        if (reachedDepths.has(depth) || currentDepth < depth) return;
+
+        reachedDepths.add(depth);
+        window.trackSiteEvent('scroll_depth_reached', { depth }, { interactive: false });
+      });
+    };
+
+    window.addEventListener('scroll', () => {
+      if (scrollPending) return;
+
+      scrollPending = true;
+      requestAnimationFrame(trackScrollDepth);
+    }, { passive: true });
+
+    requestAnimationFrame(trackScrollDepth);
+  })();
+</script>

@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
 import type { Lang } from '../i18n';
 import { DOMAINS, getAlternateUrl, getAlternateLang, getSiteOrigin } from '../i18n';
 
@@ -95,16 +96,8 @@ const jsonLd = JSON.stringify({
       <slot />
     </main>
     <Footer lang={lang} />
+    <Analytics />
     <script is:inline>
-      document.querySelectorAll('a[href*="kontakt"], a[href*="contact"]').forEach(link => {
-        link.addEventListener('click', () => {
-          if (typeof plausible !== 'undefined') {
-            const isBookCall = link.textContent?.toLowerCase().includes('call') || link.textContent?.toLowerCase().includes('hovor');
-            plausible(isBookCall ? 'clicked_book_call' : 'clicked_service_cta');
-          }
-        });
-      });
-
       // Scroll reveal
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

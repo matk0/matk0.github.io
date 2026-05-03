@@ -36,7 +36,12 @@ const year = new Date().getFullYear();
         <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{strings.footer.getInTouch}</h4>
         <ul class="space-y-3">
           <li>
-            <a href={`mailto:${strings.contact.email}`} class="text-sm hover:text-white transition-colors">
+            <a
+              href={`mailto:${strings.contact.email}`}
+              class="text-sm hover:text-white transition-colors"
+              data-analytics-event="mailto_clicked"
+              data-analytics-position="footer"
+            >
               {strings.contact.email}
             </a>
           </li>
@@ -47,7 +52,15 @@ const year = new Date().getFullYear();
         <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{strings.footer.research}</h4>
         <ul class="space-y-2">
           <li>
-            <a href={ATLAS_URL} target="_blank" rel="noopener noreferrer" class="text-sm hover:text-white transition-colors">
+            <a
+              href={ATLAS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm hover:text-white transition-colors"
+              data-analytics-event="external_link_clicked"
+              data-analytics-destination="agent_threat_atlas"
+              data-analytics-position="footer"
+            >
               {strings.footer.agentThreatAtlas}
             </a>
           </li>

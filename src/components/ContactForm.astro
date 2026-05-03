@@ -27,7 +27,7 @@ const strings = t(lang);
   }
 </script>
 
-<form id="contact-form" class="space-y-5 rounded-2xl p-4 -m-4" method="POST" action="/api/contact">
+<form id="contact-form" class="space-y-5 rounded-2xl p-4 -m-4" method="POST" action="/api/contact" data-analytics-event-source="contact_form">
   <input type="hidden" name="lang" value={lang} />
   <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
 
@@ -96,9 +96,24 @@ const strings = t(lang);
 <script is:inline>
   const form = document.getElementById('contact-form');
   const nameInput = document.getElementById('name');
+  const serviceSelect = document.getElementById('service');
   const shouldFocusForm =
     document.documentElement.dataset.contactFormIntent === 'true' ||
     new URLSearchParams(window.location.search).get('focus') === 'contact-form';
+  let contactFormStarted = false;
+
+  const getSelectedService = () => serviceSelect?.value || 'notSure';
+
+  const trackContactForm = (eventName) => {
+    window.trackSiteEvent?.(eventName, { service: getSelectedService() });
+  };
+
+  const trackContactFormStarted = () => {
+    if (contactFormStarted) return;
+
+    contactFormStarted = true;
+    trackContactForm('contact_form_started');
+  };
 
   const removeContactFormHash = () => {
     if (window.location.hash === '#contact-form') {
@@ -136,6 +151,9 @@ const strings = t(lang);
     queueContactFormFocus();
   });
 
+  form?.addEventListener('input', trackContactFormStarted);
+  form?.addEventListener('change', trackContactFormStarted);
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
@@ -148,6 +166,7 @@ const strings = t(lang);
     errorEl?.classList.add('hidden');
     submitBtn.disabled = true;
     submitBtn.textContent = '...';
+    trackContactForm('contact_form_submitted');
 
     try {
       const res = await fetch('/api/contact', {
@@ -155,12 +174,15 @@ const strings = t(lang);
         body: data,
       });
       if (res.ok) {
+        trackContactForm('contact_form_succeeded');
         successEl?.classList.remove('hidden');
         form.reset();
       } else {
+        trackContactForm('contact_form_failed');
         errorEl?.classList.remove('hidden');
       }
     } catch {
+      trackContactForm('contact_form_failed');
       errorEl?.classList.remove('hidden');
     } finally {
       submitBtn.disabled = false;
