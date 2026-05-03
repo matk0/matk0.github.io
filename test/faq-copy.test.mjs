@@ -29,10 +29,10 @@ test('English FAQ mirrors the Slovak FAQ scope', () => {
   assert.deepEqual(
     en.contact.faq.map((item) => item.question),
     [
-      'We do not know where to start with AI. Is it worth getting in touch?',
-      'How long does the first rollout take?',
+      "We don't know where to start with AI. Is it worth getting in touch?",
+      'How long does the first deployment take?',
       'How do we know whether AI is creating real value?',
-      'How do you handle data safety?',
+      'How do you handle data security?',
       'Do we need our own technical team?',
       'What tools do you work with?',
       'What happens after handoff?',

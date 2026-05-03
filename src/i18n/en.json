@@ -5,115 +5,115 @@
     "services": "Services",
     "about": "About",
     "contact": "Contact",
-    "bookCall": "Book a Call",
+    "bookCall": "Free Consultation",
     "faq": "FAQ"
   },
   "home": {
     "heroTitle": "AI agents for your team.",
-    "heroTypewords": ["highly effective", "fully secure", "massively cost-saving", "rock solid", "fully transparent", "production ready", "thoroughly tested"],
-    "heroDescription": "You know you need AI. Together we find where to start, what creates the most value, and launch the first useful solution.",
-    "ctaPrimary": "Book a Free Call",
+    "heroTypewords": ["Highly effective", "Secure by design", "Cost-saving", "Highly reliable", "Fully transparent", "Production-ready", "Thoroughly tested"],
+    "heroDescription": "You know you need AI. Together, we'll find where to start, what makes the most sense for your business, and launch the first useful solution.",
+    "ctaPrimary": "Book a Free Consultation",
     "ctaSecondary": "See My Services",
-    "painTitle": "AI only makes sense when it solves a real business problem.",
-    "pain1Title": "You need a clear first step",
-    "pain1Description": "There are many options. Before choosing a tool, we name the business problem worth solving first.",
+    "painTitle": "AI only makes sense when it solves a real problem in your business.",
+    "pain1Title": "The first step is unclear",
+    "pain1Description": "There are many options. Before choosing a tool, we need to name the business problem worth solving first.",
     "pain2Title": "Value must be measurable",
-    "pain2Description": "AI agents should not become another vague experiment. We define upfront how they save time, reduce cost, improve quality, or create customer value.",
+    "pain2Description": "AI agents cannot become another experiment without clear results. Up front, we define how much time they should save, which costs they should reduce, or exactly what value they should create for customers.",
     "pain3Title": "Adoption must be safe",
-    "pain3Description": "Data access, rules, permissions, and rollout matter. Your team needs AI systems they can use confidently without putting company data at risk.",
+    "pain3Description": "Data access, rules, permissions, and gradual rollout matter as much as the tool itself. Your team needs an AI solution they understand and can use safely.",
     "pain3AtlasText": "See the public Agent Threat Atlas",
-    "servicesTitle": "How I Help",
-    "consultingTitle": "AI consulting and strategy",
-    "consultingDescription": "If you know AI matters but do not know where to start, I map opportunities, pick the first project worth doing, and define how success will be measured.",
-    "implementationTitle": "AI solution implementation",
-    "implementationDescription": "If you have a clear problem, I design and build a practical AI workflow or agent that fits your process, tools, and safety constraints.",
-    "trainingTitle": "Team training and adoption",
-    "trainingDescription": "If the solution needs to stick, I train your team to use it confidently, understand its boundaries, and improve the workflow over time.",
+    "servicesTitle": "How I Can Help",
+    "consultingTitle": "AI Consulting and Strategy",
+    "consultingDescription": "If you are not sure where to start, I will help map opportunities, choose the right first project, and decide how we will measure success.",
+    "implementationTitle": "AI Solution Implementation",
+    "implementationDescription": "If you already have a clear problem, I will design and build a practical AI solution that fits your processes, tools, and security rules.",
+    "trainingTitle": "AI Workshops and Adoption",
+    "trainingDescription": "If AI is going to work long term, your team needs to use it in everyday work. I help people find concrete use cases, verify outputs, and build safe work habits.",
     "learnMore": "Learn more",
-    "processTitle": "How It Works",
+    "processTitle": "How We Work Together",
     "processSteps": [
       {
         "label": "01",
-        "title": "Discovery Call",
-        "description": "30 minutes, free. We clarify where you are, what you want to improve, and whether AI is the right next step."
+        "title": "Introductory Call",
+        "description": "30 minutes, no commitment. We clarify where you are, what you want to improve, and whether AI is the right next step."
       },
       {
         "label": "02",
-        "title": "Your Roadmap",
-        "description": "I propose a clear plan with the first use case, success metric, safety rules, and rollout path."
+        "title": "First-Step Plan",
+        "description": "I propose a concrete first use case, a success metric, safety rules, and a realistic rollout path."
       },
       {
         "label": "03",
         "title": "Execution",
-        "description": "We build the approved workflow, test it on real tasks, train the first users, and measure whether it saves time, reduces cost, improves quality, or creates customer value."
+        "description": "We build the approved workflow, test it on real tasks, train the first users, and measure its impact."
       },
       {
         "label": "04",
         "title": "Handoff",
-        "description": "Once it works, your team takes ownership. Long-term support stays available if you want it."
+        "description": "Once the solution works, your team takes it over. If you want to keep going, long-term support remains available."
       }
     ],
     "firstStepOffer": {
       "eyebrow": "Most common first step",
-      "title": "AI opportunity and risk audit",
+      "title": "AI Opportunity and Risk Audit",
       "description": "In 1–2 weeks we map where AI makes sense in your company, which workflow to tackle first, what risks need controls, and how success will be measured.",
-      "cta": "Book a Free Call"
+      "cta": "Book a Free Consultation"
     },
-    "atlasProofEyebrow": "Security research",
+    "atlasProofEyebrow": "Security Research",
     "atlasProofTitle": "AI agent security is not an abstract risk.",
-    "atlasProofDescription": "I maintain a public atlas of agentic AI incidents, mapping real failures to threat categories and prevention principles teams can use before rollout.",
+    "atlasProofDescription": "I maintain a public atlas of agentic AI incidents that maps real failures to threat categories and prevention principles teams can use before deployment.",
     "atlasProofCta": "Open Agent Threat Atlas",
     "atlasProofSecondaryCta": "Browse threat categories",
-    "trustTitle": "Built on practical value, not hype",
+    "trustTitle": "Practical value, not hype",
     "trustDescription": "I recommend the technology and rollout path that fit your business problem, team, budget, and safety needs.",
     "ctaBandTitle": "Ready to find your first useful AI project?",
-    "ctaBandDescription": "Most clients start with a 30-minute consultation. No commitment, no jargon."
+    "ctaBandDescription": "Most clients start with a 30-minute consultation. No commitment, no unnecessary hype."
   },
   "services": {
     "heroTitle": "How I Help",
-    "heroDescription": "From first AI use case to safe rollout.",
+    "heroDescription": "From the first AI use case to safe deployment.",
     "consulting": {
-      "title": "AI consulting and strategy",
-      "subtitle": "Find the AI project worth doing before you spend serious time or money.",
-      "description": "I assess your current workflows, identify the highest-impact AI opportunities, and build a concrete adoption roadmap. You get clarity on what is worth automating, what should wait, and how value will be measured.",
-      "includes": ["Workflow and process audit", "AI opportunity mapping", "ROI and feasibility prioritization", "Adoption roadmap with success metrics"],
-      "cta": "Book a Consultation"
+      "title": "AI Consulting and Strategy",
+      "subtitle": "Find out which AI project is worth doing before you spend time or money.",
+      "description": "I evaluate your current processes, identify the highest-impact AI opportunities, and prepare a concrete adoption plan. You get clarity on what is worth automating, what should wait, and how we will measure value.",
+      "includes": ["Process and workflow audit", "AI opportunity mapping", "Prioritization by ROI and feasibility", "Adoption plan with success metrics"],
+      "cta": "Schedule a Consultation"
     },
     "implementation": {
-      "title": "AI solution implementation",
-      "subtitle": "Build the first useful workflow and prove it on real work.",
-      "description": "I design and implement practical AI workflows, agents, and integrations around a clear business problem. The goal is a safe, measurable system your team can actually use.",
-      "includes": ["AI agent prototypes and production implementations", "Workflow automation and integrations", "RAG and knowledge workflows where useful", "Evals, monitoring, and safe rollout support"],
+      "title": "AI Solution Implementation",
+      "subtitle": "Automate the first useful workflow and prove it in the real world.",
+      "description": "I design and implement practical AI automations, agents, and integrations around a clear business problem. The goal is a safe, measurable solution your team actually uses.",
+      "includes": ["AI agent prototypes and production implementations", "Workflow automation and integrations", "RAG and knowledge workflows where they make sense", "Safe deployment, evaluations, and monitoring"],
       "cta": "Start a Project"
     },
     "training": {
-      "title": "Team training and adoption",
-      "subtitle": "Help the team use AI confidently, not just watch a demo.",
-      "description": "Practical workshops and rollout support that help your team use the new workflow well, understand its limits, and build safe AI habits.",
-      "includes": ["Hands-on AI workflow training", "Prompting and review habits for business teams", "Rules for data safety and tool boundaries", "Ongoing adoption support"],
-      "cta": "Request Training"
+      "title": "AI Workshops and Adoption",
+      "subtitle": "Turn leadership enthusiasm into everyday AI use.",
+      "description": "I show the team where AI fits their real tasks, how to verify outputs, and where the boundaries of safe use are. The goal is not a one-off demo, but new work habits that stick.",
+      "includes": ["Workshops built around your team's real tasks", "Practical AI use for writing, analysis, and decision-making", "Output review, model limits, and the right level of trust", "Rules for safe use of data and tools"],
+      "cta": "Schedule a Workshop"
     },
     "notSure": {
       "title": "Not sure where to start?",
       "description": "Most clients start with a 30-minute consultation. No commitment, no jargon — just an honest conversation about where AI might create measurable value.",
-      "cta": "Book a Free Call"
+      "cta": "Book a Free Consultation"
     }
   },
   "about": {
-    "heroTitle": "Who Am I",
-    "heroDescription": "One person, one mission: making AI work for real teams.",
+    "heroTitle": "Who I Am",
+    "heroDescription": "I help companies turn AI pressure into safe, measurable solutions.",
     "bioName": "Matej Lukášik",
-    "bioTitle": "Agentic AI Consultant for SMBs",
-    "bioText": "I help small and medium-sized businesses turn AI urgency into practical, safe, measurable AI agent workflows.\n\nMy work starts with a real business problem, not a tool. Together we identify the right first workflow, define how value will be measured, and build a safe path from experiment to production.\n\nI combine 10+ years of software engineering experience with hands-on work in LLM systems, RAG, evals, LLMOps, automation, and agentic workflows.",
+    "bioTitle": "Agentic AI Consultant",
+    "bioText": "I am an agentic AI consultant with 10 years of software engineering experience. I help small and medium-sized businesses find specific places where AI can save time, streamline teamwork, and create measurable value.\n\nI enter projects practically: first I understand the business problems, processes, and data sources, then I choose the right tools. Together we design the first usable workflow, set success metrics, and define safe deployment rules.\n\nMy solutions build on experience with LLM systems, RAG, evaluations, AI models, automations, and AI agents. My goal is to deliver a solution leadership understands, the team can use, and the company can keep developing independently.",
     "approachTitle": "My Approach",
-    "principle1Title": "Right tool for the job",
-    "principle1Description": "Open-source or managed, self-hosted or cloud — I recommend what fits your team, budget, and compliance needs.",
+    "principle1Title": "Problem First, Tool Second",
+    "principle1Description": "Open source or managed, self-hosted or cloud — I recommend what fits your team, budget, and security requirements.",
     "principle2Title": "Capability, not dependency",
-    "principle2Description": "I train your team alongside deployment. The goal is for you to own and evolve your AI systems independently.",
-    "principle3Title": "Start small, prove value",
-    "principle3Description": "No 6-month projects. I deploy fast, measure results, and expand only what works.",
-    "techTitle": "The Technology",
-    "techDescription": "The right setup depends on the workflow. Sometimes that means a lightweight automation, sometimes a RAG system, sometimes a custom AI agent connected to your existing tools. The common thread is clear rules, controlled access, measurable outcomes, and a team that knows how to use it.",
+    "principle2Description": "I train your team alongside deployment. The goal is for you to own your AI workflows and keep developing them.",
+    "principle3Title": "Start Smart, Prove Value",
+    "principle3Description": "First we validate one useful use case. We measure results and expand only what works.",
+    "techTitle": "Technology",
+    "techDescription": "The right technical solution depends on the workflow. Sometimes a lightweight automation is enough; other times it takes a RAG system or a custom AI agent connected to existing tools. What they share are clear rules, controlled access, measurable results, and a team that knows how to use the solution.",
     "ctaTitle": "Let's talk about the first AI workflow worth solving.",
     "ctaPrimary": "Book a Call",
     "ctaSecondary": "Send a Message"
@@ -128,29 +128,29 @@
     "emailPlaceholder": "you@company.com",
     "serviceLabel": "What are you interested in?",
     "serviceOptions": {
-      "consulting": "AI consulting and strategy",
-      "implementation": "AI solution implementation",
-      "training": "Team training and adoption",
+      "consulting": "AI Consulting and Strategy",
+      "implementation": "AI Solution Implementation",
+      "training": "AI Workshops and Adoption",
       "notSure": "Not sure yet"
     },
     "messageLabel": "Message",
     "messagePlaceholder": "Tell me about your project or question...",
     "submit": "Send Message",
     "success": "Message sent! I'll get back to you within 24 hours.",
-    "error": "Something went wrong. Please try again or email me directly.",
+    "error": "Something went wrong. Please try again or email me directly at matej@matejlukasik.com.",
     "bookTitle": "Book a call",
-    "bookDescription": "Pick a time that works. 30 minutes, no strings attached.",
+    "bookDescription": "Choose a time that works for you.",
     "directTitle": "Or reach out directly",
     "email": "matej@matejlukasik.com",
     "location": "Slovakia",
     "faqTitle": "Frequently Asked Questions",
     "faq": [
       {
-        "question": "We do not know where to start with AI. Is it worth getting in touch?",
+        "question": "We don't know where to start with AI. Is it worth getting in touch?",
         "answer": "Yes. This is the most common starting point. On the first call we look at your processes, data, and the places where the team loses time. The goal is a clear first use case, not a list of tools."
       },
       {
-        "question": "How long does the first rollout take?",
+        "question": "How long does the first deployment take?",
         "answer": "Most first projects move from kickoff to a working workflow in 2–6 weeks. A simple automation can be live in days. More complex systems take longer, but you should see progress every week."
       },
       {
@@ -158,8 +158,8 @@
         "answer": "Before building, we define the metric: time saved, shorter cycle time, fewer errors, better quality, or faster customer response. If value cannot be measured, we narrow the project or postpone it."
       },
       {
-        "question": "How do you handle data safety?",
-        "answer": "We start with data, permissions, and rollout boundaries. The first version should use the minimum access needed, clear rules for sensitive data, and human review where risk is higher. We move slower where safety matters.",
+        "question": "How do you handle data security?",
+        "answer": "We start with data, permissions, and deployment boundaries. The first version should use only the minimum necessary access, clear rules for sensitive data, and human review where the risk is higher. With security, slower and steadier is better.",
         "linkText": "Open Agent Threat Atlas",
         "linkHref": "https://atlas.matejlukasik.sk/"
       },
@@ -169,7 +169,7 @@
       },
       {
         "question": "What tools do you work with?",
-        "answer": "The tool depends on the problem, data, and safety requirements. For workflow automation I use n8n, CrewAI, or LangChain/LangGraph. For models I choose between frontier models such as OpenAI and Anthropic, or open models such as Mistral and Llama. For closed-source agentic coding tools, Codex and Claude Code can make sense. For more controlled or self-hosted agents, OpenClaw or Hermes Agent may fit. The goal is not to use more tools, but to choose a stack that is safe, maintainable, and creates measurable value."
+        "answer": "Tools depend on the problem, data, and security requirements. For workflow automation I use n8n, CrewAI, or LangChain/LangGraph. For models I choose frontier models from OpenAI and Anthropic, or open models such as Mistral and Llama. For commercial agentic tools, Codex and Claude Code can make sense. If you need more control or self-hosting, we can also work with open-source agents such as OpenClaw or Hermes Agent. The goal is not to use as many tools as possible, but to choose a stack that is safe, maintainable, and creates measurable value."
       },
       {
         "question": "What happens after handoff?",
@@ -178,7 +178,7 @@
     ]
   },
   "footer": {
-    "description": "Agentic AI for small and medium-sized businesses that want safe, measurable results.",
+    "description": "Agentic AI for small and medium-sized businesses where measurability and security matter.",
     "navigation": "Navigation",
     "getInTouch": "Get in Touch",
     "copyright": "Matej Lukášik. All rights reserved.",
@@ -188,8 +188,8 @@
     "privacy": "Privacy"
   },
   "notFound": {
-    "title": "Lost in the machine",
-    "description": "Even AI agents can't find this page. It might have been moved, deleted, or never existed in the first place.",
-    "backHome": "Back to Homepage"
+    "title": "Lost in the Matrix",
+    "description": "Even AI agents could not find this page. It may have been moved, deleted, or never existed in the first place.",
+    "backHome": "Back Home"
   }
 }

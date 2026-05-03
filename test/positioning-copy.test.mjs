@@ -9,15 +9,19 @@ test('english homepage positions Matej around practical SMB AI adoption', () => 
   assert.equal(en.home.heroTitle, 'AI agents for your team.');
   assert.equal(
     en.home.heroDescription,
-    'You know you need AI. Together we find where to start, what creates the most value, and launch the first useful solution.',
+    "You know you need AI. Together, we'll find where to start, what makes the most sense for your business, and launch the first useful solution.",
   );
-  assert.equal(en.about.bioTitle, 'Agentic AI Consultant for SMBs');
+  assert.equal(en.about.heroTitle, 'Who I Am');
+  assert.equal(en.about.heroDescription, 'I help companies turn AI pressure into safe, measurable solutions.');
+  assert.equal(en.about.bioTitle, 'Agentic AI Consultant');
 });
 
 test('service copy emphasizes strategy, implementation, and team adoption', () => {
-  assert.equal(en.home.consultingTitle, 'AI consulting and strategy');
-  assert.equal(en.home.implementationTitle, 'AI solution implementation');
-  assert.equal(en.home.trainingTitle, 'Team training and adoption');
+  assert.equal(en.home.consultingTitle, 'AI Consulting and Strategy');
+  assert.equal(en.home.implementationTitle, 'AI Solution Implementation');
+  assert.equal(en.home.trainingTitle, 'AI Workshops and Adoption');
+  assert.equal(en.services.training.title, 'AI Workshops and Adoption');
+  assert.ok(en.services.training.description.includes('new work habits that stick'));
   assert.equal(sk.home.consultingTitle, 'Konzultácie a AI stratégia');
   assert.equal(sk.home.implementationTitle, 'Implementácia AI riešení');
   assert.equal(sk.home.trainingTitle, 'AI workshopy a zavedenie do praxe');
@@ -44,7 +48,7 @@ test('homepage names the common first paid engagement after the free call', () =
   );
   assert.equal(sk.home.firstStepOffer.cta, sk.home.ctaPrimary);
 
-  assert.equal(en.home.firstStepOffer.title, 'AI opportunity and risk audit');
+  assert.equal(en.home.firstStepOffer.title, 'AI Opportunity and Risk Audit');
   assert.match(en.home.firstStepOffer.description, /1–2 weeks/);
 });
 

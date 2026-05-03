@@ -31,7 +31,7 @@ test('footer copy is specific to small and medium businesses', () => {
   );
   assert.equal(
     en.footer.description,
-    'Agentic AI for small and medium-sized businesses that want safe, measurable results.',
+    'Agentic AI for small and medium-sized businesses where measurability and security matter.',
   );
 });
 
