@@ -69,7 +69,7 @@
     "heroTitle": "Ako pomozem",
     "heroDescription": "Od strategie po realizaciu — stretnem sa tam, kde ste.",
     "consulting": {
-      "title": "Konzultacie a poradenstvo",
+      "title": "Konzultácie a AI stratégia",
       "subtitle": "Zistite, kde ma AI zmysel — skor, nez minete jedinu korunu.",
       "description": "Zhodnotim vase sucasne procesy, identifikujem prilezitosti s najvacsim dopadom a vytvorim konkretny plan nasadenia. Ziskate jasno v tom, co sa oplati automatizovat a co nie.",
       "includes": [
@@ -141,7 +141,7 @@
     "companyPlaceholder": "Nazov vasej firmy",
     "serviceLabel": "O co mate zaujem?",
     "serviceOptions": {
-      "consulting": "Konzultacie a poradenstvo",
+      "consulting": "Konzultácie a AI stratégia",
       "implementation": "Implementacia",
       "training": "Skolenia a workshopy",
       "notSure": "Zatial neviem"

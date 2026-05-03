@@ -14,3 +14,9 @@ test('contact pages show booking before message form in source order', () => {
     assert.ok(source.indexOf('<CalEmbed') < source.indexOf('<ContactForm'));
   }
 });
+
+test('Slovak contact page does not include direct contact section', () => {
+  const source = readFileSync(new URL('../src/pages/kontakt.astro', import.meta.url), 'utf8');
+
+  assert.equal(source.includes('strings.contact.directTitle'), false);
+});
