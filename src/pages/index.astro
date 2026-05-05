@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import AtlasLanding from '../components/AtlasLanding.astro';
 import PainCard from '../components/PainCard.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import ServiceSection from '../components/ServiceSection.astro';
@@ -63,6 +64,15 @@ const bookingHref = `${paths.contact}?focus=calendar`;
       </div>
     </div>
   </section>
+
+  <AtlasLanding
+    id={strings.home.atlasLandingId}
+    eyebrow={strings.home.atlasLandingEyebrow}
+    title={strings.home.atlasLandingTitle}
+    description={strings.home.atlasLandingDescription}
+    ctaText={strings.home.atlasLandingCta}
+    ctaHref={`${paths.contact}?service=consulting&focus=contact-form&source=agent-threat-atlas`}
+  />
 
   <section id="services" class="section-padding bg-surface-alt relative" data-analytics-section="services">
     <div class="container mx-auto">

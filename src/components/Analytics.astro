@@ -28,6 +28,7 @@
       'startTime',
       'endTime',
     ]);
+    const marketingParamNames = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
 
     const toSnakeCase = (key) => key.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
 
@@ -42,6 +43,14 @@
         lang: document.documentElement.lang || 'unknown',
         path: window.location.pathname,
       };
+      const marketingParams = new URLSearchParams(window.location.search);
+
+      marketingParamNames.forEach((key) => {
+        const normalizedValue = normalizeValue(marketingParams.get(key));
+        if (!normalizedValue) return;
+
+        cleanProps[key] = normalizedValue;
+      });
 
       Object.entries(props).forEach(([key, value]) => {
         if (!key || blockedPropKeys.has(key)) return;

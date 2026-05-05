@@ -34,6 +34,11 @@ test('analytics helper tracks governed events with sanitized properties', () => 
   assert.match(analytics, /allowedEventNames = new Set/);
   assert.match(analytics, /section_viewed/);
   assert.match(analytics, /scroll_depth_reached/);
+  assert.match(analytics, /marketingParams = new URLSearchParams\(window\.location\.search\)/);
+  assert.match(analytics, /utm_source/);
+  assert.match(analytics, /utm_medium/);
+  assert.match(analytics, /utm_campaign/);
+  assert.match(analytics, /utm_content/);
   assert.match(analytics, /data-analytics-event/);
   assert.match(analytics, /data-analytics-section/);
   assert.match(analytics, /interactive: false/);
