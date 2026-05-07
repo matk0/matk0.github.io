@@ -20,6 +20,7 @@ const firstStepOffer = read('../src/components/FirstStepOffer.astro');
 const faq = read('../src/components/FAQ.astro');
 const contactForm = read('../src/components/ContactForm.astro');
 const calEmbed = read('../src/components/CalEmbed.astro');
+const removedProviderPattern = new RegExp(['p', 'lausible'].join(''), 'i');
 
 test('layout loads GA4 when configured and the first-party analytics helper', () => {
   assert.match(layout, /import Analytics from '\.\.\/components\/Analytics\.astro';/);
@@ -27,7 +28,7 @@ test('layout loads GA4 when configured and the first-party analytics helper', ()
   assert.match(layout, /PUBLIC_GA_MEASUREMENT_ID/);
   assert.match(layout, /https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=/);
   assert.match(layout, /gtag\('config', gaMeasurementId\)/);
-  assert.doesNotMatch(layout, /plausible\.io/);
+  assert.doesNotMatch(layout, removedProviderPattern);
 });
 
 test('analytics helper tracks governed events with sanitized properties', () => {

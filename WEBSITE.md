@@ -14,7 +14,7 @@ Founded by Matej Lukasik (Founder & AI Engineer). Based in Slovakia.
 - **Hosting:** Cloudflare Workers (via `@astrojs/cloudflare` adapter)
 - **Email:** Resend API (contact form delivery to matej@clawforce.sk)
 - **Scheduling:** Cal.com embed (30min booking with matejlukasik)
-- **Analytics:** Plausible (privacy-friendly, custom events for CTA clicks)
+- **Analytics:** Google Analytics 4 (custom events for CTA clicks and funnel signals)
 - **Domain:** clawforce.sk (+ www redirect)
 
 ## Design
@@ -69,7 +69,7 @@ Translations stored in `src/i18n/sk.json` and `src/i18n/en.json`. Language switc
 
 ### Layout (`Layout.astro`)
 
-All pages share: `<Nav>` (fixed top) → `<main>` (slot) → `<Footer>`. Full OG/Twitter meta tags, canonical URLs, Plausible analytics script. Custom event tracking on CTA link clicks (`clicked_book_call` / `clicked_service_cta`).
+All pages share: `<Nav>` (fixed top) → `<main>` (slot) → `<Footer>`. Full OG/Twitter meta tags, canonical URLs, GA4 analytics script. Custom event tracking on CTA link clicks and funnel signals.
 
 ### Navigation (`Nav.astro`)
 
@@ -141,7 +141,7 @@ Contact form handler. Validates required fields (name, email, message) and email
 
 | Component | Purpose |
 |---|---|
-| `Layout.astro` | HTML shell, meta tags, nav + footer, Plausible, CTA tracking |
+| `Layout.astro` | HTML shell, meta tags, nav + footer, GA4, CTA tracking |
 | `Nav.astro` | Fixed nav bar, language switcher, mobile hamburger menu |
 | `Footer.astro` | 3-column footer with brand, nav links, contact |
 | `Hero.astro` | Gradient hero section, large/small variants, optional subtitle + slot for CTAs |

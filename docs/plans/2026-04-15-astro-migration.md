@@ -6,12 +6,12 @@
 
 **Architecture:** Domain-based i18n — matejlukasik.com serves English, matejlukasik.sk serves Slovak. Astro middleware detects hostname and sets locale. All pages are SSR on Cloudflare Pages. Clean URLs with no language prefix (e.g., `/services` not `/en/services`). Language switcher links to the equivalent page on the other domain.
 
-**Tech Stack:** Astro 6 (SSR), Tailwind CSS 4 (Vite plugin), Cloudflare Pages (`@astrojs/cloudflare`), Resend (contact form email), Cal.com embed, Plausible analytics, Inter font.
+**Tech Stack:** Astro 6 (SSR), Tailwind CSS 4 (Vite plugin), Cloudflare Pages (`@astrojs/cloudflare`), Resend (contact form email), Cal.com embed, Google Analytics 4, Inter font.
 
 **Prerequisites (manual, not part of this plan):**
 - Cloudflare account with both domains (matejlukasik.com, matejlukasik.sk) configured
 - Resend account with matejlukasik.com domain verified, API key generated
-- Plausible analytics account with both domains added
+- Google Analytics 4 property with both domains configured
 
 ---
 
@@ -724,7 +724,7 @@ const altLang = getAlternateLang(lang);
 </html>
 ```
 
-Note: Plausible analytics will be added in Task 10 after the site is functional.
+Note: Google Analytics 4 will be added in Task 10 after the site is functional.
 
 **Step 3: Commit**
 
@@ -1956,19 +1956,21 @@ git commit -m "Add contact pages with form, Cal.com embed, and API route"
 ## Task 10: Add Analytics, SEO, Deployment, and Update CLAUDE.md
 
 **Files:**
-- Modify: `src/layouts/Layout.astro` (add Plausible + CTA tracking)
+- Modify: `src/layouts/Layout.astro` (add GA4 + CTA tracking)
 - Create: `.github/workflows/ci.yml` (build verification)
 - Modify: `CLAUDE.md` (update for new Astro project)
 
-**Step 1: Add Plausible analytics to Layout**
+**Step 1: Add Google Analytics 4 to Layout**
 
 Add the following inside `<head>` in `src/layouts/Layout.astro`, before `<title>`:
 
 ```html
-<!-- Plausible analytics — replace PLAUSIBLE_SCRIPT_ID with your actual script path -->
-<script async src="https://plausible.io/js/script.js" data-domain="matejlukasik.com,matejlukasik.sk" is:inline></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script is:inline>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)};
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
 </script>
 ```
 
@@ -1978,16 +1980,16 @@ Add CTA tracking script before `</body>` in Layout:
 <script is:inline>
   document.querySelectorAll('a[href*="kontakt"], a[href*="contact"]').forEach(link => {
     link.addEventListener('click', () => {
-      if (typeof plausible !== 'undefined') {
+      if (typeof gtag !== 'undefined') {
         const isBookCall = link.textContent?.toLowerCase().includes('call') || link.textContent?.toLowerCase().includes('hovor');
-        plausible(isBookCall ? 'clicked_book_call' : 'clicked_service_cta');
+        gtag('event', isBookCall ? 'clicked_book_call' : 'clicked_service_cta');
       }
     });
   });
 </script>
 ```
 
-Note: After creating your Plausible account, replace the `data-domain` attribute and script src with the actual values from your Plausible dashboard.
+Note: After creating your Google Analytics property, replace `G-XXXXXXXXXX` with the actual GA4 Measurement ID.
 
 **Step 2: Create CI workflow for build verification**
 
@@ -2083,5 +2085,5 @@ Verify all pages render correctly:
 
 ```bash
 git add -A
-git commit -m "Add Plausible analytics, CI workflow, and update CLAUDE.md"
+git commit -m "Add GA4 analytics, CI workflow, and update CLAUDE.md"
 ```
