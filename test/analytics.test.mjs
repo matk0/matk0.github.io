@@ -27,7 +27,7 @@ test('layout loads GA4 when configured and the first-party analytics helper', ()
   assert.match(layout, /import Analytics from '\.\.\/components\/Analytics\.astro';/);
   assert.match(layout, /<Analytics \/>/);
   assert.match(layout, /PUBLIC_GA_MEASUREMENT_ID/);
-  assert.match(layout, /Astro\.locals\.runtime\?\.env\?\.PUBLIC_GA_MEASUREMENT_ID/);
+  assert.match(layout, /cloudflareEnv\.PUBLIC_GA_MEASUREMENT_ID/);
   assert.match(layout, /https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=/);
   assert.match(layout, /gtag\('config', gaMeasurementId\)/);
   assert.doesNotMatch(layout, removedProviderPattern);
@@ -35,6 +35,13 @@ test('layout loads GA4 when configured and the first-party analytics helper', ()
 
 test('Cloudflare runtime vars preserve the public GA measurement ID for deploys', () => {
   assert.equal(wrangler.vars.PUBLIC_GA_MEASUREMENT_ID, 'G-25EZ859D79');
+});
+
+test('layout exposes Google site verification from Cloudflare runtime vars', () => {
+  assert.match(layout, /PUBLIC_GOOGLE_SITE_VERIFICATION/);
+  assert.match(layout, /cloudflareEnv\.PUBLIC_GOOGLE_SITE_VERIFICATION/);
+  assert.match(layout, /<meta name="google-site-verification" content=\{googleSiteVerification\} \/>/);
+  assert.equal(wrangler.vars.PUBLIC_GOOGLE_SITE_VERIFICATION, 'dLw3bqFci_Kn9iQRfvRBo28i3MJJMv1z-vgNBoA2eN8');
 });
 
 test('analytics helper tracks governed events with sanitized properties', () => {

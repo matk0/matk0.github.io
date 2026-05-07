@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
 import type { Lang } from '../i18n';
 import { DOMAINS, getAlternateUrl, getAlternateLang, getSiteOrigin } from '../i18n';
+import { env as cloudflareEnv } from 'cloudflare:workers';
 
 interface Props {
   title: string;
@@ -19,9 +20,12 @@ const canonicalURL = new URL(currentPath, siteOrigin);
 const alternateURL = getAlternateUrl(lang, currentPath, Astro.url);
 const altLang = getAlternateLang(lang);
 const ogImage = new URL('/og.png', siteOrigin).href;
+const googleSiteVerification =
+  import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION ||
+  cloudflareEnv.PUBLIC_GOOGLE_SITE_VERIFICATION;
 const gaMeasurementId =
   import.meta.env.PUBLIC_GA_MEASUREMENT_ID ||
-  Astro.locals.runtime?.env?.PUBLIC_GA_MEASUREMENT_ID;
+  cloudflareEnv.PUBLIC_GA_MEASUREMENT_ID;
 const gaScriptSrc = gaMeasurementId
   ? `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`
   : undefined;
@@ -70,6 +74,7 @@ const jsonLd = JSON.stringify({
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    {googleSiteVerification && <meta name="google-site-verification" content={googleSiteVerification} />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />

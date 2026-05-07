@@ -8,7 +8,8 @@
     { "pattern": "www.matejlukasik.sk/*", "zone_name": "matejlukasik.sk" }
   ],
   "vars": {
-    "PUBLIC_GA_MEASUREMENT_ID": "G-25EZ859D79"
+    "PUBLIC_GA_MEASUREMENT_ID": "G-25EZ859D79",
+    "PUBLIC_GOOGLE_SITE_VERIFICATION": "dLw3bqFci_Kn9iQRfvRBo28i3MJJMv1z-vgNBoA2eN8"
   },
   "observability": { "enabled": true }
 }
