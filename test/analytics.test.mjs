@@ -21,16 +21,18 @@ const faq = read('../src/components/FAQ.astro');
 const contactForm = read('../src/components/ContactForm.astro');
 const calEmbed = read('../src/components/CalEmbed.astro');
 
-test('layout loads Plausible and the first-party analytics helper', () => {
+test('layout loads GA4 when configured and the first-party analytics helper', () => {
   assert.match(layout, /import Analytics from '\.\.\/components\/Analytics\.astro';/);
   assert.match(layout, /<Analytics \/>/);
-  assert.match(layout, /https:\/\/plausible\.io\/js\/script\.js/);
-  assert.match(layout, /data-domain="matejlukasik\.com,matejlukasik\.sk"/);
+  assert.match(layout, /PUBLIC_GA_MEASUREMENT_ID/);
+  assert.match(layout, /https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=/);
+  assert.match(layout, /gtag\('config', gaMeasurementId\)/);
+  assert.doesNotMatch(layout, /plausible\.io/);
 });
 
 test('analytics helper tracks governed events with sanitized properties', () => {
   assert.match(analytics, /window\.trackSiteEvent =/);
-  assert.match(analytics, /plausible\(name, \{ \.\.\.options, props: cleanProps \}\)/);
+  assert.match(analytics, /gtag\('event', name, \{ \.\.\.cleanProps, \.\.\.options \}\)/);
   assert.match(analytics, /allowedEventNames = new Set/);
   assert.match(analytics, /section_viewed/);
   assert.match(analytics, /scroll_depth_reached/);

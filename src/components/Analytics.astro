@@ -84,8 +84,8 @@
 
       const cleanProps = sanitizeProps(props);
 
-      if (typeof plausible === 'function') {
-        plausible(name, { ...options, props: cleanProps });
+      if (typeof gtag === 'function') {
+        gtag('event', name, { ...cleanProps, ...options });
       }
     };
 

@@ -19,6 +19,10 @@ const canonicalURL = new URL(currentPath, siteOrigin);
 const alternateURL = getAlternateUrl(lang, currentPath, Astro.url);
 const altLang = getAlternateLang(lang);
 const ogImage = new URL('/og.png', siteOrigin).href;
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const gaScriptSrc = gaMeasurementId
+  ? `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`
+  : undefined;
 
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -84,10 +88,17 @@ const jsonLd = JSON.stringify({
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <script async src="https://plausible.io/js/script.js" data-domain="matejlukasik.com,matejlukasik.sk" is:inline></script>
-    <script is:inline>
-      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)};
-    </script>
+    {gaScriptSrc && (
+      <>
+        <script async src={gaScriptSrc}></script>
+        <script define:vars={{ gaMeasurementId }} is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', gaMeasurementId);
+        </script>
+      </>
+    )}
     <title>{title}</title>
   </head>
   <body class="min-h-screen flex flex-col">
