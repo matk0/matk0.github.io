@@ -19,7 +19,9 @@ const canonicalURL = new URL(currentPath, siteOrigin);
 const alternateURL = getAlternateUrl(lang, currentPath, Astro.url);
 const altLang = getAlternateLang(lang);
 const ogImage = new URL('/og.png', siteOrigin).href;
-const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const gaMeasurementId =
+  import.meta.env.PUBLIC_GA_MEASUREMENT_ID ||
+  Astro.locals.runtime?.env?.PUBLIC_GA_MEASUREMENT_ID;
 const gaScriptSrc = gaMeasurementId
   ? `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`
   : undefined;

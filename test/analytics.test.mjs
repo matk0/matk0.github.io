@@ -9,6 +9,7 @@ const read = (path) => {
 
 const analytics = read('../src/components/Analytics.astro');
 const layout = read('../src/layouts/Layout.astro');
+const wrangler = JSON.parse(read('../wrangler.json'));
 const index = read('../src/pages/index.astro');
 const contact = read('../src/pages/contact.astro');
 const kontakt = read('../src/pages/kontakt.astro');
@@ -26,9 +27,14 @@ test('layout loads GA4 when configured and the first-party analytics helper', ()
   assert.match(layout, /import Analytics from '\.\.\/components\/Analytics\.astro';/);
   assert.match(layout, /<Analytics \/>/);
   assert.match(layout, /PUBLIC_GA_MEASUREMENT_ID/);
+  assert.match(layout, /Astro\.locals\.runtime\?\.env\?\.PUBLIC_GA_MEASUREMENT_ID/);
   assert.match(layout, /https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=/);
   assert.match(layout, /gtag\('config', gaMeasurementId\)/);
   assert.doesNotMatch(layout, removedProviderPattern);
+});
+
+test('Cloudflare runtime vars preserve the public GA measurement ID for deploys', () => {
+  assert.equal(wrangler.vars.PUBLIC_GA_MEASUREMENT_ID, 'G-25EZ859D79');
 });
 
 test('analytics helper tracks governed events with sanitized properties', () => {
