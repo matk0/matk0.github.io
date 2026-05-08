@@ -1,11 +1,20 @@
 import type { APIRoute } from 'astro';
 
 export const POST: APIRoute = async ({ request, locals }) => {
+  const json = (payload: unknown, status: number) =>
+    new Response(JSON.stringify(payload), {
+      status,
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        'X-Contact-Handler': 'v2',
+      },
+    });
+
   const formData = await request.formData();
 
   const honeypot = formData.get('website');
   if (honeypot) {
-    return new Response(JSON.stringify({ success: true }), { status: 200 });
+    return json({ success: true }, 200);
   }
 
   const name = formData.get('name')?.toString().trim();
@@ -15,18 +24,12 @@ export const POST: APIRoute = async ({ request, locals }) => {
   const lang = formData.get('lang')?.toString().trim() || 'en';
 
   if (!name || !email || !message) {
-    return new Response(
-      JSON.stringify({ error: 'Missing required fields' }),
-      { status: 400 }
-    );
+    return json({ error: 'Missing required fields' }, 400);
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    return new Response(
-      JSON.stringify({ error: 'Invalid email' }),
-      { status: 400 }
-    );
+    return json({ error: 'Invalid email' }, 400);
   }
 
   const runtime = (locals as any).runtime;
@@ -57,17 +60,11 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
       if (!res.ok) {
         console.error('Resend API error:', await res.text());
-        return new Response(
-          JSON.stringify({ error: 'Failed to send email' }),
-          { status: 500 }
-        );
+        return json({ error: 'Failed to send email' }, 500);
       }
     } catch (error) {
       console.error('Resend API request failed:', error);
-      return new Response(
-        JSON.stringify({ error: 'Failed to send email' }),
-        { status: 500 }
-      );
+      return json({ error: 'Failed to send email' }, 500);
     }
   } else {
     console.log('Contact form submission (no RESEND_API_KEY):', {
@@ -76,5 +73,5 @@ export const POST: APIRoute = async ({ request, locals }) => {
     });
   }
 
-  return new Response(JSON.stringify({ success: true }), { status: 200 });
+  return json({ success: true }, 200);
 };
