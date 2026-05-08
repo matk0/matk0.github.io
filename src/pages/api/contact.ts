@@ -33,29 +33,37 @@ export const POST: APIRoute = async ({ request, locals }) => {
   const RESEND_API_KEY = runtime?.env?.RESEND_API_KEY || import.meta.env.RESEND_API_KEY;
 
   if (RESEND_API_KEY) {
-    const res = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'Matej Lukášik <matej@matejlukasik.com>',
-        to: ['matej@matejlukasik.com'],
-        reply_to: email,
-        subject: `New inquiry from ${name} — ${service}`,
-        html: `<h2>New contact form submission</h2>
-               <p><strong>Name:</strong> ${name}</p>
-               <p><strong>Email:</strong> ${email}</p>
-               <p><strong>Service:</strong> ${service}</p>
-               <p><strong>Language:</strong> ${lang}</p>
-               <hr />
-               <p>${message.replace(/\n/g, '<br />')}</p>`,
-      }),
-    });
+    try {
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${RESEND_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: 'Matej Lukášik <matej@matejlukasik.com>',
+          to: ['matej@matejlukasik.com'],
+          reply_to: email,
+          subject: `New inquiry from ${name} — ${service}`,
+          html: `<h2>New contact form submission</h2>
+                 <p><strong>Name:</strong> ${name}</p>
+                 <p><strong>Email:</strong> ${email}</p>
+                 <p><strong>Service:</strong> ${service}</p>
+                 <p><strong>Language:</strong> ${lang}</p>
+                 <hr />
+                 <p>${message.replace(/\n/g, '<br />')}</p>`,
+        }),
+      });
 
-    if (!res.ok) {
-      console.error('Resend API error:', await res.text());
+      if (!res.ok) {
+        console.error('Resend API error:', await res.text());
+        return new Response(
+          JSON.stringify({ error: 'Failed to send email' }),
+          { status: 500 }
+        );
+      }
+    } catch (error) {
+      console.error('Resend API request failed:', error);
       return new Response(
         JSON.stringify({ error: 'Failed to send email' }),
         { status: 500 }
