@@ -33,7 +33,13 @@ export const POST: APIRoute = async ({ request, locals }) => {
   }
 
   const runtime = (locals as any).runtime;
-  const RESEND_API_KEY = runtime?.env?.RESEND_API_KEY || import.meta.env.RESEND_API_KEY;
+  let RESEND_API_KEY: string | undefined;
+  try {
+    RESEND_API_KEY = runtime?.env?.RESEND_API_KEY || import.meta.env.RESEND_API_KEY;
+  } catch (error) {
+    console.error('Failed to read RESEND_API_KEY from runtime env:', error);
+    RESEND_API_KEY = import.meta.env.RESEND_API_KEY;
+  }
 
   if (RESEND_API_KEY) {
     try {
