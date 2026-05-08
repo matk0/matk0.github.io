@@ -84,8 +84,8 @@
 
       const cleanProps = sanitizeProps(props);
 
-      if (typeof gtag === 'function') {
-        gtag('event', name, { ...cleanProps, ...options });
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', name, { ...cleanProps, ...options });
       }
     };
 

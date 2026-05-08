@@ -46,7 +46,7 @@ test('layout exposes Google site verification from Cloudflare runtime vars', () 
 
 test('analytics helper tracks governed events with sanitized properties', () => {
   assert.match(analytics, /window\.trackSiteEvent =/);
-  assert.match(analytics, /gtag\('event', name, \{ \.\.\.cleanProps, \.\.\.options \}\)/);
+  assert.match(analytics, /window\.gtag\('event', name, \{ \.\.\.cleanProps, \.\.\.options \}\)/);
   assert.match(analytics, /allowedEventNames = new Set/);
   assert.match(analytics, /section_viewed/);
   assert.match(analytics, /scroll_depth_reached/);

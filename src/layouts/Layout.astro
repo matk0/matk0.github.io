@@ -100,9 +100,9 @@ const jsonLd = JSON.stringify({
         <script async src={gaScriptSrc}></script>
         <script define:vars={{ gaMeasurementId }} is:inline>
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', gaMeasurementId);
+          window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); };
+          window.gtag('js', new Date());
+          window.gtag('config', gaMeasurementId);
         </script>
       </>
     )}
