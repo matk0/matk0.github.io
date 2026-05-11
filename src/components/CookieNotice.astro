@@ -1,0 +1,194 @@
+---
+import { t, getLocalizedPaths } from '../i18n';
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  gaMeasurementId?: string;
+}
+
+const { lang, gaMeasurementId } = Astro.props;
+const strings = t(lang);
+const paths = getLocalizedPaths(lang);
+const notice = strings.cookieNotice;
+---
+
+{gaMeasurementId && (
+  <div
+    class="fixed inset-x-0 bottom-0 z-50 px-4 pb-4 sm:pb-6"
+    data-cookie-notice
+    role="region"
+    aria-label={notice.ariaLabel}
+    hidden
+  >
+    <div class="mx-auto max-w-5xl rounded-lg border border-border bg-white/95 p-4 shadow-2xl shadow-heading/15 backdrop-blur sm:p-5">
+      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div class="max-w-3xl">
+          <p class="font-heading text-base font-semibold text-heading">{notice.title}</p>
+          <p class="mt-1 text-sm leading-relaxed text-body">
+            {notice.description}
+            <a href={paths.privacy} class="font-medium text-primary hover:text-primary-hover">
+              {notice.privacyLink}
+            </a>
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:flex md:shrink-0">
+          <button
+            type="button"
+            class="inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-4 py-2 text-sm font-semibold text-heading transition-colors hover:border-heading/30 hover:bg-heading/5"
+            data-cookie-reject
+          >
+            {notice.reject}
+          </button>
+          <button
+            type="button"
+            class="inline-flex min-h-11 items-center justify-center rounded-lg border border-primary bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-primary-hover hover:bg-primary-hover"
+            data-cookie-accept
+          >
+            {notice.accept}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+<script define:vars={{ gaMeasurementId }} is:inline>
+  (() => {
+    const CONSENT_STORAGE_KEY = 'matejlukasik_cookie_consent';
+    const ACCEPTED = 'accepted';
+    const REJECTED = 'rejected';
+    const measurementId = gaMeasurementId;
+    const notice = document.querySelector('[data-cookie-notice]');
+
+    if (!measurementId || !notice) return;
+
+    const readConsent = () => {
+      try {
+        return localStorage.getItem(CONSENT_STORAGE_KEY);
+      } catch {
+        return null;
+      }
+    };
+
+    const persistConsent = (choice) => {
+      try {
+        localStorage.setItem(CONSENT_STORAGE_KEY, choice);
+      } catch {
+      }
+
+      window.siteAnalyticsConsent = choice;
+    };
+
+    const hideNotice = () => {
+      notice.hidden = true;
+    };
+
+    const showNotice = () => {
+      notice.hidden = false;
+    };
+
+    const expireCookie = (name, domain) => {
+      const domainPart = domain ? `; domain=${domain}` : '';
+      document.cookie = `${name}=; Max-Age=0; path=/${domainPart}; SameSite=Lax`;
+    };
+
+    const clearAnalyticsCookies = () => {
+      const hostname = window.location.hostname;
+      const baseDomain = hostname.split('.').slice(-2).join('.');
+      const domains = new Set(['', hostname, `.${hostname}`, baseDomain, `.${baseDomain}`]);
+
+      document.cookie
+        .split(';')
+        .map((cookie) => cookie.trim().split('=')[0])
+        .filter((name) => /^_ga|^_gid$|^_gat/.test(name))
+        .forEach((name) => {
+          domains.forEach((domain) => expireCookie(name, domain));
+        });
+    };
+
+    const updateAnalyticsConsent = (value) => {
+      if (typeof window.gtag !== 'function') return;
+
+      window.gtag('consent', 'update', {
+        analytics_storage: value,
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+      });
+    };
+
+    const loadGoogleAnalytics = () => {
+      if (window.siteAnalyticsLoaded) {
+        updateAnalyticsConsent('granted');
+        return;
+      }
+
+      window.siteAnalyticsLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); };
+      window.gtag('consent', 'default', {
+        analytics_storage: 'granted',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+      });
+
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
+      document.head.appendChild(script);
+
+      window.gtag('js', new Date());
+      window.gtag('config', measurementId);
+    };
+
+    const rejectAnalytics = () => {
+      updateAnalyticsConsent('denied');
+      clearAnalyticsCookies();
+    };
+
+    const setConsent = (choice) => {
+      persistConsent(choice);
+      hideNotice();
+
+      if (choice === ACCEPTED) {
+        loadGoogleAnalytics();
+      } else {
+        rejectAnalytics();
+      }
+    };
+
+    notice.querySelector('[data-cookie-accept]')?.addEventListener('click', () => {
+      setConsent(ACCEPTED);
+    });
+
+    notice.querySelector('[data-cookie-reject]')?.addEventListener('click', () => {
+      setConsent(REJECTED);
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!(event.target instanceof Element)) return;
+      if (!event.target.closest('[data-cookie-settings]')) return;
+
+      showNotice();
+    });
+
+    const initialConsent = readConsent();
+    window.siteAnalyticsConsent = initialConsent;
+
+    if (initialConsent === ACCEPTED) {
+      loadGoogleAnalytics();
+      hideNotice();
+      return;
+    }
+
+    if (initialConsent === REJECTED) {
+      rejectAnalytics();
+      hideNotice();
+      return;
+    }
+
+    showNotice();
+  })();
+</script>

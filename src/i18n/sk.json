@@ -213,7 +213,16 @@
     "followMe": "Sociálne médiá",
     "research": "Projekty",
     "agentThreatAtlas": "Agent Threat Atlas",
-    "privacy": "Ochrana osobných údajov"
+    "privacy": "Ochrana osobných údajov",
+    "cookieSettings": "Nastavenia cookies"
+  },
+  "cookieNotice": {
+    "title": "Analytické cookies",
+    "description": "Používam voliteľné analytické cookies na pochopenie agregovaných zobrazení stránok a konverzných udalostí. Obsah formulárov ani identifikátory rezervácií sa neposielajú.",
+    "privacyLink": "Podrobnosti o súkromí",
+    "accept": "Povoliť analytiku",
+    "reject": "Odmietnuť analytiku",
+    "ariaLabel": "Upozornenie na cookies"
   },
   "notFound": {
     "title": "Stratene v matrixe",

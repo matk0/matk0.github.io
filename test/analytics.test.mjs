@@ -8,6 +8,7 @@ const read = (path) => {
 };
 
 const analytics = read('../src/components/Analytics.astro');
+const cookieNotice = read('../src/components/CookieNotice.astro');
 const layout = read('../src/layouts/Layout.astro');
 const wrangler = JSON.parse(read('../wrangler.json'));
 const index = read('../src/pages/index.astro');
@@ -23,13 +24,16 @@ const contactForm = read('../src/components/ContactForm.astro');
 const calEmbed = read('../src/components/CalEmbed.astro');
 const removedProviderPattern = new RegExp(['p', 'lausible'].join(''), 'i');
 
-test('layout loads GA4 when configured and the first-party analytics helper', () => {
+test('layout wires GA4 through cookie consent and the first-party analytics helper', () => {
   assert.match(layout, /import Analytics from '\.\.\/components\/Analytics\.astro';/);
+  assert.match(layout, /import CookieNotice from '\.\.\/components\/CookieNotice\.astro';/);
   assert.match(layout, /<Analytics \/>/);
+  assert.match(layout, /<CookieNotice lang=\{lang\} gaMeasurementId=\{gaMeasurementId\} \/>/);
   assert.match(layout, /PUBLIC_GA_MEASUREMENT_ID/);
   assert.match(layout, /cloudflareEnv\.PUBLIC_GA_MEASUREMENT_ID/);
-  assert.match(layout, /https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=/);
-  assert.match(layout, /gtag\('config', gaMeasurementId\)/);
+  assert.doesNotMatch(layout, /https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=/);
+  assert.match(cookieNotice, /https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=/);
+  assert.match(cookieNotice, /window\.gtag\('config', measurementId\)/);
   assert.doesNotMatch(layout, removedProviderPattern);
 });
 
@@ -46,6 +50,8 @@ test('layout exposes Google site verification from Cloudflare runtime vars', () 
 
 test('analytics helper tracks governed events with sanitized properties', () => {
   assert.match(analytics, /window\.trackSiteEvent =/);
+  assert.match(analytics, /hasAnalyticsConsent\(\)/);
+  assert.match(analytics, /localStorage\.getItem\(CONSENT_STORAGE_KEY\) === 'accepted'/);
   assert.match(analytics, /window\.gtag\('event', name, \{ \.\.\.cleanProps, \.\.\.options \}\)/);
   assert.match(analytics, /allowedEventNames = new Set/);
   assert.match(analytics, /section_viewed/);

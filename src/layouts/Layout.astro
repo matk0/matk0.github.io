@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
+import CookieNotice from '../components/CookieNotice.astro';
 import type { Lang } from '../i18n';
 import { DOMAINS, getAlternateUrl, getAlternateLang, getSiteOrigin } from '../i18n';
 import { env as cloudflareEnv } from 'cloudflare:workers';
@@ -26,9 +27,6 @@ const googleSiteVerification =
 const gaMeasurementId =
   import.meta.env.PUBLIC_GA_MEASUREMENT_ID ||
   cloudflareEnv.PUBLIC_GA_MEASUREMENT_ID;
-const gaScriptSrc = gaMeasurementId
-  ? `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`
-  : undefined;
 
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -95,17 +93,6 @@ const jsonLd = JSON.stringify({
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    {gaScriptSrc && (
-      <>
-        <script async src={gaScriptSrc}></script>
-        <script define:vars={{ gaMeasurementId }} is:inline>
-          window.dataLayer = window.dataLayer || [];
-          window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); };
-          window.gtag('js', new Date());
-          window.gtag('config', gaMeasurementId);
-        </script>
-      </>
-    )}
     <title>{title}</title>
   </head>
   <body class="min-h-screen flex flex-col">
@@ -114,6 +101,7 @@ const jsonLd = JSON.stringify({
       <slot />
     </main>
     <Footer lang={lang} />
+    <CookieNotice lang={lang} gaMeasurementId={gaMeasurementId} />
     <Analytics />
     <script is:inline>
       // Scroll reveal

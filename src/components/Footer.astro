@@ -88,7 +88,16 @@ const year = new Date().getFullYear();
 
     <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
       <p class="text-sm text-white/40">&copy; {year} {strings.footer.copyright}</p>
-      <a href={paths.privacy} class="text-sm text-white/40 hover:text-white transition-colors">{strings.footer.privacy}</a>
+      <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+        <a href={paths.privacy} class="text-sm text-white/40 hover:text-white transition-colors">{strings.footer.privacy}</a>
+        <button
+          type="button"
+          class="text-left text-sm text-white/40 transition-colors hover:text-white sm:text-right"
+          data-cookie-settings
+        >
+          {strings.footer.cookieSettings}
+        </button>
+      </div>
     </div>
   </div>
 </footer>

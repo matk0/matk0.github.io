@@ -1,5 +1,6 @@
 <script is:inline>
   (() => {
+    const CONSENT_STORAGE_KEY = 'matejlukasik_cookie_consent';
     const allowedEventNames = new Set([
       'services_intent_clicked',
       'booking_intent_clicked',
@@ -79,8 +80,21 @@
       return props;
     };
 
+    const hasAnalyticsConsent = () => {
+      if (window.siteAnalyticsConsent) {
+        return window.siteAnalyticsConsent === 'accepted';
+      }
+
+      try {
+        return localStorage.getItem(CONSENT_STORAGE_KEY) === 'accepted';
+      } catch {
+        return false;
+      }
+    };
+
     window.trackSiteEvent = (name, props = {}, options = {}) => {
       if (!allowedEventNames.has(name)) return;
+      if (!hasAnalyticsConsent()) return;
 
       const cleanProps = sanitizeProps(props);
 

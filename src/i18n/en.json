@@ -190,7 +190,16 @@
     "followMe": "Social Media",
     "research": "Projects",
     "agentThreatAtlas": "Agent Threat Atlas",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "cookieSettings": "Cookie settings"
+  },
+  "cookieNotice": {
+    "title": "Analytics cookies",
+    "description": "I use optional analytics cookies to understand aggregate page views and conversion events. No form messages or booking identifiers are sent.",
+    "privacyLink": "Privacy details",
+    "accept": "Allow analytics",
+    "reject": "Reject analytics",
+    "ariaLabel": "Cookie notice"
   },
   "notFound": {
     "title": "Lost in the Matrix",
