@@ -1,6 +1,6 @@
 ---
 import type { Lang } from '../i18n';
-import { t } from '../i18n';
+import { getLocalizedPaths, t } from '../i18n';
 
 interface Props {
   lang: Lang;
@@ -9,6 +9,7 @@ interface Props {
 
 const { lang, preselectedService } = Astro.props;
 const strings = t(lang);
+const paths = getLocalizedPaths(lang);
 ---
 
 <script is:inline>
@@ -84,6 +85,12 @@ const strings = t(lang);
   <button type="submit" class="btn-primary w-full">
     {strings.contact.submit}
   </button>
+
+  <p class="text-xs leading-relaxed text-body/80">
+    {strings.contact.privacyNotice}
+    {' '}
+    <a href={paths.privacy} class="font-medium text-primary hover:text-primary-hover">{strings.contact.privacyLink}</a>
+  </p>
 
   <div id="form-success" class="hidden p-4 rounded-xl bg-green-50 text-green-800 text-sm">
     {strings.contact.success}
