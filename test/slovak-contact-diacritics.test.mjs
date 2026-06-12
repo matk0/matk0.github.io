@@ -11,8 +11,8 @@ test('Slovak contact page copy uses Slovak diacritics', () => {
   assert.equal(sk.contact.formTitle, 'Napíšte mi');
   assert.equal(sk.contact.namePlaceholder, 'Vaše meno');
   assert.equal(sk.contact.serviceLabel, 'O čo máte záujem?');
-  assert.equal(sk.contact.serviceOptions.implementation, 'Implementácia AI riešení');
-  assert.equal(sk.contact.serviceOptions.training, 'AI workshopy a zavedenie do praxe');
+  assert.equal(sk.contact.serviceOptions.implementation, 'Postaviť AI workflow v praxi');
+  assert.equal(sk.contact.serviceOptions.training, 'Zaučiť tím do nového workflowu');
   assert.equal(sk.contact.serviceOptions.notSure, 'Zatiaľ neviem');
   assert.equal(sk.contact.messageLabel, 'Správa');
   assert.equal(sk.contact.messagePlaceholder, 'Povedzte mi o Vašom projekte alebo otázke...');
@@ -25,7 +25,7 @@ test('Slovak contact page copy uses Slovak diacritics', () => {
   assert.equal(sk.contact.faq[0].question, 'Nevieme, kde s AI začať. Má zmysel sa ozvať?');
   assert.equal(sk.contact.faq[5].question, 'S akými nástrojmi pracujete?');
   assert.equal(sk.contact.faq[6].question, 'Čo sa stane po odovzdaní riešenia?');
-  assert.equal(sk.footer.description, 'Agentická AI pre malé a stredné firmy, pre ktoré sú merateľnosť a bezpečnosť dôležité.');
+  assert.equal(sk.footer.description, 'AI workflowy pre zakladateľov a malé tímy, ktoré chcú používať AI prakticky a pod kontrolou.');
   assert.equal(sk.footer.navigation, 'Navigácia');
   assert.equal(sk.footer.copyright, 'Matej Lukášik. Všetky práva vyhradené.');
 });
@@ -34,19 +34,18 @@ test('Slovak tools FAQ names concrete categories and tools', () => {
   const toolsFaq = sk.contact.faq.find((item) => item.question === 'S akými nástrojmi pracujete?');
 
   assert.ok(toolsFaq);
-  assert.match(toolsFaq.answer, /automatizácii workflowov/i);
-  assert.match(toolsFaq.answer, /n8n/);
-  assert.match(toolsFaq.answer, /CrewAI/);
-  assert.match(toolsFaq.answer, /LangChain\/LangGraph/);
-  assert.match(toolsFaq.answer, /frontier modely (ako|od) OpenAI a Anthropic/);
-  assert.match(toolsFaq.answer, /otvorené modely ako Mistral a Llama/);
-  assert.match(toolsFaq.answer, /Codex/);
-  assert.match(toolsFaq.answer, /Claude Code/);
-  assert.match(toolsFaq.answer, /OpenClaw/);
-  assert.match(toolsFaq.answer, /Hermes Agent/);
+  assert.match(toolsFaq.answer, /nástrojmi, ktoré už používate/i);
+  assert.match(toolsFaq.answer, /email/);
+  assert.match(toolsFaq.answer, /kalendár/);
+  assert.match(toolsFaq.answer, /CRM/);
+  assert.match(toolsFaq.answer, /Trello/);
+  assert.match(toolsFaq.answer, /Notion/);
+  assert.match(toolsFaq.answer, /automatizačné platformy/);
+  assert.match(toolsFaq.answer, /AI modely/);
+  assert.match(toolsFaq.answer, /ľahký vlastný kód/);
 });
 
 test('Slovak contact page metadata uses Slovak diacritics', () => {
   assert.match(kontaktPage, /Spojte sa so mnou\. Napíšte správu alebo si dohodnite bezplatnú konzultáciu\./);
-  assert.match(layout, /Agentická AI pre malé a stredné firmy, ktoré chcú bezpečné a merateľné výsledky\./);
+  assert.match(layout, /Technická, UX a SEO práca pre zakladateľské e-shopy, ktoré chcú predávať viac\./);
 });

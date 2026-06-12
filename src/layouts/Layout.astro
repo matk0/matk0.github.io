@@ -13,14 +13,15 @@ interface Props {
   description: string;
   lang: Lang;
   currentPath: string;
+  minimal?: boolean;
 }
 
-const { title, description, lang, currentPath } = Astro.props;
+const { title, description, lang, currentPath, minimal = false } = Astro.props;
 const siteOrigin = getSiteOrigin(lang, Astro.url);
 const canonicalURL = new URL(currentPath, siteOrigin);
 const alternateURL = getAlternateUrl(lang, currentPath, Astro.url);
 const altLang = getAlternateLang(lang);
-const ogImage = new URL('/og.png', siteOrigin).href;
+const ogImage = new URL('/images/matej-lukasik-profile.jpg', siteOrigin).href;
 const googleSiteVerification =
   import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION ||
   cloudflareEnv.PUBLIC_GOOGLE_SITE_VERIFICATION;
@@ -35,12 +36,11 @@ const jsonLd = JSON.stringify({
       "@type": "Person",
       "name": "Matej Lukášik",
       "url": "https://matejlukasik.com",
-      "jobTitle": lang === 'sk' ? "Konzultant pre agentickú AI" : "Agentic AI Consultant for SMBs",
-      "image": `${DOMAINS[lang]}/avatar.png`,
+      "jobTitle": lang === 'sk' ? "Zakladateľ post.work" : "Founder of post.work",
+      "image": `${DOMAINS[lang]}/images/matej-lukasik-profile.jpg`,
       "sameAs": [
         "https://www.linkedin.com/in/matej-lukasik",
         "https://x.com/matejlukasik",
-        "https://github.com/matk0",
         "https://youtube.com/@matejlukasik"
       ],
       "address": {
@@ -50,11 +50,11 @@ const jsonLd = JSON.stringify({
     },
     {
       "@type": "ProfessionalService",
-      "name": "Matej Lukášik — Agentic AI Consulting",
+      "name": "post.work",
       "url": "https://matejlukasik.com",
       "description": lang === 'sk'
-        ? "Agentická AI pre malé a stredné firmy, ktoré chcú bezpečné a merateľné výsledky."
-        : "Agentic AI for small and medium-sized businesses that want safe, measurable results.",
+        ? "Technická, UX a SEO práca pre zakladateľské e-shopy, ktoré chcú predávať viac."
+        : "Technical, UX, and SEO work for founder-led e-shops that want to sell more.",
       "areaServed": "EU",
       "provider": { "@type": "Person", "name": "Matej Lukášik" },
       "availableLanguage": ["en", "sk"]
@@ -96,42 +96,44 @@ const jsonLd = JSON.stringify({
     <title>{title}</title>
   </head>
   <body class="min-h-screen flex flex-col">
-    <Nav lang={lang} currentPath={currentPath} currentUrl={Astro.url} />
+    {!minimal && <Nav lang={lang} currentPath={currentPath} currentUrl={Astro.url} />}
     <main class="flex-1">
       <slot />
     </main>
-    <Footer lang={lang} />
-    <CookieNotice lang={lang} gaMeasurementId={gaMeasurementId} />
-    <Analytics />
-    <script is:inline>
-      // Scroll reveal
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    {!minimal && <Footer lang={lang} />}
+    {!minimal && <CookieNotice lang={lang} gaMeasurementId={gaMeasurementId} />}
+    {!minimal && <Analytics />}
+    {!minimal && (
+      <script is:inline>
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-      // 3D card tilt
-      document.querySelectorAll('[data-tilt]').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          const rotateX = (y - centerY) / centerY * -4;
-          const rotateY = (x - centerX) / centerX * 4;
-          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        // 3D card tilt
+        document.querySelectorAll('[data-tilt]').forEach(card => {
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = (y - centerY) / centerY * -4;
+            const rotateY = (x - centerX) / centerX * 4;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+          });
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+          });
         });
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-        });
-      });
-    </script>
+      </script>
+    )}
   </body>
 </html>

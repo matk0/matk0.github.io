@@ -1,167 +1,133 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import AtlasLanding from '../components/AtlasLanding.astro';
-import PainCard from '../components/PainCard.astro';
-import ServiceCard from '../components/ServiceCard.astro';
-import ServiceSection from '../components/ServiceSection.astro';
-import ProcessTimeline from '../components/ProcessTimeline.astro';
-import FirstStepOffer from '../components/FirstStepOffer.astro';
-import CTABand from '../components/CTABand.astro';
-import FAQ from '../components/FAQ.astro';
-import { t, getLocalizedPaths, ATLAS_URL } from '../i18n';
+import { DOMAINS } from '../i18n';
 import type { Lang } from '../i18n';
 
-const lang = (Astro.locals as any).lang as Lang || 'en';
-const strings = t(lang);
-const paths = getLocalizedPaths(lang);
-const bookingHref = `${paths.contact}?focus=calendar`;
+const lang = ((Astro.locals as any).lang as Lang) || 'en';
+const POST_WORK_URL = 'https://post.work/';
+
+type ProfileParagraph =
+  | { text: string }
+  | { before: string; linkText: string; href: string; after: string };
+
+const profiles = {
+  en: {
+    greeting: 'Hi,',
+    description:
+      'Matej Lukášik is building post.work to clear the machinery of e-commerce from the path of authentic creation.',
+    paragraphs: [
+      { text: 'My name is Matej Lukášik and when it comes to work, I believe we should all focus on one thing: AUTHENTIC CREATION.' },
+      {
+        before: 'I am building ',
+        linkText: 'post.work',
+        href: POST_WORK_URL,
+        after: ' to clear the machinery of e-commerce from your path, so you can fully focus on your creation while enjoying material abundance.',
+      },
+    ],
+  },
+  sk: {
+    greeting: 'Ahoj,',
+    description:
+      'Matej Lukášik buduje post.work, aby tvorcom odstránil z cesty e-commerce prekážky a nechal priestor autentickej tvorbe.',
+    paragraphs: [
+      { text: 'Volám sa Matej Lukášik a verím, že by sme sa všetci mali sústrediť na jednu vec: AUTENTICKÚ TVORBU.' },
+      {
+        before: 'Budujem ',
+        linkText: 'post.work',
+        href: POST_WORK_URL,
+        after: ', aby som pre Vás odstránil komplexitu e-commerce, tak aby ste sa mohli sústrediť na Vašu tvorbu a zároveň si užívať materiálnu hojnosť.',
+      },
+    ],
+  },
+} satisfies Record<Lang, { greeting: string; description: string; paragraphs: ProfileParagraph[] }>;
+
+const links = [
+  { label: 'Email', href: 'mailto:matej@post.work' },
+  { label: 'X', href: 'https://x.com/matejlukasik' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/matej-lukasik' },
+];
+
+const profile = profiles[lang];
 ---
 
 <Layout
-  title={`Matej Lukášik — ${strings.home.heroTitle}`}
-  description={strings.home.heroDescription}
+  title="Matej Lukášik | post.work"
+  description={profile.description}
   lang={lang}
   currentPath="/"
+  minimal
 >
-  <Hero
-    title={strings.home.heroTitle}
-    description={strings.home.heroDescription}
-    typewords={strings.home.heroTypewords}
-    size="large"
-  >
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#services" class="btn-outline-white" data-analytics-event="services_intent_clicked" data-analytics-position="hero">
-        {strings.home.ctaSecondary}
+  <section class="min-h-screen bg-surface px-5 py-8 sm:px-8 lg:px-12">
+    <nav
+      class="mb-8 flex justify-end gap-2 text-xs font-semibold uppercase tracking-wide"
+      aria-label="Language"
+    >
+      <a
+        href={DOMAINS.en}
+        class:list={[
+          'transition-colors',
+          lang === 'en' ? 'text-heading' : 'text-body hover:text-primary',
+        ]}
+        aria-current={lang === 'en' ? 'page' : undefined}
+      >
+        EN
       </a>
-      <a href={bookingHref} class="btn-white" data-analytics-event="booking_intent_clicked" data-analytics-position="hero" data-analytics-target="calendar">
-        {strings.home.ctaPrimary}
+      <span class="text-border" aria-hidden="true">/</span>
+      <a
+        href={DOMAINS.sk}
+        class:list={[
+          'transition-colors',
+          lang === 'sk' ? 'text-heading' : 'text-body hover:text-primary',
+        ]}
+        aria-current={lang === 'sk' ? 'page' : undefined}
+      >
+        SK
       </a>
-    </div>
-  </Hero>
+    </nav>
 
-  <section class="section-padding bg-surface bg-dots relative" data-analytics-section="pain_points">
-    <div class="container mx-auto">
-      <h2 class="text-2xl md:text-4xl font-bold text-heading text-center mb-12 max-w-3xl mx-auto reveal">
-        {strings.home.painTitle}
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="reveal reveal-delay-1">
-          <PainCard imageSrc="/images/pain-clarity.webp" title={strings.home.pain1Title} description={strings.home.pain1Description} />
-        </div>
-        <div class="reveal reveal-delay-2">
-          <PainCard imageSrc="/images/pain-value.webp" title={strings.home.pain2Title} description={strings.home.pain2Description} />
-        </div>
-        <div class="reveal reveal-delay-3">
-          <PainCard
-            imageSrc="/images/pain-security.webp"
-            title={strings.home.pain3Title}
-            description={strings.home.pain3Description}
-            linkHref={ATLAS_URL}
-            linkText={strings.home.pain3AtlasText}
-          />
-        </div>
+    <div class="mx-auto grid min-h-[calc(100vh-8rem)] max-w-6xl grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      <div class="mx-auto w-full max-w-[540px] lg:mx-0">
+        <img
+          src="/images/matej-lukasik-profile.jpg"
+          alt="Matej Lukášik"
+          width="1600"
+          height="2400"
+          class="block max-h-[78vh] w-full rounded-lg object-contain"
+        />
       </div>
-    </div>
-  </section>
 
-  <AtlasLanding
-    id={strings.home.atlasLandingId}
-    eyebrow={strings.home.atlasLandingEyebrow}
-    title={strings.home.atlasLandingTitle}
-    description={strings.home.atlasLandingDescription}
-    ctaText={strings.home.atlasLandingCta}
-    ctaHref={`${paths.contact}?service=consulting&focus=contact-form&source=agent-threat-atlas`}
-  />
-
-  <section id="services" class="section-padding bg-surface-alt relative" data-analytics-section="services">
-    <div class="container mx-auto">
-      <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 reveal">
-        <span class="gradient-text-dark">{strings.home.servicesTitle}</span>
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="reveal reveal-delay-1 h-full">
-          <ServiceCard imageSrc="/images/service-strategy.webp" title={strings.home.consultingTitle} description={strings.home.consultingDescription} href="#consulting" linkText={strings.home.learnMore} />
-        </div>
-        <div class="reveal reveal-delay-2 h-full">
-          <ServiceCard imageSrc="/images/service-implementation.webp" title={strings.home.implementationTitle} description={strings.home.implementationDescription} href="#implementation" linkText={strings.home.learnMore} />
-        </div>
-        <div class="reveal reveal-delay-3 h-full">
-          <ServiceCard imageSrc="/images/service-training.webp" title={strings.home.trainingTitle} description={strings.home.trainingDescription} href="#training" linkText={strings.home.learnMore} />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <ServiceSection
-    id="consulting"
-    imageSrc="/images/service-strategy.webp"
-    title={strings.services.consulting.title}
-    subtitle={strings.services.consulting.subtitle}
-    description={strings.services.consulting.description}
-    includes={strings.services.consulting.includes}
-    ctaText={strings.services.consulting.cta}
-    ctaHref={`${paths.contact}?service=consulting&focus=contact-form`}
-    bg="white"
-  />
-
-  <ServiceSection
-    id="implementation"
-    imageSrc="/images/service-implementation.webp"
-    title={strings.services.implementation.title}
-    subtitle={strings.services.implementation.subtitle}
-    description={strings.services.implementation.description}
-    includes={strings.services.implementation.includes}
-    ctaText={strings.services.implementation.cta}
-    ctaHref={`${paths.contact}?service=implementation&focus=contact-form`}
-    reversed
-    bg="alt"
-  />
-
-  <ServiceSection
-    id="training"
-    imageSrc="/images/service-training.webp"
-    title={strings.services.training.title}
-    subtitle={strings.services.training.subtitle}
-    description={strings.services.training.description}
-    includes={strings.services.training.includes}
-    ctaText={strings.services.training.cta}
-    ctaHref={`${paths.contact}?service=training&focus=contact-form`}
-    bg="white"
-  />
-
-  <ProcessTimeline title={strings.home.processTitle} steps={strings.home.processSteps} />
-
-  <FirstStepOffer offer={strings.home.firstStepOffer} href={bookingHref} />
-
-  <section id="about" class="section-padding bg-surface" data-analytics-section="about">
-    <div class="container mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-        <div class="reveal">
-          <div class="w-full max-w-[560px] mx-auto">
-            <div class="aspect-[4/5] max-h-[680px] rounded-2xl overflow-hidden bg-primary-light border border-border shadow-sm">
-              <img src="/images/about-matej.webp" alt="Matej Lukášik" class="w-full h-full object-cover" />
-            </div>
-            <div class="mt-6 lg:mt-8 text-center">
-              <h2 class="text-4xl md:text-5xl font-bold text-heading">{strings.about.bioName}</h2>
-              <p class="mt-3 text-lg md:text-xl text-primary font-semibold">{strings.about.bioTitle}</p>
-            </div>
-          </div>
-        </div>
-        <div class="reveal reveal-delay-1 max-w-2xl">
-          {strings.about.bioText.split('\n\n').map((paragraph) => (
-            <p class="text-body text-lg leading-relaxed mb-5 last:mb-0">{paragraph}</p>
+      <div class="max-w-xl">
+        <h1 class="text-4xl font-bold text-heading sm:text-5xl">{profile.greeting}</h1>
+        <div class="mt-6 space-y-5 text-lg leading-relaxed text-body">
+          {profile.paragraphs.map((paragraph) => (
+            <p>
+              {'text' in paragraph ? (
+                paragraph.text
+              ) : (
+                <>{paragraph.before}<a
+                    href={paragraph.href}
+                    class="text-primary transition-colors hover:text-primary-hover"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >{paragraph.linkText}</a>{paragraph.after}</>
+              )}
+            </p>
           ))}
         </div>
+
+        <nav class="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-base font-medium" aria-label="Contact and profiles">
+          {links.map((link) => (
+            <a
+              href={link.href}
+              class="text-primary transition-colors hover:text-primary-hover"
+              target={link.href.startsWith('http') ? '_blank' : undefined}
+              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
       </div>
     </div>
   </section>
-
-  <FAQ title={strings.contact.faqTitle} items={strings.contact.faq} />
-
-  <CTABand title={strings.home.ctaBandTitle} description={strings.home.ctaBandDescription}>
-    <a href={bookingHref} class="btn-white" data-analytics-event="booking_intent_clicked" data-analytics-position="final_cta" data-analytics-target="calendar">
-      {strings.home.ctaPrimary}
-    </a>
-  </CTABand>
 </Layout>

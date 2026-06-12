@@ -67,12 +67,10 @@ test('analytics helper tracks governed events with sanitized properties', () => 
   assert.doesNotMatch(analytics, /email:|message:|name:|uid:|videoCallUrl:|startTime:|endTime:/);
 });
 
-test('homepage funnel surfaces are annotated for click and section tracking', () => {
-  assert.match(index, /data-analytics-section="pain_points"/);
-  assert.match(index, /data-analytics-section="services"/);
-  assert.match(index, /data-analytics-section="about"/);
-  assert.match(index, /data-analytics-event="services_intent_clicked"/);
-  assert.match(index, /data-analytics-event="booking_intent_clicked"/);
+test('minimal homepage does not expose funnel tracking hooks', () => {
+  assert.doesNotMatch(index, /data-analytics-section=/);
+  assert.doesNotMatch(index, /data-analytics-event=/);
+  assert.doesNotMatch(index, /booking_intent_clicked/);
   assert.match(serviceCard, /data-analytics-event="service_card_clicked"/);
   assert.match(serviceSection, /data-analytics-section=\{id\}/);
   assert.match(serviceSection, /data-analytics-event="service_cta_clicked"/);

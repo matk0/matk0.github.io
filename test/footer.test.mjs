@@ -27,7 +27,7 @@ test('footer has privacy route without location or booking CTA', () => {
 test('footer copy is specific to small and medium businesses', () => {
   assert.equal(
     sk.footer.description,
-    'Agentická AI pre malé a stredné firmy, pre ktoré sú merateľnosť a bezpečnosť dôležité.',
+    'AI workflowy pre zakladateľov a malé tímy, ktoré chcú používať AI prakticky a pod kontrolou.',
   );
   assert.equal(
     en.footer.description,
@@ -40,9 +40,11 @@ test('footer shows selected professional and publishing profiles', () => {
   assert.equal(en.footer.followMe, 'Social Media');
   assert.match(footer, /linkedin\.com\/in\/matej-lukasik/);
   assert.match(footer, /x\.com\/matejlukasik/);
-  assert.match(footer, /github\.com\/matk0/);
+  assert.doesNotMatch(footer, /github\.com\/matk0/);
+  assert.doesNotMatch(footer, /aria-label="GitHub"/);
   assert.match(footer, /youtube\.com\/@matejlukasik/);
   assert.match(footer, /aria-label="X"/);
   assert.match(footer, /aria-label="YouTube"/);
   assert.match(layout, /x\.com\/matejlukasik/);
+  assert.doesNotMatch(layout, /github\.com\/matk0/);
 });

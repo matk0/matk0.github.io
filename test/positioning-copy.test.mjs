@@ -4,16 +4,18 @@ import { test } from 'node:test';
 
 const en = JSON.parse(readFileSync(new URL('../src/i18n/en.json', import.meta.url), 'utf8'));
 const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
+const index = readFileSync(new URL('../src/pages/index.astro', import.meta.url), 'utf8');
 
-test('english homepage positions Matej around practical SMB AI adoption', () => {
-  assert.equal(en.home.heroTitle, 'AI agents for your team.');
-  assert.equal(
-    en.home.heroDescription,
-    "You know you need AI. Together, we'll find where to start, what makes the most sense for your business, and launch the first useful solution.",
-  );
-  assert.equal(en.about.heroTitle, 'Who I Am');
-  assert.equal(en.about.heroDescription, 'I help companies turn AI pressure into safe, measurable solutions.');
-  assert.equal(en.about.bioTitle, 'Agentic AI Consultant');
+test('homepage positions Matej around creators and post.work', () => {
+  assert.match(index, /My name is Matej Lukášik and when it comes to work, I believe we should all focus on one thing: AUTHENTIC CREATION\./);
+  assert.match(index, /clear the machinery of e-commerce from your path/);
+  assert.match(index, /fully focus on your creation/);
+  assert.match(index, /enjoying material abundance/);
+  assert.match(index, /Volám sa Matej Lukášik/);
+  assert.match(index, /AUTENTICKÚ TVORBU/);
+  assert.match(index, /komplexitu e-commerce/);
+  assert.match(index, /materiálnu hojnosť/);
+  assert.doesNotMatch(index, /UX, SEO, checkout/);
 });
 
 test('service copy emphasizes strategy, implementation, and team adoption', () => {
@@ -22,29 +24,29 @@ test('service copy emphasizes strategy, implementation, and team adoption', () =
   assert.equal(en.home.trainingTitle, 'AI Workshops and Adoption');
   assert.equal(en.services.training.title, 'AI Workshops and Adoption');
   assert.ok(en.services.training.description.includes('new work habits that stick'));
-  assert.equal(sk.home.consultingTitle, 'Konzultácie a AI stratégia');
-  assert.equal(sk.home.implementationTitle, 'Implementácia AI riešení');
-  assert.equal(sk.home.trainingTitle, 'AI workshopy a zavedenie do praxe');
-  assert.equal(sk.services.training.title, 'AI workshopy a zavedenie do praxe');
-  assert.equal(sk.services.training.cta, 'Dohodnúť workshop');
-  assert.ok(sk.services.training.description.includes('nové pracovné návyky'));
+  assert.equal(sk.home.consultingTitle, 'Nájdeme správny prvý proces');
+  assert.equal(sk.home.implementationTitle, 'Postavíme AI workflow v praxi');
+  assert.equal(sk.home.trainingTitle, 'Naučíme tím používať nový spôsob práce');
+  assert.equal(sk.services.training.title, 'Naučíme tím používať nový spôsob práce');
+  assert.equal(sk.services.training.cta, 'Dohodnúť úvodný hovor');
+  assert.ok(sk.services.training.description.includes('pracovný návyk'));
 });
 
 test('slovak process copy frames the collaboration clearly', () => {
   assert.equal(sk.home.processTitle, 'Ako prebieha spolupráca?');
   assert.deepEqual(
     sk.home.processSteps.map((step) => step.title),
-    ['Úvodný rozhovor', 'Plán prvého kroku', 'Realizácia', 'Odovzdanie do praxe'],
+    ['Úvodný rozhovor', 'Výber prvého workflowu', 'Návrh a stavba', 'Používanie a zlepšovanie'],
   );
-  assert.ok(sk.home.processSteps[2].description.includes('meriame jeho dopad'));
+  assert.ok(sk.home.processSteps[2].description.includes('reálnych prípadoch'));
 });
 
 test('homepage names the common first paid engagement after the free call', () => {
   assert.equal(sk.home.firstStepOffer.eyebrow, 'Najčastejší prvý krok');
-  assert.equal(sk.home.firstStepOffer.title, 'Audit AI príležitostí a rizík');
+  assert.equal(sk.home.firstStepOffer.title, 'Prvý AI workflow sprint');
   assert.equal(
     sk.home.firstStepOffer.description,
-    'Za 1–2 týždne zmapujeme, kde má AI vo Vašej firme zmysel, ktorý workflow riešiť ako prvý, aké riziká treba ošetriť a ako budeme merať úspech.',
+    'Za 10 pracovných dní vyberieme jeden opakujúci sa proces, zmapujeme ako funguje dnes, postavíme AI verziu s ľudským schvaľovaním a otestujeme ju na reálnych príkladoch.',
   );
   assert.equal(sk.home.firstStepOffer.cta, sk.home.ctaPrimary);
 

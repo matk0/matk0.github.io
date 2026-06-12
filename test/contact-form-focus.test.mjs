@@ -9,10 +9,11 @@ const contactForm = readFileSync(new URL('../src/components/ContactForm.astro', 
 const contactApi = readFileSync(new URL('../src/pages/api/contact.ts', import.meta.url), 'utf8');
 const styles = readFileSync(new URL('../src/styles/global.css', import.meta.url), 'utf8');
 
-test('service CTAs target the contact form directly', () => {
-  assert.match(index, /ctaHref=\{`\$\{paths\.contact\}\?service=consulting&focus=contact-form`\}/);
-  assert.match(index, /ctaHref=\{`\$\{paths\.contact\}\?service=implementation&focus=contact-form`\}/);
-  assert.match(index, /ctaHref=\{`\$\{paths\.contact\}\?service=training&focus=contact-form`\}/);
+test('minimal homepage does not link into the old service contact funnel', () => {
+  assert.doesNotMatch(index, /service=consulting/);
+  assert.doesNotMatch(index, /service=implementation/);
+  assert.doesNotMatch(index, /service=training/);
+  assert.doesNotMatch(index, /focus=contact-form/);
   assert.doesNotMatch(index, /#contact-form`/);
 });
 
@@ -33,11 +34,11 @@ test('targeted contact form flashes and focuses the name field', () => {
   assert.match(styles, /\.contact-form-flash/);
 });
 
-test('booking CTAs target the calendar booking form', () => {
+test('navigation booking CTAs target the calendar booking form', () => {
   assert.match(nav, /const bookingHref = `\$\{paths\.contact\}\?focus=calendar`;/);
-  assert.match(index, /const bookingHref = `\$\{paths\.contact\}\?focus=calendar`;/);
   assert.equal(nav.match(/href=\{bookingHref\}/g)?.length, 2);
-  assert.equal(index.match(/href=\{bookingHref\}/g)?.length, 3);
+  assert.doesNotMatch(index, /bookingHref/);
+  assert.doesNotMatch(index, /focus=calendar/);
 });
 
 test('targeted calendar booking form flashes without an anchor jump', () => {
