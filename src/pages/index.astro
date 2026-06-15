@@ -10,6 +10,8 @@ type ProfileParagraph =
   | { text: string }
   | { before: string; linkText: string; href: string; after: string };
 
+type ProfileLinkIcon = 'email' | 'x' | 'linkedin';
+
 const profiles = {
   en: {
     greeting: 'Hi,',
@@ -30,22 +32,22 @@ const profiles = {
     description:
       'Matej Lukášik buduje post.work, aby tvorcom odstránil z cesty e-commerce prekážky a nechal priestor autentickej tvorbe.',
     paragraphs: [
-      { text: 'Volám sa Matej Lukášik a verím, že by sme sa všetci mali sústrediť na jednu vec: AUTENTICKÚ TVORBU.' },
+      { text: 'Volám sa Matej Lukášik a verím, že čo sa práce týka, každý by sme sa mali sústrediť na jednu vec: AUTENTICKÚ TVORBU.' },
       {
         before: 'Budujem ',
         linkText: 'post.work',
         href: POST_WORK_URL,
-        after: ', aby som pre Vás odstránil komplexitu e-commerce, tak aby ste sa mohli sústrediť na Vašu tvorbu a zároveň si užívať materiálnu hojnosť.',
+        after: ', aby som pre Vás odstránil komplexitu e-commerce, a Vy sa tak mohli sústrediť na Vašu tvorbu a popritom si užívať materiálnu hojnosť.',
       },
     ],
   },
 } satisfies Record<Lang, { greeting: string; description: string; paragraphs: ProfileParagraph[] }>;
 
 const links = [
-  { label: 'Email', href: 'mailto:matej@post.work' },
-  { label: 'X', href: 'https://x.com/matejlukasik' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/matej-lukasik' },
-];
+  { label: 'Email', href: 'mailto:matej@post.work', icon: 'email' },
+  { label: 'X', href: 'https://x.com/matejlukasik', icon: 'x' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/matej-lukasik', icon: 'linkedin' },
+] satisfies { label: string; href: string; icon: ProfileLinkIcon }[];
 
 const profile = profiles[lang];
 ---
@@ -115,15 +117,32 @@ const profile = profiles[lang];
           ))}
         </div>
 
-        <nav class="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-base font-medium" aria-label="Contact and profiles">
+        <nav class="mt-8 flex flex-wrap gap-4 text-base font-medium" aria-label="Contact and profiles">
           {links.map((link) => (
             <a
               href={link.href}
-              class="text-primary transition-colors hover:text-primary-hover"
+              class="inline-flex h-8 w-8 items-center justify-center text-primary transition-colors hover:text-primary-hover"
+              aria-label={link.label}
               target={link.href.startsWith('http') ? '_blank' : undefined}
               rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
             >
-              {link.label}
+              {link.icon === 'email' && (
+                <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                  <path d="M4 6h16v12H4z" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+              )}
+              {link.icon === 'x' && (
+                <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.7 3h3.1l-6.8 7.8 8 10.2h-6.3l-4.9-6.3L5.2 21H2.1l7.3-8.4L1.7 3h6.5l4.4 5.7L17.7 3Zm-1.1 16.2h1.7L7.3 4.7H5.5l11.1 14.5Z" />
+                </svg>
+              )}
+              {link.icon === 'linkedin' && (
+                <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M5.3 8.9H2.2V21h3.1V8.9ZM3.7 3a1.8 1.8 0 1 0 0 3.6A1.8 1.8 0 0 0 3.7 3Zm17 11.2c0-3.3-1.8-5.4-4.6-5.4-1.8 0-2.9 1-3.3 1.8V8.9h-3V21h3.1v-6.4c0-1.7.9-2.8 2.3-2.8s2.3 1 2.3 2.8V21h3.2v-6.8Z" />
+                </svg>
+              )}
+              <span class="sr-only">{link.label}</span>
             </a>
           ))}
         </nav>

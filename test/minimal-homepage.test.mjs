@@ -27,6 +27,15 @@ test('post.work is linked inline instead of in the profile link row', () => {
   assert.doesNotMatch(index, /\{ label: 'GitHub'/);
 });
 
+test('profile links render as accessible social icons', () => {
+  assert.match(index, /icon: 'email'/);
+  assert.match(index, /icon: 'x'/);
+  assert.match(index, /icon: 'linkedin'/);
+  assert.match(index, /aria-label=\{link\.label\}/);
+  assert.match(index, /<svg/);
+  assert.match(index, /<span class="sr-only">\{link\.label\}<\/span>/);
+});
+
 test('homepage headline is localized greeting copy', () => {
   assert.match(index, /greeting:\s*'Hi,'/);
   assert.match(index, /greeting:\s*'Ahoj,'/);
