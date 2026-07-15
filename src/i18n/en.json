@@ -5,7 +5,7 @@
     "services": "Services",
     "about": "About",
     "contact": "Contact",
-    "bookCall": "Free Consultation",
+    "bookCall": "Book consultation",
     "faq": "FAQ"
   },
   "home": {
@@ -122,30 +122,30 @@
     "ctaSecondary": "Send a Message"
   },
   "contact": {
-    "heroTitle": "Get in Touch",
-    "heroDescription": "Whether you have a clear project or just questions — I'm here.",
-    "formTitle": "Send me a message",
+    "heroTitle": "Bring me the decision",
+    "heroDescription": "Book a Strategic Consultation or tell me about the situation that needs diagnosis.",
+    "formTitle": "Discuss a larger engagement",
     "nameLabel": "Name",
     "namePlaceholder": "Your name",
     "emailLabel": "Email",
     "emailPlaceholder": "you@company.com",
     "serviceLabel": "What are you interested in?",
     "serviceOptions": {
-      "consulting": "AI Consulting and Strategy",
-      "implementation": "AI Solution Implementation",
-      "training": "AI Workshops and Adoption",
-      "notSure": "Not sure yet"
+      "consulting": "Strategic Consultation",
+      "implementation": "Strategic Diagnosis",
+      "training": "Co-CEO Month",
+      "notSure": "Another strategic question"
     },
     "messageLabel": "Message",
-    "messagePlaceholder": "Tell me about your project or question...",
+    "messagePlaceholder": "Describe the decision, relevant context, and why it matters now...",
     "submit": "Send Message",
     "success": "Message sent! I'll get back to you within 24 hours.",
     "error": "Something went wrong. Please try again or email me directly at matej@matejlukasik.com.",
     "privacyNotice": "I use these details only to respond to your inquiry.",
     "bookingPrivacyNotice": "Booking details are processed by Cal.com to schedule the call.",
     "privacyLink": "Privacy details",
-    "bookTitle": "Book a call",
-    "bookDescription": "Choose a time that works for you.",
+    "bookTitle": "Book a Strategic Consultation",
+    "bookDescription": "€300 for a private two-hour working session, preceded by a short intake and followed by a concise written recap.",
     "directTitle": "Or reach out directly",
     "email": "matej@matejlukasik.com",
     "location": "Slovakia",
@@ -184,7 +184,7 @@
     ]
   },
   "footer": {
-    "description": "Agentic AI for small and medium-sized businesses where measurability and security matter.",
+    "description": "Strategic advisory for founder-led digital businesses.",
     "navigation": "Navigation",
     "getInTouch": "Get in Touch",
     "copyright": "Matej Lukášik. All rights reserved.",

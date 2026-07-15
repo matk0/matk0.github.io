@@ -7,25 +7,27 @@ const kontaktPage = readFileSync(new URL('../src/pages/kontakt.astro', import.me
 const layout = readFileSync(new URL('../src/layouts/Layout.astro', import.meta.url), 'utf8');
 
 test('Slovak contact page copy uses Slovak diacritics', () => {
-  assert.equal(sk.contact.heroDescription, 'Či už máte jasný projekt, alebo len otázky — som tu.');
-  assert.equal(sk.contact.formTitle, 'Napíšte mi');
+  assert.equal(sk.contact.heroTitle, 'Prineste mi rozhodnutie');
+  assert.equal(sk.contact.heroDescription, 'Rezervujte si strategickú konzultáciu alebo mi napíšte o situácii, ktorá potrebuje diagnózu.');
+  assert.equal(sk.contact.formTitle, 'Prediskutovať väčšiu spoluprácu');
   assert.equal(sk.contact.namePlaceholder, 'Vaše meno');
   assert.equal(sk.contact.serviceLabel, 'O čo máte záujem?');
-  assert.equal(sk.contact.serviceOptions.implementation, 'Postaviť AI workflow v praxi');
-  assert.equal(sk.contact.serviceOptions.training, 'Zaučiť tím do nového workflowu');
-  assert.equal(sk.contact.serviceOptions.notSure, 'Zatiaľ neviem');
+  assert.equal(sk.contact.serviceOptions.consulting, 'Strategická konzultácia');
+  assert.equal(sk.contact.serviceOptions.implementation, 'Strategická diagnóza');
+  assert.equal(sk.contact.serviceOptions.training, 'Co-CEO na mesiac');
+  assert.equal(sk.contact.serviceOptions.notSure, 'Iná strategická otázka');
   assert.equal(sk.contact.messageLabel, 'Správa');
-  assert.equal(sk.contact.messagePlaceholder, 'Povedzte mi o Vašom projekte alebo otázke...');
+  assert.equal(sk.contact.messagePlaceholder, 'Opíšte rozhodnutie, relevantný kontext a prečo je dôležité práve teraz...');
   assert.equal(sk.contact.submit, 'Odoslať správu');
   assert.equal(sk.contact.success, 'Správa odoslaná! Ozvem sa do 24 hodín.');
   assert.equal(sk.contact.error, 'Niečo sa pokazilo. Skúste to znova alebo mi napíšte priamo na matej@matejlukasik.com.');
-  assert.equal(sk.contact.bookTitle, 'Dohodnúť hovor');
-  assert.equal(sk.contact.bookDescription, 'Vyberte si čas, ktorý Vám vyhovuje.');
+  assert.equal(sk.contact.bookTitle, 'Rezervovať strategickú konzultáciu');
+  assert.equal(sk.contact.bookDescription, '300 € za súkromnú dvojhodinovú pracovnú konzultáciu, krátky vstupný dotazník a stručné písomné zhrnutie.');
   assert.equal(sk.contact.faqTitle, 'Často kladené otázky');
   assert.equal(sk.contact.faq[0].question, 'Nevieme, kde s AI začať. Má zmysel sa ozvať?');
   assert.equal(sk.contact.faq[5].question, 'S akými nástrojmi pracujete?');
   assert.equal(sk.contact.faq[6].question, 'Čo sa stane po odovzdaní riešenia?');
-  assert.equal(sk.footer.description, 'AI workflowy pre zakladateľov a malé tímy, ktoré chcú používať AI prakticky a pod kontrolou.');
+  assert.equal(sk.footer.description, 'Strategické poradenstvo pre zakladateľov digitálnych firiem.');
   assert.equal(sk.footer.navigation, 'Navigácia');
   assert.equal(sk.footer.copyright, 'Matej Lukášik. Všetky práva vyhradené.');
 });
@@ -46,6 +48,6 @@ test('Slovak tools FAQ names concrete categories and tools', () => {
 });
 
 test('Slovak contact page metadata uses Slovak diacritics', () => {
-  assert.match(kontaktPage, /Spojte sa so mnou\. Napíšte správu alebo si dohodnite bezplatnú konzultáciu\./);
-  assert.match(layout, /Technická, UX a SEO práca pre zakladateľské e-shopy, ktoré chcú predávať viac\./);
+  assert.match(kontaktPage, /Rezervujte si dvojhodinovú strategickú konzultáciu alebo prediskutujte rozsiahlejšiu spoluprácu\./);
+  assert.match(layout, /Strategické poradenstvo pre zakladateľov digitálnych firiem\./);
 });

@@ -6,15 +6,24 @@ const en = JSON.parse(readFileSync(new URL('../src/i18n/en.json', import.meta.ur
 const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
 const index = readFileSync(new URL('../src/pages/index.astro', import.meta.url), 'utf8');
 
-test('homepage positions Matej around creators and post.work', () => {
-  assert.match(index, /My name is Matej Lukášik and when it comes to work, I believe we should all focus on one thing: AUTHENTIC CREATION\./);
-  assert.match(index, /clear the machinery of e-commerce from your path/);
-  assert.match(index, /fully focus on your creation/);
-  assert.match(index, /enjoying material abundance/);
-  assert.match(index, /Volám sa Matej Lukášik/);
-  assert.match(index, /AUTENTICKÚ TVORBU/);
-  assert.match(index, /komplexitu e-commerce/);
-  assert.match(index, /materiálnu hojnosť/);
+test('homepage uses concise advisory positioning in English and Slovak', () => {
+  assert.match(index, /Strategic Advisor to Founder-Led Digital Businesses/);
+  assert.doesNotMatch(index, /Former CTO and product builder/);
+  assert.match(index, /greeting: 'Strategický poradca'/);
+  assert.match(
+    index,
+    /Pomáham majiteľom firiem pomenovať skutočný problém, pochopiť súvislosti a rozhodnúť sa, čo ďalej\./,
+  );
+  assert.match(index, /href="#consultation"/);
+  assert.match(index, /strategickej konzultácie/);
+  assert.match(index, /href="#diagnosis"/);
+  assert.match(index, /diagnostického šprintu/);
+  assert.match(index, /href="#co-ceo"/);
+  assert.match(index, /co-CEO na mesiac/);
+  assert.match(index, /cta: 'Pozrieť si možnosti spolupráce'/);
+  assert.match(index, /id=\{offer\.id\}/);
+  assert.doesNotMatch(index, /Bývalý CTO a tvorca produktov/);
+  assert.doesNotMatch(index, /AUTHENTIC CREATION|material abundance|AUTENTICKÚ TVORBU|materiálnu hojnosť/);
   assert.doesNotMatch(index, /UX, SEO, checkout/);
 });
 

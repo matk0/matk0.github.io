@@ -4,26 +4,22 @@ import { test } from 'node:test';
 
 const index = readFileSync(new URL('../src/pages/index.astro', import.meta.url), 'utf8');
 const layout = readFileSync(new URL('../src/layouts/Layout.astro', import.meta.url), 'utf8');
+const llms = readFileSync(new URL('../src/pages/llms.txt.ts', import.meta.url), 'utf8');
+const llmsFull = readFileSync(new URL('../src/pages/llms-full.txt.ts', import.meta.url), 'utf8');
 
-test('homepage is a minimal personal page pointing to post.work', () => {
+test('homepage is a minimal bilingual advisory presentation', () => {
   assert.match(index, /minimal/);
   assert.match(index, /src="\/images\/matej-lukasik-profile\.jpg"/);
-  assert.match(index, /AUTHENTIC CREATION/);
-  assert.match(index, /clear the machinery of e-commerce from your path/);
-  assert.match(index, /fully focus on your creation while enjoying material abundance/);
-  assert.match(index, /mailto:matej@post\.work/);
-  assert.match(index, /POST_WORK_URL = 'https:\/\/post\.work\/'/);
+  assert.match(index, /mailto:matej@matejlukasik\.com/);
+  assert.doesNotMatch(index, /mailto:matej@post\.work/);
   assert.match(index, /https:\/\/x\.com\/matejlukasik/);
   assert.match(index, /https:\/\/www\.linkedin\.com\/in\/matej-lukasik/);
   assert.doesNotMatch(index, /https:\/\/github\.com\/matk0/);
 });
 
-test('post.work is linked inline instead of in the profile link row', () => {
-  assert.match(index, /linkText: 'post\.work'/);
-  assert.match(index, /href: POST_WORK_URL/);
-  assert.match(index, /href=\{paragraph\.href\}/);
-  assert.doesNotMatch(index, /\{ label: 'post\.work', href: POST_WORK_URL \}/);
-  assert.doesNotMatch(index, /\{ label: 'post\.work', href: 'https:\/\/post\.work\/' \}/);
+test('profile link row contains only direct contact channels', () => {
+  assert.doesNotMatch(index, /POST_WORK_URL|linkText:|paragraph\.href|paragraph\.before|paragraph\.after/);
+  assert.doesNotMatch(index, /\{ label: 'post\.work'/);
   assert.doesNotMatch(index, /\{ label: 'GitHub'/);
 });
 
@@ -36,28 +32,76 @@ test('profile links render as accessible social icons', () => {
   assert.match(index, /<span class="sr-only">\{link\.label\}<\/span>/);
 });
 
-test('homepage headline is localized greeting copy', () => {
-  assert.match(index, /greeting:\s*'Hi,'/);
-  assert.match(index, /greeting:\s*'Ahoj,'/);
-  assert.match(index, /<h1 class="text-4xl font-bold text-heading sm:text-5xl">\{profile\.greeting\}<\/h1>/);
-  assert.doesNotMatch(index, /<h1 class="text-4xl font-bold text-heading sm:text-5xl">Matej Lukášik<\/h1>/);
+test('english homepage shows only the advisory positioning', () => {
+  assert.match(
+    index,
+    /greeting:\s*'Strategic Advisor to Founder-Led Digital Businesses'/,
+  );
+  assert.doesNotMatch(index, /Former CTO and product builder/);
+  assert.match(
+    index,
+    /description:\s*\n\s*'Matej Lukášik helps founders resolve consequential decisions across business model, brand, product, and technology\.'/,
+  );
+  assert.doesNotMatch(
+    index,
+    /Hi,|AUTHENTIC CREATION|clear the machinery of e-commerce|material abundance/,
+  );
 });
 
-test('homepage body copy is rendered as short localized paragraphs', () => {
-  assert.match(index, /paragraphs: \[/);
-  assert.match(index, /My name is Matej Lukášik and when it comes to work, I believe/);
-  assert.match(index, /Volám sa Matej Lukášik a verím/);
-  assert.match(index, /AUTENTICKÚ TVORBU/);
-  assert.match(index, /profile\.paragraphs\.map/);
-  assert.doesNotMatch(index, /UX, SEO, checkout/);
+test('english homepage presents the full strategic advisory narrative', () => {
+  assert.match(index, /For founders building businesses around work they genuinely believe in\./);
+  assert.match(index, /I help founders turn competing truths into one clear strategic decision\./);
+  assert.match(index, /Authenticity/);
+  assert.match(index, /Commercial viability/);
+  assert.match(index, /Self-expression/);
+  assert.match(index, /Customer reality/);
+  assert.match(index, /Aesthetics/);
+  assert.match(index, /Conversion/);
+  assert.match(index, /Meaning/);
+  assert.match(index, /Money/);
+  assert.match(index, /Intuition/);
+  assert.match(index, /Evidence/);
+  assert.match(index, /Vision/);
+  assert.match(index, /Implementation/);
+  assert.match(index, /See the whole\. Find the constraint\. Decide what changes\./);
+  assert.match(index, /Strategic Consultation/);
+  assert.match(index, /Strategic Diagnosis/);
+  assert.match(index, /Co-CEO Month/);
+  assert.match(index, /Two calendar weeks/);
+  assert.match(index, /Bring me the problem that does not fit one box\./);
 });
 
-test('homepage removes the old marketing funnel surface', () => {
+test('slovak homepage shows only the advisory positioning', () => {
+  assert.match(index, /greeting:\s*'Strategic Advisor to Founder-Led Digital Businesses'/);
+  assert.match(
+    index,
+    /greeting:\s*'Strategický poradca'/,
+  );
+  assert.doesNotMatch(index, /Bývalý CTO a tvorca produktov/);
+  assert.match(
+    index,
+    /description:\s*\n\s*'Matej Lukášik pomáha zakladateľom riešiť dôležité rozhodnutia naprieč biznis modelom, značkou, produktom a technológiou\.'/,
+  );
+  assert.match(index, /<h1 class="text-4xl font-bold text-heading sm:text-5xl">\{copy\.profile\.greeting\}<\/h1>/);
+  assert.doesNotMatch(
+    index,
+    /Ahoj,|AUTENTICKÚ TVORBU|komplexitu e-commerce|materiálnu hojnosť/,
+  );
+});
+
+test('homepage hero omits the former CTO tagline component', () => {
+  assert.doesNotMatch(index, /profile\.paragraphs\.map/);
+  assert.doesNotMatch(index, /Former CTO and product builder/);
+  assert.doesNotMatch(index, /Bývalý CTO a tvorca produktov/);
+});
+
+test('homepage removes the old marketing funnel while linking the paid consultation', () => {
   assert.doesNotMatch(index, /<Hero/);
   assert.doesNotMatch(index, /<Service/);
   assert.doesNotMatch(index, /<FAQ/);
   assert.doesNotMatch(index, /<CTABand/);
-  assert.doesNotMatch(index, /bookingHref/);
+  assert.match(index, /const bookingHref = `\$\{paths\.contact\}\?focus=calendar`;/);
+  assert.match(index, /consultation: bookingHref/);
   assert.doesNotMatch(index, /data-analytics-event="booking_intent_clicked"/);
 });
 
@@ -78,6 +122,15 @@ test('minimal layout mode removes navigation, footer, cookie, and analytics chro
   assert.match(layout, /!minimal && <Footer/);
   assert.match(layout, /!minimal && <CookieNotice/);
   assert.match(layout, /!minimal && <Analytics/);
+});
+
+test('metadata and machine-readable pages use the strategic advisory positioning', () => {
+  assert.match(layout, /Strategic Advisor to Founder-Led Digital Businesses/);
+  assert.doesNotMatch(layout, /Technical, UX, and SEO work for founder-led e-shops/);
+  assert.match(llms, /Strategic Advisor to Founder-Led Digital Businesses/);
+  assert.match(llmsFull, /Strategic Advisor to Founder-Led Digital Businesses/);
+  assert.doesNotMatch(llms, /AI Agent Consulting|CEO orchestrator/);
+  assert.doesNotMatch(llmsFull, /AI Solution Implementation|Agent Threat Atlas/);
 });
 
 test('profile portrait asset exists in public images', () => {

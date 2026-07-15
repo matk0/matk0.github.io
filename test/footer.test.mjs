@@ -24,14 +24,14 @@ test('footer has privacy route without location or booking CTA', () => {
   assert.doesNotMatch(footer, /focus=calendar/);
 });
 
-test('footer copy is specific to small and medium businesses', () => {
+test('footer copy reflects the advisory positioning', () => {
   assert.equal(
     sk.footer.description,
-    'AI workflowy pre zakladateľov a malé tímy, ktoré chcú používať AI prakticky a pod kontrolou.',
+    'Strategické poradenstvo pre zakladateľov digitálnych firiem.',
   );
   assert.equal(
     en.footer.description,
-    'Agentic AI for small and medium-sized businesses where measurability and security matter.',
+    'Strategic advisory for founder-led digital businesses.',
   );
 });
 

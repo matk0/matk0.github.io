@@ -5,7 +5,7 @@
     "services": "Služby",
     "about": "O mne",
     "contact": "Kontakt",
-    "bookCall": "Úvodný hovor",
+    "bookCall": "Rezervovať konzultáciu",
     "faq": "FAQ"
   },
   "home": {
@@ -147,30 +147,30 @@
     "ctaSecondary": "Napísať správu"
   },
   "contact": {
-    "heroTitle": "Spojte sa so mnou",
-    "heroDescription": "Či už máte jasný projekt, alebo len otázky — som tu.",
-    "formTitle": "Napíšte mi",
+    "heroTitle": "Prineste mi rozhodnutie",
+    "heroDescription": "Rezervujte si strategickú konzultáciu alebo mi napíšte o situácii, ktorá potrebuje diagnózu.",
+    "formTitle": "Prediskutovať väčšiu spoluprácu",
     "nameLabel": "Meno",
     "namePlaceholder": "Vaše meno",
     "emailLabel": "Email",
     "emailPlaceholder": "vy@firma.sk",
     "serviceLabel": "O čo máte záujem?",
     "serviceOptions": {
-      "consulting": "Nájsť prvý AI workflow",
-      "implementation": "Postaviť AI workflow v praxi",
-      "training": "Zaučiť tím do nového workflowu",
-      "notSure": "Zatiaľ neviem"
+      "consulting": "Strategická konzultácia",
+      "implementation": "Strategická diagnóza",
+      "training": "Co-CEO na mesiac",
+      "notSure": "Iná strategická otázka"
     },
     "messageLabel": "Správa",
-    "messagePlaceholder": "Povedzte mi o Vašom projekte alebo otázke...",
+    "messagePlaceholder": "Opíšte rozhodnutie, relevantný kontext a prečo je dôležité práve teraz...",
     "submit": "Odoslať správu",
     "success": "Správa odoslaná! Ozvem sa do 24 hodín.",
     "error": "Niečo sa pokazilo. Skúste to znova alebo mi napíšte priamo na matej@matejlukasik.com.",
     "privacyNotice": "Tieto údaje použijem iba na odpoveď na Vašu správu.",
     "bookingPrivacyNotice": "Rezervačné údaje spracúva Cal.com na naplánovanie hovoru.",
     "privacyLink": "Podrobnosti o súkromí",
-    "bookTitle": "Dohodnúť hovor",
-    "bookDescription": "Vyberte si čas, ktorý Vám vyhovuje.",
+    "bookTitle": "Rezervovať strategickú konzultáciu",
+    "bookDescription": "300 € za súkromnú dvojhodinovú pracovnú konzultáciu, krátky vstupný dotazník a stručné písomné zhrnutie.",
     "directTitle": "Alebo ma kontaktujte priamo",
     "email": "matej@matejlukasik.com",
     "location": "Slovensko",
@@ -209,7 +209,7 @@
     ]
   },
   "footer": {
-    "description": "AI workflowy pre zakladateľov a malé tímy, ktoré chcú používať AI prakticky a pod kontrolou.",
+    "description": "Strategické poradenstvo pre zakladateľov digitálnych firiem.",
     "navigation": "Navigácia",
     "getInTouch": "Kontakt",
     "copyright": "Matej Lukášik. Všetky práva vyhradené.",

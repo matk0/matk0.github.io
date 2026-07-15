@@ -36,7 +36,9 @@ const jsonLd = JSON.stringify({
       "@type": "Person",
       "name": "Matej Lukášik",
       "url": "https://matejlukasik.com",
-      "jobTitle": lang === 'sk' ? "Zakladateľ post.work" : "Founder of post.work",
+      "jobTitle": lang === 'sk'
+        ? "Strategický poradca pre zakladateľov digitálnych firiem"
+        : "Strategic Advisor to Founder-Led Digital Businesses",
       "image": `${DOMAINS[lang]}/images/matej-lukasik-profile.jpg`,
       "sameAs": [
         "https://www.linkedin.com/in/matej-lukasik",
@@ -50,11 +52,12 @@ const jsonLd = JSON.stringify({
     },
     {
       "@type": "ProfessionalService",
-      "name": "post.work",
+      "name": "Matej Lukášik — Strategic Advisory",
       "url": "https://matejlukasik.com",
       "description": lang === 'sk'
-        ? "Technická, UX a SEO práca pre zakladateľské e-shopy, ktoré chcú predávať viac."
-        : "Technical, UX, and SEO work for founder-led e-shops that want to sell more.",
+        ? "Strategické poradenstvo pre zakladateľov digitálnych firiem."
+        : "Strategic advisory across business model, brand, product, and technology for founder-led digital businesses.",
+      "serviceType": "Strategic advisory",
       "areaServed": "EU",
       "provider": { "@type": "Person", "name": "Matej Lukášik" },
       "availableLanguage": ["en", "sk"]

@@ -18,7 +18,9 @@ test('homepage keeps the portrait and text as the only two primary columns', () 
   assert.match(index, /max-w-xl/);
 });
 
-test('homepage does not render a separate about section', () => {
-  assert.doesNotMatch(index, /<section id="about"/);
+test('homepage keeps the about section focused on evidence without adding another portrait', () => {
+  assert.match(index, /<section id="about"/);
+  assert.match(index, /selected-work-heading/);
   assert.doesNotMatch(index, /strings\.about/);
+  assert.equal(index.match(/src="\/images\/matej-lukasik-profile\.jpg"/g)?.length, 1);
 });
