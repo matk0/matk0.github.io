@@ -15,16 +15,24 @@ test('i18n exposes Agent Threat Atlas URLs', () => {
   assert.match(i18n, /ATLAS_THREATS_URL = 'https:\/\/atlas\.matejlukasik\.sk\/threats'/);
 });
 
-test('minimal homepage does not render the Agent Threat Atlas campaign surface', () => {
-  assert.doesNotMatch(index, /ATLAS_URL/);
-  assert.doesNotMatch(index, /AtlasLanding/);
+test('homepage keeps lightweight security links to Agent Threat Atlas', () => {
+  assert.match(index, /ATLAS_URL/);
+  assert.match(index, /strings\.home\.pain3AtlasText/);
   assert.doesNotMatch(index, /strings\.home\.atlasProofTitle/);
   assert.doesNotMatch(index, /strings\.about\.atlasText/);
   assert.doesNotMatch(index, /strings\.about\.atlasLink/);
   assert.doesNotMatch(index, /ATLAS_THREATS_URL/);
+  assert.ok(index.indexOf('<ProcessTimeline') < index.indexOf('<FirstStepOffer'));
+  assert.ok(index.indexOf('<FirstStepOffer') < index.indexOf('<FAQ'));
 });
 
-test('Atlas landing component remains tracked when used elsewhere', () => {
+test('homepage gives Atlas visitors a tracked consulting landing section', () => {
+  assert.match(index, /import AtlasLanding from '\.\.\/components\/AtlasLanding\.astro';/);
+  assert.match(index, /<AtlasLanding/);
+  assert.match(index, /id=\{strings\.home\.atlasLandingId\}/);
+  assert.match(index, /ctaHref=\{`\$\{paths\.contact\}\?service=consulting&focus=contact-form&source=agent-threat-atlas`\}/);
+  assert.ok(index.indexOf('<AtlasLanding') < index.indexOf('<section id="services"'));
+
   assert.match(atlasLanding, /data-analytics-section="atlas_landing"/);
   assert.match(atlasLanding, /data-analytics-event="service_cta_clicked"/);
   assert.match(atlasLanding, /data-analytics-position="atlas_landing"/);

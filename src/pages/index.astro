@@ -1,718 +1,167 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { DOMAINS, getLocalizedPaths } from '../i18n';
+import Hero from '../components/Hero.astro';
+import AtlasLanding from '../components/AtlasLanding.astro';
+import PainCard from '../components/PainCard.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ServiceSection from '../components/ServiceSection.astro';
+import ProcessTimeline from '../components/ProcessTimeline.astro';
+import FirstStepOffer from '../components/FirstStepOffer.astro';
+import CTABand from '../components/CTABand.astro';
+import FAQ from '../components/FAQ.astro';
+import { t, getLocalizedPaths, ATLAS_URL } from '../i18n';
 import type { Lang } from '../i18n';
 
-const lang = ((Astro.locals as any).lang as Lang) || 'en';
-
-type ProfileLinkIcon = 'email' | 'x' | 'linkedin';
-
-const pageCopy = {
-  en: {
-    profile: {
-      greeting: 'Strategic Advisor to Founder-Led Digital Businesses',
-      description:
-        'Matej Lukášik helps founders resolve consequential decisions across business model, brand, product, and technology.',
-      statement: 'For founders building businesses around work they genuinely believe in.',
-      introduction:
-        'I help you find the real constraint, make the difficult decision, and turn it into one coherent direction.',
-      offerLine: null,
-      cta: 'See how we can work together',
-    },
-    tensions: {
-      eyebrow: 'Where I work',
-      title: 'I help founders turn competing truths into one clear strategic decision.',
-      introduction:
-        'The difficult problems live between disciplines. I work where two necessary truths pull the business in different directions.',
-      pairs: [
-        ['Authenticity', 'Commercial viability'],
-        ['Self-expression', 'Customer reality'],
-        ['Aesthetics', 'Conversion'],
-        ['Meaning', 'Money'],
-        ['Intuition', 'Evidence'],
-        ['Vision', 'Implementation'],
-      ],
-      explanation:
-        'Both sides are usually true. The answer is not always a compromise. It is knowing what must be preserved, what can change, and what the business is actually trying to become.',
-      conclusion: 'I help founders turn that tension into one clear strategic decision.',
-    },
-    work: {
-      eyebrow: 'The work',
-      title: 'See the whole. Find the constraint. Decide what changes.',
-      description:
-        'The real constraint may sit in the offer, positioning, customer journey, product, technology—or in a decision only the founder can make.',
-      descriptionTwo:
-        'I build a model of the whole system, separate causes from symptoms, and translate the conclusion into priorities your team can execute.',
-      method: [
-        {
-          number: '01',
-          title: 'Diagnose',
-          description:
-            'Understand the founder, business model, customer, brand, product, and technology as one system.',
-        },
-        {
-          number: '02',
-          title: 'Decide',
-          description:
-            'Name the governing tension, examine the evidence, and make the trade-offs explicit.',
-        },
-        {
-          number: '03',
-          title: 'Translate',
-          description:
-            'Turn the decision into a written direction, priorities, briefs, and a first executable move.',
-        },
-      ],
-      note:
-        'I do not arrive with a predetermined solution to sell. The right answer may be a new offer, sharper positioning, a product change, a technical decision—or stopping something that should never have been started.',
-    },
-    situations: {
-      eyebrow: 'When to call',
-      title: 'Bring me the situation when:',
-      items: [
-        'The business works, but has become difficult to steer.',
-        'The offer, brand, product, and customer experience no longer agree.',
-        'Growth appears to require diluting what made the business valuable.',
-        'Different specialists are giving you incompatible answers.',
-        'Several plausible directions are competing for the same attention.',
-        'The team is waiting for a decision only you can make.',
-      ],
-    },
-    why: {
-      eyebrow: 'Why me',
-      title: 'I work across the boundaries.',
-      description:
-        'My background spans business operations, software development, digital products, ecommerce, brand, and marketing. I understand both sides of the brief: deciding what should change and understanding what it takes to make the change real.',
-      descriptionTwo:
-        'I do not claim to know every discipline better than its specialists. My value is seeing how the disciplines constrain one another, deciding which part deserves attention, and giving the founder, team, and specialists one coherent direction.',
-      summary: 'Business experience. Product-building experience. A systems view across the whole.',
-      selectedEyebrow: 'Selected work',
-      selectedTitle: 'Founder-led ecommerce business',
-      selectedDescription:
-        'Designed the marketing strategy, identified the conversion bottleneck, defined the brand and copy, and built a lean Shopify store around the resulting direction.',
-      selectedSummary: 'One problem. Several disciplines. One coherent solution.',
-    },
-    offers: {
-      eyebrow: 'Ways to work together',
-      title: 'Start with the level of involvement the decision requires.',
-      introduction:
-        'A focused question may need two hours. A tangled business situation needs diagnosis. A consequential initiative needs sustained context and continuity.',
-      deliverablesLabel: 'What is included',
-      items: [
-        {
-          id: 'consultation',
-          number: '01',
-          title: 'Strategic Consultation',
-          price: '€300',
-          period: 'Two hours',
-          summary:
-            'For one clearly framed business decision. We examine the situation, test the assumptions, and identify the most useful next move.',
-          deliverables: [
-            'A short intake before the session',
-            'A private two-hour working session',
-            'A concise written recap of the decision, open questions, and next steps',
-          ],
-          note: '',
-          cta: 'Book a consultation',
-        },
-        {
-          id: 'diagnosis',
-          number: '02',
-          title: 'Strategic Diagnosis',
-          price: '€4,000',
-          period: 'Two calendar weeks',
-          summary:
-            'The normal starting point for a consequential but unclear business situation. I build a model of the relevant business system, identify the actual constraint, and turn the conclusion into a decision and an executable initiative brief.',
-          deliverables: [
-            'A model of the relevant business system and available evidence',
-            'The actual constraint and the decision it requires',
-            'The recommended direction, rejected alternatives, and what not to do',
-            'A clear 90-day priority map',
-            'An initiative brief ready for your team or a Co-CEO Month',
-          ],
-          note:
-            'If we continue, the diagnosis becomes the first two weeks of the Co-CEO Month. You pay the €6,000 balance; the work is not repeated.',
-          cta: 'Discuss a Strategic Diagnosis',
-        },
-        {
-          id: 'co-ceo',
-          number: '03',
-          title: 'Co-CEO Month',
-          price: '€10,000',
-          period: 'Four weeks',
-          summary:
-            'An embedded strategic partnership for one founder and one consequential business initiative. For one month, I work beside you closely enough to move it from ambiguity into aligned execution.',
-          deliverables: [
-            'An initiative charter defining the outcome, scope, evidence, measures, and decision rights',
-            'Up to four hours of reserved capacity each business day, scheduled around the initiative',
-            'Participation in relevant meetings with leadership, teams, customers, and specialists',
-            'A live decision and assumption log, with weekly priority notes',
-            'Briefs and work reviews that keep the relevant specialists aligned',
-            'An end-of-month outcome review and next 60-day plan',
-          ],
-          note:
-            'I own the initiative’s strategic coherence, decision cadence, and forward movement. You retain executive authority and final decisions; specialists remain responsible for the quality of their domain work.',
-          cta: 'Discuss a Co-CEO Month',
-        },
-      ],
-      conclusion:
-        'The consultation helps with one decision. The diagnosis determines what should happen. The Co-CEO Month stays close enough to help carry it through.',
-    },
-    reviews: {
-      eyebrow: 'Client evidence',
-      title: 'Replace these with verified client words.',
-      notice: 'Development placeholders · Not published on the live site',
-      items: [
-        {
-          quote: '[Replace with a verified client quote about identifying the real constraint.]',
-          attribution: 'Client name · company · role',
-        },
-        {
-          quote: '[Replace with a verified client quote about resolving a difficult trade-off.]',
-          attribution: 'Client name · company · role',
-        },
-        {
-          quote: '[Replace with a verified client quote about preserving direction through execution.]',
-          attribution: 'Client name · company · role',
-        },
-      ],
-    },
-    fit: {
-      eyebrow: 'A good fit',
-      title: 'Commercially serious. Personally meaningful.',
-      paragraphs: [
-        'You have customers, a working offer, or credible demand. The business expresses something you genuinely care about, but it must also stand on commercial reality.',
-        'You take numbers seriously without believing numbers tell the whole story. You want informed disagreement rather than reassurance, and you are prepared to act once the decision is clear.',
-      ],
-      exclusion:
-        'This is not idea-stage exploration, motivational coaching, isolated channel optimization, or a substitute for accountable specialist work.',
-    },
-    closing: {
-      title: 'Bring me the problem that does not fit one box.',
-      description:
-        'If it sits somewhere between business, brand, product, technology—and a decision only you can make—that is probably where I am most useful.',
-      cta: 'Tell me what is stuck',
-    },
-  },
-  sk: {
-    profile: {
-      greeting: 'Strategický poradca',
-      description:
-        'Matej Lukášik pomáha zakladateľom riešiť dôležité rozhodnutia naprieč biznis modelom, značkou, produktom a technológiou.',
-      statement:
-        'Pomáham majiteľom firiem pomenovať skutočný problém, pochopiť súvislosti a rozhodnúť sa, čo ďalej.',
-      introduction: null,
-      offerLine: {
-        prefix: 'Pracujem formou ',
-        consultation: 'strategickej konzultácie',
-        diagnosis: 'diagnostického šprintu',
-        conjunction: 'alebo ako',
-        coCeo: 'co-CEO na mesiac',
-      },
-      cta: 'Pozrieť si možnosti spolupráce',
-    },
-    tensions: {
-      eyebrow: 'Kde pomáham',
-      title: 'Pomáham zakladateľom premeniť protichodné pravdy na jedno jasné strategické rozhodnutie.',
-      introduction:
-        'Najťažšie problémy žijú medzi disciplínami. Pracujem tam, kde dve potrebné pravdy ťahajú firmu rôznymi smermi.',
-      pairs: [
-        ['Autenticita', 'Komerčná životaschopnosť'],
-        ['Sebavyjadrenie', 'Realita zákazníka'],
-        ['Estetika', 'Konverzia'],
-        ['Zmysel', 'Peniaze'],
-        ['Intuícia', 'Dôkazy'],
-        ['Vízia', 'Realizácia'],
-      ],
-      explanation:
-        'Obe strany sú zvyčajne pravdivé. Odpoveďou nie je vždy kompromis. Treba vedieť, čo musí zostať zachované, čo sa môže zmeniť a čím sa firma v skutočnosti snaží stať.',
-      conclusion: 'Pomáham zakladateľom premeniť toto napätie na jedno jasné strategické rozhodnutie.',
-    },
-    work: {
-      eyebrow: 'Spôsob práce',
-      title: 'Vidieť celok. Nájsť obmedzenie. Rozhodnúť, čo sa zmení.',
-      description:
-        'Skutočné obmedzenie môže byť v ponuke, positioningu, zákazníckej ceste, produkte, technológii alebo v rozhodnutí, ktoré môže urobiť iba zakladateľ.',
-      descriptionTwo:
-        'Vytvorím model celého systému, oddelím príčiny od príznakov a premením záver na priority, ktoré môže Váš tím uskutočniť.',
-      method: [
-        {
-          number: '01',
-          title: 'Diagnostikovať',
-          description:
-            'Pochopiť zakladateľa, biznis model, zákazníka, značku, produkt a technológiu ako jeden systém.',
-        },
-        {
-          number: '02',
-          title: 'Rozhodnúť',
-          description:
-            'Pomenovať určujúce napätie, preskúmať dôkazy a explicitne stanoviť kompromisy.',
-        },
-        {
-          number: '03',
-          title: 'Premietnuť',
-          description:
-            'Premeniť rozhodnutie na písomný smer, priority, zadania a prvý uskutočniteľný krok.',
-        },
-      ],
-      note:
-        'Neprichádzam s vopred určeným riešením, ktoré Vám chcem predať. Správnou odpoveďou môže byť nová ponuka, ostrejší positioning, zmena produktu, technické rozhodnutie alebo zastavenie niečoho, čo sa nikdy nemalo začať.',
-    },
-    situations: {
-      eyebrow: 'Kedy sa ozvať',
-      title: 'Prineste mi situáciu, keď:',
-      items: [
-        'Firma funguje, ale je čoraz ťažšie ju riadiť.',
-        'Ponuka, značka, produkt a zákaznícka skúsenosť si prestali zodpovedať.',
-        'Rast zdanlivo vyžaduje oslabiť to, čo robí firmu hodnotnou.',
-        'Rôzni špecialisti Vám dávajú navzájom nezlučiteľné odpovede.',
-        'Niekoľko rozumných smerov súperí o tú istú pozornosť.',
-        'Tím čaká na rozhodnutie, ktoré môžete urobiť iba Vy.',
-      ],
-    },
-    why: {
-      eyebrow: 'Prečo ja',
-      title: 'Pracujem naprieč hranicami.',
-      description:
-        'Moje skúsenosti spájajú firemné operácie, vývoj softvéru, digitálne produkty, e-commerce, značku a marketing. Rozumiem obom stranám zadania: rozhodovaniu o tom, čo sa má zmeniť, aj tomu, čo si reálna zmena vyžaduje.',
-      descriptionTwo:
-        'Netvrdím, že poznám každú disciplínu lepšie než jej špecialisti. Moja hodnota je v tom, že vidím, ako sa navzájom obmedzujú, určím, ktorá časť si zaslúži pozornosť, a dám zakladateľovi, tímu a špecialistom jeden súdržný smer.',
-      summary: 'Skúsenosti z biznisu. Tvorba digitálnych produktov. Systémový pohľad na celok.',
-      selectedEyebrow: 'Vybraná práca',
-      selectedTitle: 'E-commerce firma vedená zakladateľkou',
-      selectedDescription:
-        'Navrhol som marketingovú stratégiu, našiel úzke miesto konverzie, definoval značku a texty a postavil úsporný Shopify e-shop podľa výsledného smerovania.',
-      selectedSummary: 'Jeden problém. Viacero disciplín. Jedno súdržné riešenie.',
-    },
-    offers: {
-      eyebrow: 'Možnosti spolupráce',
-      title: 'Začnime mierou zapojenia, ktorú si rozhodnutie vyžaduje.',
-      introduction:
-        'Jednej presnej otázke môžu stačiť dve hodiny. Zložitá situácia potrebuje diagnózu. Kľúčová iniciatíva si vyžaduje kontext a kontinuitu.',
-      deliverablesLabel: 'Čo spolupráca zahŕňa',
-      items: [
-        {
-          id: 'consultation',
-          number: '01',
-          title: 'Strategická konzultácia',
-          price: '300 €',
-          period: 'Dve hodiny',
-          summary:
-            'Pre jedno jasne ohraničené biznisové rozhodnutie. Spoločne preskúmame situáciu, preveríme predpoklady a pomenujeme najužitočnejší ďalší krok.',
-          deliverables: [
-            'Krátky vstupný dotazník',
-            'Súkromná dvojhodinová pracovná konzultácia',
-            'Stručné písomné zhrnutie rozhodnutia, otvorených otázok a ďalších krokov',
-          ],
-          note: '',
-          cta: 'Rezervovať konzultáciu',
-        },
-        {
-          id: 'diagnosis',
-          number: '02',
-          title: 'Strategická diagnóza',
-          price: '4 000 €',
-          period: 'Dva kalendárne týždne',
-          summary:
-            'Bežný prvý krok pri dôležitej, no nejasnej biznisovej situácii. Vytvorím model relevantnej časti firmy, nájdem skutočné obmedzenie a premením záver na rozhodnutie a realizovateľné zadanie iniciatívy.',
-          deliverables: [
-            'Model relevantného biznisového systému a dostupných dôkazov',
-            'Skutočné obmedzenie a rozhodnutie, ktoré si vyžaduje',
-            'Odporúčaný smer, zamietnuté alternatívy a zoznam toho, čo nerobiť',
-            'Jasné priority na 90 dní',
-            'Zadanie iniciatívy pripravené pre Váš tím alebo Co-CEO na mesiac',
-          ],
-          note:
-            'Ak budeme pokračovať, diagnóza sa stane prvými dvoma týždňami Co-CEO na mesiac. Doplatíte 6 000 € a práca sa nebude opakovať.',
-          cta: 'Prediskutovať strategickú diagnózu',
-        },
-        {
-          id: 'co-ceo',
-          number: '03',
-          title: 'Co-CEO na mesiac',
-          price: '10 000 €',
-          period: 'Štyri týždne',
-          summary:
-            'Intenzívne strategické partnerstvo pre jedného zakladateľa a jednu kľúčovú biznisovú iniciatívu. Jeden mesiac pracujem po Vašom boku dostatočne blízko na to, aby sme ju posunuli z nejasnosti k zladenej realizácii.',
-          deliverables: [
-            'Zadanie iniciatívy s cieľom, rozsahom, dôkazmi, metrikami a rozhodovacími právomocami',
-            'Najviac štyri hodiny vyhradenej kapacity každý pracovný deň, plánované podľa iniciatívy',
-            'Účasť na relevantných stretnutiach vedenia, tímu, zákazníkov a špecialistov',
-            'Priebežný denník rozhodnutí a predpokladov s týždenným zhrnutím priorít',
-            'Zadania a kontrola práce, ktoré udržia zapojených špecialistov v jednom smere',
-            'Záverečné vyhodnotenie a plán na ďalších 60 dní',
-          ],
-          note:
-            'Zodpovedám za strategickú súdržnosť, rytmus rozhodovania a posun iniciatívy. Výkonná právomoc a konečné rozhodnutia zostávajú Vám; špecialisti naďalej zodpovedajú za kvalitu svojej odbornej práce.',
-          cta: 'Prediskutovať Co-CEO na mesiac',
-        },
-      ],
-      conclusion:
-        'Konzultácia pomôže s jedným rozhodnutím. Diagnóza určí, čo sa má stať. Co-CEO na mesiac zostane pri iniciatíve dostatočne blízko, aby sa rozhodnutie premietlo do práce.',
-    },
-    reviews: {
-      eyebrow: 'Dôkazy od klientov',
-      title: 'Nahraďte overenými slovami klientov.',
-      notice: 'Vývojové zástupné texty · Na živej stránke sa nezobrazia',
-      items: [
-        {
-          quote: '[Nahraďte overeným vyjadrením klienta o nájdení skutočného obmedzenia.]',
-          attribution: 'Meno klienta · firma · pozícia',
-        },
-        {
-          quote: '[Nahraďte overeným vyjadrením klienta o vyriešení náročného konfliktu priorít.]',
-          attribution: 'Meno klienta · firma · pozícia',
-        },
-        {
-          quote: '[Nahraďte overeným vyjadrením klienta o udržaní smeru počas realizácie.]',
-          attribution: 'Meno klienta · firma · pozícia',
-        },
-      ],
-    },
-    fit: {
-      eyebrow: 'Dobrá zhoda',
-      title: 'Komerčne seriózne. Osobne zmysluplné.',
-      paragraphs: [
-        'Máte zákazníkov, fungujúcu ponuku alebo dôveryhodný dopyt. Firma vyjadruje niečo, na čom Vám skutočne záleží, no musí stáť aj na komerčnej realite.',
-        'Čísla beriete vážne, ale neveríte, že hovoria celý príbeh. Chcete informovaný nesúhlas, nie uisťovanie, a ste pripravení konať, keď je rozhodnutie jasné.',
-      ],
-      exclusion:
-        'Toto nie je hľadanie nápadu, motivačný koučing, izolovaná optimalizácia jedného kanála ani náhrada za zodpovednú prácu špecialistov.',
-    },
-    closing: {
-      title: 'Prineste mi problém, ktorý sa nezmestí do jednej škatuľky.',
-      description:
-        'Ak sa nachádza niekde medzi biznisom, značkou, produktom, technológiou a rozhodnutím, ktoré môžete urobiť iba Vy, pravdepodobne tam budem najužitočnejší.',
-      cta: 'Povedzte mi, čo stojí',
-    },
-  },
-} as const;
-
-const links = [
-  { label: 'Email', href: 'mailto:matej@matejlukasik.com', icon: 'email' },
-  { label: 'X', href: 'https://x.com/matejlukasik', icon: 'x' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/matej-lukasik', icon: 'linkedin' },
-] satisfies { label: string; href: string; icon: ProfileLinkIcon }[];
-
-const copy = pageCopy[lang];
-const offerLine = copy.profile.offerLine;
+const lang = (Astro.locals as any).lang as Lang || 'en';
+const strings = t(lang);
 const paths = getLocalizedPaths(lang);
 const bookingHref = `${paths.contact}?focus=calendar`;
-const discussionHref = `mailto:matej@matejlukasik.com?subject=${encodeURIComponent(
-  lang === 'sk' ? 'Strategické rozhodnutie' : 'Strategic decision',
-)}`;
-const offerHrefs = {
-  consultation: bookingHref,
-  diagnosis: `mailto:matej@matejlukasik.com?subject=${encodeURIComponent(copy.offers.items[1].title)}`,
-  'co-ceo': `mailto:matej@matejlukasik.com?subject=${encodeURIComponent(copy.offers.items[2].title)}`,
-} as const;
-const pageTitle = lang === 'en'
-  ? 'Matej Lukášik — Strategic Advisor'
-  : 'Matej Lukášik — Strategický poradca';
-const showReviewPlaceholders = import.meta.env.DEV;
 ---
 
 <Layout
-  title={pageTitle}
-  description={copy.profile.description}
+  title={`Matej Lukášik — ${strings.home.heroTitle}`}
+  description={strings.home.heroDescription}
   lang={lang}
   currentPath="/"
-  minimal
 >
-  <section class="min-h-screen bg-surface px-5 py-8 sm:px-8 lg:px-12">
-    <nav
-      class="mb-8 flex justify-end gap-2 text-xs font-semibold uppercase tracking-wide"
-      aria-label="Language"
-    >
-      <a
-        href={DOMAINS.en}
-        class:list={[
-          'transition-colors',
-          lang === 'en' ? 'text-heading' : 'text-body hover:text-primary',
-        ]}
-        aria-current={lang === 'en' ? 'page' : undefined}
-      >
-        EN
+  <Hero
+    title={strings.home.heroTitle}
+    description={strings.home.heroDescription}
+    typewords={strings.home.heroTypewords}
+    size="large"
+  >
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#services" class="btn-outline-white" data-analytics-event="services_intent_clicked" data-analytics-position="hero">
+        {strings.home.ctaSecondary}
       </a>
-      <span class="text-border" aria-hidden="true">/</span>
-      <a
-        href={DOMAINS.sk}
-        class:list={[
-          'transition-colors',
-          lang === 'sk' ? 'text-heading' : 'text-body hover:text-primary',
-        ]}
-        aria-current={lang === 'sk' ? 'page' : undefined}
-      >
-        SK
+      <a href={bookingHref} class="btn-white" data-analytics-event="booking_intent_clicked" data-analytics-position="hero" data-analytics-target="calendar">
+        {strings.home.ctaPrimary}
       </a>
-    </nav>
+    </div>
+  </Hero>
 
-    <div class="mx-auto grid min-h-[calc(100vh-8rem)] max-w-6xl grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
-      <div class="mx-auto w-full max-w-[540px] lg:mx-0">
-        <img
-          src="/images/matej-lukasik-profile.jpg"
-          alt="Matej Lukášik"
-          width="1600"
-          height="2400"
-          class="block max-h-[78vh] w-full rounded-lg object-contain"
-        />
-      </div>
-
-      <div class="max-w-xl">
-        <h1 class="text-4xl font-bold text-heading sm:text-5xl">{copy.profile.greeting}</h1>
-        <p class="mt-6 text-xl font-medium leading-relaxed text-heading">{copy.profile.statement}</p>
-        {copy.profile.introduction && (
-          <p class="mt-5 text-lg leading-relaxed text-body">{copy.profile.introduction}</p>
-        )}
-        {offerLine && (
-          <p class="mt-5 text-lg leading-relaxed text-body">
-            {offerLine.prefix}<a
-              href="#consultation"
-              class="font-medium text-heading underline decoration-primary/40 underline-offset-4 transition-colors hover:text-primary"
-            >{offerLine.consultation}</a>, <a
-              href="#diagnosis"
-              class="font-medium text-heading underline decoration-primary/40 underline-offset-4 transition-colors hover:text-primary"
-            >{offerLine.diagnosis}</a> {offerLine.conjunction} <a
-              href="#co-ceo"
-              class="font-medium text-heading underline decoration-primary/40 underline-offset-4 transition-colors hover:text-primary"
-            >{offerLine.coCeo}</a>.
-          </p>
-        )}
-        <a
-          href="#services"
-          class="mt-8 inline-flex items-center gap-2 border-b border-primary/30 pb-1 font-semibold text-primary transition-colors hover:border-primary hover:text-primary-hover"
-        >
-          {copy.profile.cta}
-          <span aria-hidden="true">→</span>
-        </a>
-
-        <nav class="mt-8 flex flex-wrap gap-4 text-base font-medium" aria-label="Contact and profiles">
-          {links.map((link) => (
-            <a
-              href={link.href}
-              class="inline-flex h-8 w-8 items-center justify-center text-primary transition-colors hover:text-primary-hover"
-              aria-label={link.label}
-              target={link.href.startsWith('http') ? '_blank' : undefined}
-              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            >
-              {link.icon === 'email' && (
-                <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                  <path d="M4 6h16v12H4z" />
-                  <path d="m4 7 8 6 8-6" />
-                </svg>
-              )}
-              {link.icon === 'x' && (
-                <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.7 3h3.1l-6.8 7.8 8 10.2h-6.3l-4.9-6.3L5.2 21H2.1l7.3-8.4L1.7 3h6.5l4.4 5.7L17.7 3Zm-1.1 16.2h1.7L7.3 4.7H5.5l11.1 14.5Z" />
-                </svg>
-              )}
-              {link.icon === 'linkedin' && (
-                <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M5.3 8.9H2.2V21h3.1V8.9ZM3.7 3a1.8 1.8 0 1 0 0 3.6A1.8 1.8 0 0 0 3.7 3Zm17 11.2c0-3.3-1.8-5.4-4.6-5.4-1.8 0-2.9 1-3.3 1.8V8.9h-3V21h3.1v-6.4c0-1.7.9-2.8 2.3-2.8s2.3 1 2.3 2.8V21h3.2v-6.8Z" />
-                </svg>
-              )}
-              <span class="sr-only">{link.label}</span>
-            </a>
-          ))}
-        </nav>
+  <section class="section-padding bg-surface bg-dots relative" data-analytics-section="pain_points">
+    <div class="container mx-auto">
+      <h2 class="text-2xl md:text-4xl font-bold text-heading text-center mb-12 max-w-3xl mx-auto reveal">
+        {strings.home.painTitle}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="reveal reveal-delay-1">
+          <PainCard imageSrc="/images/pain-clarity.webp" title={strings.home.pain1Title} description={strings.home.pain1Description} />
+        </div>
+        <div class="reveal reveal-delay-2">
+          <PainCard imageSrc="/images/pain-value.webp" title={strings.home.pain2Title} description={strings.home.pain2Description} />
+        </div>
+        <div class="reveal reveal-delay-3">
+          <PainCard
+            imageSrc="/images/pain-security.webp"
+            title={strings.home.pain3Title}
+            description={strings.home.pain3Description}
+            linkHref={ATLAS_URL}
+            linkText={strings.home.pain3AtlasText}
+          />
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="border-y border-border bg-surface-alt/35 px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
-    <div class="mx-auto max-w-6xl">
-      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{copy.tensions.eyebrow}</p>
-      <h2 class="mt-5 max-w-4xl text-3xl font-bold sm:text-5xl">{copy.tensions.title}</h2>
-      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-body">{copy.tensions.introduction}</p>
+  <AtlasLanding
+    id={strings.home.atlasLandingId}
+    eyebrow={strings.home.atlasLandingEyebrow}
+    title={strings.home.atlasLandingTitle}
+    description={strings.home.atlasLandingDescription}
+    ctaText={strings.home.atlasLandingCta}
+    ctaHref={`${paths.contact}?service=consulting&focus=contact-form&source=agent-threat-atlas`}
+  />
 
-      <div class="mt-14 grid gap-x-12 md:grid-cols-2">
-        {copy.tensions.pairs.map(([left, right]) => (
-          <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-3 border-t border-border py-6 last:border-b md:nth-[5]:border-b md:nth-[6]:border-b">
-            <span class="font-heading text-lg font-semibold text-heading sm:text-xl">{left}</span>
-            <span class="text-primary" aria-hidden="true">↔</span>
-            <span class="text-right font-heading text-lg font-semibold text-heading sm:text-xl">{right}</span>
+  <section id="services" class="section-padding bg-surface-alt relative" data-analytics-section="services">
+    <div class="container mx-auto">
+      <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 reveal">
+        <span class="gradient-text-dark">{strings.home.servicesTitle}</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="reveal reveal-delay-1 h-full">
+          <ServiceCard imageSrc="/images/service-strategy.webp" title={strings.home.consultingTitle} description={strings.home.consultingDescription} href="#consulting" linkText={strings.home.learnMore} />
+        </div>
+        <div class="reveal reveal-delay-2 h-full">
+          <ServiceCard imageSrc="/images/service-implementation.webp" title={strings.home.implementationTitle} description={strings.home.implementationDescription} href="#implementation" linkText={strings.home.learnMore} />
+        </div>
+        <div class="reveal reveal-delay-3 h-full">
+          <ServiceCard imageSrc="/images/service-training.webp" title={strings.home.trainingTitle} description={strings.home.trainingDescription} href="#training" linkText={strings.home.learnMore} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ServiceSection
+    id="consulting"
+    imageSrc="/images/service-strategy.webp"
+    title={strings.services.consulting.title}
+    subtitle={strings.services.consulting.subtitle}
+    description={strings.services.consulting.description}
+    includes={strings.services.consulting.includes}
+    ctaText={strings.services.consulting.cta}
+    ctaHref={`${paths.contact}?service=consulting&focus=contact-form`}
+    bg="white"
+  />
+
+  <ServiceSection
+    id="implementation"
+    imageSrc="/images/service-implementation.webp"
+    title={strings.services.implementation.title}
+    subtitle={strings.services.implementation.subtitle}
+    description={strings.services.implementation.description}
+    includes={strings.services.implementation.includes}
+    ctaText={strings.services.implementation.cta}
+    ctaHref={`${paths.contact}?service=implementation&focus=contact-form`}
+    reversed
+    bg="alt"
+  />
+
+  <ServiceSection
+    id="training"
+    imageSrc="/images/service-training.webp"
+    title={strings.services.training.title}
+    subtitle={strings.services.training.subtitle}
+    description={strings.services.training.description}
+    includes={strings.services.training.includes}
+    ctaText={strings.services.training.cta}
+    ctaHref={`${paths.contact}?service=training&focus=contact-form`}
+    bg="white"
+  />
+
+  <ProcessTimeline title={strings.home.processTitle} steps={strings.home.processSteps} />
+
+  <FirstStepOffer offer={strings.home.firstStepOffer} href={bookingHref} />
+
+  <section id="about" class="section-padding bg-surface" data-analytics-section="about">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div class="reveal">
+          <div class="w-full max-w-[560px] mx-auto">
+            <div class="aspect-[4/5] max-h-[680px] rounded-2xl overflow-hidden bg-primary-light border border-border shadow-sm">
+              <img src="/images/about-matej.webp" alt="Matej Lukášik" class="w-full h-full object-cover" />
+            </div>
+            <div class="mt-6 lg:mt-8 text-center">
+              <h2 class="text-4xl md:text-5xl font-bold text-heading">{strings.about.bioName}</h2>
+              <p class="mt-3 text-lg md:text-xl text-primary font-semibold">{strings.about.bioTitle}</p>
+            </div>
           </div>
-        ))}
-      </div>
-
-      <div class="mt-12 max-w-3xl space-y-5 text-lg leading-relaxed text-body">
-        <p>{copy.tensions.explanation}</p>
-        <p class="font-medium text-heading">{copy.tensions.conclusion}</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-surface px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-        <div>
-          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{copy.work.eyebrow}</p>
-          <h2 class="mt-5 text-3xl font-bold sm:text-5xl">{copy.work.title}</h2>
-          <p class="mt-6 text-lg leading-relaxed text-body">{copy.work.description}</p>
-          <p class="mt-5 text-lg leading-relaxed text-body">{copy.work.descriptionTwo}</p>
         </div>
-
-        <ol class="border-t border-border">
-          {copy.work.method.map((step) => (
-            <li class="grid gap-4 border-b border-border py-7 sm:grid-cols-[3rem_8rem_1fr] sm:items-baseline">
-              <span class="text-sm font-semibold text-primary">{step.number}</span>
-              <h3 class="text-xl">{step.title}</h3>
-              <p class="leading-relaxed text-body">{step.description}</p>
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      <p class="mt-14 max-w-4xl border-l-2 border-primary pl-6 text-lg leading-relaxed text-heading">
-        {copy.work.note}
-      </p>
-    </div>
-  </section>
-
-  <section class="bg-heading px-5 py-20 text-white sm:px-8 sm:py-28 lg:px-12">
-    <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-      <div>
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">{copy.situations.eyebrow}</p>
-        <h2 class="mt-5 text-3xl font-bold text-white sm:text-5xl">{copy.situations.title}</h2>
-      </div>
-      <ul class="border-t border-white/20">
-        {copy.situations.items.map((situation) => (
-          <li class="grid grid-cols-[auto_1fr] gap-4 border-b border-white/20 py-5 text-lg leading-relaxed text-white/80">
-            <span class="text-accent" aria-hidden="true">→</span>
-            <span>{situation}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <section id="about" class="bg-surface px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid gap-12 lg:grid-cols-2 lg:gap-20">
-        <div>
-          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{copy.why.eyebrow}</p>
-          <h2 class="mt-5 text-3xl font-bold sm:text-5xl">{copy.why.title}</h2>
-          <p class="mt-6 text-lg leading-relaxed text-body">{copy.why.description}</p>
-          <p class="mt-5 text-lg leading-relaxed text-body">{copy.why.descriptionTwo}</p>
-          <p class="mt-6 font-heading text-lg font-semibold text-heading">{copy.why.summary}</p>
-        </div>
-
-        <aside class="self-start border border-border bg-surface-alt/35 p-7 sm:p-9" aria-labelledby="selected-work-heading">
-          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{copy.why.selectedEyebrow}</p>
-          <h3 id="selected-work-heading" class="mt-5 text-2xl">{copy.why.selectedTitle}</h3>
-          <p class="mt-5 text-lg leading-relaxed text-body">{copy.why.selectedDescription}</p>
-          <p class="mt-7 font-heading text-lg font-semibold text-heading">{copy.why.selectedSummary}</p>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="border-y border-border bg-surface-alt/35 px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
-    <div class="mx-auto max-w-6xl">
-      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{copy.offers.eyebrow}</p>
-      <h2 class="mt-5 max-w-4xl text-3xl font-bold sm:text-5xl">{copy.offers.title}</h2>
-      <p class="mt-6 max-w-3xl text-lg leading-relaxed text-body">{copy.offers.introduction}</p>
-
-      <div class="mt-14 border-t border-border">
-        {copy.offers.items.map((offer) => (
-          <article
-            id={offer.id}
-            class="scroll-mt-8 grid gap-8 border-b border-border py-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16 lg:py-14"
-            data-offer={offer.id}
-          >
-            <div>
-              <p class="text-sm font-semibold text-primary">{offer.number}</p>
-              <h3 class="mt-3 text-3xl">{offer.title}</h3>
-              <p class="mt-5 font-heading text-2xl font-semibold text-heading">{offer.price}</p>
-              <p class="mt-1 text-sm uppercase tracking-[0.12em] text-body">{offer.period}</p>
-            </div>
-
-            <div>
-              <p class="text-lg leading-relaxed text-body">{offer.summary}</p>
-              <p class="mt-7 text-sm font-semibold uppercase tracking-[0.18em] text-heading">
-                {copy.offers.deliverablesLabel}
-              </p>
-              <ul class="mt-3 border-t border-border">
-                {offer.deliverables.map((deliverable) => (
-                  <li class="grid grid-cols-[auto_1fr] gap-4 border-b border-border py-3.5 leading-relaxed text-heading">
-                    <span class="text-primary" aria-hidden="true">→</span>
-                    <span>{deliverable}</span>
-                  </li>
-                ))}
-              </ul>
-              {offer.note && (
-                <p class="mt-6 border-l-2 border-primary pl-5 leading-relaxed text-heading">{offer.note}</p>
-              )}
-              <a
-                href={offerHrefs[offer.id]}
-                class="mt-7 inline-flex items-center gap-2 border-b border-primary/30 pb-1 font-semibold text-primary transition-colors hover:border-primary hover:text-primary-hover"
-              >
-                {offer.cta}
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      <p class="mt-10 max-w-4xl text-lg font-medium leading-relaxed text-heading">{copy.offers.conclusion}</p>
-    </div>
-  </section>
-
-  {showReviewPlaceholders && (
-    <section class="bg-surface px-5 py-20 sm:px-8 sm:py-28 lg:px-12" data-placeholder-reviews="true">
-      <div class="mx-auto max-w-6xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{copy.reviews.eyebrow}</p>
-        <h2 class="mt-5 max-w-4xl text-3xl font-bold sm:text-5xl">{copy.reviews.title}</h2>
-        <p class="mt-4 text-sm font-semibold uppercase tracking-[0.12em] text-body">{copy.reviews.notice}</p>
-        <div class="mt-10 grid gap-5 md:grid-cols-3">
-          {copy.reviews.items.map((review) => (
-            <article class="border border-dashed border-border bg-surface-alt/35 p-7" data-placeholder-review="true">
-              <blockquote class="text-lg leading-relaxed text-heading">{review.quote}</blockquote>
-              <p class="mt-6 text-sm text-body">{review.attribution}</p>
-            </article>
+        <div class="reveal reveal-delay-1 max-w-2xl">
+          {strings.about.bioText.split('\n\n').map((paragraph) => (
+            <p class="text-body text-lg leading-relaxed mb-5 last:mb-0">{paragraph}</p>
           ))}
         </div>
       </div>
-    </section>
-  )}
-
-  <section class="bg-surface px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
-    <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
-      <div>
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{copy.fit.eyebrow}</p>
-        <h2 class="mt-5 text-3xl font-bold sm:text-5xl">{copy.fit.title}</h2>
-      </div>
-      <div class="space-y-5 text-lg leading-relaxed text-body">
-        {copy.fit.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-        <p class="font-medium text-heading">{copy.fit.exclusion}</p>
-      </div>
     </div>
   </section>
 
-  <section class="bg-heading px-5 py-20 text-white sm:px-8 sm:py-28 lg:px-12">
-    <div class="mx-auto max-w-4xl text-center">
-      <h2 class="text-3xl font-bold text-white sm:text-5xl">{copy.closing.title}</h2>
-      <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70">{copy.closing.description}</p>
-      <a
-        href={discussionHref}
-        class="mt-9 inline-flex items-center gap-2 border-b border-accent/60 pb-1 font-semibold text-white transition-colors hover:border-white"
-      >
-        {copy.closing.cta}
-        <span aria-hidden="true">→</span>
-      </a>
-      <nav class="mt-12 flex justify-center gap-5" aria-label="Contact and profiles">
-        {links.map((link) => (
-          <a
-            href={link.href}
-            class="text-sm font-medium text-white/60 transition-colors hover:text-white"
-            target={link.href.startsWith('http') ? '_blank' : undefined}
-            rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-          >
-            {link.label}
-          </a>
-        ))}
-      </nav>
-    </div>
-  </section>
+  <FAQ title={strings.contact.faqTitle} items={strings.contact.faq} />
+
+  <CTABand title={strings.home.ctaBandTitle} description={strings.home.ctaBandDescription}>
+    <a href={bookingHref} class="btn-white" data-analytics-event="booking_intent_clicked" data-analytics-position="final_cta" data-analytics-target="calendar">
+      {strings.home.ctaPrimary}
+    </a>
+  </CTABand>
 </Layout>

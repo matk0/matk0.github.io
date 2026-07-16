@@ -5,172 +5,172 @@
     "services": "Služby",
     "about": "O mne",
     "contact": "Kontakt",
-    "bookCall": "Rezervovať konzultáciu",
+    "bookCall": "Konzultácia zdarma",
     "faq": "FAQ"
   },
   "home": {
     "heroTitle": "AI agenti pre Váš tím.",
     "heroTypewords": [
-      "Užitoční v praxi",
-      "Pod Vašou kontrolou",
-      "Napojení na Vašu prácu",
-      "Bez zbytočnej technickej záťaže",
-      "Pripravení na schvaľovanie",
-      "Postavení okolo Vašich nástrojov",
-      "Zameraní na skutočný výsledok"
+      "Vysoko efektívni",
+      "Úplne bezpeční",
+      "Výrazne úsporní",
+      "Maximálne spoľahliví",
+      "Plne transparentní",
+      "Pripravení na produkciu",
+      "Dôkladne otestovaní"
     ],
-    "heroDescription": "Viete, že AI by mala Vašej firme pomôcť. Nemusíte však rozumieť agentom, modelom ani automatizačným nástrojom. Spolu nájdeme prvý opakujúci sa proces, kde AI ušetrí čas, pripraví kvalitné návrhy a nechá rozhodnutie vo Vašich rukách.",
-    "ctaPrimary": "Dohodnúť úvodný hovor",
-    "ctaSecondary": "Ako to funguje",
-    "painTitle": "Nepotrebujete rozumieť AI agentom. Potrebujete vedieť, kde má AI pomôcť ako prvé.",
-    "pain1Title": "AI je všade, prvý krok nie je jasný",
-    "pain1Description": "ChatGPT, automatizácie, agenti, nové nástroje každý týždeň. Pred výberom technológie treba pomenovať jeden proces, ktorý sa vo firme opakuje a stojí čas.",
-    "pain2Title": "Zakladateľ je stále úzke hrdlo",
-    "pain2Description": "Marketing, odpovede, follow-upy, obsah, reporty alebo odovzdávanie úloh často čakajú na človeka, ktorý má najviac kontextu. AI má pomôcť pripraviť prvý návrh, nie nahradiť Váš úsudok.",
-    "pain3Title": "Dôležité veci musia zostať pod kontrolou",
-    "pain3Description": "Prvá verzia nemá sama posielať emaily, publikovať kampane ani meniť dáta bez schválenia. Dobré AI workflow pripraví návrh, ukáže dôvody a nechá človeka rozhodnúť.",
+    "heroDescription": "Viete, že AI potrebujete. Spolu nájdeme, kde začať, čo má pre Vás najväčší zmysel a spustíme prvé užitočné riešenie.",
+    "ctaPrimary": "Bezplatná konzultácia",
+    "ctaSecondary": "Moje služby",
+    "painTitle": "AI má zmysel až vtedy, keď rieši skutočný problém vo Vašom podnikaní.",
+    "pain1Title": "Chýba Vám jasný prvý krok",
+    "pain1Description": "Možností je veľa. Skôr než vyberiete nástroj, treba pomenovať problém, ktorý má pre firmu najväčší zmysel vyriešiť.",
+    "pain2Title": "Hodnota musí byť merateľná",
+    "pain2Description": "AI agenti nemôžu byť len ďalší experiment bez jednoznačných výsledkov. Dopredu definujeme a nastavíme: koľko času ušetrí, ktoré náklady zníži alebo presne akú hodnotu prinesie zákazníkom.",
+    "pain3Title": "Adopcia musí byť bezpečná",
+    "pain3Description": "Prístup k dátam, pravidlá, oprávnenia a postupné nasadenie sú rovnako dôležité ako samotný nástroj. Tím potrebuje AI riešenie, ktorému rozumie a vie ho bezpečne používať.",
     "pain3AtlasText": "Pozrite si verejný Agent Threat Atlas",
     "atlasLandingId": "bezpecnost-agentickej-ai",
     "atlasLandingEyebrow": "Prišli ste z Agent Threat Atlas?",
     "atlasLandingTitle": "Premeňme vzory incidentov na kontrolné mechanizmy ešte pred nasadením agentov.",
     "atlasLandingDescription": "Pomáham tímom zmapovať workflowy agentov, prístupy k dátam, oprávnenia nástrojov a zlyhania na praktické bezpečnostné pravidlá, ktoré vedia prevádzkovať.",
     "atlasLandingCta": "Prejsť riziká Vašich agentov",
-    "servicesTitle": "Prvý krok: nájsť a postaviť užitočný AI workflow",
-    "consultingTitle": "Nájdeme správny prvý proces",
-    "consultingDescription": "Pozrieme sa na Vašu firmu, opakujúce sa úlohy a miesta, kde dnes mizne čas. Cieľom nie je zoznam nástrojov, ale jeden konkrétny workflow, ktorý má zmysel zlepšiť ako prvý.",
-    "implementationTitle": "Postavíme AI workflow v praxi",
-    "implementationDescription": "Navrhnem a postavím riešenie okolo nástrojov, ktoré už používate. AI pripraví návrhy, podklady alebo ďalší krok a človek schvaľuje všetko dôležité.",
-    "trainingTitle": "Naučíme tím používať nový spôsob práce",
-    "trainingDescription": "AI má fungovať v bežnom dni, nie iba v deme. Tím musí vedieť, čo od systému čakať, ako kontrolovať výstupy a kedy má rozhodnutie zostať na človeku.",
+    "servicesTitle": "Ako Vám viem pomôcť?",
+    "consultingTitle": "Konzultácie a AI stratégia",
+    "consultingDescription": "Ak ešte neviete, kde začať, pomôžem Vám zmapovať príležitosti, vybrať správny prvý projekt a určiť ako budeme merať úspech.",
+    "implementationTitle": "Implementácia AI riešení",
+    "implementationDescription": "Ak už máte jasný problém, navrhnem a postavím praktické AI riešenie, ktoré zapadne do Vašich procesov, nástrojov a bezpečnostných pravidiel.",
+    "trainingTitle": "AI workshopy a zavedenie do praxe",
+    "trainingDescription": "Ak má AI fungovať dlhodobo, tím ju musí vedieť používať pri svojej každodennej práci. Pomôžem ľuďom nájsť konkrétne využitie, overovať výstupy a nastaviť bezpečné pracovné návyky.",
     "learnMore": "Viac info",
     "processTitle": "Ako prebieha spolupráca?",
     "processSteps": [
       {
         "label": "01",
         "title": "Úvodný rozhovor",
-        "description": "30 minút bez záväzkov. Ujasníme si, ako dnes pracujete, kde sa opakuje najviac ručnej práce a či má AI zmysel riešiť práve teraz."
+        "description": "30 minút bez záväzkov. Ujasníme si, kde ste, čo chcete zlepšiť a či je AI správny ďalší krok."
       },
       {
         "label": "02",
-        "title": "Výber prvého workflowu",
-        "description": "Vyberieme jeden proces, v ktorom má AI pripraviť návrh, zhrnúť podklady, navrhnúť ďalší krok alebo zrýchliť schvaľovanie."
+        "title": "Plán prvého kroku",
+        "description": "Navrhnem konkrétny prvý use case, metriku úspechu, bezpečnostné pravidlá a realistický postup nasadenia."
       },
       {
         "label": "03",
-        "title": "Návrh a stavba",
-        "description": "Postavím prvú verziu okolo Vašich existujúcich nástrojov, príkladov a pravidiel. Testujeme ju na reálnych prípadoch, nie na ukážkových dátach."
+        "title": "Realizácia",
+        "description": "Postavíme schválený workflow, otestujeme ho na reálnych úlohách, vyškolíme prvých používateľov a meriame jeho dopad."
       },
       {
         "label": "04",
-        "title": "Používanie a zlepšovanie",
-        "description": "Keď workflow funguje, viete ho používať v každodennej práci. Ak dáva zmysel pokračovať, vylepšujeme ho podľa reálnych výstupov."
+        "title": "Odovzdanie do praxe",
+        "description": "Keď riešenie funguje, preberá ho Váš tím. Ak chcete pokračovať ďalej, dlhodobá podpora ostáva otvorená."
       }
     ],
     "firstStepOffer": {
       "eyebrow": "Najčastejší prvý krok",
-      "title": "Prvý AI workflow sprint",
-      "description": "Za 10 pracovných dní vyberieme jeden opakujúci sa proces, zmapujeme ako funguje dnes, postavíme AI verziu s ľudským schvaľovaním a otestujeme ju na reálnych príkladoch.",
-      "cta": "Dohodnúť úvodný hovor"
+      "title": "Audit AI príležitostí a rizík",
+      "description": "Za 1–2 týždne zmapujeme, kde má AI vo Vašej firme zmysel, ktorý workflow riešiť ako prvý, aké riziká treba ošetriť a ako budeme merať úspech.",
+      "cta": "Bezplatná konzultácia"
     },
     "atlasProofEyebrow": "Bezpečnostný výskum",
     "atlasProofTitle": "Bezpečnosť AI agentov nie je abstraktné riziko.",
     "atlasProofDescription": "Vediem verejný atlas incidentov agentickej AI, kde mapujem reálne zlyhania na kategórie hrozieb a preventívne princípy pre tímy pred nasadením.",
     "atlasProofCta": "Otvoriť Agent Threat Atlas",
     "atlasProofSecondaryCta": "Pozrieť kategórie hrozieb",
-    "trustTitle": "AI ako pracovný systém, nie ako ďalší nástroj navyše",
-    "trustDescription": "Odporúčam technológiu a spôsob nasadenia podľa problému, tímu, rozpočtu a hraníc dôvery. Začíname tam, kde vie AI pripraviť užitočný návrh a človek zostáva vo vedení.",
-    "ctaBandTitle": "Poďme nájsť prvý workflow, kde Vám AI reálne pomôže.",
-    "ctaBandDescription": "Väčšina spoluprác začína 30-minútovým rozhovorom. Bez technického žargónu, bez záväzkov a bez tlaku na veľký projekt."
+    "trustTitle": "Postavené na praktickej hodnote, nie na hype",
+    "trustDescription": "Odporúčam technológiu a spôsob nasadenia, ktoré sedia Vášmu problému, tímu, rozpočtu a bezpečnostným požiadavkám.",
+    "ctaBandTitle": "Ste pripravení nájsť prvý užitočný AI projekt?",
+    "ctaBandDescription": "Väčšina klientov začína 30-minútovou konzultáciou. Bez záväzkov, bez zbytočného hypu."
   },
   "services": {
     "heroTitle": "Ako pomôžem",
-    "heroDescription": "Od nejasného pocitu, že AI potrebujete, po prvý workflow, ktorý vie tím používať.",
+    "heroDescription": "Od prvého AI use casu po bezpečné nasadenie.",
     "consulting": {
-      "title": "Nájdeme správny prvý proces",
-      "subtitle": "Skôr než budete riešiť nástroje, potrebujete vedieť, kde má AI vo firme najväčší zmysel.",
-      "description": "Pozriem sa s Vami na opakujúce sa úlohy, rozhodnutia a miesta, kde dnes práca stojí na zakladateľovi alebo seniornom človeku. Výsledkom je konkrétny prvý workflow, jasná hranica dôvery a realistický postup.",
+      "title": "Konzultácie a AI stratégia",
+      "subtitle": "Zistite, ktorý AI projekt má zmysel riešiť skôr ako miniete čas alebo peniaze.",
+      "description": "Zhodnotím Vaše súčasné procesy, identifikujem AI príležitosti s najväčším dopadom a pripravím konkrétny plán adopcie. Získate jasno v tom, čo sa oplatí automatizovať, čo má počkať a ako budeme merať hodnotu.",
       "includes": [
-        "Mapovanie opakujúcich sa úloh",
-        "Výber prvého workflowu s praktickým dopadom",
-        "Návrh schvaľovania a hraníc dôvery",
-        "Jednoduchý plán, čo postaviť teraz a čo nechať na neskôr"
+        "Audit procesov a workflowov",
+        "Mapovanie AI príležitostí",
+        "Prioritizácia podľa ROI a realizovateľnosti",
+        "Plán adopcie s metrikami úspechu"
       ],
-      "cta": "Dohodnúť úvodný hovor"
+      "cta": "Dohodnúť konzultáciu"
     },
     "implementation": {
-      "title": "Postavíme AI workflow v praxi",
-      "subtitle": "AI má pripraviť podklady, návrhy a ďalšie kroky tam, kde dnes práca čaká na človeka.",
-      "description": "Navrhnem a implementujem praktické AI workflowy okolo Vašich existujúcich nástrojov, dát a pracovných návykov. Prvá verzia má pomôcť v reálnom procese a všetko dôležité necháva na schválenie človeku.",
+      "title": "Implementácia AI riešení",
+      "subtitle": "Automatizujme prvý užitočný workflow a overme ho v skutočnom svete.",
+      "description": "Navrhnem a implementujem praktické AI automatizácie, agentov a integrácie okolo jasného biznis problému. Cieľom je bezpečné a merateľné riešenie, ktoré tím naozaj používa.",
       "includes": [
-        "AI návrhy emailov, follow-upov, obsahu, reportov alebo podkladov",
-        "Napojenie na existujúce dokumenty, tabuľky, kalendáre, CRM alebo projektové nástroje",
-        "Schvaľovací krok pred odoslaním, publikovaním alebo zmenou dát",
-        "Testovanie na reálnych príkladoch z Vašej firmy"
+        "Prototypy aj produkčné implementácie AI agentov",
+        "Automatizácia workflowov a integrácie",
+        "RAG a znalostné workflowy tam, kde dávajú zmysel",
+        "Bezpečné nasadenie, evaluácie a monitoring"
       ],
       "cta": "Spustiť projekt"
     },
     "training": {
-      "title": "Naučíme tím používať nový spôsob práce",
+      "title": "AI workshopy a zavedenie do praxe",
       "subtitle": "Aby AI nezostalo pri nadšení vedenia, ale začalo pomáhať v každodennej práci.",
-      "description": "Tímu ukážem, čo systém vie pripraviť, ako kontrolovať výstupy, kde sú hranice dôvery a ako dávať spätnú väzbu. Cieľom nie je jednorazové školenie, ale pracovný návyk, ktorý sa udrží.",
+      "description": "Tímu ukážem, kde má AI zmysel v ich konkrétnych úlohách, ako si overovať výstupy a kde sú hranice bezpečného používania. Cieľom nie je jednorazové demo, ale nové pracovné návyky, ktoré sa vo firme udržia.",
       "includes": [
-        "Zaučenie na reálnom workflowe, nie všeobecné promptovanie",
-        "Kontrola výstupov, opravy a spätná väzba systému",
-        "Pravidlá pre bezpečné používanie dát a nástrojov",
-        "Rozlíšenie medzi návrhom od AI a rozhodnutím človeka"
+        "Workshopy postavené na reálnych úlohách Vášho tímu",
+        "Praktické používanie AI pri písaní, analýze a rozhodovaní",
+        "Kontrola výstupov, limity modelov a zdravá miera dôvery",
+        "Pravidlá pre bezpečné používanie dát a nástrojov"
       ],
-      "cta": "Dohodnúť úvodný hovor"
+      "cta": "Dohodnúť workshop"
     },
     "notSure": {
       "title": "Neviete, kde začať?",
-      "description": "To je najčastejší začiatok. Nemusíte vedieť pomenovať agentov, modely ani automatizácie. Stačí priniesť jeden proces, ktorý sa opakuje a zaberá Vám čas.",
-      "cta": "Dohodnúť úvodný hovor"
+      "description": "Väčšina klientov začína 30-minútovou konzultáciou. Bez záväzkov, bez žargónu — len úprimný rozhovor o tom, kde môže AI priniesť merateľnú hodnotu.",
+      "cta": "Bezplatná konzultácia"
     }
   },
   "about": {
     "heroTitle": "Kto som",
-    "heroDescription": "Pomáham zakladateľom premeniť AI tlak na prvý užitočný workflow.",
+    "heroDescription": "Pomáham firmám premeniť AI tlak na bezpečné a merateľné riešenia.",
     "bioName": "Matej Lukášik",
-    "bioTitle": "AI konzultant a technický builder",
-    "bioText": "Som technický konzultant s 10 rokmi praxe vo vývoji softvéru. Pomáham zakladateľom a menším tímom nájsť prvé miesto, kde má AI v ich firme praktický zmysel: obsah, follow-upy, odpovede, reporty, predajné podklady alebo odovzdávanie úloh.\n\nDo projektov vstupujem prakticky. Najprv porozumiem tomu, ako dnes pracujete, kde sa opakuje ručná práca a čo nesmie odísť bez schválenia. Až potom vyberám nástroje a staviam prvý workflow okolo toho, čo už používate.\n\nRozumiem agentickej AI, automatizáciám, LLM systémom, RAG, evaluáciám aj integráciám. Klient však nemusí rozumieť technickým detailom. Cieľom je pracovný systém, ktorý pripraví užitočný návrh, tím ho vie skontrolovať a firma ho dokáže ďalej používať.",
+    "bioTitle": "Konzultant pre agentickú AI",
+    "bioText": "Som konzultant pre agentické AI, ktorý sa opiera o 10 rokov praxe v softvérovom inžinierstve. Pomáham malým a stredným firmám nájsť konkrétne miesta, kde im AI vie ušetriť čas, zefektívniť tímovú prácu a priniesť merateľnú hodnotu.\n\nDo projektov vstupujem prakticky: najprv porozumiem biznis problémom, procesom a dátovým zdrojom, až potom vyberám vhodné nástroje. Spolu navrhneme prvý použiteľný workflow, nastavíme metriky úspechu a bezpečné pravidlá nasadenia.\n\nMoje riešenia vychádzajú zo skúseností s LLM systémami, RAGmi, evaluáciami, AI modelmi, automatizáciami a AI agentmi. Mojím cieľom je dodať riešenie, ktorému rozumie vedenie, tím ho vie používať a firma ho dokáže ďalej samostatne rozvíjať.",
     "approachTitle": "Môj prístup",
-    "principle1Title": "Najprv workflow, potom nástroj",
-    "principle1Description": "Nástroje vyberám až po tom, čo je jasné, kde má AI pomôcť a čo má zostať pod ľudskou kontrolou.",
-    "principle2Title": "Návrh od AI, rozhodnutie od človeka",
-    "principle2Description": "Prvá verzia má pripravovať podklady, návrhy a ďalšie kroky. Dôležité odoslania, publikovanie a zmeny dát zostávajú na schválení.",
-    "principle3Title": "Jeden proces, skutočné príklady",
-    "principle3Description": "Začíname jedným opakujúcim sa procesom a testujeme ho na Vašich reálnych materiáloch. Rozširujeme až to, čo funguje.",
+    "principle1Title": "Najprv problém, potom nástroj",
+    "principle1Description": "Open-source alebo spravované, self-hosted alebo cloud — odporúčam to, čo sedí tímu, rozpočtu a bezpečnostným požiadavkám.",
+    "principle2Title": "Schopnosť, nie závislosť",
+    "principle2Description": "Tím školím súčasne s nasadením. Cieľom je, aby ste svoje AI workflowy vlastnili a vedeli ich ďalej rozvíjať.",
+    "principle3Title": "Začať rozumne, dokázať hodnotu",
+    "principle3Description": "Najprv overíme jeden užitočný use case. Meriame výsledky a rozširujeme len to, čo funguje.",
     "techTitle": "Technológia",
-    "techDescription": "Správne technické riešenie závisí od workflowu. Niekedy stačí jednoduchá automatizácia, inokedy AI agent, znalostná databáza alebo vlastný kód napojený na existujúce nástroje. Spoločné sú jasné pravidlá, kontrolovaný prístup, schvaľovanie a tím, ktorý riešenie vie používať.",
-    "ctaTitle": "Porozprávajme sa o prvom mieste, kde má AI pomôcť Vašej firme.",
+    "techDescription": "Správne technické riešenie závisí od workflowu. Niekedy stačí ľahká automatizácia, inokedy RAG systém alebo vlastný AI agent napojený na existujúce nástroje. Spoločné sú jasné pravidlá, kontrolovaný prístup, merateľné výsledky a tím, ktorý vie riešenie používať.",
+    "ctaTitle": "Porozprávajme sa o prvom AI workflowe, ktorý má zmysel riešiť.",
     "ctaPrimary": "Dohodnúť hovor",
     "ctaSecondary": "Napísať správu"
   },
   "contact": {
-    "heroTitle": "Prineste mi rozhodnutie",
-    "heroDescription": "Rezervujte si strategickú konzultáciu alebo mi napíšte o situácii, ktorá potrebuje diagnózu.",
-    "formTitle": "Prediskutovať väčšiu spoluprácu",
+    "heroTitle": "Spojte sa so mnou",
+    "heroDescription": "Či už máte jasný projekt, alebo len otázky — som tu.",
+    "formTitle": "Napíšte mi",
     "nameLabel": "Meno",
     "namePlaceholder": "Vaše meno",
     "emailLabel": "Email",
     "emailPlaceholder": "vy@firma.sk",
     "serviceLabel": "O čo máte záujem?",
     "serviceOptions": {
-      "consulting": "Strategická konzultácia",
-      "implementation": "Strategická diagnóza",
-      "training": "Co-CEO na mesiac",
-      "notSure": "Iná strategická otázka"
+      "consulting": "Konzultácie a AI stratégia",
+      "implementation": "Implementácia AI riešení",
+      "training": "AI workshopy a zavedenie do praxe",
+      "notSure": "Zatiaľ neviem"
     },
     "messageLabel": "Správa",
-    "messagePlaceholder": "Opíšte rozhodnutie, relevantný kontext a prečo je dôležité práve teraz...",
+    "messagePlaceholder": "Povedzte mi o Vašom projekte alebo otázke...",
     "submit": "Odoslať správu",
     "success": "Správa odoslaná! Ozvem sa do 24 hodín.",
     "error": "Niečo sa pokazilo. Skúste to znova alebo mi napíšte priamo na matej@matejlukasik.com.",
     "privacyNotice": "Tieto údaje použijem iba na odpoveď na Vašu správu.",
     "bookingPrivacyNotice": "Rezervačné údaje spracúva Cal.com na naplánovanie hovoru.",
     "privacyLink": "Podrobnosti o súkromí",
-    "bookTitle": "Rezervovať strategickú konzultáciu",
-    "bookDescription": "300 € za súkromnú dvojhodinovú pracovnú konzultáciu, krátky vstupný dotazník a stručné písomné zhrnutie.",
+    "bookTitle": "Dohodnúť hovor",
+    "bookDescription": "Vyberte si čas, ktorý Vám vyhovuje.",
     "directTitle": "Alebo ma kontaktujte priamo",
     "email": "matej@matejlukasik.com",
     "location": "Slovensko",
@@ -178,19 +178,19 @@
     "faq": [
       {
         "question": "Nevieme, kde s AI začať. Má zmysel sa ozvať?",
-        "answer": "Áno. Práve toto je najčastejší začiatok. Na úvodnom hovore sa pozrieme na Vaše procesy, opakujúce sa úlohy a miesta, kde dnes práca stojí na Vás alebo seniornom človeku. Cieľom je jasný prvý workflow, nie zoznam nástrojov."
+        "answer": "Áno. Práve toto je najčastejší začiatok. Na úvodnom hovore sa pozrieme na Vaše procesy, dáta a miesta, kde tím stráca čas. Cieľom je jasný prvý use case, nie zoznam nástrojov."
       },
       {
-        "question": "Musíme rozumieť AI agentom?",
-        "answer": "Nie. Stačí, že rozumiete svojej firme a viete ukázať, ako dnes práca prebieha. Technické rozhodnutia, výber nástrojov a implementáciu riešim ja. Spolu určujeme, čo má AI pripraviť a čo musí schváliť človek."
+        "question": "Ako dlho trvá prvé nasadenie?",
+        "answer": "Väčšina prvých projektov ide od štartu po funkčný workflow za 2–6 týždňov. Jednoduchá automatizácia môže bežať za pár dní. Zložitejšie systémy trvajú dlhšie, ale pokrok by ste mali vidieť každý týždeň."
       },
       {
-        "question": "Ako dlho trvá prvý workflow?",
-        "answer": "Najmenší rozumný prvý sprint je približne 10 pracovných dní pre jeden jasne vybraný proces. Zložitejšie systémy môžu trvať dlhšie, ale prvý cieľ má byť pracovná verzia na reálnych príkladoch, nie veľká transformácia."
+        "question": "Ako zistíme, či AI naozaj prináša hodnotu?",
+        "answer": "Ešte pred implementáciou si nastavíme metriku: ušetrený čas, kratší proces, menej chýb, vyššia kvalita alebo rýchlejšia obsluha zákazníkov. Ak sa hodnota nedá merať, projekt treba zúžiť alebo odložiť."
       },
       {
         "question": "Ako riešite bezpečnosť dát?",
-        "answer": "Začíname dátami, oprávneniami a hranicami dôvery. Prvá verzia má používať iba minimálny potrebný prístup, jasné pravidlá pre citlivé dáta a ľudské schválenie všade tam, kde je riziko vyššie.",
+        "answer": "Začíname dátami, oprávneniami a hranicami nasadenia. Prvá verzia má používať iba minimálny potrebný prístup, jasné pravidlá pre citlivé dáta a ľudskú kontrolu tam, kde je riziko vyššie. Pri bezpečnosti je lepšie ísť pomalšie a istejšie.",
         "linkText": "Otvoriť Agent Threat Atlas",
         "linkHref": "https://atlas.matejlukasik.sk/"
       },
@@ -200,16 +200,16 @@
       },
       {
         "question": "S akými nástrojmi pracujete?",
-        "answer": "Začíname nástrojmi, ktoré už používate: email, kalendár, dokumenty, tabuľky, CRM, Trello, Notion, e-shop, sociálne siete alebo projektový nástroj. Podľa potreby doplním automatizačné platformy, AI modely alebo ľahký vlastný kód. Cieľom nie je ukázať čo najviac technológie, ale postaviť workflow, ktorý funguje vo Vašej firme."
+        "answer": "Nástroje vyberám podľa problému, dát a bezpečnostných požiadaviek. Pri automatizácii workflowov používam n8n, CrewAI alebo LangChain/LangGraph. Pri modeloch volím podľa potreby frontier modely od OpenAI a Anthropic, alebo otvorené modely ako Mistral a Llama. Pri komerčných agentických nástrojoch dávajú zmysel Codex a Claude Code. Ak potrebujete viac kontroly alebo self-hosting, môžeme pracovať aj s open-source agentmi ako OpenClaw alebo Hermes Agent. Cieľom nie je použiť čo najviac nástrojov, ale zvoliť stack, ktorý je bezpečný, udržateľný a prináša merateľnú hodnotu."
       },
       {
         "question": "Čo sa stane po odovzdaní riešenia?",
-        "answer": "Keď workflow funguje, dostanete pravidlá používania, zaškolenie a dostatok kontextu na bezpečnú prácu s riešením. Cieľom je, aby ste vedeli systém používať a zlepšovať. Ak dáva zmysel pokračovať, môžeme pridávať ďalšie workflowy alebo vylepšovať prvý."
+        "answer": "Keď workflow funguje, Váš tím dostane pravidlá používania, zaškolenie a dostatok kontextu na bezpečnú prácu s riešením. Cieľom je schopnosť, nie závislosť. Ak dáva zmysel pokračovať, môžeme riešenie ďalej rozvíjať spolu."
       }
     ]
   },
   "footer": {
-    "description": "Strategické poradenstvo pre zakladateľov digitálnych firiem.",
+    "description": "Agentická AI pre malé a stredné firmy, pre ktoré sú merateľnosť a bezpečnosť dôležité.",
     "navigation": "Navigácia",
     "getInTouch": "Kontakt",
     "copyright": "Matej Lukášik. Všetky práva vyhradené.",

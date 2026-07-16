@@ -5,7 +5,7 @@ import { test } from 'node:test';
 const index = readFileSync(new URL('../src/pages/index.astro', import.meta.url), 'utf8');
 const painCard = readFileSync(new URL('../src/components/PainCard.astro', import.meta.url), 'utf8');
 
-test('minimal homepage does not render old pain-card sections', () => {
+test('homepage pain cards use generated illustrations', () => {
   const imagePaths = [
     '/images/pain-clarity.webp',
     '/images/pain-value.webp',
@@ -13,11 +13,9 @@ test('minimal homepage does not render old pain-card sections', () => {
   ];
 
   for (const imagePath of imagePaths) {
+    assert.match(index, new RegExp(`imageSrc="${imagePath}"`));
     assert.ok(existsSync(new URL(`../public${imagePath}`, import.meta.url)), `${imagePath} should exist`);
-    assert.doesNotMatch(index, new RegExp(`imageSrc="${imagePath}"`));
   }
-
-  assert.doesNotMatch(index, /<PainCard/);
 });
 
 test('pain card keeps image rendering and emoji fallback', () => {

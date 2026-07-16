@@ -10,8 +10,8 @@ test('Slovak FAQ addresses the full client decision path', () => {
     sk.contact.faq.map((item) => item.question),
     [
       'Nevieme, kde s AI začať. Má zmysel sa ozvať?',
-      'Musíme rozumieť AI agentom?',
-      'Ako dlho trvá prvý workflow?',
+      'Ako dlho trvá prvé nasadenie?',
+      'Ako zistíme, či AI naozaj prináša hodnotu?',
       'Ako riešite bezpečnosť dát?',
       'Potrebujeme vlastný technický tím?',
       'S akými nástrojmi pracujete?',
@@ -19,11 +19,10 @@ test('Slovak FAQ addresses the full client decision path', () => {
     ],
   );
 
-  assert.match(sk.contact.faq[0].answer, /jasný prvý workflow/);
-  assert.match(sk.contact.faq[1].answer, /Technické rozhodnutia/);
-  assert.match(sk.contact.faq[2].answer, /10 pracovných dní/);
+  assert.match(sk.contact.faq[0].answer, /jasný prvý use case/);
+  assert.match(sk.contact.faq[2].answer, /ušetrený čas/);
   assert.match(sk.contact.faq[3].answer, /oprávnenia/);
-  assert.match(sk.contact.faq[6].answer, /ďalšie workflowy/);
+  assert.match(sk.contact.faq[6].answer, /Váš tím/);
 });
 
 test('English FAQ mirrors the Slovak FAQ scope', () => {
@@ -48,24 +47,17 @@ test('Tools FAQ names concrete categories and tools in both languages', () => {
   assert.ok(slovakToolsFaq);
   assert.ok(englishToolsFaq);
 
-  assert.match(slovakToolsFaq.answer, /email/);
-  assert.match(slovakToolsFaq.answer, /kalendár/);
-  assert.match(slovakToolsFaq.answer, /CRM/);
-  assert.match(slovakToolsFaq.answer, /Trello/);
-  assert.match(slovakToolsFaq.answer, /Notion/);
-  assert.match(slovakToolsFaq.answer, /automatizačné platformy/);
-  assert.match(slovakToolsFaq.answer, /AI modely/);
-  assert.match(slovakToolsFaq.answer, /ľahký vlastný kód/);
-
-  assert.match(englishToolsFaq.answer, /n8n/);
-  assert.match(englishToolsFaq.answer, /CrewAI/);
-  assert.match(englishToolsFaq.answer, /LangChain\/LangGraph/);
-  assert.match(englishToolsFaq.answer, /OpenAI/);
-  assert.match(englishToolsFaq.answer, /Anthropic/);
-  assert.match(englishToolsFaq.answer, /Mistral/);
-  assert.match(englishToolsFaq.answer, /Llama/);
-  assert.match(englishToolsFaq.answer, /Codex/);
-  assert.match(englishToolsFaq.answer, /Claude Code/);
-  assert.match(englishToolsFaq.answer, /OpenClaw/);
-  assert.match(englishToolsFaq.answer, /Hermes Agent/);
+  for (const answer of [slovakToolsFaq.answer, englishToolsFaq.answer]) {
+    assert.match(answer, /n8n/);
+    assert.match(answer, /CrewAI/);
+    assert.match(answer, /LangChain\/LangGraph/);
+    assert.match(answer, /OpenAI/);
+    assert.match(answer, /Anthropic/);
+    assert.match(answer, /Mistral/);
+    assert.match(answer, /Llama/);
+    assert.match(answer, /Codex/);
+    assert.match(answer, /Claude Code/);
+    assert.match(answer, /OpenClaw/);
+    assert.match(answer, /Hermes Agent/);
+  }
 });
