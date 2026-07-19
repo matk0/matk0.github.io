@@ -1,6 +1,7 @@
 <script is:inline>
   (() => {
     const CONSENT_STORAGE_KEY = 'matejlukasik_cookie_consent';
+    const CONSENT_VERSION = '2026-07-19';
     const allowedEventNames = new Set([
       'services_intent_clicked',
       'booking_intent_clicked',
@@ -86,7 +87,13 @@
       }
 
       try {
-        return localStorage.getItem(CONSENT_STORAGE_KEY) === 'accepted';
+        const storedConsent = localStorage.getItem(CONSENT_STORAGE_KEY);
+        if (!storedConsent) return false;
+
+        const record = JSON.parse(storedConsent);
+        return record.version === CONSENT_VERSION
+          && record.choice === 'accepted'
+          && Date.parse(record.expiresAt) > Date.now();
       } catch {
         return false;
       }

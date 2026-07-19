@@ -10,15 +10,6 @@
   },
   "home": {
     "heroTitle": "Prestaňte robiť prácu, ktorú má za Vás robiť AI.",
-    "heroTypewords": [
-      "nudnú",
-      "repetitívnu",
-      "rutinnú",
-      "zdĺhavú",
-      "neinšpiratívnu",
-      "administratívnu"
-    ],
-    "heroTypewordTemplate": "Prestaňte robiť {word} prácu, ktorú má za Vás robiť AI.",
     "heroDescription": "AI Vám má šetriť čas a peniaze, nie vytvárať ďalšiu prácu. Spolu nájdeme, kde začať, čo má pre Vás najväčší zmysel a spustíme prvé užitočné riešenie.",
     "ctaPrimary": "Bezplatná konzultácia",
     "ctaSecondary": "Moje služby",
@@ -166,6 +157,7 @@
     "privacyLink": "Podrobnosti o súkromí",
     "bookTitle": "Dohodnúť hovor",
     "bookDescription": "Vyberte si čas, ktorý Vám vyhovuje.",
+    "loadBooking": "Načítať rezervačný kalendár",
     "directTitle": "Alebo ma kontaktujte priamo",
     "email": "matej@matejlukasik.com",
     "location": "Slovensko",
@@ -212,7 +204,19 @@
     "research": "Projekty",
     "agentThreatAtlas": "Agent Threat Atlas",
     "privacy": "Ochrana osobných údajov",
-    "cookieSettings": "Nastavenia cookies"
+    "cookieSettings": "Nastavenia cookies",
+    "businessDetails": "Údaje o podnikateľovi",
+    "businessName": "Matej Lukášik",
+    "businessAddress": "Ulica Hlboká 5943/14, 917 01 Trnava, Slovensko",
+    "businessIdLabel": "IČO",
+    "businessId": "50113801",
+    "tradeRegister": "Živnostenský register SR č. 250-37148",
+    "phoneLabel": "Telefón",
+    "emailLabel": "Email",
+    "tradeSupervision": "Orgán dozoru nad živnostenským podnikaním",
+    "tradeSupervisionAuthority": "Okresný úrad Trnava, odbor živnostenského podnikania, Kollárova 8, 917 02 Trnava",
+    "consumerSupervision": "Orgán dohľadu nad ochranou spotrebiteľa",
+    "consumerSupervisionAuthority": "Inšpektorát SOI pre Trnavský kraj, Pekárska 23, 917 01 Trnava"
   },
   "cookieNotice": {
     "title": "Analytické cookies",

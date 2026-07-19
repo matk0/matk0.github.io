@@ -9,21 +9,20 @@ const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.ur
 
 test('the public homepage is the Agentic AI consulting site', () => {
   assert.equal(en.home.heroTitle, 'Stop doing work that AI should be doing for you.');
-  assert.deepEqual(en.home.heroTypewords, ['boring', 'repetitive', 'routine', 'tedious', 'uninspiring', 'administrative']);
-  assert.equal(en.home.heroTypewordTemplate, 'Stop doing {word} work that AI should be doing for you.');
+  assert.equal('heroTypewords' in en.home, false);
+  assert.equal('heroTypewordTemplate' in en.home, false);
   assert.equal(en.home.heroDescription, "AI should save your business time and money, not create more work. Together, we'll find where to start, what makes the most sense for your business, and launch the first useful solution.");
   assert.equal(sk.home.heroTitle, 'Prestaňte robiť prácu, ktorú má za Vás robiť AI.');
-  assert.deepEqual(sk.home.heroTypewords, ['nudnú', 'repetitívnu', 'rutinnú', 'zdĺhavú', 'neinšpiratívnu', 'administratívnu']);
-  assert.equal(sk.home.heroTypewordTemplate, 'Prestaňte robiť {word} prácu, ktorú má za Vás robiť AI.');
+  assert.equal('heroTypewords' in sk.home, false);
+  assert.equal('heroTypewordTemplate' in sk.home, false);
   assert.equal(sk.home.heroDescription, 'AI Vám má šetriť čas a peniaze, nie vytvárať ďalšiu prácu. Spolu nájdeme, kde začať, čo má pre Vás najväčší zmysel a spustíme prvé užitočné riešenie.');
   assert.equal(sk.home.firstStepOffer.title, 'Audit AI príležitostí');
   assert.equal(en.home.painTitle, 'Bringing AI into your company only makes sense when it solves a real business problem.');
   assert.equal(en.home.servicesTitle, 'How can I help you?');
   assert.match(index, /<Hero\s/);
   assert.match(index, /title=\{strings\.home\.heroTitle\}/);
-  assert.match(index, /typewordTemplate=\{strings\.home\.heroTypewordTemplate\}/);
-  assert.match(hero, /aria-label=\{hasInlineTypewords \? title : undefined\}/);
-  assert.doesNotMatch(hero, /class="sr-only"/);
+  assert.doesNotMatch(index, /typewords|typewordTemplate/);
+  assert.doesNotMatch(hero, /typewriter|typewords|typewordTemplate/);
   assert.doesNotMatch(index, /<ServiceCard/);
   assert.match(index, /<FirstStepOffer/);
   assert.doesNotMatch(index, /Strategický poradca/);

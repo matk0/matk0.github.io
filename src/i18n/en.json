@@ -10,15 +10,6 @@
   },
   "home": {
     "heroTitle": "Stop doing work that AI should be doing for you.",
-    "heroTypewords": [
-      "boring",
-      "repetitive",
-      "routine",
-      "tedious",
-      "uninspiring",
-      "administrative"
-    ],
-    "heroTypewordTemplate": "Stop doing {word} work that AI should be doing for you.",
     "heroDescription": "AI should save your business time and money, not create more work. Together, we'll find where to start, what makes the most sense for your business, and launch the first useful solution.",
     "ctaPrimary": "Book a Free Consultation",
     "ctaSecondary": "See My Services",
@@ -151,6 +142,7 @@
     "privacyLink": "Privacy details",
     "bookTitle": "Book a call",
     "bookDescription": "Choose a time that works for you.",
+    "loadBooking": "Load booking calendar",
     "directTitle": "Or reach out directly",
     "email": "matej@matejlukasik.com",
     "location": "Slovakia",
@@ -197,7 +189,19 @@
     "research": "Projects",
     "agentThreatAtlas": "Agent Threat Atlas",
     "privacy": "Privacy",
-    "cookieSettings": "Cookie settings"
+    "cookieSettings": "Cookie settings",
+    "businessDetails": "Business details",
+    "businessName": "Matej Lukášik",
+    "businessAddress": "Ulica Hlboká 5943/14, 917 01 Trnava, Slovakia",
+    "businessIdLabel": "Business ID",
+    "businessId": "50113801",
+    "tradeRegister": "Slovak Trade Register no. 250-37148",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "tradeSupervision": "Trade supervision",
+    "tradeSupervisionAuthority": "District Office Trnava, Trade Licensing Department, Kollárova 8, 917 02 Trnava",
+    "consumerSupervision": "Consumer protection supervision",
+    "consumerSupervisionAuthority": "Slovak Trade Inspection, Inspectorate for the Trnava Region, Pekárska 23, 917 01 Trnava"
   },
   "cookieNotice": {
     "title": "Analytics cookies",

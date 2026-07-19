@@ -21,75 +21,99 @@ const paths = getLocalizedPaths(lang);
     {' '}
     <a href={paths.privacy} class="font-medium text-primary hover:text-primary-hover">{strings.contact.privacyLink}</a>
   </p>
-  <div class="rounded-xl border border-border overflow-hidden bg-surface-alt min-h-[400px]">
+  <div class="rounded-xl border border-border overflow-hidden bg-surface-alt min-h-[400px]" data-cal-shell>
     <div id="cal-embed" class="w-full"></div>
+    <div class="flex min-h-[400px] items-center justify-center p-6" data-cal-gate>
+      <button
+        type="button"
+        class="inline-flex min-h-11 items-center justify-center rounded-lg border border-primary bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-primary-hover hover:bg-primary-hover disabled:cursor-wait disabled:opacity-70"
+        data-cal-load
+      >
+        {strings.contact.loadBooking}
+      </button>
+    </div>
   </div>
 </div>
 
 <script is:inline>
   const bookingCalendar = document.getElementById('booking-calendar');
-  const shouldFlashCalendar = new URLSearchParams(window.location.search).get('focus') === 'calendar';
+  const loadCalendarButton = bookingCalendar?.querySelector('[data-cal-load]');
+  const calendarGate = bookingCalendar?.querySelector('[data-cal-gate]');
+  const shouldLoadCalendarImmediately = new URLSearchParams(window.location.search).get('focus') === 'calendar';
+  let calEmbedLoading = false;
 
-  if (bookingCalendar && shouldFlashCalendar) {
-    requestAnimationFrame(() => {
-      bookingCalendar.classList.add('booking-calendar-flash');
-    });
-  }
-</script>
-
-<script is:inline>
-  (function (C, A, L) {
-    let p = function (a, ar) { a.q.push(ar); };
-    let d = C.document;
-    C.Cal = C.Cal || function () { var ar = arguments; let cal = C.Cal; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); };
-  })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init", { origin: "https://cal.com" });
-  Cal("inline", {
-    elementOrSelector: "#cal-embed",
-    calLink: "matejlukasik/free-consultation",
-    config: { layout: "month_view" },
-  });
-  Cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
   const trackCalendarEvent = (eventName, props = {}) => {
     window.trackSiteEvent?.(eventName, {
-      source: new URLSearchParams(window.location.search).get('focus') === 'calendar' ? 'booking_cta' : 'contact_page',
+      source: shouldLoadCalendarImmediately ? 'booking_cta' : 'contact_page',
       ...props,
     });
   };
 
-  Cal("on", {
-    action: "bookerViewed",
-    callback: (event) => {
-      const details = event.detail?.data || {};
+  const loadCalEmbed = () => {
+    if (calEmbedLoading) return;
+    calEmbedLoading = true;
+    loadCalendarButton?.setAttribute('disabled', '');
+    if (calendarGate) calendarGate.hidden = true;
 
-      trackCalendarEvent('cal_booker_viewed', {
-        eventSlug: details.eventSlug || 'unknown',
-        slotsLoaded: details.slotsLoaded,
-      });
-    },
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () { var ar = arguments; let cal = C.Cal; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", { origin: "https://cal.com" });
+    Cal("inline", {
+      elementOrSelector: "#cal-embed",
+      calLink: "matejlukasik/free-consultation",
+      config: { layout: "month_view" },
+    });
+    Cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+
+    Cal("on", {
+      action: "bookerViewed",
+      callback: (event) => {
+        const details = event.detail?.data || {};
+
+        trackCalendarEvent('cal_booker_viewed', {
+          eventSlug: details.eventSlug || 'unknown',
+          slotsLoaded: details.slotsLoaded,
+        });
+      },
+    });
+
+    Cal("on", {
+      action: "bookerReady",
+      callback: (event) => {
+        const details = event.detail?.data || {};
+
+        trackCalendarEvent('cal_booker_ready', {
+          eventSlug: details.eventSlug || 'unknown',
+        });
+      },
+    });
+
+    Cal("on", {
+      action: "bookingSuccessfulV2",
+      callback: (event) => {
+        const details = event.detail?.data || {};
+
+        trackCalendarEvent('booking_successful', {
+          status: details.status || 'unknown',
+          paymentRequired: details.paymentRequired,
+          isRecurring: details.isRecurring,
+        });
+      },
+    });
+  };
+
+  loadCalendarButton?.addEventListener('click', () => {
+    trackCalendarEvent('booking_intent_clicked', { position: 'calendar_gate' });
+    loadCalEmbed();
   });
 
-  Cal("on", {
-    action: "bookerReady",
-    callback: (event) => {
-      const details = event.detail?.data || {};
-
-      trackCalendarEvent('cal_booker_ready', {
-        eventSlug: details.eventSlug || 'unknown',
-      });
-    },
-  });
-
-  Cal("on", {
-    action: "bookingSuccessfulV2",
-    callback: (event) => {
-      const details = event.detail?.data || {};
-
-      trackCalendarEvent('booking_successful', {
-        status: details.status || 'unknown',
-        paymentRequired: details.paymentRequired,
-        isRecurring: details.isRecurring,
-      });
-    },
-  });
+  if (bookingCalendar && shouldLoadCalendarImmediately) {
+    requestAnimationFrame(() => {
+      bookingCalendar.classList.add('booking-calendar-flash');
+      loadCalEmbed();
+    });
+  }
 </script>

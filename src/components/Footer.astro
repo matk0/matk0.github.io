@@ -86,6 +86,36 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
+    <div class="mb-10 grid grid-cols-1 gap-8 border-t border-white/10 pt-8 text-sm leading-relaxed md:grid-cols-3">
+      <div>
+        <h4 class="mb-3 font-semibold uppercase tracking-wider text-white">{strings.footer.businessDetails}</h4>
+        <address class="space-y-1 not-italic">
+          <p class="font-medium text-white/90">{strings.footer.businessName}</p>
+          <p>{strings.footer.businessAddress}</p>
+          <p>{strings.footer.businessIdLabel}: {strings.footer.businessId}</p>
+          <p>{strings.footer.tradeRegister}</p>
+          <p>
+            {strings.footer.phoneLabel}:{' '}
+            <a href="tel:+421944302185" class="hover:text-white transition-colors">+421 944 302 185</a>
+          </p>
+          <p>
+            {strings.footer.emailLabel}:{' '}
+            <a href={`mailto:${strings.contact.email}`} class="hover:text-white transition-colors">{strings.contact.email}</a>
+          </p>
+        </address>
+      </div>
+
+      <div>
+        <h4 class="mb-3 font-semibold uppercase tracking-wider text-white">{strings.footer.tradeSupervision}</h4>
+        <p>{strings.footer.tradeSupervisionAuthority}</p>
+      </div>
+
+      <div>
+        <h4 class="mb-3 font-semibold uppercase tracking-wider text-white">{strings.footer.consumerSupervision}</h4>
+        <p>{strings.footer.consumerSupervisionAuthority}</p>
+      </div>
+    </div>
+
     <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
       <p class="text-sm text-white/40">&copy; {year} {strings.footer.copyright}</p>
       <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">

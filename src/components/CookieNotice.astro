@@ -27,6 +27,7 @@ const notice = strings.cookieNotice;
           <p class="font-heading text-base font-semibold text-heading">{notice.title}</p>
           <p class="mt-1 text-sm leading-relaxed text-body">
             {notice.description}
+            {' '}
             <a href={paths.privacy} class="font-medium text-primary hover:text-primary-hover">
               {notice.privacyLink}
             </a>
@@ -56,6 +57,8 @@ const notice = strings.cookieNotice;
 <script define:vars={{ gaMeasurementId }} is:inline>
   (() => {
     const CONSENT_STORAGE_KEY = 'matejlukasik_cookie_consent';
+    const CONSENT_VERSION = '2026-07-19';
+    const CONSENT_LIFETIME_MS = 365 * 24 * 60 * 60 * 1000;
     const ACCEPTED = 'accepted';
     const REJECTED = 'rejected';
     const measurementId = gaMeasurementId;
@@ -65,7 +68,16 @@ const notice = strings.cookieNotice;
 
     const readConsent = () => {
       try {
-        return localStorage.getItem(CONSENT_STORAGE_KEY);
+        const storedConsent = localStorage.getItem(CONSENT_STORAGE_KEY);
+        if (!storedConsent) return null;
+
+        const record = JSON.parse(storedConsent);
+        const expiresAt = Date.parse(record.expiresAt);
+        if (record.version !== CONSENT_VERSION) return null;
+        if (record.choice !== ACCEPTED && record.choice !== REJECTED) return null;
+        if (!Number.isFinite(expiresAt) || expiresAt <= Date.now()) return null;
+
+        return record.choice;
       } catch {
         return null;
       }
@@ -73,7 +85,13 @@ const notice = strings.cookieNotice;
 
     const persistConsent = (choice) => {
       try {
-        localStorage.setItem(CONSENT_STORAGE_KEY, choice);
+        const decidedAt = Date.now();
+        localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify({
+          version: CONSENT_VERSION,
+          choice,
+          decidedAt: new Date(decidedAt).toISOString(),
+          expiresAt: new Date(decidedAt + CONSENT_LIFETIME_MS).toISOString(),
+        }));
       } catch {
       }
 

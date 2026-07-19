@@ -51,7 +51,9 @@ test('layout exposes Google site verification from Cloudflare runtime vars', () 
 test('analytics helper tracks governed events with sanitized properties', () => {
   assert.match(analytics, /window\.trackSiteEvent =/);
   assert.match(analytics, /hasAnalyticsConsent\(\)/);
-  assert.match(analytics, /localStorage\.getItem\(CONSENT_STORAGE_KEY\) === 'accepted'/);
+  assert.match(analytics, /localStorage\.getItem\(CONSENT_STORAGE_KEY\)/);
+  assert.match(analytics, /record\.version === CONSENT_VERSION/);
+  assert.match(analytics, /record\.choice === 'accepted'/);
   assert.match(analytics, /window\.gtag\('event', name, \{ \.\.\.cleanProps, \.\.\.options \}\)/);
   assert.match(analytics, /allowedEventNames = new Set/);
   assert.match(analytics, /section_viewed/);

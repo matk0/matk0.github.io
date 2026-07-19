@@ -120,7 +120,10 @@ test('accepting analytics retries section and scroll signals first seen before c
     .filter(([command]) => command === 'event');
   const eventNames = analyticsEvents.map(([, name]) => name);
 
-  assert.equal(storedValues.get('matejlukasik_cookie_consent'), 'accepted');
+  const storedConsent = JSON.parse(storedValues.get('matejlukasik_cookie_consent'));
+  assert.equal(storedConsent.version, '2026-07-19');
+  assert.equal(storedConsent.choice, 'accepted');
+  assert.ok(Date.parse(storedConsent.expiresAt) > Date.parse(storedConsent.decidedAt));
   assert.deepEqual(sectionObserver.unobserved, [section]);
   assert.ok(eventNames.includes('section_viewed'));
   assert.equal(eventNames.filter((name) => name === 'scroll_depth_reached').length, 3);

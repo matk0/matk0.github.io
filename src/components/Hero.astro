@@ -4,15 +4,10 @@ interface Props {
   subtitle?: string;
   description?: string;
   size?: 'large' | 'small';
-  typewords?: string[];
-  typewordTemplate?: string;
 }
 
-const { title, subtitle, description, size = 'small', typewords, typewordTemplate } = Astro.props;
+const { title, subtitle, description, size = 'small' } = Astro.props;
 const isLarge = size === 'large';
-const hasTypewords = Boolean(typewords?.length);
-const hasInlineTypewords = hasTypewords && Boolean(typewordTemplate?.includes('{word}'));
-const [typewordPrefix = '', typewordSuffix = ''] = typewordTemplate?.split('{word}') ?? [];
 ---
 
 <section class:list={["relative overflow-hidden wave-divider", isLarge ? "hero-aurora" : "bg-gradient-to-br from-primary-dark to-primary-dark"]}>
@@ -37,22 +32,8 @@ const [typewordPrefix = '', typewordSuffix = ''] = typewordTemplate?.split('{wor
         {subtitle}
       </p>
     )}
-    <h1 aria-label={hasInlineTypewords ? title : undefined} class:list={["font-bold leading-tight reveal reveal-delay-1", isLarge ? "text-4xl md:text-7xl max-w-4xl mx-auto gradient-text" : "text-3xl md:text-5xl max-w-3xl mx-auto text-white"]}>
-      {hasInlineTypewords ? (
-        <span aria-hidden="true">
-          {typewordPrefix}<span id="typewriter" class="text-accent" data-words={JSON.stringify(typewords)}></span><span class="typewriter-cursor"></span>{typewordSuffix}
-        </span>
-      ) : (
-        <>
-          {hasTypewords && (
-            <span class="block mb-2">
-              <span id="typewriter" class="text-accent" data-words={JSON.stringify(typewords)}></span>
-              <span class="typewriter-cursor"></span>
-            </span>
-          )}
-          {title}
-        </>
-      )}
+    <h1 class:list={["font-bold leading-tight reveal reveal-delay-1", isLarge ? "text-4xl md:text-7xl max-w-4xl mx-auto gradient-text" : "text-3xl md:text-5xl max-w-3xl mx-auto text-white"]}>
+      {title}
     </h1>
     {description && (
       <p class:list={["text-white/70 max-w-2xl mx-auto reveal reveal-delay-2", isLarge ? "text-lg md:text-xl mt-6" : "text-base md:text-lg mt-4"]}>
@@ -65,67 +46,7 @@ const [typewordPrefix = '', typewordSuffix = ''] = typewordTemplate?.split('{wor
   </div>
 </section>
 
-<script>
-  const el = document.getElementById('typewriter');
-  if (el) {
-    const words = JSON.parse(el.dataset.words || '[]');
-    let wordIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-    const typeSpeed = 80;
-    const deleteSpeed = 40;
-    const pauseAfterType = 2000;
-    const pauseAfterDelete = 400;
-
-    function tick() {
-      const word = words[wordIndex];
-      if (deleting) {
-        charIndex--;
-        el.textContent = word.slice(0, charIndex);
-        if (charIndex === 0) {
-          deleting = false;
-          wordIndex = (wordIndex + 1) % words.length;
-          setTimeout(tick, pauseAfterDelete);
-        } else {
-          setTimeout(tick, deleteSpeed);
-        }
-      } else {
-        charIndex++;
-        el.textContent = word.slice(0, charIndex);
-        if (charIndex === word.length) {
-          deleting = true;
-          setTimeout(tick, pauseAfterType);
-        } else {
-          setTimeout(tick, typeSpeed);
-        }
-      }
-    }
-
-    setTimeout(tick, 600);
-  }
-</script>
-
 <style>
-  #typewriter {
-    color: var(--color-accent);
-    -webkit-text-fill-color: var(--color-accent);
-  }
-
-  .typewriter-cursor {
-    display: inline-block;
-    width: 0.05em;
-    height: 0.9em;
-    background: var(--color-accent);
-    animation: blink 0.8s step-end infinite;
-    margin-left: 0.06em;
-    vertical-align: -0.08em;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-
   .hero-aurora {
     background: var(--color-primary-dark);
     position: relative;

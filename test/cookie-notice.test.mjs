@@ -28,7 +28,7 @@ test('cookie notice gives immediate localized analytics choices and a policy lin
   assert.match(cookieNotice, /data-cookie-notice/);
   assert.match(cookieNotice, /data-cookie-accept/);
   assert.match(cookieNotice, /data-cookie-reject/);
-  assert.match(cookieNotice, /localStorage\.setItem\(CONSENT_STORAGE_KEY, choice\)/);
+  assert.match(cookieNotice, /localStorage\.setItem\(CONSENT_STORAGE_KEY, JSON\.stringify/);
   assert.match(cookieNotice, /updateAnalyticsConsent\('granted'\)/);
   assert.match(cookieNotice, /paths\.privacy/);
   assert.equal(en.cookieNotice.title, 'Analytics cookies');
