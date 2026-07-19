@@ -5,10 +5,14 @@ interface Props {
   description?: string;
   size?: 'large' | 'small';
   typewords?: string[];
+  typewordTemplate?: string;
 }
 
-const { title, subtitle, description, size = 'small', typewords } = Astro.props;
+const { title, subtitle, description, size = 'small', typewords, typewordTemplate } = Astro.props;
 const isLarge = size === 'large';
+const hasTypewords = Boolean(typewords?.length);
+const hasInlineTypewords = hasTypewords && Boolean(typewordTemplate?.includes('{word}'));
+const [typewordPrefix = '', typewordSuffix = ''] = typewordTemplate?.split('{word}') ?? [];
 ---
 
 <section class:list={["relative overflow-hidden wave-divider", isLarge ? "hero-aurora" : "bg-gradient-to-br from-primary-dark to-primary-dark"]}>
@@ -33,14 +37,22 @@ const isLarge = size === 'large';
         {subtitle}
       </p>
     )}
-    <h1 class:list={["font-bold leading-tight reveal reveal-delay-1", isLarge ? "text-4xl md:text-7xl max-w-4xl mx-auto gradient-text" : "text-3xl md:text-5xl max-w-3xl mx-auto text-white"]}>
-      {typewords && (
-        <span class="block mb-2">
-          <span id="typewriter" class="text-accent" data-words={JSON.stringify(typewords)}></span>
-          <span class="typewriter-cursor">|</span>
+    <h1 aria-label={hasInlineTypewords ? title : undefined} class:list={["font-bold leading-tight reveal reveal-delay-1", isLarge ? "text-4xl md:text-7xl max-w-4xl mx-auto gradient-text" : "text-3xl md:text-5xl max-w-3xl mx-auto text-white"]}>
+      {hasInlineTypewords ? (
+        <span aria-hidden="true">
+          {typewordPrefix}<span id="typewriter" class="text-accent" data-words={JSON.stringify(typewords)}></span><span class="typewriter-cursor"></span>{typewordSuffix}
         </span>
+      ) : (
+        <>
+          {hasTypewords && (
+            <span class="block mb-2">
+              <span id="typewriter" class="text-accent" data-words={JSON.stringify(typewords)}></span>
+              <span class="typewriter-cursor"></span>
+            </span>
+          )}
+          {title}
+        </>
       )}
-      {title}
     </h1>
     {description && (
       <p class:list={["text-white/70 max-w-2xl mx-auto reveal reveal-delay-2", isLarge ? "text-lg md:text-xl mt-6" : "text-base md:text-lg mt-4"]}>
@@ -94,12 +106,19 @@ const isLarge = size === 'large';
 </script>
 
 <style>
+  #typewriter {
+    color: var(--color-accent);
+    -webkit-text-fill-color: var(--color-accent);
+  }
+
   .typewriter-cursor {
     display: inline-block;
-    color: var(--color-accent);
+    width: 0.05em;
+    height: 0.9em;
+    background: var(--color-accent);
     animation: blink 0.8s step-end infinite;
-    margin-left: 2px;
-    font-weight: 300;
+    margin-left: 0.06em;
+    vertical-align: -0.08em;
   }
 
   @keyframes blink {

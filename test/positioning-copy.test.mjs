@@ -4,12 +4,13 @@ import { test } from 'node:test';
 
 const en = JSON.parse(readFileSync(new URL('../src/i18n/en.json', import.meta.url), 'utf8'));
 const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
+const llms = readFileSync(new URL('../src/pages/llms.txt.ts', import.meta.url), 'utf8');
 
 test('english homepage positions Matej around practical SMB AI adoption', () => {
-  assert.equal(en.home.heroTitle, 'AI agents for your team.');
+  assert.equal(en.home.heroTitle, 'Stop doing work that AI should be doing for you.');
   assert.equal(
     en.home.heroDescription,
-    "You know you need AI. Together, we'll find where to start, what makes the most sense for your business, and launch the first useful solution.",
+    "AI should save your business time and money, not create more work. Together, we'll find where to start, what makes the most sense for your business, and launch the first useful solution.",
   );
   assert.equal(en.about.heroTitle, 'Who I Am');
   assert.equal(en.about.heroDescription, 'I help companies turn AI pressure into safe, measurable solutions.');
@@ -39,21 +40,24 @@ test('slovak process copy frames the collaboration clearly', () => {
   assert.ok(sk.home.processSteps[2].description.includes('meriame jeho dopad'));
 });
 
-test('homepage names the common first paid engagement after the free call', () => {
+test('homepage presents the free opportunity audit as the common first step', () => {
   assert.equal(sk.home.firstStepOffer.eyebrow, 'Najčastejší prvý krok');
-  assert.equal(sk.home.firstStepOffer.title, 'Audit AI príležitostí a rizík');
+  assert.equal(sk.home.firstStepOffer.title, 'Audit AI príležitostí');
   assert.equal(
     sk.home.firstStepOffer.description,
-    'Za 1–2 týždne zmapujeme, kde má AI vo Vašej firme zmysel, ktorý workflow riešiť ako prvý, aké riziká treba ošetriť a ako budeme merať úspech.',
+    'Za bezplatných 45 minút zmapujeme, kde má AI vo Vašej firme zmysel, ktorý workflow riešiť ako prvý, aké riziká treba ošetriť a ako budeme merať úspech.',
   );
   assert.equal(sk.home.firstStepOffer.cta, sk.home.ctaPrimary);
 
-  assert.equal(en.home.firstStepOffer.title, 'AI Opportunity and Risk Audit');
-  assert.match(en.home.firstStepOffer.description, /1–2 weeks/);
+  assert.equal(en.home.firstStepOffer.title, 'AI Opportunity Audit');
+  assert.equal(
+    en.home.firstStepOffer.description,
+    "In a free 45-minute consultation, we'll map where AI makes sense in your company, which workflow to tackle first, which risks need addressing, and how we'll measure success.",
+  );
 });
 
 test('service pages avoid premature architecture promises', () => {
-  const combinedCopy = JSON.stringify({ en, sk });
+  const combinedCopy = `${JSON.stringify({ en, sk })}\n${llms}`;
   const bannedPhrases = [
     'One API key',
     'CEO orchestrator',
@@ -66,4 +70,10 @@ test('service pages avoid premature architecture promises', () => {
   for (const phrase of bannedPhrases) {
     assert.ok(!combinedCopy.includes(phrase), `${phrase} should not appear in public service copy`);
   }
+});
+
+test('machine-readable copy mirrors the free AI Opportunity Audit', () => {
+  assert.match(llms, /\*\*AI Opportunity Audit\*\* — In a free 45-minute consultation/);
+  assert.match(llms, /\*\*Audit AI prilezitosti\*\* — Za bezplatnych 45 minut/);
+  assert.doesNotMatch(llms, /1–2 weeks|1–2 tyzdne/);
 });

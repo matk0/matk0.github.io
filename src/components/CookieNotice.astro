@@ -118,9 +118,14 @@ const notice = strings.cookieNotice;
       });
     };
 
+    const announceAnalyticsReady = () => {
+      window.dispatchEvent(new CustomEvent('site:analytics-ready'));
+    };
+
     const loadGoogleAnalytics = () => {
       if (window.siteAnalyticsLoaded) {
         updateAnalyticsConsent('granted');
+        announceAnalyticsReady();
         return;
       }
 
@@ -141,6 +146,7 @@ const notice = strings.cookieNotice;
 
       window.gtag('js', new Date());
       window.gtag('config', measurementId);
+      announceAnalyticsReady();
     };
 
     const rejectAnalytics = () => {

@@ -11,13 +11,22 @@ interface Props {
   imageAlt?: string;
   reversed?: boolean;
   bg?: 'white' | 'alt';
+  nested?: boolean;
 }
 
-const { id, title, subtitle, description, includes, ctaText, ctaHref, imageSrc, imageAlt = '', reversed = false, bg = 'white' } = Astro.props;
+const { id, title, subtitle, description, includes, ctaText, ctaHref, imageSrc, imageAlt = '', reversed = false, bg = 'white', nested = false } = Astro.props;
 ---
 
-<section id={id} class:list={["section-padding relative", bg === 'alt' ? "bg-surface-alt" : "bg-surface bg-dots"]} data-analytics-section={id}>
-  <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<section
+  id={id}
+  class:list={[
+    "relative",
+    nested ? "rounded-2xl bg-surface border border-border/60 shadow-sm p-6 md:p-10 lg:p-12" : "section-padding",
+    !nested && (bg === 'alt' ? "bg-surface-alt" : "bg-surface bg-dots"),
+  ]}
+  data-analytics-section={id}
+>
+  <div class:list={["grid grid-cols-1 lg:grid-cols-2 gap-12 items-center", !nested && "container mx-auto"]}>
     <div class:list={["reveal", reversed && "lg:order-2"]}>
       <h2 class="text-2xl md:text-3xl font-bold text-heading mb-3">{title}</h2>
       <p class="text-lg text-primary font-medium mb-4">{subtitle}</p>

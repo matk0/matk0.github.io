@@ -7,9 +7,9 @@ const painCard = readFileSync(new URL('../src/components/PainCard.astro', import
 
 test('homepage pain cards use generated illustrations', () => {
   const imagePaths = [
-    '/images/pain-clarity.webp',
-    '/images/pain-value.webp',
-    '/images/pain-security.webp',
+    '/images/pain-clarity-consulting.webp',
+    '/images/pain-value-automation.webp',
+    '/images/pain-security-agent.webp',
   ];
 
   for (const imagePath of imagePaths) {

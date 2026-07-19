@@ -1,9 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import AtlasLanding from '../components/AtlasLanding.astro';
 import PainCard from '../components/PainCard.astro';
-import ServiceCard from '../components/ServiceCard.astro';
 import ServiceSection from '../components/ServiceSection.astro';
 import ProcessTimeline from '../components/ProcessTimeline.astro';
 import FirstStepOffer from '../components/FirstStepOffer.astro';
@@ -28,6 +26,7 @@ const bookingHref = `${paths.contact}?focus=calendar`;
     title={strings.home.heroTitle}
     description={strings.home.heroDescription}
     typewords={strings.home.heroTypewords}
+    typewordTemplate={strings.home.heroTypewordTemplate}
     size="large"
   >
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -47,14 +46,14 @@ const bookingHref = `${paths.contact}?focus=calendar`;
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="reveal reveal-delay-1">
-          <PainCard imageSrc="/images/pain-clarity.webp" title={strings.home.pain1Title} description={strings.home.pain1Description} />
+          <PainCard imageSrc="/images/pain-clarity-consulting.webp" title={strings.home.pain1Title} description={strings.home.pain1Description} />
         </div>
         <div class="reveal reveal-delay-2">
-          <PainCard imageSrc="/images/pain-value.webp" title={strings.home.pain2Title} description={strings.home.pain2Description} />
+          <PainCard imageSrc="/images/pain-value-automation.webp" title={strings.home.pain2Title} description={strings.home.pain2Description} />
         </div>
         <div class="reveal reveal-delay-3">
           <PainCard
-            imageSrc="/images/pain-security.webp"
+            imageSrc="/images/pain-security-agent.webp"
             title={strings.home.pain3Title}
             description={strings.home.pain3Description}
             linkHref={ATLAS_URL}
@@ -65,70 +64,52 @@ const bookingHref = `${paths.contact}?focus=calendar`;
     </div>
   </section>
 
-  <AtlasLanding
-    id={strings.home.atlasLandingId}
-    eyebrow={strings.home.atlasLandingEyebrow}
-    title={strings.home.atlasLandingTitle}
-    description={strings.home.atlasLandingDescription}
-    ctaText={strings.home.atlasLandingCta}
-    ctaHref={`${paths.contact}?service=consulting&focus=contact-form&source=agent-threat-atlas`}
-  />
-
-  <section id="services" class="section-padding bg-surface-alt relative" data-analytics-section="services">
-    <div class="container mx-auto">
-      <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 reveal">
+  <section id="services" class="py-8 md:py-10 bg-surface-alt relative" data-analytics-section="services">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-10 reveal">
         <span class="gradient-text-dark">{strings.home.servicesTitle}</span>
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="reveal reveal-delay-1 h-full">
-          <ServiceCard imageSrc="/images/service-strategy.webp" title={strings.home.consultingTitle} description={strings.home.consultingDescription} href="#consulting" linkText={strings.home.learnMore} />
-        </div>
-        <div class="reveal reveal-delay-2 h-full">
-          <ServiceCard imageSrc="/images/service-implementation.webp" title={strings.home.implementationTitle} description={strings.home.implementationDescription} href="#implementation" linkText={strings.home.learnMore} />
-        </div>
-        <div class="reveal reveal-delay-3 h-full">
-          <ServiceCard imageSrc="/images/service-training.webp" title={strings.home.trainingTitle} description={strings.home.trainingDescription} href="#training" linkText={strings.home.learnMore} />
-        </div>
+
+      <div class="space-y-6 md:space-y-8">
+        <ServiceSection
+          id="consulting"
+          imageSrc="/images/service-strategy.webp"
+          title={strings.services.consulting.title}
+          subtitle={strings.services.consulting.subtitle}
+          description={strings.services.consulting.description}
+          includes={strings.services.consulting.includes}
+          ctaText={strings.services.consulting.cta}
+          ctaHref={`${paths.contact}?service=consulting&focus=contact-form`}
+          nested
+        />
+
+        <ServiceSection
+          id="implementation"
+          imageSrc="/images/service-implementation.webp"
+          title={strings.services.implementation.title}
+          subtitle={strings.services.implementation.subtitle}
+          description={strings.services.implementation.description}
+          includes={strings.services.implementation.includes}
+          ctaText={strings.services.implementation.cta}
+          ctaHref={`${paths.contact}?service=implementation&focus=contact-form`}
+          reversed
+          nested
+        />
+
+        <ServiceSection
+          id="training"
+          imageSrc="/images/service-training.webp"
+          title={strings.services.training.title}
+          subtitle={strings.services.training.subtitle}
+          description={strings.services.training.description}
+          includes={strings.services.training.includes}
+          ctaText={strings.services.training.cta}
+          ctaHref={`${paths.contact}?service=training&focus=contact-form`}
+          nested
+        />
       </div>
     </div>
   </section>
-
-  <ServiceSection
-    id="consulting"
-    imageSrc="/images/service-strategy.webp"
-    title={strings.services.consulting.title}
-    subtitle={strings.services.consulting.subtitle}
-    description={strings.services.consulting.description}
-    includes={strings.services.consulting.includes}
-    ctaText={strings.services.consulting.cta}
-    ctaHref={`${paths.contact}?service=consulting&focus=contact-form`}
-    bg="white"
-  />
-
-  <ServiceSection
-    id="implementation"
-    imageSrc="/images/service-implementation.webp"
-    title={strings.services.implementation.title}
-    subtitle={strings.services.implementation.subtitle}
-    description={strings.services.implementation.description}
-    includes={strings.services.implementation.includes}
-    ctaText={strings.services.implementation.cta}
-    ctaHref={`${paths.contact}?service=implementation&focus=contact-form`}
-    reversed
-    bg="alt"
-  />
-
-  <ServiceSection
-    id="training"
-    imageSrc="/images/service-training.webp"
-    title={strings.services.training.title}
-    subtitle={strings.services.training.subtitle}
-    description={strings.services.training.description}
-    includes={strings.services.training.includes}
-    ctaText={strings.services.training.cta}
-    ctaHref={`${paths.contact}?service=training&focus=contact-form`}
-    bg="white"
-  />
 
   <ProcessTimeline title={strings.home.processTitle} steps={strings.home.processSteps} />
 
@@ -140,7 +121,7 @@ const bookingHref = `${paths.contact}?focus=calendar`;
         <div class="reveal">
           <div class="w-full max-w-[560px] mx-auto">
             <div class="aspect-[4/5] max-h-[680px] rounded-2xl overflow-hidden bg-primary-light border border-border shadow-sm">
-              <img src="/images/about-matej.webp" alt="Matej Lukášik" class="w-full h-full object-cover" />
+              <img src="/images/about-matej-portrait.webp" alt="Matej Lukášik" class="w-full h-full object-cover" />
             </div>
             <div class="mt-6 lg:mt-8 text-center">
               <h2 class="text-4xl md:text-5xl font-bold text-heading">{strings.about.bioName}</h2>

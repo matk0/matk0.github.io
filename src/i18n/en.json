@@ -9,12 +9,20 @@
     "faq": "FAQ"
   },
   "home": {
-    "heroTitle": "AI agents for your team.",
-    "heroTypewords": ["Highly effective", "Secure by design", "Cost-saving", "Highly reliable", "Fully transparent", "Production-ready", "Thoroughly tested"],
-    "heroDescription": "You know you need AI. Together, we'll find where to start, what makes the most sense for your business, and launch the first useful solution.",
+    "heroTitle": "Stop doing work that AI should be doing for you.",
+    "heroTypewords": [
+      "boring",
+      "repetitive",
+      "routine",
+      "tedious",
+      "uninspiring",
+      "administrative"
+    ],
+    "heroTypewordTemplate": "Stop doing {word} work that AI should be doing for you.",
+    "heroDescription": "AI should save your business time and money, not create more work. Together, we'll find where to start, what makes the most sense for your business, and launch the first useful solution.",
     "ctaPrimary": "Book a Free Consultation",
     "ctaSecondary": "See My Services",
-    "painTitle": "AI only makes sense when it solves a real problem in your business.",
+    "painTitle": "Bringing AI into your company only makes sense when it solves a real business problem.",
     "pain1Title": "The first step is unclear",
     "pain1Description": "There are many options. Before choosing a tool, we need to name the business problem worth solving first.",
     "pain2Title": "Value must be measurable",
@@ -22,12 +30,7 @@
     "pain3Title": "Adoption must be safe",
     "pain3Description": "Data access, rules, permissions, and gradual rollout matter as much as the tool itself. Your team needs an AI solution they understand and can use safely.",
     "pain3AtlasText": "See the public Agent Threat Atlas",
-    "atlasLandingId": "agentic-ai-security",
-    "atlasLandingEyebrow": "Came from Agent Threat Atlas?",
-    "atlasLandingTitle": "Turn incident patterns into controls before your agents ship.",
-    "atlasLandingDescription": "I help teams map agent workflows, data access, tool permissions, and failure modes into practical guardrails they can own in production.",
-    "atlasLandingCta": "Talk through your agent risks",
-    "servicesTitle": "How I Can Help",
+    "servicesTitle": "How can I help you?",
     "consultingTitle": "AI Consulting and Strategy",
     "consultingDescription": "If you are not sure where to start, I will help map opportunities, choose the right first project, and decide how we will measure success.",
     "implementationTitle": "AI Solution Implementation",
@@ -40,7 +43,7 @@
       {
         "label": "01",
         "title": "Introductory Call",
-        "description": "30 minutes, no commitment. We clarify where you are, what you want to improve, and whether AI is the right next step."
+        "description": "45 minutes, no commitment. We clarify where you are, what you want to improve, and whether AI is the right next step."
       },
       {
         "label": "02",
@@ -60,8 +63,8 @@
     ],
     "firstStepOffer": {
       "eyebrow": "Most common first step",
-      "title": "AI Opportunity and Risk Audit",
-      "description": "In 1–2 weeks we map where AI makes sense in your company, which workflow to tackle first, what risks need controls, and how success will be measured.",
+      "title": "AI Opportunity Audit",
+      "description": "In a free 45-minute consultation, we'll map where AI makes sense in your company, which workflow to tackle first, which risks need addressing, and how we'll measure success.",
       "cta": "Book a Free Consultation"
     },
     "atlasProofEyebrow": "Security Research",
@@ -72,7 +75,7 @@
     "trustTitle": "Practical value, not hype",
     "trustDescription": "I recommend the technology and rollout path that fit your business problem, team, budget, and safety needs.",
     "ctaBandTitle": "Ready to find your first useful AI project?",
-    "ctaBandDescription": "Most clients start with a 30-minute consultation. No commitment, no unnecessary hype."
+    "ctaBandDescription": "Most clients start with a 45-minute consultation. No commitment, no unnecessary hype."
   },
   "services": {
     "heroTitle": "How I Help",
@@ -100,7 +103,7 @@
     },
     "notSure": {
       "title": "Not sure where to start?",
-      "description": "Most clients start with a 30-minute consultation. No commitment, no jargon — just an honest conversation about where AI might create measurable value.",
+      "description": "Most clients start with a 45-minute consultation. No commitment, no jargon — just an honest conversation about where AI might create measurable value.",
       "cta": "Book a Free Consultation"
     }
   },
@@ -186,7 +189,7 @@
     ]
   },
   "footer": {
-    "description": "Agentic AI for small and medium-sized businesses where measurability and security matter.",
+    "description": "Stop doing work that AI should be doing for you.",
     "navigation": "Navigation",
     "getInTouch": "Get in Touch",
     "copyright": "Matej Lukášik. All rights reserved.",

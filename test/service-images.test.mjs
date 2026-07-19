@@ -26,11 +26,13 @@ test('service components do not expose emoji icon props', () => {
   assert.doesNotMatch(index, /<ServiceSection[\s\S]*?\n\s+icon=/);
 });
 
-test('service cards stretch to equal grid height', () => {
+test('service card component stretches its content to equal height', () => {
   assert.match(serviceCard, /h-full flex flex-col/);
   assert.match(serviceCard, /relative z-10 h-full flex flex-col/);
   assert.match(serviceCard, /mt-auto/);
-  assert.match(index, /reveal reveal-delay-1 h-full/);
-  assert.match(index, /reveal reveal-delay-2 h-full/);
-  assert.match(index, /reveal reveal-delay-3 h-full/);
+});
+
+test('nested service sections render as white panels', () => {
+  assert.match(serviceSection, /nested\?: boolean/);
+  assert.match(serviceSection, /rounded-2xl bg-surface border border-border\/60 shadow-sm/);
 });

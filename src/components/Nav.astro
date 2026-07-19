@@ -17,12 +17,12 @@ const bookingHref = `${paths.contact}?focus=calendar`;
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-xl saturate-150 border-b border-border/50 shadow-sm shadow-black/[0.03]">
-  <div class="container mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-    <a href="/" class="inline-flex items-center rounded-xl" aria-label="Matej Lukášik">
+  <div class="container mx-auto px-4 sm:px-6 h-16 flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:justify-normal">
+    <a href="/" class="inline-flex items-center rounded-xl md:justify-self-start" aria-label="Matej Lukášik">
       <img src="/logo.svg" alt="Matej Lukášik" width="40" height="40" class="block h-10 w-10" />
     </a>
 
-    <div class="hidden md:flex items-center gap-1">
+    <div class="hidden md:flex items-center gap-1 md:justify-self-center">
       <a href="/#services" class="nav-pill">
         {strings.nav.services}
       </a>
@@ -37,7 +37,7 @@ const bookingHref = `${paths.contact}?focus=calendar`;
       </a>
     </div>
 
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-3 md:justify-self-end">
       <a
         href={altUrl}
         class="text-sm font-medium text-body hover:text-primary transition-colors px-2 py-1 rounded-lg hover:bg-primary-light"

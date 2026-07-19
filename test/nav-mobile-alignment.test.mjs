@@ -10,6 +10,17 @@ test('top navigation uses the mlx logotype asset', () => {
   assert.match(nav, /alt="Matej Lukášik"/);
 });
 
+test('desktop navigation keeps the link group centered independently of side content', () => {
+  assert.match(
+    nav,
+    /class="[^"]*\bmd:grid\b[^"]*md:grid-cols-\[1fr_auto_1fr\][^"]*"/,
+    'expected a balanced three-column desktop navigation shell',
+  );
+  assert.match(nav, /class="[^"]*\bmd:justify-self-start\b[^"]*" aria-label="Matej Lukášik"/);
+  assert.match(nav, /class="[^"]*\bhidden\b[^"]*\bmd:flex\b[^"]*\bmd:justify-self-center\b[^"]*"/);
+  assert.match(nav, /class="[^"]*\bflex\b[^"]*\bitems-center\b[^"]*\bmd:justify-self-end\b[^"]*"/);
+});
+
 test('mobile language picker is grouped with the hamburger menu', () => {
   const actionGroup = /<div class="[^"]*\bflex\b[^"]*\bitems-center\b[^"]*\bgap-3\b[^"]*">/.exec(nav);
 

@@ -24,14 +24,14 @@ test('footer has privacy route without location or booking CTA', () => {
   assert.doesNotMatch(footer, /focus=calendar/);
 });
 
-test('footer copy is specific to small and medium businesses', () => {
+test('footer repeats the Slovak homepage promise', () => {
   assert.equal(
     sk.footer.description,
-    'Agentická AI pre malé a stredné firmy, pre ktoré sú merateľnosť a bezpečnosť dôležité.',
+    'Prestaňte robiť prácu, ktorú má za Vás robiť AI.',
   );
   assert.equal(
     en.footer.description,
-    'Agentic AI for small and medium-sized businesses where measurability and security matter.',
+    'Stop doing work that AI should be doing for you.',
   );
 });
 

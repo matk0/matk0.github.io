@@ -5,9 +5,9 @@ import { test } from 'node:test';
 const index = readFileSync(new URL('../src/pages/index.astro', import.meta.url), 'utf8');
 const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
 
-test('about section uses the clay-style Matej image', () => {
-  assert.match(index, /src="\/images\/about-matej\.webp"/);
-  assert.ok(existsSync(new URL('../public/images/about-matej.webp', import.meta.url)));
+test('about section uses the supplied black-and-white portrait', () => {
+  assert.match(index, /src="\/images\/about-matej-portrait\.webp"/);
+  assert.ok(existsSync(new URL('../public/images/about-matej-portrait.webp', import.meta.url)));
 });
 
 test('about section gives the portrait half-width presence', () => {

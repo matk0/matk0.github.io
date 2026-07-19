@@ -9,20 +9,20 @@ Matej comes from a Ruby/Rails engineering background and now focuses on agentic 
 
 ## Services
 
-- **Consulting & Advisory** — Workflow and process audit, automation opportunity mapping, ROI estimation, adoption roadmap with milestones.
-- **Implementation** — Custom AI agents tailored to client processes. Typical setup: one agent per employee accessible via Slack, a CEO orchestrator agent coordinating across teams, a shared prompt library and company knowledge base, admin dashboard with usage analytics. Self-hosted or managed.
-- **Training & Workshops** — Half-day intensive workshops, multi-week training programs, prompt engineering for business teams, ongoing support and office hours.
+- **AI Consulting & Strategy** — Process and workflow audit, AI opportunity mapping, prioritization by ROI and feasibility, and an adoption plan with success metrics.
+- **AI Solution Implementation** — Practical AI automations, agents, and integrations built around a clear business problem, with safe deployment, evaluations, and monitoring.
+- **AI Workshops & Adoption** — Workshops built around the team's real tasks, output verification, model limits, and rules for safe use of data and tools.
 
 ## Process
 
-1. Discovery Call — free 30-minute exploratory conversation.
-2. Roadmap — tailored plan with clear milestones, no guesswork.
-3. Execution — agents built, team trained, weekly progress visible (no big-reveal).
-4. Handoff — documentation, training, client team runs it independently.
+1. Introductory Call — free 45-minute conversation to clarify the problem and whether AI is the right next step.
+2. First-Step Plan — a concrete use case, success metric, safety rules, and realistic rollout path.
+3. Execution — the approved workflow is built, tested on real tasks, introduced to the first users, and measured.
+4. Handoff — once the solution works, the client team takes it over, with continued support available when useful.
 
 ## Common first engagement
 
-**AI opportunity and risk audit** — In 1–2 weeks, maps where AI makes sense in the company, which workflow to tackle first, what risks need controls, and how success will be measured.
+**AI Opportunity Audit** — In a free 45-minute consultation, maps where AI makes sense in the company, which workflow to tackle first, which risks need addressing, and how success will be measured.
 
 ## Research
 
@@ -62,20 +62,20 @@ Matej ma pozadie v Ruby/Rails inzinierstve a teraz sa venuje agentickej AI. Prac
 
 ## Sluzby
 
-- **Konzultacie a poradenstvo** — Audit procesov a workflows, mapovanie prilezitosti na automatizaciu, odhad ROI, plan nasadenia s milnikmi.
-- **Implementacia** — AI agenti na mieru klientskym procesom. Typicke nastavenie: jeden agent na zamestnanca pristupny cez Slack, CEO orchestrator agent koordinujuci napriec timami, zdielana kniznica promptov a firemna znalostna baza, admin dashboard s analytikou. Self-hosted alebo spravovane.
-- **Skolenia a workshopy** — Poldenove intenzivne workshopy, viactyzdnove trenovacie programy, prompt engineering pre business timy, priebezna podpora a konzultacie.
+- **Konzultacie a AI strategia** — Audit procesov a workflowov, mapovanie AI prilezitosti, prioritizacia podla ROI a realizovatelnosti a plan adopcie s metrikami uspechu.
+- **Implementacia AI rieseni** — Prakticke AI automatizacie, agenti a integracie postavene okolo jasneho biznis problemu, s bezpecnym nasadenim, evaluaciami a monitoringom.
+- **AI workshopy a zavedenie do praxe** — Workshopy postavene na realnych ulohach timu, overovanie vystupov, limity modelov a pravidla bezpecneho pouzivania dat a nastrojov.
 
 ## Proces
 
-1. Uvodni hovor — bezplatna 30-minutova konzultacia.
-2. Plan — nasadeny na mieru s jasnymi milnikmi, ziadne hadanie.
-3. Realizacia — agenti nasadeni, tim vyskoleny, pokrok kazdy tyzden (ziadne velke odhalenie na konci).
-4. Odovzdanie — dokumentacia, skolenie, klientsky tim to riadi samostatne.
+1. Uvodny rozhovor — bezplatnych 45 minut na ujasnenie problemu a toho, ci je AI spravny dalsi krok.
+2. Plan prveho kroku — konkretny use case, metrika uspechu, bezpecnostne pravidla a realisticky postup nasadenia.
+3. Realizacia — schvaleny workflow sa postavi, otestuje na realnych ulohach, zavedie medzi prvych pouzivatelov a zmeria.
+4. Odovzdanie do praxe — ked riesenie funguje, preberie ho klientsky tim; dalsia podpora ostava dostupna, ak dava zmysel.
 
 ## Najcastejsi prvy krok
 
-**Audit AI prilezitosti a rizik** — Za 1–2 tyzdne zmapuje, kde ma AI vo firme zmysel, ktory workflow riesit ako prvy, ake rizika treba osetrit a ako sa bude merat uspech.
+**Audit AI prilezitosti** — Za bezplatnych 45 minut zmapuje, kde ma AI vo firme zmysel, ktory workflow riesit ako prvy, ake rizika treba osetrit a ako sa bude merat uspech.
 
 ## Vyskum
 

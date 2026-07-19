@@ -25,7 +25,7 @@ test('Slovak contact page copy uses Slovak diacritics', () => {
   assert.equal(sk.contact.faq[0].question, 'Nevieme, kde s AI začať. Má zmysel sa ozvať?');
   assert.equal(sk.contact.faq[5].question, 'S akými nástrojmi pracujete?');
   assert.equal(sk.contact.faq[6].question, 'Čo sa stane po odovzdaní riešenia?');
-  assert.equal(sk.footer.description, 'Agentická AI pre malé a stredné firmy, pre ktoré sú merateľnosť a bezpečnosť dôležité.');
+  assert.equal(sk.footer.description, 'Prestaňte robiť prácu, ktorú má za Vás robiť AI.');
   assert.equal(sk.footer.navigation, 'Navigácia');
   assert.equal(sk.footer.copyright, 'Matej Lukášik. Všetky práva vyhradené.');
 });

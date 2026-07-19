@@ -93,14 +93,14 @@
     };
 
     window.trackSiteEvent = (name, props = {}, options = {}) => {
-      if (!allowedEventNames.has(name)) return;
-      if (!hasAnalyticsConsent()) return;
+      if (!allowedEventNames.has(name)) return false;
+      if (!hasAnalyticsConsent()) return false;
+      if (typeof window.gtag !== 'function') return false;
 
       const cleanProps = sanitizeProps(props);
 
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', name, { ...cleanProps, ...options });
-      }
+      window.gtag('event', name, { ...cleanProps, ...options });
+      return true;
     };
 
     document.addEventListener('click', (event) => {
@@ -120,17 +120,31 @@
       });
     });
 
-    if ('IntersectionObserver' in window) {
-      const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
+    const visibleSections = new Set();
+    let sectionObserver;
 
-          sectionObserver.unobserve(entry.target);
-          window.trackSiteEvent(
-            'section_viewed',
-            { section: entry.target.dataset.analyticsSection },
-            { interactive: false }
-          );
+    const trackSectionView = (section) => {
+      const tracked = window.trackSiteEvent(
+        'section_viewed',
+        { section: section.dataset.analyticsSection },
+        { interactive: false }
+      );
+      if (!tracked) return;
+
+      visibleSections.delete(section);
+      sectionObserver?.unobserve(section);
+    };
+
+    if ('IntersectionObserver' in window) {
+      sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            visibleSections.delete(entry.target);
+            return;
+          }
+
+          visibleSections.add(entry.target);
+          trackSectionView(entry.target);
         });
       }, { threshold: 0.45 });
 
@@ -158,10 +172,19 @@
       scrollDepths.forEach((depth) => {
         if (reachedDepths.has(depth) || currentDepth < depth) return;
 
-        reachedDepths.add(depth);
-        window.trackSiteEvent('scroll_depth_reached', { depth }, { interactive: false });
+        const tracked = window.trackSiteEvent(
+          'scroll_depth_reached',
+          { depth },
+          { interactive: false }
+        );
+        if (tracked) reachedDepths.add(depth);
       });
     };
+
+    window.addEventListener('site:analytics-ready', () => {
+      visibleSections.forEach(trackSectionView);
+      trackScrollDepth();
+    });
 
     window.addEventListener('scroll', () => {
       if (scrollPending) return;

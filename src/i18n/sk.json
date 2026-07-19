@@ -9,20 +9,20 @@
     "faq": "FAQ"
   },
   "home": {
-    "heroTitle": "AI agenti pre Váš tím.",
+    "heroTitle": "Prestaňte robiť prácu, ktorú má za Vás robiť AI.",
     "heroTypewords": [
-      "Vysoko efektívni",
-      "Úplne bezpeční",
-      "Výrazne úsporní",
-      "Maximálne spoľahliví",
-      "Plne transparentní",
-      "Pripravení na produkciu",
-      "Dôkladne otestovaní"
+      "nudnú",
+      "repetitívnu",
+      "rutinnú",
+      "zdĺhavú",
+      "neinšpiratívnu",
+      "administratívnu"
     ],
-    "heroDescription": "Viete, že AI potrebujete. Spolu nájdeme, kde začať, čo má pre Vás najväčší zmysel a spustíme prvé užitočné riešenie.",
+    "heroTypewordTemplate": "Prestaňte robiť {word} prácu, ktorú má za Vás robiť AI.",
+    "heroDescription": "AI Vám má šetriť čas a peniaze, nie vytvárať ďalšiu prácu. Spolu nájdeme, kde začať, čo má pre Vás najväčší zmysel a spustíme prvé užitočné riešenie.",
     "ctaPrimary": "Bezplatná konzultácia",
     "ctaSecondary": "Moje služby",
-    "painTitle": "AI má zmysel až vtedy, keď rieši skutočný problém vo Vašom podnikaní.",
+    "painTitle": "Zavedenie AI do firmy má zmysel až vtedy, keď rieši skutočný problém vo Vašom podnikaní.",
     "pain1Title": "Chýba Vám jasný prvý krok",
     "pain1Description": "Možností je veľa. Skôr než vyberiete nástroj, treba pomenovať problém, ktorý má pre firmu najväčší zmysel vyriešiť.",
     "pain2Title": "Hodnota musí byť merateľná",
@@ -30,11 +30,6 @@
     "pain3Title": "Adopcia musí byť bezpečná",
     "pain3Description": "Prístup k dátam, pravidlá, oprávnenia a postupné nasadenie sú rovnako dôležité ako samotný nástroj. Tím potrebuje AI riešenie, ktorému rozumie a vie ho bezpečne používať.",
     "pain3AtlasText": "Pozrite si verejný Agent Threat Atlas",
-    "atlasLandingId": "bezpecnost-agentickej-ai",
-    "atlasLandingEyebrow": "Prišli ste z Agent Threat Atlas?",
-    "atlasLandingTitle": "Premeňme vzory incidentov na kontrolné mechanizmy ešte pred nasadením agentov.",
-    "atlasLandingDescription": "Pomáham tímom zmapovať workflowy agentov, prístupy k dátam, oprávnenia nástrojov a zlyhania na praktické bezpečnostné pravidlá, ktoré vedia prevádzkovať.",
-    "atlasLandingCta": "Prejsť riziká Vašich agentov",
     "servicesTitle": "Ako Vám viem pomôcť?",
     "consultingTitle": "Konzultácie a AI stratégia",
     "consultingDescription": "Ak ešte neviete, kde začať, pomôžem Vám zmapovať príležitosti, vybrať správny prvý projekt a určiť ako budeme merať úspech.",
@@ -48,7 +43,7 @@
       {
         "label": "01",
         "title": "Úvodný rozhovor",
-        "description": "30 minút bez záväzkov. Ujasníme si, kde ste, čo chcete zlepšiť a či je AI správny ďalší krok."
+        "description": "45 minút bez záväzkov. Ujasníme si, kde ste, čo chcete zlepšiť a či je AI správny ďalší krok."
       },
       {
         "label": "02",
@@ -68,8 +63,8 @@
     ],
     "firstStepOffer": {
       "eyebrow": "Najčastejší prvý krok",
-      "title": "Audit AI príležitostí a rizík",
-      "description": "Za 1–2 týždne zmapujeme, kde má AI vo Vašej firme zmysel, ktorý workflow riešiť ako prvý, aké riziká treba ošetriť a ako budeme merať úspech.",
+      "title": "Audit AI príležitostí",
+      "description": "Za bezplatných 45 minút zmapujeme, kde má AI vo Vašej firme zmysel, ktorý workflow riešiť ako prvý, aké riziká treba ošetriť a ako budeme merať úspech.",
       "cta": "Bezplatná konzultácia"
     },
     "atlasProofEyebrow": "Bezpečnostný výskum",
@@ -80,7 +75,7 @@
     "trustTitle": "Postavené na praktickej hodnote, nie na hype",
     "trustDescription": "Odporúčam technológiu a spôsob nasadenia, ktoré sedia Vášmu problému, tímu, rozpočtu a bezpečnostným požiadavkám.",
     "ctaBandTitle": "Ste pripravení nájsť prvý užitočný AI projekt?",
-    "ctaBandDescription": "Väčšina klientov začína 30-minútovou konzultáciou. Bez záväzkov, bez zbytočného hypu."
+    "ctaBandDescription": "Väčšina klientov začína 45-minútovou konzultáciou. Bez záväzkov, bez zbytočného hypu."
   },
   "services": {
     "heroTitle": "Ako pomôžem",
@@ -123,7 +118,7 @@
     },
     "notSure": {
       "title": "Neviete, kde začať?",
-      "description": "Väčšina klientov začína 30-minútovou konzultáciou. Bez záväzkov, bez žargónu — len úprimný rozhovor o tom, kde môže AI priniesť merateľnú hodnotu.",
+      "description": "Väčšina klientov začína 45-minútovou konzultáciou. Bez záväzkov, bez žargónu — len úprimný rozhovor o tom, kde môže AI priniesť merateľnú hodnotu.",
       "cta": "Bezplatná konzultácia"
     }
   },
@@ -209,7 +204,7 @@
     ]
   },
   "footer": {
-    "description": "Agentická AI pre malé a stredné firmy, pre ktoré sú merateľnosť a bezpečnosť dôležité.",
+    "description": "Prestaňte robiť prácu, ktorú má za Vás robiť AI.",
     "navigation": "Navigácia",
     "getInTouch": "Kontakt",
     "copyright": "Matej Lukášik. Všetky práva vyhradené.",

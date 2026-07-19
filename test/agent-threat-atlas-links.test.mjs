@@ -3,7 +3,6 @@ import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 
 const index = readFileSync(new URL('../src/pages/index.astro', import.meta.url), 'utf8');
-const atlasLanding = readFileSync(new URL('../src/components/AtlasLanding.astro', import.meta.url), 'utf8');
 const footer = readFileSync(new URL('../src/components/Footer.astro', import.meta.url), 'utf8');
 const faq = readFileSync(new URL('../src/components/FAQ.astro', import.meta.url), 'utf8');
 const i18n = readFileSync(new URL('../src/i18n/index.ts', import.meta.url), 'utf8');
@@ -26,28 +25,14 @@ test('homepage keeps lightweight security links to Agent Threat Atlas', () => {
   assert.ok(index.indexOf('<FirstStepOffer') < index.indexOf('<FAQ'));
 });
 
-test('homepage gives Atlas visitors a tracked consulting landing section', () => {
-  assert.match(index, /import AtlasLanding from '\.\.\/components\/AtlasLanding\.astro';/);
-  assert.match(index, /<AtlasLanding/);
-  assert.match(index, /id=\{strings\.home\.atlasLandingId\}/);
-  assert.match(index, /ctaHref=\{`\$\{paths\.contact\}\?service=consulting&focus=contact-form&source=agent-threat-atlas`\}/);
-  assert.ok(index.indexOf('<AtlasLanding') < index.indexOf('<section id="services"'));
-
-  assert.match(atlasLanding, /data-analytics-section="atlas_landing"/);
-  assert.match(atlasLanding, /data-analytics-event="service_cta_clicked"/);
-  assert.match(atlasLanding, /data-analytics-position="atlas_landing"/);
-  assert.match(atlasLanding, /data-analytics-service="agentic_ai_security"/);
-  assert.match(atlasLanding, /scroll-mt-24/);
+test('homepage omits the dedicated Agent Threat Atlas landing section', () => {
+  assert.doesNotMatch(index, /AtlasLanding/);
+  assert.doesNotMatch(index, /atlasLanding/);
+  assert.equal(en.home.atlasLandingId, undefined);
+  assert.equal(sk.home.atlasLandingId, undefined);
 });
 
 test('Slovak copy connects security concern to Agent Threat Atlas', () => {
-  assert.equal(en.home.atlasLandingId, 'agentic-ai-security');
-  assert.equal(sk.home.atlasLandingId, 'bezpecnost-agentickej-ai');
-  assert.equal(en.home.atlasLandingEyebrow, 'Came from Agent Threat Atlas?');
-  assert.equal(sk.home.atlasLandingEyebrow, 'Prišli ste z Agent Threat Atlas?');
-  assert.equal(en.home.atlasLandingCta, 'Talk through your agent risks');
-  assert.equal(sk.home.atlasLandingCta, 'Prejsť riziká Vašich agentov');
-
   assert.equal(sk.home.atlasProofTitle, 'Bezpečnosť AI agentov nie je abstraktné riziko.');
   assert.equal(sk.home.atlasProofCta, 'Otvoriť Agent Threat Atlas');
   assert.equal(sk.home.pain3AtlasText, 'Pozrite si verejný Agent Threat Atlas');
