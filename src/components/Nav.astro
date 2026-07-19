@@ -54,15 +54,21 @@ const bookingHref = `${paths.contact}?focus=calendar`;
         {strings.nav.bookCall}
       </a>
 
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-body hover:text-heading" aria-label="Menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-body hover:text-heading"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-surface">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-surface" aria-hidden="true">
     <div class="container mx-auto px-4 py-4 flex flex-col gap-3">
       <a href="/#services" class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.services}</a>
       <a href="/#about" class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.about}</a>
@@ -86,7 +92,25 @@ const bookingHref = `${paths.contact}?focus=calendar`;
 <script>
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
+
+  const setMenuOpen = (open) => {
+    menu?.classList.toggle('hidden', !open);
+    menu?.setAttribute('aria-hidden', String(!open));
+    btn?.setAttribute('aria-expanded', String(open));
+  };
+
   btn?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
+    setMenuOpen(btn.getAttribute('aria-expanded') !== 'true');
+  });
+
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMenuOpen(false));
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && btn?.getAttribute('aria-expanded') === 'true') {
+      setMenuOpen(false);
+      btn?.focus();
+    }
   });
 </script>

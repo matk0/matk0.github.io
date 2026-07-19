@@ -30,7 +30,7 @@ const paths = getLocalizedPaths(lang);
 
 <form id="contact-form" class="space-y-5 rounded-2xl p-4 -m-4" method="POST" action="/api/contact" data-analytics-event-source="contact_form">
   <input type="hidden" name="lang" value={lang} />
-  <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
+  <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
   <div>
     <label for="name" class="block text-sm font-medium text-heading mb-1.5">{strings.contact.nameLabel}</label>
@@ -39,6 +39,8 @@ const paths = getLocalizedPaths(lang);
       id="name"
       name="name"
       required
+      maxlength="100"
+      autocomplete="name"
       placeholder={strings.contact.namePlaceholder}
       class="w-full px-4 py-3 rounded-xl border border-border bg-surface text-heading placeholder:text-body/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-sm"
     />
@@ -51,6 +53,8 @@ const paths = getLocalizedPaths(lang);
       id="email"
       name="email"
       required
+      maxlength="254"
+      autocomplete="email"
       placeholder={strings.contact.emailPlaceholder}
       class="w-full px-4 py-3 rounded-xl border border-border bg-surface text-heading placeholder:text-body/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-sm"
     />
@@ -77,6 +81,7 @@ const paths = getLocalizedPaths(lang);
       name="message"
       rows="4"
       required
+      maxlength="5000"
       placeholder={strings.contact.messagePlaceholder}
       class="w-full px-4 py-3 rounded-xl border border-border bg-surface text-heading placeholder:text-body/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-sm resize-none"
     ></textarea>
@@ -92,10 +97,10 @@ const paths = getLocalizedPaths(lang);
     <a href={paths.privacy} class="font-medium text-primary hover:text-primary-hover">{strings.contact.privacyLink}</a>
   </p>
 
-  <div id="form-success" class="hidden p-4 rounded-xl bg-green-50 text-green-800 text-sm">
+  <div id="form-success" role="status" aria-live="polite" tabindex="-1" class="hidden p-4 rounded-xl bg-green-50 text-green-800 text-sm">
     {strings.contact.success}
   </div>
-  <div id="form-error" class="hidden p-4 rounded-xl bg-red-50 text-red-800 text-sm">
+  <div id="form-error" role="alert" aria-live="assertive" tabindex="-1" class="hidden p-4 rounded-xl bg-red-50 text-red-800 text-sm">
     {strings.contact.error}
   </div>
 </form>
@@ -171,6 +176,7 @@ const paths = getLocalizedPaths(lang);
 
     successEl?.classList.add('hidden');
     errorEl?.classList.add('hidden');
+    form.setAttribute('aria-busy', 'true');
     submitBtn.disabled = true;
     submitBtn.textContent = '...';
     trackContactForm('contact_form_submitted');
@@ -184,14 +190,18 @@ const paths = getLocalizedPaths(lang);
         trackContactForm('contact_form_succeeded');
         successEl?.classList.remove('hidden');
         form.reset();
+        successEl?.focus();
       } else {
         trackContactForm('contact_form_failed');
         errorEl?.classList.remove('hidden');
+        errorEl?.focus();
       }
     } catch {
       trackContactForm('contact_form_failed');
       errorEl?.classList.remove('hidden');
+      errorEl?.focus();
     } finally {
+      form.setAttribute('aria-busy', 'false');
       submitBtn.disabled = false;
       submitBtn.textContent = originalText;
     }

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#eeeaff" />
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#936dff" stop-opacity="0.32" />
+      <stop offset="1" stop-color="#936dff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)" />
+  <circle cx="1100" cy="40" r="360" fill="url(#glow)" />
+  <circle cx="1080" cy="600" r="220" fill="url(#glow)" opacity="0.55" />
+  <image href="logo.svg" x="80" y="165" width="300" height="300" />
+  <text x="440" y="170" fill="#6d4aff" font-family="Space Grotesk, sans-serif" font-size="30" font-weight="600">Matej Lukášik</text>
+  <text x="440" y="255" fill="#1b1340" font-family="Space Grotesk, sans-serif" font-size="53" font-weight="700" letter-spacing="-1.3">
+    <tspan x="440" dy="0">Stop doing work that AI</tspan>
+    <tspan x="440" dy="66">should be doing for you.</tspan>
+  </text>
+  <text x="440" y="460" fill="#706d7a" font-family="Inter, sans-serif" font-size="25" font-weight="500">AI consulting · implementation · workshops</text>
+  <rect x="440" y="500" width="120" height="7" rx="3.5" fill="#936dff" />
+</svg>

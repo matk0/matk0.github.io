@@ -10,7 +10,8 @@ const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.ur
 test('calendar embed books the free 45-minute consultation', () => {
   assert.match(calEmbed, /https:\/\/app\.cal\.com\/embed\/embed\.js/);
   assert.match(calEmbed, /origin: "https:\/\/cal\.com"/);
-  assert.match(calEmbed, /calLink: "matejlukasik\/free-consultation"/);
+  assert.match(calEmbed, /lang === 'sk' \? 'matejlukasik\/bezplatna-konzultacia'/);
+  assert.match(calEmbed, /: 'matejlukasik\/free-consultation'/);
   assert.doesNotMatch(calEmbed, /cal\.eu/);
 });
 

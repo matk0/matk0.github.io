@@ -1,6 +1,9 @@
 {
   "lang": "sk",
   "dir": "ltr",
+  "accessibility": {
+    "skipToContent": "Preskočiť na obsah"
+  },
   "nav": {
     "services": "Služby",
     "about": "O mne",

@@ -5,6 +5,7 @@ import { test } from 'node:test';
 const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
 const kontaktPage = readFileSync(new URL('../src/pages/kontakt.astro', import.meta.url), 'utf8');
 const layout = readFileSync(new URL('../src/layouts/Layout.astro', import.meta.url), 'utf8');
+const structuredData = readFileSync(new URL('../src/structured-data.ts', import.meta.url), 'utf8');
 
 test('Slovak contact page copy uses Slovak diacritics', () => {
   assert.equal(sk.contact.heroDescription, 'Či už máte jasný projekt, alebo len otázky — som tu.');
@@ -48,5 +49,6 @@ test('Slovak tools FAQ names concrete categories and tools', () => {
 
 test('Slovak contact page metadata uses Slovak diacritics', () => {
   assert.match(kontaktPage, /Spojte sa so mnou\. Napíšte správu alebo si dohodnite bezplatnú konzultáciu\./);
-  assert.match(layout, /Agentická AI pre malé a stredné firmy, ktoré chcú bezpečné a merateľné výsledky\./);
+  assert.match(structuredData, /Agentická AI pre malé a stredné firmy, ktoré chcú bezpečné a merateľné výsledky\./);
+  assert.match(layout, /getStructuredData/);
 });

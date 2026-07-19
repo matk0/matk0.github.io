@@ -1,6 +1,9 @@
 {
   "lang": "en",
   "dir": "ltr",
+  "accessibility": {
+    "skipToContent": "Skip to content"
+  },
   "nav": {
     "services": "Services",
     "about": "About",

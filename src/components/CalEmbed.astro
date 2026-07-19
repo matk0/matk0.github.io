@@ -11,6 +11,7 @@ interface Props {
 const { title, description, lang } = Astro.props;
 const strings = t(lang);
 const paths = getLocalizedPaths(lang);
+const calLink = lang === 'sk' ? 'matejlukasik/bezplatna-konzultacia' : 'matejlukasik/free-consultation';
 ---
 
 <div id="booking-calendar" class="rounded-2xl p-4 -m-4">
@@ -35,7 +36,7 @@ const paths = getLocalizedPaths(lang);
   </div>
 </div>
 
-<script is:inline>
+<script define:vars={{ calLink }} is:inline>
   const bookingCalendar = document.getElementById('booking-calendar');
   const loadCalendarButton = bookingCalendar?.querySelector('[data-cal-load]');
   const calendarGate = bookingCalendar?.querySelector('[data-cal-gate]');
@@ -63,7 +64,7 @@ const paths = getLocalizedPaths(lang);
     Cal("init", { origin: "https://cal.com" });
     Cal("inline", {
       elementOrSelector: "#cal-embed",
-      calLink: "matejlukasik/free-consultation",
+      calLink,
       config: { layout: "month_view" },
     });
     Cal("ui", { hideEventTypeDetails: false, layout: "month_view" });

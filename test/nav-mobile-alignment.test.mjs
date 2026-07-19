@@ -29,7 +29,7 @@ test('mobile language picker is grouped with the hamburger menu', () => {
   const actionGroupStart = actionGroup.index;
   const actionGroupEnd = nav.indexOf('</div>', actionGroupStart);
   const languagePicker = nav.indexOf('{altLang.toUpperCase()}', actionGroupStart);
-  const hamburgerButton = nav.indexOf('<button id="mobile-menu-btn"', actionGroupStart);
+  const hamburgerButton = nav.indexOf('id="mobile-menu-btn"', actionGroupStart);
 
   assert.ok(languagePicker > actionGroupStart, 'expected the language picker in the action group');
   assert.ok(

@@ -1,30 +1,24 @@
 import type { APIRoute } from 'astro';
 import { DOMAINS, type Lang } from '../i18n';
 
+const PAGE_PATHS: Array<Record<Lang, string>> = [
+  { en: '/', sk: '/' },
+  { en: '/contact', sk: '/kontakt' },
+  { en: '/privacy', sk: '/sukromie' },
+];
+
 function urls(lang: Lang) {
   const self = DOMAINS[lang];
-  const other = DOMAINS[lang === 'sk' ? 'en' : 'sk'];
-  const home = '/';
-  const contact = lang === 'sk' ? '/kontakt' : '/contact';
-  const altContact = lang === 'sk' ? '/contact' : '/kontakt';
   const altLang = lang === 'sk' ? 'en' : 'sk';
 
-  return [
-    {
-      loc: `${self}${home}`,
-      alternates: [
-        { hreflang: lang, href: `${self}${home}` },
-        { hreflang: altLang, href: `${other}${home}` },
-      ],
-    },
-    {
-      loc: `${self}${contact}`,
-      alternates: [
-        { hreflang: lang, href: `${self}${contact}` },
-        { hreflang: altLang, href: `${other}${altContact}` },
-      ],
-    },
-  ];
+  return PAGE_PATHS.map((paths) => ({
+    loc: `${self}${paths[lang]}`,
+    alternates: [
+      { hreflang: lang, href: `${self}${paths[lang]}` },
+      { hreflang: altLang, href: `${DOMAINS[altLang]}${paths[altLang]}` },
+      { hreflang: 'x-default', href: `${DOMAINS.en}${paths.en}` },
+    ],
+  }));
 }
 
 export const GET: APIRoute = ({ locals }) => {

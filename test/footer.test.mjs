@@ -5,6 +5,7 @@ import { test } from 'node:test';
 const footer = readFileSync(new URL('../src/components/Footer.astro', import.meta.url), 'utf8');
 const i18n = readFileSync(new URL('../src/i18n/index.ts', import.meta.url), 'utf8');
 const layout = readFileSync(new URL('../src/layouts/Layout.astro', import.meta.url), 'utf8');
+const structuredData = readFileSync(new URL('../src/structured-data.ts', import.meta.url), 'utf8');
 const en = JSON.parse(readFileSync(new URL('../src/i18n/en.json', import.meta.url), 'utf8'));
 const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
 
@@ -44,5 +45,6 @@ test('footer shows selected professional and publishing profiles', () => {
   assert.match(footer, /youtube\.com\/@matejlukasik/);
   assert.match(footer, /aria-label="X"/);
   assert.match(footer, /aria-label="YouTube"/);
-  assert.match(layout, /x\.com\/matejlukasik/);
+  assert.match(structuredData, /x\.com\/matejlukasik/);
+  assert.match(layout, /getStructuredData/);
 });

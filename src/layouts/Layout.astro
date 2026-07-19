@@ -5,7 +5,8 @@ import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
 import CookieNotice from '../components/CookieNotice.astro';
 import type { Lang } from '../i18n';
-import { DOMAINS, getAlternateUrl, getAlternateLang, getSiteOrigin } from '../i18n';
+import { getAlternateUrl, getAlternateLang, getSiteOrigin, t } from '../i18n';
+import { getStructuredData } from '../structured-data';
 import { env as cloudflareEnv } from 'cloudflare:workers';
 
 interface Props {
@@ -16,11 +17,16 @@ interface Props {
 }
 
 const { title, description, lang, currentPath } = Astro.props;
+const strings = t(lang);
 const siteOrigin = getSiteOrigin(lang, Astro.url);
 const canonicalURL = new URL(currentPath, siteOrigin);
 const alternateURL = getAlternateUrl(lang, currentPath, Astro.url);
 const altLang = getAlternateLang(lang);
-const ogImage = new URL('/og.png', siteOrigin).href;
+const ogImagePath = lang === 'sk' ? '/og-sk.png' : '/og-en.png';
+const ogImage = new URL(ogImagePath, siteOrigin).href;
+const ogImageAlt = lang === 'sk'
+  ? 'Matej Lukášik — konzultácie a implementácia AI'
+  : 'Matej Lukášik — AI consulting and implementation';
 const googleSiteVerification =
   import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION ||
   cloudflareEnv.PUBLIC_GOOGLE_SITE_VERIFICATION;
@@ -28,39 +34,7 @@ const gaMeasurementId =
   import.meta.env.PUBLIC_GA_MEASUREMENT_ID ||
   cloudflareEnv.PUBLIC_GA_MEASUREMENT_ID;
 
-const jsonLd = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "name": "Matej Lukášik",
-      "url": "https://matejlukasik.com",
-      "jobTitle": lang === 'sk' ? "Konzultant pre agentickú AI" : "Agentic AI Consultant for SMBs",
-      "image": `${DOMAINS[lang]}/avatar.png`,
-      "sameAs": [
-        "https://www.linkedin.com/in/matej-lukasik",
-        "https://x.com/matejlukasik",
-        "https://github.com/matk0",
-        "https://youtube.com/@matejlukasik"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "SK"
-      }
-    },
-    {
-      "@type": "ProfessionalService",
-      "name": "Matej Lukášik — Agentic AI Consulting",
-      "url": "https://matejlukasik.com",
-      "description": lang === 'sk'
-        ? "Agentická AI pre malé a stredné firmy, ktoré chcú bezpečné a merateľné výsledky."
-        : "Agentic AI for small and medium-sized businesses that want safe, measurable results.",
-      "areaServed": "EU",
-      "provider": { "@type": "Person", "name": "Matej Lukášik" },
-      "availableLanguage": ["en", "sk"]
-    }
-  ]
-});
+const jsonLd = JSON.stringify(getStructuredData(lang, siteOrigin));
 ---
 
 <!DOCTYPE html>
@@ -78,12 +52,17 @@ const jsonLd = JSON.stringify({
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:locale" content={lang === 'sk' ? 'sk_SK' : 'en_US'} />
     <meta property="og:site_name" content="Matej Lukášik" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
     <script type="application/ld+json" set:html={jsonLd} />
     <link rel="canonical" href={canonicalURL.href} />
     <link rel="alternate" hreflang={altLang} href={alternateURL} />
@@ -96,42 +75,48 @@ const jsonLd = JSON.stringify({
     <title>{title}</title>
   </head>
   <body class="min-h-screen flex flex-col">
+    <a href="#main-content" class="skip-link">{strings.accessibility.skipToContent}</a>
     <Nav lang={lang} currentPath={currentPath} currentUrl={Astro.url} />
-    <main class="flex-1">
+    <main id="main-content" tabindex="-1" class="flex-1">
       <slot />
     </main>
     <Footer lang={lang} />
     <CookieNotice lang={lang} gaMeasurementId={gaMeasurementId} />
     <Analytics />
     <script is:inline>
-      // Scroll reveal
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealElements = document.querySelectorAll('.reveal');
 
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      if (prefersReducedMotion) {
+        revealElements.forEach((element) => element.classList.add('revealed'));
+      } else {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-      // 3D card tilt
-      document.querySelectorAll('[data-tilt]').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          const rotateX = (y - centerY) / centerY * -4;
-          const rotateY = (x - centerX) / centerX * 4;
-          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        revealElements.forEach(element => observer.observe(element));
+
+        document.querySelectorAll('[data-tilt]').forEach(card => {
+          card.addEventListener('mousemove', (event) => {
+            const rect = card.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = (y - centerY) / centerY * -4;
+            const rotateY = (x - centerX) / centerX * 4;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+          });
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+          });
         });
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-        });
-      });
+      }
     </script>
   </body>
 </html>
