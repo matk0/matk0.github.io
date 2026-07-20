@@ -1,28 +1,28 @@
 import type { APIRoute } from 'astro';
 import { type Lang } from '../i18n';
 
-const EN = `# Matej Lukášik — AI Agent Consulting
+const EN = `# Matej Lukášik — AI Process Audits and Automation
 
-> Solo AI agent consultant based in Slovakia. Helps teams identify, design, and deploy AI agent systems that produce measurable results — from first roadmap to production handoff. Stack-agnostic, open-source friendly, focused on building internal capability rather than long-term consultant dependency.
+> Helps small and medium-sized businesses find recurring work that consumes the most time, simplify it, automate it, and measure the result. The starting point is one concrete business process, not an AI tool.
 
-Matej comes from a Ruby/Rails engineering background and now focuses on agentic AI. He works with teams across the EU. Engagements range from a single discovery call to multi-week implementation and training programs. Bilingual (English / Slovak).
+Matej has 10 years of software engineering experience and now focuses on practical AI automation. He works with businesses in Slovakia and across the EU. Engagements range from a 45-minute diagnostic to custom implementation and team training. Bilingual (English / Slovak).
 
 ## Services
 
-- **AI Consulting & Strategy** — Process and workflow audit, AI opportunity mapping, prioritization by ROI and feasibility, and an adoption plan with success metrics.
-- **AI Solution Implementation** — Practical AI automations, agents, and integrations built around a clear business problem, with safe deployment, evaluations, and monitoring.
-- **AI Workshops & Adoption** — Workshops built around the team's real tasks, output verification, model limits, and rules for safe use of data and tools.
+- **Process and AI Opportunity Audit** — Identifies the processes currently taking the most time, ranks 3–5 opportunities by impact and effort, recommends the first process, and provides a concrete next-step plan.
+- **Automating One Specific Process** — Connects one automated process to the tools the client already uses, tests it on real cases, measures the result, and hands it over to the team.
+- **AI in the Team's Day-to-Day Work** — Establishes practical tasks, rules, and work habits so AI becomes part of day-to-day work rather than a one-off demo.
 
 ## Process
 
-1. Introductory Call — free 45-minute conversation to clarify the problem and whether AI is the right next step.
-2. First-Step Plan — a concrete use case, success metric, safety rules, and realistic rollout path.
-3. Execution — the approved workflow is built, tested on real tasks, introduced to the first users, and measured.
+1. 45-Minute AI Opportunity Diagnostic — a free 45-minute review of one recurring process to assess whether it is worth automating.
+2. First-Step Plan — the first process worth solving, a success metric, security rules, and a realistic rollout path.
+3. Execution — the agreed solution is built, tested on real work, introduced to the first users, and measured.
 4. Handoff — once the solution works, the client team takes it over, with continued support available when useful.
 
 ## Common first engagement
 
-**AI Opportunity Audit** — In a free 45-minute consultation, maps where AI makes sense in the company, which workflow to tackle first, which risks need addressing, and how success will be measured.
+**45-Minute AI Opportunity Diagnostic** — In 45 minutes, maps one recurring process and assesses whether it is worth automating. If it is not, Matej says so directly.
 
 ## Research
 
@@ -37,7 +37,7 @@ Matej comes from a Ruby/Rails engineering background and now focuses on agentic 
 
 ## Pages
 
-- [Home (EN)](https://matejlukasik.com/): Services overview, process, principles, FAQ.
+- [Home (EN)](https://matejlukasik.com/): Services overview, process, about, FAQ.
 - [Contact (EN)](https://matejlukasik.com/contact): Contact form and direct email.
 - [Domov (SK)](https://matejlukasik.sk/): Slovak homepage.
 - [Kontakt (SK)](https://matejlukasik.sk/kontakt): Slovak contact page.
@@ -62,20 +62,20 @@ Matej ma pozadie v Ruby/Rails inzinierstve a teraz sa venuje agentickej AI. Prac
 
 ## Sluzby
 
-- **Konzultacie a AI strategia** — Audit procesov a workflowov, mapovanie AI prilezitosti, prioritizacia podla ROI a realizovatelnosti a plan adopcie s metrikami uspechu.
-- **Implementacia AI rieseni** — Prakticke AI automatizacie, agenti a integracie postavene okolo jasneho biznis problemu, s bezpecnym nasadenim, evaluaciami a monitoringom.
-- **AI workshopy a zavedenie do praxe** — Workshopy postavene na realnych ulohach timu, overovanie vystupov, limity modelov a pravidla bezpecneho pouzivania dat a nastrojov.
+- **Audit procesov a AI prilezitosti** — Procesy, ktore dnes stoja najviac casu, 3–5 prilezitosti zoradenych podla prinosu a narocnosti, odporucanie prveho procesu a konkretny plan dalsich krokov.
+- **Automatizacia jedneho konkretneho procesu** — Proces napojeny na sucasne nastroje, otestovany na realnych pripadoch a odovzdany timu s meranim vysledku.
+- **AI v kazdodennej praci timu** — Konkretne ulohy, pravidla a pracovne navyky, vdaka ktorym AI nezostane jednorazovym demom.
 
 ## Proces
 
-1. Uvodny rozhovor — bezplatnych 45 minut na ujasnenie problemu a toho, ci je AI spravny dalsi krok.
-2. Plan prveho kroku — konkretny use case, metrika uspechu, bezpecnostne pravidla a realisticky postup nasadenia.
-3. Realizacia — schvaleny workflow sa postavi, otestuje na realnych ulohach, zavedie medzi prvych pouzivatelov a zmeria.
+1. 45-minutova diagnostika moznosti AI — bezplatna 45-minutova analyza jedneho opakujuceho sa procesu, ktora posudi, ci sa ho oplati automatizovat.
+2. Plan prveho kroku — prvy proces, ktory sa oplati riesit, metrika uspechu, bezpecnostne pravidla a realisticky postup nasadenia.
+3. Realizacia — dohodnute riesenie sa postavi, otestuje na realnej praci, zavedie medzi prvych pouzivatelov a zmeria.
 4. Odovzdanie do praxe — ked riesenie funguje, preberie ho klientsky tim; dalsia podpora ostava dostupna, ak dava zmysel.
 
 ## Najcastejsi prvy krok
 
-**Audit AI prilezitosti** — Za bezplatnych 45 minut zmapuje, kde ma AI vo firme zmysel, ktory workflow riesit ako prvy, ake rizika treba osetrit a ako sa bude merat uspech.
+**45-minutova diagnostika moznosti AI** — Za 45 minut zmapuje jeden opakujuci sa proces a posudi, ci sa ho oplati automatizovat. Ak nie, Matej to povie priamo.
 
 ## Vyskum
 

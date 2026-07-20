@@ -77,10 +77,24 @@ test('booking embed discloses Cal.com processing and links to localized privacy 
   assert.match(calEmbed, /href=\{paths\.privacy\}/);
   assert.equal(
     en.contact.bookingPrivacyNotice,
-    'Booking details are processed by Cal.com to schedule the call.'
+    'When you open the Contact page, Cal.com receives the technical data needed to display and protect the booking calendar. If you make a booking, it also processes the details you enter.'
   );
   assert.equal(
     sk.contact.bookingPrivacyNotice,
-    'Rezervačné údaje spracúva Cal.com na naplánovanie hovoru.'
+    'Pri otvorení stránky Kontakt dostane Cal.com technické údaje potrebné na zobrazenie a ochranu rezervačného kalendára. Ak vytvoríte rezerváciu, spracúva aj údaje, ktoré zadáte.'
+  );
+});
+
+test('privacy pages disclose that Cal.com loads when the contact page opens', () => {
+  assert.match(privacy, /when you open the Contact page, Cal\.com receives the technical data/);
+  assert.match(sukromie, /pri otvorení stránky Kontakt dostane Cal\.com technické údaje/);
+  assert.doesNotMatch(privacy, /after you request the booking calendar/);
+  assert.doesNotMatch(sukromie, /po vyžiadaní rezervačného kalendára/);
+});
+
+test('English analytics notice excludes all form content from analytics', () => {
+  assert.equal(
+    en.cookieNotice.description,
+    'I use optional analytics cookies to understand aggregate page views and conversion events. No form content or booking identifiers are sent.',
   );
 });

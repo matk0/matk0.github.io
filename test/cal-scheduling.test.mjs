@@ -7,7 +7,7 @@ const llms = readFileSync(new URL('../src/pages/llms.txt.ts', import.meta.url), 
 const en = JSON.parse(readFileSync(new URL('../src/i18n/en.json', import.meta.url), 'utf8'));
 const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
 
-test('calendar embed books the free 45-minute consultation', () => {
+test('calendar embed books the free 45-minute diagnostic', () => {
   assert.match(calEmbed, /https:\/\/app\.cal\.com\/embed\/embed\.js/);
   assert.match(calEmbed, /origin: "https:\/\/cal\.com"/);
   assert.match(calEmbed, /lang === 'sk' \? 'matejlukasik\/bezplatna-konzultacia'/);
@@ -15,8 +15,8 @@ test('calendar embed books the free 45-minute consultation', () => {
   assert.doesNotMatch(calEmbed, /cal\.eu/);
 });
 
-test('consultation copy consistently promises a 45-minute call', () => {
-  const consultationCopy = [
+test('diagnostic copy consistently promises a 45-minute call', () => {
+  const diagnosticCopy = [
     en.home.processSteps[0].description,
     en.home.ctaBandDescription,
     en.services.notSure.description,
@@ -25,13 +25,13 @@ test('consultation copy consistently promises a 45-minute call', () => {
     sk.services.notSure.description,
   ];
 
-  for (const copy of consultationCopy) {
+  for (const copy of diagnosticCopy) {
     assert.match(copy, /45/);
     assert.doesNotMatch(copy, /30/);
   }
 
   assert.match(llms, /free 45-minute/);
   assert.doesNotMatch(llms, /free 30-minute/);
-  assert.match(llms, /bezplatnych 45 minut/);
-  assert.doesNotMatch(llms, /bezplatnych 30 minut/);
+  assert.match(llms, /bezplatna 45-minutova/);
+  assert.doesNotMatch(llms, /bezplatna 30-minutova/);
 });

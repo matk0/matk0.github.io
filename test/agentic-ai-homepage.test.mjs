@@ -11,12 +11,12 @@ test('the public homepage is the Agentic AI consulting site', () => {
   assert.equal(en.home.heroTitle, 'Stop doing work that AI should be doing for you.');
   assert.equal('heroTypewords' in en.home, false);
   assert.equal('heroTypewordTemplate' in en.home, false);
-  assert.equal(en.home.heroDescription, "AI should save your business time and money, not create more work. Together, we'll find where to start, what makes the most sense for your business, and launch the first useful solution.");
+  assert.equal(en.home.heroDescription, "AI should save your business time and money, not create more work. First, we'll find the recurring work that takes up the most time in your business. Then we'll simplify it, automate it, and measure the result.");
   assert.equal(sk.home.heroTitle, 'Prestaňte robiť prácu, ktorú má za Vás robiť AI.');
   assert.equal('heroTypewords' in sk.home, false);
   assert.equal('heroTypewordTemplate' in sk.home, false);
-  assert.equal(sk.home.heroDescription, 'AI Vám má šetriť čas a peniaze, nie vytvárať ďalšiu prácu. Spolu nájdeme, kde začať, čo má pre Vás najväčší zmysel a spustíme prvé užitočné riešenie.');
-  assert.equal(sk.home.firstStepOffer.title, 'Audit AI príležitostí');
+  assert.equal(sk.home.heroDescription, 'AI Vám má šetriť čas a peniaze, nie vytvárať ďalšiu prácu. Najprv nájdeme opakujúcu sa prácu, ktorá Vašej firme berie najviac času. Potom ju zjednodušíme, zautomatizujeme a zmeriame výsledok.');
+  assert.equal(sk.home.firstStepOffer.title, '45-minútová diagnostika možností AI');
   assert.equal(en.home.painTitle, 'Bringing AI into your company only makes sense when it solves a real business problem.');
   assert.equal(en.home.servicesTitle, 'How can I help you?');
   assert.match(index, /<Hero\s/);

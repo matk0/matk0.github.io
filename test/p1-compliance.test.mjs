@@ -81,11 +81,11 @@ test('consent is versioned, expires after one year, and the privacy link is spac
   assert.match(analytics, /JSON\.parse/);
 });
 
-test('Cal.com loads only after a direct booking request', () => {
+test('Cal.com loads immediately on the contact page without a manual gate', () => {
   const calEmbed = read('../src/components/CalEmbed.astro');
 
-  assert.match(calEmbed, /data-cal-load/);
+  assert.doesNotMatch(calEmbed, /data-cal-load/);
+  assert.doesNotMatch(calEmbed, /data-cal-gate/);
   assert.match(calEmbed, /loadCalEmbed/);
-  assert.match(calEmbed, /shouldLoadCalendarImmediately/);
-  assert.match(calEmbed, /focus.*calendar/);
+  assert.match(calEmbed, /if \(bookingCalendar\) \{\s+loadCalEmbed\(\);/);
 });

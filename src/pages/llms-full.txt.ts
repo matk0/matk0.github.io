@@ -19,7 +19,7 @@ function render(lang: Lang): string {
 
   sections.push('---');
   sections.push('');
-  sections.push(`# ${lang === 'sk' ? 'Domovska stranka' : 'Home'} (${domain}/)`);
+  sections.push(`# ${lang === 'sk' ? 'Domovská stránka' : 'Home'} (${domain}/)`);
   sections.push('');
   sections.push(`## ${s.home.heroTitle}`);
   sections.push('');
@@ -38,18 +38,6 @@ function render(lang: Lang): string {
   sections.push(s.home.pain3Description);
   sections.push('');
 
-  sections.push(`## ${s.home.servicesTitle}`);
-  sections.push('');
-  sections.push(`### ${s.home.consultingTitle}`);
-  sections.push(s.home.consultingDescription);
-  sections.push('');
-  sections.push(`### ${s.home.implementationTitle}`);
-  sections.push(s.home.implementationDescription);
-  sections.push('');
-  sections.push(`### ${s.home.trainingTitle}`);
-  sections.push(s.home.trainingDescription);
-  sections.push('');
-
   sections.push(`## ${s.home.processTitle}`);
   sections.push('');
   for (const step of s.home.processSteps) {
@@ -64,19 +52,13 @@ function render(lang: Lang): string {
   sections.push(s.home.firstStepOffer.description);
   sections.push('');
 
-  sections.push(`## ${s.home.atlasProofTitle}`);
-  sections.push(s.home.atlasProofDescription);
-  sections.push(`Agent Threat Atlas: https://atlas.matejlukasik.sk/`);
-  sections.push(`Threat categories: https://atlas.matejlukasik.sk/threats`);
-  sections.push('');
-
-  sections.push(`## ${s.home.trustTitle}`);
-  sections.push(s.home.trustDescription);
+  sections.push(`## ${s.home.ctaBandTitle}`);
+  sections.push(s.home.ctaBandDescription);
   sections.push('');
 
   sections.push('---');
   sections.push('');
-  sections.push(`# ${lang === 'sk' ? 'Sluzby — detail' : 'Services — detail'}`);
+  sections.push(`# ${lang === 'sk' ? 'Služby — detail' : 'Services — detail'}`);
   sections.push('');
   sections.push(`## ${s.services.consulting.title}`);
   sections.push(`*${s.services.consulting.subtitle}*`);
@@ -112,22 +94,6 @@ function render(lang: Lang): string {
   sections.push(s.about.bioText);
   sections.push('');
 
-  sections.push(`## ${s.about.approachTitle}`);
-  sections.push('');
-  sections.push(`### ${s.about.principle1Title}`);
-  sections.push(s.about.principle1Description);
-  sections.push('');
-  sections.push(`### ${s.about.principle2Title}`);
-  sections.push(s.about.principle2Description);
-  sections.push('');
-  sections.push(`### ${s.about.principle3Title}`);
-  sections.push(s.about.principle3Description);
-  sections.push('');
-
-  sections.push(`## ${s.about.techTitle}`);
-  sections.push(s.about.techDescription);
-  sections.push('');
-
   sections.push('---');
   sections.push('');
   sections.push(`# ${s.contact.heroTitle} (${domain}${contactPath})`);
@@ -135,7 +101,7 @@ function render(lang: Lang): string {
   sections.push(s.contact.heroDescription);
   sections.push('');
   sections.push(`Email: ${s.contact.email}`);
-  sections.push(`${lang === 'sk' ? 'Lokacia' : 'Location'}: ${s.contact.location}`);
+  sections.push(`${lang === 'sk' ? 'Lokalita' : 'Location'}: ${s.contact.location}`);
   sections.push('');
 
   sections.push(`## ${s.contact.faqTitle}`);

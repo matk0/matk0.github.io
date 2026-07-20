@@ -7,6 +7,7 @@ interface Props {
   includes: string[];
   ctaText: string;
   ctaHref: string;
+  ctaTarget?: 'calendar' | 'contact_form';
   imageSrc: string;
   imageAlt?: string;
   reversed?: boolean;
@@ -14,7 +15,7 @@ interface Props {
   nested?: boolean;
 }
 
-const { id, title, subtitle, description, includes, ctaText, ctaHref, imageSrc, imageAlt = '', reversed = false, bg = 'white', nested = false } = Astro.props;
+const { id, title, subtitle, description, includes, ctaText, ctaHref, ctaTarget = 'contact_form', imageSrc, imageAlt = '', reversed = false, bg = 'white', nested = false } = Astro.props;
 ---
 
 <section
@@ -47,7 +48,7 @@ const { id, title, subtitle, description, includes, ctaText, ctaHref, imageSrc, 
         data-analytics-event="service_cta_clicked"
         data-analytics-service={id}
         data-analytics-position="service_section"
-        data-analytics-target="contact_form"
+        data-analytics-target={ctaTarget}
       >
         {ctaText}
       </a>

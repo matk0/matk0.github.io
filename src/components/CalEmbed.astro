@@ -24,28 +24,17 @@ const calLink = lang === 'sk' ? 'matejlukasik/bezplatna-konzultacia' : 'matejluk
   </p>
   <div class="rounded-xl border border-border overflow-hidden bg-surface-alt min-h-[400px]" data-cal-shell>
     <div id="cal-embed" class="w-full"></div>
-    <div class="flex min-h-[400px] items-center justify-center p-6" data-cal-gate>
-      <button
-        type="button"
-        class="inline-flex min-h-11 items-center justify-center rounded-lg border border-primary bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-primary-hover hover:bg-primary-hover disabled:cursor-wait disabled:opacity-70"
-        data-cal-load
-      >
-        {strings.contact.loadBooking}
-      </button>
-    </div>
   </div>
 </div>
 
 <script define:vars={{ calLink }} is:inline>
   const bookingCalendar = document.getElementById('booking-calendar');
-  const loadCalendarButton = bookingCalendar?.querySelector('[data-cal-load]');
-  const calendarGate = bookingCalendar?.querySelector('[data-cal-gate]');
-  const shouldLoadCalendarImmediately = new URLSearchParams(window.location.search).get('focus') === 'calendar';
+  const isBookingCta = new URLSearchParams(window.location.search).get('focus') === 'calendar';
   let calEmbedLoading = false;
 
   const trackCalendarEvent = (eventName, props = {}) => {
     window.trackSiteEvent?.(eventName, {
-      source: shouldLoadCalendarImmediately ? 'booking_cta' : 'contact_page',
+      source: isBookingCta ? 'booking_cta' : 'contact_page',
       ...props,
     });
   };
@@ -53,8 +42,6 @@ const calLink = lang === 'sk' ? 'matejlukasik/bezplatna-konzultacia' : 'matejluk
   const loadCalEmbed = () => {
     if (calEmbedLoading) return;
     calEmbedLoading = true;
-    loadCalendarButton?.setAttribute('disabled', '');
-    if (calendarGate) calendarGate.hidden = true;
 
     (function (C, A, L) {
       let p = function (a, ar) { a.q.push(ar); };
@@ -106,15 +93,13 @@ const calLink = lang === 'sk' ? 'matejlukasik/bezplatna-konzultacia' : 'matejluk
     });
   };
 
-  loadCalendarButton?.addEventListener('click', () => {
-    trackCalendarEvent('booking_intent_clicked', { position: 'calendar_gate' });
+  if (bookingCalendar) {
     loadCalEmbed();
-  });
 
-  if (bookingCalendar && shouldLoadCalendarImmediately) {
-    requestAnimationFrame(() => {
-      bookingCalendar.classList.add('booking-calendar-flash');
-      loadCalEmbed();
-    });
+    if (isBookingCta) {
+      requestAnimationFrame(() => {
+        bookingCalendar.classList.add('booking-calendar-flash');
+      });
+    }
   }
 </script>

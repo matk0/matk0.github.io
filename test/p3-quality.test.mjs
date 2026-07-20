@@ -43,13 +43,27 @@ test('each sitemap publishes home, contact, and privacy with bilingual alternate
 test('structured data uses the active language origin and verified business identity', async () => {
   const { getStructuredData } = await loadTypeScriptModule('../src/structured-data.ts');
   const sk = getStructuredData('sk', 'https://matejlukasik.sk');
+  const en = getStructuredData('en', 'https://matejlukasik.com');
   const [person, business] = sk['@graph'];
+  const [englishPerson, englishBusiness] = en['@graph'];
 
   assert.equal(person.url, 'https://matejlukasik.sk');
   assert.equal(person.image, 'https://matejlukasik.sk/avatar.png');
   assert.equal(business.url, 'https://matejlukasik.sk');
   assert.equal(business.telephone, '+421944302185');
   assert.equal(business.email, 'matej@matejlukasik.com');
+  assert.equal(person.jobTitle, 'Konzultant pre agentickú AI');
+  assert.equal(englishPerson.jobTitle, 'Agentic AI Consultant');
+  assert.equal(business.name, 'Matej Lukášik — audit procesov a automatizácia AI');
+  assert.equal(englishBusiness.name, 'Matej Lukášik — AI Process Audits and Automation');
+  assert.equal(
+    business.description,
+    'Pomáham firmám nájsť opakujúcu sa prácu, ktorá im berie najviac času, zjednodušiť ju, zautomatizovať a zmerať výsledok.',
+  );
+  assert.equal(
+    englishBusiness.description,
+    'I help businesses find recurring work that takes up the most time, simplify it, automate it, and measure the result.',
+  );
   assert.deepEqual(
     business.identifier.map(({ propertyID, value }) => [propertyID, value]),
     [['IČO', '50113801'], ['Živnostenský register SR', '250-37148']],

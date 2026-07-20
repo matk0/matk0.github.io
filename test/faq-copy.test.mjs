@@ -19,7 +19,7 @@ test('Slovak FAQ addresses the full client decision path', () => {
     ],
   );
 
-  assert.match(sk.contact.faq[0].answer, /jasný prvý use case/);
+  assert.match(sk.contact.faq[0].answer, /prvý proces, ktorý sa oplatí riešiť/);
   assert.match(sk.contact.faq[2].answer, /ušetrený čas/);
   assert.match(sk.contact.faq[3].answer, /oprávnenia/);
   assert.match(sk.contact.faq[6].answer, /Váš tím/);
@@ -40,24 +40,21 @@ test('English FAQ mirrors the Slovak FAQ scope', () => {
   );
 });
 
-test('Tools FAQ names concrete categories and tools in both languages', () => {
+test('Tools FAQ explains selection in plain business language in both languages', () => {
   const slovakToolsFaq = sk.contact.faq.find((item) => item.question === 'S akými nástrojmi pracujete?');
   const englishToolsFaq = en.contact.faq.find((item) => item.question === 'What tools do you work with?');
 
   assert.ok(slovakToolsFaq);
   assert.ok(englishToolsFaq);
 
+  assert.match(slovakToolsFaq.answer, /pochopení procesu/);
+  assert.match(slovakToolsFaq.answer, /jednoduchá automatizácia/);
+  assert.match(slovakToolsFaq.answer, /prevádzkové náklady/);
+  assert.match(englishToolsFaq.answer, /understanding the process/);
+  assert.match(englishToolsFaq.answer, /simple automation/);
+  assert.match(englishToolsFaq.answer, /operating cost/);
+
   for (const answer of [slovakToolsFaq.answer, englishToolsFaq.answer]) {
-    assert.match(answer, /n8n/);
-    assert.match(answer, /CrewAI/);
-    assert.match(answer, /LangChain\/LangGraph/);
-    assert.match(answer, /OpenAI/);
-    assert.match(answer, /Anthropic/);
-    assert.match(answer, /Mistral/);
-    assert.match(answer, /Llama/);
-    assert.match(answer, /Codex/);
-    assert.match(answer, /Claude Code/);
-    assert.match(answer, /OpenClaw/);
-    assert.match(answer, /Hermes Agent/);
+    assert.doesNotMatch(answer, /workflow|frontier|stack|self-hosting|LangChain|CrewAI/i);
   }
 });

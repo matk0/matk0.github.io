@@ -9,8 +9,8 @@ const contactForm = readFileSync(new URL('../src/components/ContactForm.astro', 
 const contactApi = readFileSync(new URL('../src/pages/api/contact.ts', import.meta.url), 'utf8');
 const styles = readFileSync(new URL('../src/styles/global.css', import.meta.url), 'utf8');
 
-test('service CTAs target the contact form directly', () => {
-  assert.match(index, /ctaHref=\{`\$\{paths\.contact\}\?service=consulting&focus=contact-form`\}/);
+test('service CTAs route the diagnostic to booking and scoped work to the contact form', () => {
+  assert.match(index, /id="consulting"[\s\S]*?ctaHref=\{bookingHref\}[\s\S]*?ctaTarget="calendar"/);
   assert.match(index, /ctaHref=\{`\$\{paths\.contact\}\?service=implementation&focus=contact-form`\}/);
   assert.match(index, /ctaHref=\{`\$\{paths\.contact\}\?service=training&focus=contact-form`\}/);
   assert.doesNotMatch(index, /#contact-form`/);

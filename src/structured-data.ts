@@ -32,7 +32,7 @@ export function getStructuredData(lang: Lang, siteOrigin: string) {
         '@id': personId,
         name: 'Matej Lukášik',
         url: siteOrigin,
-        jobTitle: lang === 'sk' ? 'Konzultant pre agentickú AI' : 'Agentic AI Consultant for SMBs',
+        jobTitle: lang === 'sk' ? 'Konzultant pre agentickú AI' : 'Agentic AI Consultant',
         image: `${siteOrigin}/avatar.png`,
         sameAs: [
           'https://www.linkedin.com/in/matej-lukasik',
@@ -45,11 +45,13 @@ export function getStructuredData(lang: Lang, siteOrigin: string) {
       {
         '@type': 'ProfessionalService',
         '@id': `${siteOrigin}/#business`,
-        name: 'Matej Lukášik — Agentic AI Consulting',
+        name: lang === 'sk'
+          ? 'Matej Lukášik — audit procesov a automatizácia AI'
+          : 'Matej Lukášik — AI Process Audits and Automation',
         url: siteOrigin,
         description: lang === 'sk'
-          ? 'Agentická AI pre malé a stredné firmy, ktoré chcú bezpečné a merateľné výsledky.'
-          : 'Agentic AI for small and medium-sized businesses that want safe, measurable results.',
+          ? 'Pomáham firmám nájsť opakujúcu sa prácu, ktorá im berie najviac času, zjednodušiť ju, zautomatizovať a zmerať výsledok.'
+          : 'I help businesses find recurring work that takes up the most time, simplify it, automate it, and measure the result.',
         areaServed: 'EU',
         availableLanguage: ['en', 'sk'],
         provider: { '@id': personId },

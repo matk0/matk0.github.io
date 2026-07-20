@@ -7,7 +7,7 @@ import ProcessTimeline from '../components/ProcessTimeline.astro';
 import FirstStepOffer from '../components/FirstStepOffer.astro';
 import CTABand from '../components/CTABand.astro';
 import FAQ from '../components/FAQ.astro';
-import { t, getLocalizedPaths, ATLAS_URL } from '../i18n';
+import { t, getLocalizedPaths } from '../i18n';
 import type { Lang } from '../i18n';
 
 const lang = (Astro.locals as any).lang as Lang || 'en';
@@ -54,8 +54,6 @@ const bookingHref = `${paths.contact}?focus=calendar`;
             imageSrc="/images/pain-security-agent.webp"
             title={strings.home.pain3Title}
             description={strings.home.pain3Description}
-            linkHref={ATLAS_URL}
-            linkText={strings.home.pain3AtlasText}
           />
         </div>
       </div>
@@ -77,7 +75,8 @@ const bookingHref = `${paths.contact}?focus=calendar`;
           description={strings.services.consulting.description}
           includes={strings.services.consulting.includes}
           ctaText={strings.services.consulting.cta}
-          ctaHref={`${paths.contact}?service=consulting&focus=contact-form`}
+          ctaHref={bookingHref}
+          ctaTarget="calendar"
           nested
         />
 

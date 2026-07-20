@@ -8,46 +8,45 @@
     "services": "Služby",
     "about": "O mne",
     "contact": "Kontakt",
-    "bookCall": "Konzultácia zdarma",
+    "bookCall": "Zistiť, čo sa oplatí automatizovať",
     "faq": "FAQ"
   },
   "home": {
     "heroTitle": "Prestaňte robiť prácu, ktorú má za Vás robiť AI.",
-    "heroDescription": "AI Vám má šetriť čas a peniaze, nie vytvárať ďalšiu prácu. Spolu nájdeme, kde začať, čo má pre Vás najväčší zmysel a spustíme prvé užitočné riešenie.",
-    "ctaPrimary": "Bezplatná konzultácia",
-    "ctaSecondary": "Moje služby",
+    "heroDescription": "AI Vám má šetriť čas a peniaze, nie vytvárať ďalšiu prácu. Najprv nájdeme opakujúcu sa prácu, ktorá Vašej firme berie najviac času. Potom ju zjednodušíme, zautomatizujeme a zmeriame výsledok.",
+    "ctaPrimary": "Zistiť, čo sa oplatí automatizovať",
+    "ctaSecondary": "Pozrieť možnosti spolupráce",
     "painTitle": "Zavedenie AI do firmy má zmysel až vtedy, keď rieši skutočný problém vo Vašom podnikaní.",
-    "pain1Title": "Chýba Vám jasný prvý krok",
-    "pain1Description": "Možností je veľa. Skôr než vyberiete nástroj, treba pomenovať problém, ktorý má pre firmu najväčší zmysel vyriešiť.",
-    "pain2Title": "Hodnota musí byť merateľná",
-    "pain2Description": "AI agenti nemôžu byť len ďalší experiment bez jednoznačných výsledkov. Dopredu definujeme a nastavíme: koľko času ušetrí, ktoré náklady zníži alebo presne akú hodnotu prinesie zákazníkom.",
-    "pain3Title": "Adopcia musí byť bezpečná",
-    "pain3Description": "Prístup k dátam, pravidlá, oprávnenia a postupné nasadenie sú rovnako dôležité ako samotný nástroj. Tím potrebuje AI riešenie, ktorému rozumie a vie ho bezpečne používať.",
-    "pain3AtlasText": "Pozrite si verejný Agent Threat Atlas",
+    "pain1Title": "Prepisovanie medzi e-mailmi, tabuľkami a systémami",
+    "pain1Description": "Údaje sa ručne kopírujú, kontrolujú a posielajú ďalej. Tím stráca čas prácou, ktorú môže automatizácia urobiť rýchlejšie a s menším počtom chýb.",
+    "pain2Title": "Ponuky, reporty a odpovede stále vznikajú ručne",
+    "pain2Description": "Ľudia opakovane hľadajú rovnaké údaje, vytvárajú takmer rovnaké dokumenty a kontrolujú ich pred odoslaním. AI môže pripraviť prvý návrh, zatiaľ čo Váš pracovník si zachováva kontrolu a finálne rozhodnutie.",
+    "pain3Title": "AI nesmie byť ďalší experiment bez výsledku",
+    "pain3Description": "Ešte pred nasadením si určíme, čo sa má zlepšiť: čas, náklady, chybovosť alebo rýchlosť obsluhy. Ak výsledok nevieme zmerať, projekt zúžime alebo ho nezačneme.",
     "servicesTitle": "Ako Vám viem pomôcť?",
-    "consultingTitle": "Konzultácie a AI stratégia",
+    "consultingTitle": "Audit procesov a AI príležitostí",
     "consultingDescription": "Ak ešte neviete, kde začať, pomôžem Vám zmapovať príležitosti, vybrať správny prvý projekt a určiť ako budeme merať úspech.",
-    "implementationTitle": "Implementácia AI riešení",
+    "implementationTitle": "Automatizácia jedného konkrétneho procesu",
     "implementationDescription": "Ak už máte jasný problém, navrhnem a postavím praktické AI riešenie, ktoré zapadne do Vašich procesov, nástrojov a bezpečnostných pravidiel.",
-    "trainingTitle": "AI workshopy a zavedenie do praxe",
+    "trainingTitle": "AI v každodennej práci tímu",
     "trainingDescription": "Ak má AI fungovať dlhodobo, tím ju musí vedieť používať pri svojej každodennej práci. Pomôžem ľuďom nájsť konkrétne využitie, overovať výstupy a nastaviť bezpečné pracovné návyky.",
     "learnMore": "Viac info",
     "processTitle": "Ako prebieha spolupráca?",
     "processSteps": [
       {
         "label": "01",
-        "title": "Úvodný rozhovor",
-        "description": "45 minút bez záväzkov. Ujasníme si, kde ste, čo chcete zlepšiť a či je AI správny ďalší krok."
+        "title": "45-minútová diagnostika možností AI",
+        "description": "Za 45 minút si prejdeme jeden opakujúci sa proces a posúdime, či sa ho oplatí automatizovať."
       },
       {
         "label": "02",
         "title": "Plán prvého kroku",
-        "description": "Navrhnem konkrétny prvý use case, metriku úspechu, bezpečnostné pravidlá a realistický postup nasadenia."
+        "description": "Navrhnem prvý proces, ktorý sa oplatí riešiť, metriku úspechu, bezpečnostné pravidlá a realistický postup nasadenia."
       },
       {
         "label": "03",
         "title": "Realizácia",
-        "description": "Postavíme schválený workflow, otestujeme ho na reálnych úlohách, vyškolíme prvých používateľov a meriame jeho dopad."
+        "description": "Postavíme dohodnuté riešenie, otestujeme ho na reálnych úlohách, zaškolíme prvých používateľov a zmeriame jeho prínos."
       },
       {
         "label": "04",
@@ -57,9 +56,9 @@
     ],
     "firstStepOffer": {
       "eyebrow": "Najčastejší prvý krok",
-      "title": "Audit AI príležitostí",
-      "description": "Za bezplatných 45 minút zmapujeme, kde má AI vo Vašej firme zmysel, ktorý workflow riešiť ako prvý, aké riziká treba ošetriť a ako budeme merať úspech.",
-      "cta": "Bezplatná konzultácia"
+      "title": "45-minútová diagnostika možností AI",
+      "description": "Za 45 minút zmapujeme jeden opakujúci sa proces a posúdime, či sa ho oplatí automatizovať. Ak nie, poviem Vám to priamo. Diagnostika je bezplatná a bez záväzkov.",
+      "cta": "Zistiť, čo sa oplatí automatizovať"
     },
     "atlasProofEyebrow": "Bezpečnostný výskum",
     "atlasProofTitle": "Bezpečnosť AI agentov nie je abstraktné riziko.",
@@ -68,39 +67,39 @@
     "atlasProofSecondaryCta": "Pozrieť kategórie hrozieb",
     "trustTitle": "Postavené na praktickej hodnote, nie na hype",
     "trustDescription": "Odporúčam technológiu a spôsob nasadenia, ktoré sedia Vášmu problému, tímu, rozpočtu a bezpečnostným požiadavkám.",
-    "ctaBandTitle": "Ste pripravení nájsť prvý užitočný AI projekt?",
-    "ctaBandDescription": "Väčšina klientov začína 45-minútovou konzultáciou. Bez záväzkov, bez zbytočného hypu."
+    "ctaBandTitle": "Začnime procesom, ktorý Vašu firmu stojí najviac času.",
+    "ctaBandDescription": "Väčšina klientov začína 45-minútovou diagnostikou možností AI. Bez záväzkov, bez zbytočného hypu."
   },
   "services": {
     "heroTitle": "Ako pomôžem",
-    "heroDescription": "Od prvého AI use casu po bezpečné nasadenie.",
+    "heroDescription": "Od prvého procesu, ktorý sa oplatí riešiť, po bezpečné nasadenie.",
     "consulting": {
-      "title": "Konzultácie a AI stratégia",
-      "subtitle": "Zistite, ktorý AI projekt má zmysel riešiť skôr ako miniete čas alebo peniaze.",
-      "description": "Zhodnotím Vaše súčasné procesy, identifikujem AI príležitosti s najväčším dopadom a pripravím konkrétny plán adopcie. Získate jasno v tom, čo sa oplatí automatizovať, čo má počkať a ako budeme merať hodnotu.",
+      "title": "Audit procesov a AI príležitostí",
+      "subtitle": "Zistite, ktorý proces má zmysel riešiť skôr, než miniete čas alebo peniaze.",
+      "description": "Zhodnotím Vaše súčasné procesy, nájdem AI príležitosti s najväčším prínosom a pripravím konkrétny plán. Získate jasno v tom, čo sa oplatí automatizovať, čo má počkať a ako budeme merať hodnotu.",
       "includes": [
-        "Audit procesov a workflowov",
-        "Mapovanie AI príležitostí",
-        "Prioritizácia podľa ROI a realizovateľnosti",
-        "Plán adopcie s metrikami úspechu"
+        "Procesy, ktoré dnes stoja najviac času",
+        "3–5 príležitostí zoradených podľa prínosu a náročnosti",
+        "Odporúčanie prvého procesu a metrika úspechu",
+        "Konkrétny plán ďalších krokov"
       ],
-      "cta": "Dohodnúť konzultáciu"
+      "cta": "Zistiť, čo sa oplatí automatizovať"
     },
     "implementation": {
-      "title": "Implementácia AI riešení",
-      "subtitle": "Automatizujme prvý užitočný workflow a overme ho v skutočnom svete.",
-      "description": "Navrhnem a implementujem praktické AI automatizácie, agentov a integrácie okolo jasného biznis problému. Cieľom je bezpečné a merateľné riešenie, ktoré tím naozaj používa.",
+      "title": "Automatizácia jedného konkrétneho procesu",
+      "subtitle": "Jeden proces. Jedna metrika. Riešenie otestované na reálnej práci.",
+      "description": "Navrhnem a postavím automatizáciu okolo jedného konkrétneho procesu. Napojím ju na nástroje, ktoré už používate, otestujem na reálnych prípadoch a nastavím kontrolu chýb aj meranie výsledku.",
       "includes": [
-        "Prototypy aj produkčné implementácie AI agentov",
-        "Automatizácia workflowov a integrácie",
-        "RAG a znalostné workflowy tam, kde dávajú zmysel",
-        "Bezpečné nasadenie, evaluácie a monitoring"
+        "Automatizovaný proces napojený na Vaše súčasné nástroje",
+        "Testovanie na reálnych prípadoch a kontrola chýb",
+        "Meranie času, kvality alebo nákladov pred a po nasadení",
+        "Zaškolenie tímu a bezpečné odovzdanie"
       ],
-      "cta": "Spustiť projekt"
+      "cta": "Prebrať riešenie na mieru"
     },
     "training": {
-      "title": "AI workshopy a zavedenie do praxe",
-      "subtitle": "Aby AI nezostalo pri nadšení vedenia, ale začalo pomáhať v každodennej práci.",
+      "title": "AI v každodennej práci tímu",
+      "subtitle": "Nie jednorazové demo. Konkrétne úlohy, pravidlá a pracovné návyky.",
       "description": "Tímu ukážem, kde má AI zmysel v ich konkrétnych úlohách, ako si overovať výstupy a kde sú hranice bezpečného používania. Cieľom nie je jednorazové demo, ale nové pracovné návyky, ktoré sa vo firme udržia.",
       "includes": [
         "Workshopy postavené na reálnych úlohách Vášho tímu",
@@ -108,12 +107,12 @@
         "Kontrola výstupov, limity modelov a zdravá miera dôvery",
         "Pravidlá pre bezpečné používanie dát a nástrojov"
       ],
-      "cta": "Dohodnúť workshop"
+      "cta": "Prebrať workshop pre tím"
     },
     "notSure": {
       "title": "Neviete, kde začať?",
-      "description": "Väčšina klientov začína 45-minútovou konzultáciou. Bez záväzkov, bez žargónu — len úprimný rozhovor o tom, kde môže AI priniesť merateľnú hodnotu.",
-      "cta": "Bezplatná konzultácia"
+      "description": "Väčšina klientov začína 45-minútovou diagnostikou možností AI. Bez záväzkov, bez žargónu — len konkrétny pohľad na jeden opakujúci sa proces.",
+      "cta": "Zistiť, čo sa oplatí automatizovať"
     }
   },
   "about": {
@@ -145,9 +144,9 @@
     "emailPlaceholder": "vy@firma.sk",
     "serviceLabel": "O čo máte záujem?",
     "serviceOptions": {
-      "consulting": "Konzultácie a AI stratégia",
-      "implementation": "Implementácia AI riešení",
-      "training": "AI workshopy a zavedenie do praxe",
+      "consulting": "Audit procesov a AI príležitostí",
+      "implementation": "Automatizácia jedného konkrétneho procesu",
+      "training": "AI v každodennej práci tímu",
       "notSure": "Zatiaľ neviem"
     },
     "messageLabel": "Správa",
@@ -156,11 +155,10 @@
     "success": "Správa odoslaná! Ozvem sa do 24 hodín.",
     "error": "Niečo sa pokazilo. Skúste to znova alebo mi napíšte priamo na matej@matejlukasik.com.",
     "privacyNotice": "Tieto údaje použijem iba na odpoveď na Vašu správu.",
-    "bookingPrivacyNotice": "Rezervačné údaje spracúva Cal.com na naplánovanie hovoru.",
+    "bookingPrivacyNotice": "Pri otvorení stránky Kontakt dostane Cal.com technické údaje potrebné na zobrazenie a ochranu rezervačného kalendára. Ak vytvoríte rezerváciu, spracúva aj údaje, ktoré zadáte.",
     "privacyLink": "Podrobnosti o súkromí",
-    "bookTitle": "Dohodnúť hovor",
-    "bookDescription": "Vyberte si čas, ktorý Vám vyhovuje.",
-    "loadBooking": "Načítať rezervačný kalendár",
+    "bookTitle": "45-minútová diagnostika možností AI",
+    "bookDescription": "Za 45 minút zmapujeme jeden opakujúci sa proces a posúdime, či sa ho oplatí automatizovať. Ak nie, poviem Vám to priamo. Diagnostika je bezplatná a bez záväzkov.",
     "directTitle": "Alebo ma kontaktujte priamo",
     "email": "matej@matejlukasik.com",
     "location": "Slovensko",
@@ -168,11 +166,11 @@
     "faq": [
       {
         "question": "Nevieme, kde s AI začať. Má zmysel sa ozvať?",
-        "answer": "Áno. Práve toto je najčastejší začiatok. Na úvodnom hovore sa pozrieme na Vaše procesy, dáta a miesta, kde tím stráca čas. Cieľom je jasný prvý use case, nie zoznam nástrojov."
+        "answer": "Áno. Práve toto je najčastejší začiatok. Na úvodnom hovore sa pozrieme na Vaše procesy, dáta a miesta, kde tím stráca čas. Cieľom je prvý proces, ktorý sa oplatí riešiť, nie zoznam nástrojov."
       },
       {
         "question": "Ako dlho trvá prvé nasadenie?",
-        "answer": "Väčšina prvých projektov ide od štartu po funkčný workflow za 2–6 týždňov. Jednoduchá automatizácia môže bežať za pár dní. Zložitejšie systémy trvajú dlhšie, ale pokrok by ste mali vidieť každý týždeň."
+        "answer": "Väčšina prvých projektov ide od štartu po funkčné riešenie za 2–6 týždňov. Jednoduchá automatizácia môže bežať za pár dní. Zložitejšie systémy trvajú dlhšie, ale pokrok by ste mali vidieť každý týždeň."
       },
       {
         "question": "Ako zistíme, či AI naozaj prináša hodnotu?",
@@ -190,11 +188,11 @@
       },
       {
         "question": "S akými nástrojmi pracujete?",
-        "answer": "Nástroje vyberám podľa problému, dát a bezpečnostných požiadaviek. Pri automatizácii workflowov používam n8n, CrewAI alebo LangChain/LangGraph. Pri modeloch volím podľa potreby frontier modely od OpenAI a Anthropic, alebo otvorené modely ako Mistral a Llama. Pri komerčných agentických nástrojoch dávajú zmysel Codex a Claude Code. Ak potrebujete viac kontroly alebo self-hosting, môžeme pracovať aj s open-source agentmi ako OpenClaw alebo Hermes Agent. Cieľom nie je použiť čo najviac nástrojov, ale zvoliť stack, ktorý je bezpečný, udržateľný a prináša merateľnú hodnotu."
+        "answer": "Nástroj vyberám až po pochopení procesu. Niekedy stačí jednoduchá automatizácia medzi aplikáciami, ktoré už používate. Vlastný AI agent má zmysel iba pri zložitejších úlohách. Rozhoduje bezpečnosť, prevádzkové náklady a to, či riešenie dokáže Váš tím dlhodobo používať."
       },
       {
         "question": "Čo sa stane po odovzdaní riešenia?",
-        "answer": "Keď workflow funguje, Váš tím dostane pravidlá používania, zaškolenie a dostatok kontextu na bezpečnú prácu s riešením. Cieľom je schopnosť, nie závislosť. Ak dáva zmysel pokračovať, môžeme riešenie ďalej rozvíjať spolu."
+        "answer": "Keď riešenie funguje, Váš tím dostane pravidlá používania, zaškolenie a dostatok kontextu na bezpečnú prácu. Cieľom je schopnosť, nie závislosť. Ak dáva zmysel pokračovať, môžeme riešenie ďalej rozvíjať spolu."
       }
     ]
   },

@@ -8,46 +8,45 @@
     "services": "Services",
     "about": "About",
     "contact": "Contact",
-    "bookCall": "Free Consultation",
+    "bookCall": "Find Out What's Worth Automating",
     "faq": "FAQ"
   },
   "home": {
     "heroTitle": "Stop doing work that AI should be doing for you.",
-    "heroDescription": "AI should save your business time and money, not create more work. Together, we'll find where to start, what makes the most sense for your business, and launch the first useful solution.",
-    "ctaPrimary": "Book a Free Consultation",
-    "ctaSecondary": "See My Services",
+    "heroDescription": "AI should save your business time and money, not create more work. First, we'll find the recurring work that takes up the most time in your business. Then we'll simplify it, automate it, and measure the result.",
+    "ctaPrimary": "Find Out What's Worth Automating",
+    "ctaSecondary": "See Ways We Can Work Together",
     "painTitle": "Bringing AI into your company only makes sense when it solves a real business problem.",
-    "pain1Title": "The first step is unclear",
-    "pain1Description": "There are many options. Before choosing a tool, we need to name the business problem worth solving first.",
-    "pain2Title": "Value must be measurable",
-    "pain2Description": "AI agents cannot become another experiment without clear results. Up front, we define how much time they should save, which costs they should reduce, or exactly what value they should create for customers.",
-    "pain3Title": "Adoption must be safe",
-    "pain3Description": "Data access, rules, permissions, and gradual rollout matter as much as the tool itself. Your team needs an AI solution they understand and can use safely.",
-    "pain3AtlasText": "See the public Agent Threat Atlas",
+    "pain1Title": "Copying between emails, spreadsheets, and systems",
+    "pain1Description": "Data is manually copied, checked, and passed along. Your team loses time on work that automation can do faster and with fewer errors.",
+    "pain2Title": "Quotes, reports, and replies are still created manually",
+    "pain2Description": "People repeatedly search for the same information, create nearly identical documents, and check them before sending. AI can prepare the first draft while a member of your team keeps control and makes the final decision.",
+    "pain3Title": "AI must not become another experiment without results",
+    "pain3Description": "Before deployment, we define what should improve: time, cost, error rates, or service speed. If we cannot measure the result, we narrow the project or do not start it.",
     "servicesTitle": "How can I help you?",
-    "consultingTitle": "AI Consulting and Strategy",
+    "consultingTitle": "Process and AI Opportunity Audit",
     "consultingDescription": "If you are not sure where to start, I will help map opportunities, choose the right first project, and decide how we will measure success.",
-    "implementationTitle": "AI Solution Implementation",
+    "implementationTitle": "Automating One Specific Process",
     "implementationDescription": "If you already have a clear problem, I will design and build a practical AI solution that fits your processes, tools, and security rules.",
-    "trainingTitle": "AI Workshops and Adoption",
+    "trainingTitle": "AI in Your Team's Day-to-Day Work",
     "trainingDescription": "If AI is going to work long term, your team needs to use it in everyday work. I help people find concrete use cases, verify outputs, and build safe work habits.",
     "learnMore": "Learn more",
     "processTitle": "How We Work Together",
     "processSteps": [
       {
         "label": "01",
-        "title": "Introductory Call",
-        "description": "45 minutes, no commitment. We clarify where you are, what you want to improve, and whether AI is the right next step."
+        "title": "45-Minute AI Opportunity Diagnostic",
+        "description": "In 45 minutes, we walk through one recurring process and assess whether it is worth automating."
       },
       {
         "label": "02",
         "title": "First-Step Plan",
-        "description": "I propose a concrete first use case, a success metric, safety rules, and a realistic rollout path."
+        "description": "I propose the first process worth solving, a success metric, security rules, and a realistic rollout path."
       },
       {
         "label": "03",
         "title": "Execution",
-        "description": "We build the approved workflow, test it on real tasks, train the first users, and measure its impact."
+        "description": "We build the agreed solution, test it on real work, train the first users, and measure its impact."
       },
       {
         "label": "04",
@@ -57,9 +56,9 @@
     ],
     "firstStepOffer": {
       "eyebrow": "Most common first step",
-      "title": "AI Opportunity Audit",
-      "description": "In a free 45-minute consultation, we'll map where AI makes sense in your company, which workflow to tackle first, which risks need addressing, and how we'll measure success.",
-      "cta": "Book a Free Consultation"
+      "title": "45-Minute AI Opportunity Diagnostic",
+      "description": "In 45 minutes, we'll map one recurring process and assess whether it is worth automating. If it isn't, I'll tell you directly. The diagnostic is free and comes with no commitment.",
+      "cta": "Find Out What's Worth Automating"
     },
     "atlasProofEyebrow": "Security Research",
     "atlasProofTitle": "AI agent security is not an abstract risk.",
@@ -67,38 +66,38 @@
     "atlasProofCta": "Open Agent Threat Atlas",
     "atlasProofSecondaryCta": "Browse threat categories",
     "trustTitle": "Practical value, not hype",
-    "trustDescription": "I recommend the technology and rollout path that fit your business problem, team, budget, and safety needs.",
-    "ctaBandTitle": "Ready to find your first useful AI project?",
-    "ctaBandDescription": "Most clients start with a 45-minute consultation. No commitment, no unnecessary hype."
+    "trustDescription": "I recommend the technology and rollout path that fit your business problem, team, budget, and security requirements.",
+    "ctaBandTitle": "Let's start with the process that costs your business the most time.",
+    "ctaBandDescription": "Most clients start with a 45-minute AI opportunity diagnostic. No commitment, no unnecessary hype."
   },
   "services": {
     "heroTitle": "How I Help",
-    "heroDescription": "From the first AI use case to safe deployment.",
+    "heroDescription": "From the first process worth solving to safe deployment.",
     "consulting": {
-      "title": "AI Consulting and Strategy",
-      "subtitle": "Find out which AI project is worth doing before you spend time or money.",
-      "description": "I evaluate your current processes, identify the highest-impact AI opportunities, and prepare a concrete adoption plan. You get clarity on what is worth automating, what should wait, and how we will measure value.",
-      "includes": ["Process and workflow audit", "AI opportunity mapping", "Prioritization by ROI and feasibility", "Adoption plan with success metrics"],
-      "cta": "Schedule a Consultation"
+      "title": "Process and AI Opportunity Audit",
+      "subtitle": "Find out which process is worth tackling before you spend time or money.",
+      "description": "I assess your current processes, identify the AI opportunities with the greatest potential, and prepare a concrete plan. You get clarity on what is worth automating, what should wait, and how we will measure value.",
+      "includes": ["Processes currently taking the most time", "3–5 opportunities ranked by impact and effort", "A recommended first process and success metric", "A concrete next-step plan"],
+      "cta": "Find Out What's Worth Automating"
     },
     "implementation": {
-      "title": "AI Solution Implementation",
-      "subtitle": "Automate the first useful workflow and prove it in the real world.",
-      "description": "I design and implement practical AI automations, agents, and integrations around a clear business problem. The goal is a safe, measurable solution your team actually uses.",
-      "includes": ["AI agent prototypes and production implementations", "Workflow automation and integrations", "RAG and knowledge workflows where they make sense", "Safe deployment, evaluations, and monitoring"],
-      "cta": "Start a Project"
+      "title": "Automating One Specific Process",
+      "subtitle": "One process. One metric. A solution tested on real work.",
+      "description": "I design and build an automation around one specific process. I connect it to the tools you already use, test it on real cases, and set up error checks and outcome measurement.",
+      "includes": ["An automated process connected to your existing tools", "Testing on real cases and error checks", "Before-and-after measurement of time, quality, or cost", "Team training and a safe handoff"],
+      "cta": "Discuss a Custom Solution"
     },
     "training": {
-      "title": "AI Workshops and Adoption",
-      "subtitle": "Turn leadership enthusiasm into everyday AI use.",
+      "title": "AI in Your Team's Day-to-Day Work",
+      "subtitle": "Not a one-off demo. Concrete tasks, rules, and work habits.",
       "description": "I show the team where AI fits their real tasks, how to verify outputs, and where the boundaries of safe use are. The goal is not a one-off demo, but new work habits that stick.",
       "includes": ["Workshops built around your team's real tasks", "Practical AI use for writing, analysis, and decision-making", "Output review, model limits, and the right level of trust", "Rules for safe use of data and tools"],
-      "cta": "Schedule a Workshop"
+      "cta": "Discuss a Workshop for Your Team"
     },
     "notSure": {
       "title": "Not sure where to start?",
-      "description": "Most clients start with a 45-minute consultation. No commitment, no jargon — just an honest conversation about where AI might create measurable value.",
-      "cta": "Book a Free Consultation"
+      "description": "Most clients start with a 45-minute AI opportunity diagnostic. No commitment, no jargon — just a concrete look at one recurring process.",
+      "cta": "Find Out What's Worth Automating"
     }
   },
   "about": {
@@ -106,7 +105,7 @@
     "heroDescription": "I help companies turn AI pressure into safe, measurable solutions.",
     "bioName": "Matej Lukášik",
     "bioTitle": "Agentic AI Consultant",
-    "bioText": "I am an agentic AI consultant with 10 years of software engineering experience. I help small and medium-sized businesses find specific places where AI can save time, streamline teamwork, and create measurable value.\n\nI enter projects practically: first I understand the business problems, processes, and data sources, then I choose the right tools. Together we design the first usable workflow, set success metrics, and define safe deployment rules.\n\nMy solutions build on experience with LLM systems, RAG, evaluations, AI models, automations, and AI agents. My goal is to deliver a solution leadership understands, the team can use, and the company can keep developing independently.",
+    "bioText": "I am an agentic AI consultant with 10 years of software engineering experience. I help small and medium-sized businesses find specific places where AI can save time, streamline teamwork, and create measurable value.\n\nI take a practical approach to projects: first, I understand the business problems, processes, and data sources; only then do I choose the right tools. Together we design the first usable workflow, set success metrics, and define safe deployment rules.\n\nMy solutions build on experience with LLM systems, RAG, evaluations, AI models, automations, and AI agents. My goal is to deliver a solution leadership understands, the team can use, and the company can keep developing independently.",
     "approachTitle": "My Approach",
     "principle1Title": "Problem First, Tool Second",
     "principle1Description": "Open source or managed, self-hosted or cloud — I recommend what fits your team, budget, and security requirements.",
@@ -130,9 +129,9 @@
     "emailPlaceholder": "you@company.com",
     "serviceLabel": "What are you interested in?",
     "serviceOptions": {
-      "consulting": "AI Consulting and Strategy",
-      "implementation": "AI Solution Implementation",
-      "training": "AI Workshops and Adoption",
+      "consulting": "Process and AI Opportunity Audit",
+      "implementation": "Automating One Specific Process",
+      "training": "AI in Your Team's Day-to-Day Work",
       "notSure": "Not sure yet"
     },
     "messageLabel": "Message",
@@ -141,11 +140,10 @@
     "success": "Message sent! I'll get back to you within 24 hours.",
     "error": "Something went wrong. Please try again or email me directly at matej@matejlukasik.com.",
     "privacyNotice": "I use these details only to respond to your inquiry.",
-    "bookingPrivacyNotice": "Booking details are processed by Cal.com to schedule the call.",
+    "bookingPrivacyNotice": "When you open the Contact page, Cal.com receives the technical data needed to display and protect the booking calendar. If you make a booking, it also processes the details you enter.",
     "privacyLink": "Privacy details",
-    "bookTitle": "Book a call",
-    "bookDescription": "Choose a time that works for you.",
-    "loadBooking": "Load booking calendar",
+    "bookTitle": "45-Minute AI Opportunity Diagnostic",
+    "bookDescription": "In 45 minutes, we'll map one recurring process and assess whether it is worth automating. If it isn't, I'll tell you directly. The diagnostic is free and comes with no commitment.",
     "directTitle": "Or reach out directly",
     "email": "matej@matejlukasik.com",
     "location": "Slovakia",
@@ -153,11 +151,11 @@
     "faq": [
       {
         "question": "We don't know where to start with AI. Is it worth getting in touch?",
-        "answer": "Yes. This is the most common starting point. On the first call we look at your processes, data, and the places where the team loses time. The goal is a clear first use case, not a list of tools."
+        "answer": "Yes. This is the most common starting point. On the first call we look at your processes, data, and the places where the team loses time. The goal is the first process worth solving, not a list of tools."
       },
       {
         "question": "How long does the first deployment take?",
-        "answer": "Most first projects move from kickoff to a working workflow in 2–6 weeks. A simple automation can be live in days. More complex systems take longer, but you should see progress every week."
+        "answer": "Most first projects move from kickoff to a working solution in 2–6 weeks. A simple automation can be live in days. More complex systems take longer, but you should see progress every week."
       },
       {
         "question": "How do we know whether AI is creating real value?",
@@ -175,11 +173,11 @@
       },
       {
         "question": "What tools do you work with?",
-        "answer": "Tools depend on the problem, data, and security requirements. For workflow automation I use n8n, CrewAI, or LangChain/LangGraph. For models I choose frontier models from OpenAI and Anthropic, or open models such as Mistral and Llama. For commercial agentic tools, Codex and Claude Code can make sense. If you need more control or self-hosting, we can also work with open-source agents such as OpenClaw or Hermes Agent. The goal is not to use as many tools as possible, but to choose a stack that is safe, maintainable, and creates measurable value."
+        "answer": "I choose the tool only after understanding the process. Sometimes a simple automation between the apps you already use is enough. A custom AI agent makes sense only for more complex work. What matters is security, operating cost, and whether your team can keep using the solution over time."
       },
       {
         "question": "What happens after handoff?",
-        "answer": "Once the workflow works, your team gets the operating rules, training, and enough context to use it safely. The goal is capability, not dependency. If useful, we can keep improving the workflow together."
+        "answer": "Once the solution works, your team gets the operating rules, training, and enough context to use it safely. The goal is capability, not dependency. If useful, we can keep improving the solution together."
       }
     ]
   },
@@ -208,7 +206,7 @@
   },
   "cookieNotice": {
     "title": "Analytics cookies",
-    "description": "I use optional analytics cookies to understand aggregate page views and conversion events. No form messages or booking identifiers are sent.",
+    "description": "I use optional analytics cookies to understand aggregate page views and conversion events. No form content or booking identifiers are sent.",
     "privacyLink": "Privacy details",
     "accept": "Allow analytics",
     "reject": "Reject analytics",
