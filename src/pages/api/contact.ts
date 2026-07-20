@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { env } from 'cloudflare:workers';
 
 const MAX_REQUEST_BYTES = 16_384;
 const MAX_NAME_LENGTH = 100;
@@ -27,7 +28,7 @@ const getClientKey = (request: Request) =>
   request.headers.get('X-Forwarded-For')?.split(',')[0]?.trim() ||
   'unknown';
 
-export const POST: APIRoute = async ({ request, locals }) => {
+export const POST: APIRoute = async ({ request }) => {
   const json = (payload: unknown, status: number, extraHeaders: HeadersInit = {}) =>
     new Response(JSON.stringify(payload), {
       status,
@@ -87,11 +88,13 @@ export const POST: APIRoute = async ({ request, locals }) => {
     return json({ error: 'Invalid email' }, 400);
   }
 
-  const runtime = (locals as any).runtime;
-  const env = runtime?.env;
+  const runtimeEnv = env as unknown as {
+    RESEND_API_KEY?: string;
+    CONTACT_RATE_LIMITER?: RateLimiter;
+  };
   const resendApiKey: string | undefined =
-    env?.RESEND_API_KEY || import.meta.env?.RESEND_API_KEY;
-  const rateLimiter: RateLimiter | undefined = env?.CONTACT_RATE_LIMITER;
+    runtimeEnv.RESEND_API_KEY || import.meta.env?.RESEND_API_KEY;
+  const rateLimiter = runtimeEnv.CONTACT_RATE_LIMITER;
 
   if (!rateLimiter) {
     console.error({ event: 'contact_configuration_error', component: 'rate_limiter' });

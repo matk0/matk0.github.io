@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { test } from 'node:test';
-import { transformSync } from 'esbuild';
+import { build, transformSync } from 'esbuild';
 
 const read = (path) => readFileSync(new URL(path, import.meta.url), 'utf8');
 
@@ -11,6 +11,40 @@ const loadTypeScriptModule = async (path) => {
     loader: 'ts',
   });
   const moduleUrl = `data:text/javascript;base64,${Buffer.from(code).toString('base64')}`;
+  return import(moduleUrl);
+};
+
+const loadContactModule = async () => {
+  const result = await build({
+    stdin: {
+      contents: read('../src/pages/api/contact.ts'),
+      loader: 'ts',
+      sourcefile: 'src/pages/api/contact.ts',
+    },
+    bundle: true,
+    format: 'esm',
+    platform: 'node',
+    target: 'node22',
+    write: false,
+    plugins: [
+      {
+        name: 'cloudflare-workers-test-env',
+        setup(buildContext) {
+          buildContext.onResolve({ filter: /^cloudflare:workers$/ }, () => ({
+            path: 'cloudflare:workers',
+            namespace: 'contact-test',
+          }));
+          buildContext.onLoad({ filter: /.*/, namespace: 'contact-test' }, () => ({
+            contents: `export const env = new Proxy({}, {
+              get: (_target, key) => globalThis.__contactTestEnv?.[key],
+            });`,
+            loader: 'js',
+          }));
+        },
+      },
+    ],
+  });
+  const moduleUrl = `data:text/javascript;base64,${Buffer.from(result.outputFiles[0].text).toString('base64')}`;
   return import(moduleUrl);
 };
 
@@ -34,7 +68,7 @@ const makeContactRequest = (overrides = {}) => {
 };
 
 test('contact delivery fails closed and sends a bounded, escaped multipart email', async () => {
-  const { POST } = await loadTypeScriptModule('../src/pages/api/contact.ts');
+  const { POST } = await loadContactModule();
   const originalFetch = globalThis.fetch;
   const calls = [];
   globalThis.fetch = async (url, options) => {
@@ -43,16 +77,13 @@ test('contact delivery fails closed and sends a bounded, escaped multipart email
   };
 
   try {
+    globalThis.__contactTestEnv = {
+      RESEND_API_KEY: 're_test',
+      CONTACT_RATE_LIMITER: { limit: async () => ({ success: true }) },
+    };
     const success = await POST({
       request: makeContactRequest(),
-      locals: {
-        runtime: {
-          env: {
-            RESEND_API_KEY: 're_test',
-            CONTACT_RATE_LIMITER: { limit: async () => ({ success: true }) },
-          },
-        },
-      },
+      locals: {},
     });
 
     assert.equal(success.status, 200);
@@ -67,46 +98,64 @@ test('contact delivery fails closed and sends a bounded, escaped multipart email
     assert.doesNotMatch(email.html, /<script>|<img src=x/);
     assert.match(email.html, /&lt;script&gt;|&lt;img/);
 
-    const missingSecret = await POST({
-      request: makeContactRequest(),
-      locals: {
-        runtime: {
-          env: {
-            CONTACT_RATE_LIMITER: { limit: async () => ({ success: true }) },
-          },
-        },
-      },
-    });
+    globalThis.__contactTestEnv = {
+      CONTACT_RATE_LIMITER: { limit: async () => ({ success: true }) },
+    };
+    const missingSecret = await POST({ request: makeContactRequest(), locals: {} });
     assert.equal(missingSecret.status, 503);
     assert.equal(calls.length, 1, 'a missing secret must not pretend delivery succeeded');
 
-    const limited = await POST({
-      request: makeContactRequest(),
-      locals: {
-        runtime: {
-          env: {
-            RESEND_API_KEY: 're_test',
-            CONTACT_RATE_LIMITER: { limit: async () => ({ success: false }) },
-          },
-        },
-      },
-    });
+    globalThis.__contactTestEnv = {
+      RESEND_API_KEY: 're_test',
+      CONTACT_RATE_LIMITER: { limit: async () => ({ success: false }) },
+    };
+    const limited = await POST({ request: makeContactRequest(), locals: {} });
     assert.equal(limited.status, 429);
 
+    globalThis.__contactTestEnv = {
+      RESEND_API_KEY: 're_test',
+      CONTACT_RATE_LIMITER: { limit: async () => ({ success: true }) },
+    };
     const oversized = await POST({
       request: makeContactRequest({ message: 'x'.repeat(5001) }),
-      locals: {
-        runtime: {
-          env: {
-            RESEND_API_KEY: 're_test',
-            CONTACT_RATE_LIMITER: { limit: async () => ({ success: true }) },
-          },
-        },
-      },
+      locals: {},
     });
     assert.equal(oversized.status, 400);
   } finally {
     globalThis.fetch = originalFetch;
+    delete globalThis.__contactTestEnv;
+  }
+});
+
+test('contact delivery does not access the removed Astro locals runtime', async () => {
+  const { POST } = await loadContactModule();
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () =>
+    new Response(JSON.stringify({ id: 'email_test' }), { status: 200 });
+  globalThis.__contactTestEnv = {
+    RESEND_API_KEY: 're_test',
+    CONTACT_RATE_LIMITER: { limit: async () => ({ success: true }) },
+  };
+
+  const locals = {};
+  Object.defineProperty(locals, 'runtime', {
+    get() {
+      throw new Error(
+        'Astro.locals.runtime.env has been removed in Astro v6. Use cloudflare:workers instead.',
+      );
+    },
+  });
+
+  try {
+    const response = await POST({
+      request: makeContactRequest(),
+      locals,
+    });
+
+    assert.equal(response.status, 200);
+  } finally {
+    globalThis.fetch = originalFetch;
+    delete globalThis.__contactTestEnv;
   }
 });
 
