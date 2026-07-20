@@ -197,7 +197,7 @@ test('motion-heavy effects respect the reduced-motion preference', () => {
 
 test('localized logo-based social previews exist at the required dimensions', () => {
   const layout = read('../src/layouts/Layout.astro');
-  assert.match(layout, /lang === 'sk' \? '\/og-sk\.png' : '\/og-en\.png'/);
+  assert.match(layout, /lang === 'sk' \? '\/og-sk-useful-ai\.png' : '\/og-en-useful-ai\.png'/);
   assert.match(layout, /property="og:image:width" content="1200"/);
   assert.match(layout, /property="og:image:height" content="630"/);
   assert.match(layout, /property="og:image:alt"/);
@@ -205,7 +205,7 @@ test('localized logo-based social previews exist at the required dimensions', ()
   assert.match(layout, /Matej Lukášik — konzultant pre užitočnú AI/);
   assert.match(layout, /Matej Lukášik — consultant for actually useful AI/);
 
-  for (const path of ['../public/og-en.png', '../public/og-sk.png']) {
+  for (const path of ['../public/og-en-useful-ai.png', '../public/og-sk-useful-ai.png']) {
     const url = new URL(path, import.meta.url);
     assert.equal(existsSync(url), true, `${path} must exist`);
     const png = readFileSync(url);
@@ -215,8 +215,8 @@ test('localized logo-based social previews exist at the required dimensions', ()
   }
 
   const socialPreviews = [
-    ['../public/og-sk.svg', 'Konzultant pre užitočnú AI'],
-    ['../public/og-en.svg', 'Consultant for actually useful AI'],
+    ['../public/og-sk-useful-ai.svg', 'Konzultant pre užitočnú AI'],
+    ['../public/og-en-useful-ai.svg', 'Consultant for actually useful AI'],
   ];
 
   for (const [path, title] of socialPreviews) {

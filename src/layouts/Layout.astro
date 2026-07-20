@@ -22,7 +22,7 @@ const siteOrigin = getSiteOrigin(lang, Astro.url);
 const canonicalURL = new URL(currentPath, siteOrigin);
 const alternateURL = getAlternateUrl(lang, currentPath, Astro.url);
 const altLang = getAlternateLang(lang);
-const ogImagePath = lang === 'sk' ? '/og-sk.png' : '/og-en.png';
+const ogImagePath = lang === 'sk' ? '/og-sk-useful-ai.png' : '/og-en-useful-ai.png';
 const ogImage = new URL(ogImagePath, siteOrigin).href;
 const ogImageAlt = lang === 'sk'
   ? 'Matej Lukášik — konzultant pre užitočnú AI'
