@@ -26,8 +26,8 @@ test('about section centers the portrait and title within the left column', () =
   assert.doesNotMatch(aboutSection, /lg:text-left/);
 });
 
-test('slovak about title uses agentic AI wording', () => {
-  assert.equal(sk.about.bioTitle, 'Konzultant pre agentickú AI');
+test('slovak about title uses useful AI wording', () => {
+  assert.equal(sk.about.bioTitle, 'Konzultant pre užitočnú AI');
 });
 
 test('slovak about bio builds trust without repeating the AI urgency hook', () => {

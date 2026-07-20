@@ -24,7 +24,7 @@ test('english homepage positions Matej around practical SMB AI adoption', () => 
   );
   assert.equal(en.about.heroTitle, 'Who I Am');
   assert.equal(en.about.heroDescription, 'I help companies turn AI pressure into safe, measurable solutions.');
-  assert.equal(en.about.bioTitle, 'Agentic AI Consultant');
+  assert.equal(en.about.bioTitle, 'Useful AI Consultant');
   assert.match(en.about.bioText, /I take a practical approach to projects/);
   assert.doesNotMatch(en.about.bioText, /I enter projects practically/);
 });
