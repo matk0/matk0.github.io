@@ -202,6 +202,8 @@ test('localized logo-based social previews exist at the required dimensions', ()
   assert.match(layout, /property="og:image:height" content="630"/);
   assert.match(layout, /property="og:image:alt"/);
   assert.match(layout, /name="twitter:image:alt"/);
+  assert.match(layout, /Matej Lukášik — konzultant pre užitočnú AI/);
+  assert.match(layout, /Matej Lukášik — consultant for actually useful AI/);
 
   for (const path of ['../public/og-en.png', '../public/og-sk.png']) {
     const url = new URL(path, import.meta.url);
@@ -210,6 +212,17 @@ test('localized logo-based social previews exist at the required dimensions', ()
     assert.equal(png.subarray(1, 4).toString(), 'PNG');
     assert.equal(png.readUInt32BE(16), 1200);
     assert.equal(png.readUInt32BE(20), 630);
+  }
+
+  const socialPreviews = [
+    ['../public/og-sk.svg', 'Konzultant pre užitočnú AI'],
+    ['../public/og-en.svg', 'Consultant for actually useful AI'],
+  ];
+
+  for (const [path, title] of socialPreviews) {
+    const svg = read(path);
+    assert.match(svg, /<text x="440" y="220"[^>]*font-size="64"[^>]*>Matej Lukášik<\/text>/);
+    assert.match(svg, new RegExp(`<text x="440" y="285"[^>]*font-size="36"[^>]*>${title}<\\/text>`));
   }
 });
 

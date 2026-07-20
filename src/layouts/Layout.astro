@@ -25,8 +25,8 @@ const altLang = getAlternateLang(lang);
 const ogImagePath = lang === 'sk' ? '/og-sk.png' : '/og-en.png';
 const ogImage = new URL(ogImagePath, siteOrigin).href;
 const ogImageAlt = lang === 'sk'
-  ? 'Matej Lukášik — konzultácie a implementácia AI'
-  : 'Matej Lukášik — AI consulting and implementation';
+  ? 'Matej Lukášik — konzultant pre užitočnú AI'
+  : 'Matej Lukášik — consultant for actually useful AI';
 const googleSiteVerification =
   import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION ||
   cloudflareEnv.PUBLIC_GOOGLE_SITE_VERIFICATION;
