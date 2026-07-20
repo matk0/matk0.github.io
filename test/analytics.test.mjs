@@ -112,8 +112,8 @@ test('Cal embed tracks booking progress without booking identifiers', () => {
 });
 
 test('both localized contact pages keep the same analytics-enabled form and calendar path', () => {
-  assert.match(contact, /<CalEmbed title=\{strings\.contact\.bookTitle\}/);
+  assert.match(contact, /<CalEmbed[\s\S]*?title=\{strings\.contact\.bookTitle\}/);
   assert.match(contact, /<ContactForm lang=\{lang\}/);
-  assert.match(kontakt, /<CalEmbed title=\{strings\.contact\.bookTitle\}/);
+  assert.match(kontakt, /<CalEmbed[\s\S]*?title=\{strings\.contact\.bookTitle\}/);
   assert.match(kontakt, /<ContactForm lang=\{lang\}/);
 });

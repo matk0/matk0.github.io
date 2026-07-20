@@ -67,10 +67,10 @@ const paths = getLocalizedPaths(lang);
       name="service"
       class="w-full px-4 py-3 rounded-xl border border-border bg-surface text-heading focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-sm"
     >
-      <option value="consulting" selected={preselectedService === 'consulting'}>{strings.contact.serviceOptions.consulting}</option>
+      <option value="consulting" selected={!preselectedService || preselectedService === 'consulting'}>{strings.contact.serviceOptions.consulting}</option>
       <option value="implementation" selected={preselectedService === 'implementation'}>{strings.contact.serviceOptions.implementation}</option>
       <option value="training" selected={preselectedService === 'training'}>{strings.contact.serviceOptions.training}</option>
-      <option value="notSure" selected={!preselectedService || preselectedService === 'notSure'}>{strings.contact.serviceOptions.notSure}</option>
+      <option value="notSure" selected={preselectedService === 'notSure'}>{strings.contact.serviceOptions.notSure}</option>
     </select>
   </div>
 

@@ -70,7 +70,7 @@ test('contact form provides privacy information at the point of collection', () 
 
 test('booking embed discloses Cal.com processing and links to localized privacy details', () => {
   assert.match(contact, /<CalEmbed title=\{strings\.contact\.bookTitle\} description=\{strings\.contact\.bookDescription\} lang=\{lang\} \/>/);
-  assert.match(kontakt, /<CalEmbed title=\{strings\.contact\.bookTitle\} description=\{strings\.contact\.bookDescription\} lang=\{lang\} \/>/);
+  assert.match(kontakt, /<CalEmbed[\s\S]*showIntro=\{false\}[\s\S]*privacyNoticeAfterCalendar/);
   assert.match(calEmbed, /getLocalizedPaths/);
   assert.match(calEmbed, /strings\.contact\.bookingPrivacyNotice/);
   assert.match(calEmbed, /strings\.contact\.privacyLink/);
@@ -83,6 +83,19 @@ test('booking embed discloses Cal.com processing and links to localized privacy 
     sk.contact.bookingPrivacyNotice,
     'Pri otvorení stránky Kontakt dostane Cal.com technické údaje potrebné na zobrazenie a ochranu rezervačného kalendára. Ak vytvoríte rezerváciu, spracúva aj údaje, ktoré zadáte.'
   );
+});
+
+test('Slovak booking page omits the booking intro and places its privacy notice below Cal.com', () => {
+  assert.match(calEmbed, /showIntro = true/);
+  assert.match(calEmbed, /privacyNoticeAfterCalendar = false/);
+  assert.match(calEmbed, /\{showIntro && \([\s\S]*<h3[\s\S]*\{title\}[\s\S]*<p[\s\S]*\{description\}/);
+
+  const calendarIndex = calEmbed.indexOf('data-cal-shell');
+  const trailingPrivacyIndex = calEmbed.indexOf('{privacyNoticeAfterCalendar && (');
+  assert.ok(calendarIndex >= 0);
+  assert.ok(trailingPrivacyIndex > calendarIndex);
+
+  assert.doesNotMatch(contact, /showIntro=\{false\}|privacyNoticeAfterCalendar/);
 });
 
 test('privacy pages disclose that Cal.com loads when the contact page opens', () => {

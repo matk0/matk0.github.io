@@ -6,25 +6,46 @@ interface Props {
   title: string;
   description: string;
   lang: Lang;
+  showIntro?: boolean;
+  privacyNoticeAfterCalendar?: boolean;
 }
 
-const { title, description, lang } = Astro.props;
+const {
+  title,
+  description,
+  lang,
+  showIntro = true,
+  privacyNoticeAfterCalendar = false,
+} = Astro.props;
 const strings = t(lang);
 const paths = getLocalizedPaths(lang);
 const calLink = lang === 'sk' ? 'matejlukasik/bezplatna-konzultacia' : 'matejlukasik/free-consultation';
 ---
 
 <div id="booking-calendar" class="rounded-2xl p-4 -m-4">
-  <h3 class="text-xl font-bold text-heading mb-2">{title}</h3>
-  <p class="text-body text-sm mb-6">{description}</p>
-  <p class="text-xs leading-relaxed text-body/80 mb-6">
-    {strings.contact.bookingPrivacyNotice}
-    {' '}
-    <a href={paths.privacy} class="font-medium text-primary hover:text-primary-hover">{strings.contact.privacyLink}</a>
-  </p>
+  {showIntro && (
+    <>
+      <h3 class="text-xl font-bold text-heading mb-2">{title}</h3>
+      <p class="text-body text-sm mb-6">{description}</p>
+    </>
+  )}
+  {!privacyNoticeAfterCalendar && (
+    <p class="text-xs leading-relaxed text-body/80 mb-6">
+      {strings.contact.bookingPrivacyNotice}
+      {' '}
+      <a href={paths.privacy} class="font-medium text-primary hover:text-primary-hover">{strings.contact.privacyLink}</a>
+    </p>
+  )}
   <div class="rounded-xl border border-border overflow-hidden bg-surface-alt min-h-[400px]" data-cal-shell>
     <div id="cal-embed" class="w-full"></div>
   </div>
+  {privacyNoticeAfterCalendar && (
+    <p class="text-xs leading-relaxed text-body/80 mt-4">
+      {strings.contact.bookingPrivacyNotice}
+      {' '}
+      <a href={paths.privacy} class="font-medium text-primary hover:text-primary-hover">{strings.contact.privacyLink}</a>
+    </p>
+  )}
 </div>
 
 <script define:vars={{ calLink }} is:inline>

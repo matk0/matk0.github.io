@@ -56,3 +56,14 @@ test('contact form does not ask for company details', () => {
   assert.doesNotMatch(contactApi, /formData\.get\('company'\)/);
   assert.doesNotMatch(contactApi, /<strong>Company:<\/strong>/);
 });
+
+test('contact form defaults to the process audit while preserving explicit service selection', () => {
+  assert.match(
+    contactForm,
+    /<option value="consulting" selected=\{!preselectedService \|\| preselectedService === 'consulting'\}>/,
+  );
+  assert.match(
+    contactForm,
+    /<option value="notSure" selected=\{preselectedService === 'notSure'\}>/,
+  );
+});
