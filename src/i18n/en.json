@@ -12,6 +12,7 @@
     "faq": "FAQ"
   },
   "home": {
+    "pageTitle": "Matej Lukášik - Specialist in actually useful AI",
     "heroTitle": "Stop doing work that AI should be doing for you.",
     "heroDescription": "AI should save your business time and money, not create more work. First, we'll find the recurring work that takes up the most time in your business. Then we'll simplify it, automate it, and measure the result.",
     "ctaPrimary": "Find Out What's Worth Automating",
@@ -104,7 +105,7 @@
     "heroTitle": "Who I Am",
     "heroDescription": "I help companies turn AI pressure into safe, measurable solutions.",
     "bioName": "Matej Lukášik",
-    "bioTitle": "Consultant for actually useful AI",
+    "bioTitle": "Specialist in actually useful AI",
     "bioText": "I am an agentic AI consultant with 10 years of software engineering experience. I help small and medium-sized businesses find specific places where AI can save time, streamline teamwork, and create measurable value.\n\nI take a practical approach to projects: first, I understand the business problems, processes, and data sources; only then do I choose the right tools. Together we design the first usable workflow, set success metrics, and define safe deployment rules.\n\nMy solutions build on experience with LLM systems, RAG, evaluations, AI models, automations, and AI agents. My goal is to deliver a solution leadership understands, the team can use, and the company can keep developing independently.",
     "approachTitle": "My Approach",
     "principle1Title": "Problem First, Tool Second",

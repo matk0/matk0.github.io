@@ -202,8 +202,8 @@ test('localized logo-based social previews exist at the required dimensions', ()
   assert.match(layout, /property="og:image:height" content="630"/);
   assert.match(layout, /property="og:image:alt"/);
   assert.match(layout, /name="twitter:image:alt"/);
-  assert.match(layout, /Matej Lukášik — konzultant pre užitočnú AI/);
-  assert.match(layout, /Matej Lukášik — consultant for actually useful AI/);
+  assert.match(layout, /Matej Lukášik — špecialista na užitočnú AI/);
+  assert.match(layout, /Matej Lukášik — specialist in actually useful AI/);
 
   for (const path of ['../public/og-en-useful-ai.png', '../public/og-sk-useful-ai.png']) {
     const url = new URL(path, import.meta.url);
@@ -215,8 +215,8 @@ test('localized logo-based social previews exist at the required dimensions', ()
   }
 
   const socialPreviews = [
-    ['../public/og-sk-useful-ai.svg', 'Konzultant pre užitočnú AI'],
-    ['../public/og-en-useful-ai.svg', 'Consultant for actually useful AI'],
+    ['../public/og-sk-useful-ai.svg', 'Špecialista na užitočnú AI'],
+    ['../public/og-en-useful-ai.svg', 'Specialist in actually useful AI'],
   ];
 
   for (const [path, title] of socialPreviews) {

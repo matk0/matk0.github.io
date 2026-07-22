@@ -8,6 +8,7 @@ const llms = readFileSync(new URL('../src/pages/llms.txt.ts', import.meta.url), 
 const llmsFull = readFileSync(new URL('../src/pages/llms-full.txt.ts', import.meta.url), 'utf8');
 
 test('english homepage positions Matej around practical SMB AI adoption', () => {
+  assert.equal(en.home.pageTitle, 'Matej Lukášik - Specialist in actually useful AI');
   assert.equal(en.home.heroTitle, 'Stop doing work that AI should be doing for you.');
   assert.equal(
     en.home.heroDescription,
@@ -24,9 +25,13 @@ test('english homepage positions Matej around practical SMB AI adoption', () => 
   );
   assert.equal(en.about.heroTitle, 'Who I Am');
   assert.equal(en.about.heroDescription, 'I help companies turn AI pressure into safe, measurable solutions.');
-  assert.equal(en.about.bioTitle, 'Consultant for actually useful AI');
+  assert.equal(en.about.bioTitle, 'Specialist in actually useful AI');
   assert.match(en.about.bioText, /I take a practical approach to projects/);
   assert.doesNotMatch(en.about.bioText, /I enter projects practically/);
+});
+
+test('slovak homepage uses the useful AI specialist page title', () => {
+  assert.equal(sk.home.pageTitle, 'Matej Lukášik - Špecialista na užitočnú AI');
 });
 
 test('service copy presents outcome-led assessment, automation, and team adoption offers', () => {
