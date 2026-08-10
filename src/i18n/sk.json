@@ -8,58 +8,58 @@
     "services": "Služby",
     "about": "O mne",
     "contact": "Kontakt",
-    "bookCall": "Zistiť, čo sa oplatí automatizovať",
+    "bookCall": "Dohodnúť si bezplatnú 30-minútovú konzultáciu",
     "faq": "FAQ"
   },
   "home": {
-    "pageTitle": "Matej Lukášik - Špecialista na užitočnú AI",
-    "heroTitle": "Prestaňte robiť prácu, ktorú má za Vás robiť AI.",
-    "heroDescription": "AI Vám má šetriť čas a peniaze, nie vytvárať ďalšiu prácu. Najprv nájdeme opakujúcu sa prácu, ktorá Vašej firme berie najviac času. Potom ju zjednodušíme, zautomatizujeme a zmeriame výsledok.",
-    "ctaPrimary": "Zistiť, čo sa oplatí automatizovať",
-    "ctaSecondary": "Pozrieť možnosti spolupráce",
-    "painTitle": "Zavedenie AI do firmy má zmysel až vtedy, keď rieši skutočný problém vo Vašom podnikaní.",
-    "pain1Title": "Prepisovanie medzi e-mailmi, tabuľkami a systémami",
-    "pain1Description": "Údaje sa ručne kopírujú, kontrolujú a posielajú ďalej. Tím stráca čas prácou, ktorú môže automatizácia urobiť rýchlejšie a s menším počtom chýb.",
-    "pain2Title": "Ponuky, reporty a odpovede stále vznikajú ručne",
-    "pain2Description": "Ľudia opakovane hľadajú rovnaké údaje, vytvárajú takmer rovnaké dokumenty a kontrolujú ich pred odoslaním. AI môže pripraviť prvý návrh, zatiaľ čo Váš pracovník si zachováva kontrolu a finálne rozhodnutie.",
+    "pageTitle": "Matej Lukášik — Konzultant pre AI systémy a softvérové inžinierstvo",
+    "heroTitle": "Nahraďte časovo náročné procesy a softvér, ktorý už Vašej firme nevyhovuje.",
+    "heroDescription": "Som konzultant pre AI systémy a softvérové inžinierstvo. Malým a stredným firmám pomáham nájsť a vytvoriť správnu kombináciu softvérových systémov na mieru, automatizácií a AI agentov.",
+    "ctaPrimary": "Dohodnúť si bezplatnú 30-minútovú konzultáciu",
+    "ctaSecondary": "Ako Vám môžem pomôcť",
+    "painTitle": "AI, nový softvér alebo ich kombinácia majú zmysel len vtedy, keď riešia skutočný problém vo Vašom podnikaní.",
+    "pain1Title": "Práca sa zasekáva medzi ľuďmi a systémami",
+    "pain1Description": "Schvaľovanie, údaje a rozhodnutia sa medzi ľuďmi a systémami presúvajú cez e-maily, tabuľky a opakované urgencie. Ako firma rastie, práca sa spomaľuje, rastie riziko chýb a kľúčoví ľudia sa stávajú úzkym miestom.",
+    "pain2Title": "Softvér už nezodpovedá tomu, ako Vaša firma funguje",
+    "pain2Description": "Chýbajúce funkcie a nepružné systémy vedú k pomocným tabuľkám, duplicitnému zadávaniu údajov a ručným kontrolám. Softvér sa má prispôsobiť firme, nie firma softvéru.",
     "pain3Title": "AI nesmie byť ďalší experiment bez výsledku",
     "pain3Description": "Ešte pred nasadením si určíme, čo sa má zlepšiť: čas, náklady, chybovosť alebo rýchlosť obsluhy. Ak výsledok nevieme zmerať, projekt zúžime alebo ho nezačneme.",
     "servicesTitle": "Ako Vám viem pomôcť?",
-    "consultingTitle": "Audit procesov a AI príležitostí",
-    "consultingDescription": "Ak ešte neviete, kde začať, pomôžem Vám zmapovať príležitosti, vybrať správny prvý projekt a určiť ako budeme merať úspech.",
-    "implementationTitle": "Automatizácia jedného konkrétneho procesu",
-    "implementationDescription": "Ak už máte jasný problém, navrhnem a postavím praktické AI riešenie, ktoré zapadne do Vašich procesov, nástrojov a bezpečnostných pravidiel.",
-    "trainingTitle": "AI v každodennej práci tímu",
-    "trainingDescription": "Ak má AI fungovať dlhodobo, tím ju musí vedieť používať pri svojej každodennej práci. Pomôžem ľuďom nájsť konkrétne využitie, overovať výstupy a nastaviť bezpečné pracovné návyky.",
+    "consultingTitle": "Assessment Sprint pre procesy a softvér",
+    "consultingDescription": "Zmapujem, ako vo Vašej firme prebieha práca, a pripravím plán zoradený podľa priority, ktorý ukáže, čo zjednodušiť, automatizovať, nanovo postaviť alebo podporiť pomocou AI.",
+    "implementationTitle": "Softvér na mieru, automatizácie a AI agenti",
+    "implementationDescription": "Navrhnem a postavím správnu kombináciu softvéru na mieru, automatizácií a AI agentov pre jeden konkrétny problém vo Vašom podnikaní.",
+    "trainingTitle": "Zavedenie do praxe, odovzdanie a zlepšovanie",
+    "trainingDescription": "Pomôžem tímu osvojiť si riešenie, nastaviť pravidlá prevádzky, merať výsledky a zlepšovať ho podľa reálneho používania.",
     "learnMore": "Viac info",
     "processTitle": "Ako prebieha spolupráca?",
     "processSteps": [
       {
         "label": "01",
-        "title": "45-minútová diagnostika možností AI",
-        "description": "Za 45 minút si prejdeme jeden opakujúci sa proces a posúdime, či sa ho oplatí automatizovať."
+        "title": "Bezplatná 30-minútová konzultácia",
+        "description": "Preberieme problém vo Vašom podnikaní, súčasný proces alebo softvér a posúdime, či je Assessment Sprint správnym ďalším krokom."
       },
       {
         "label": "02",
-        "title": "Plán prvého kroku",
-        "description": "Navrhnem prvý proces, ktorý sa oplatí riešiť, metriku úspechu, bezpečnostné pravidlá a realistický postup nasadenia."
+        "title": "Assessment Sprint pre procesy a softvér",
+        "description": "Zmapujem relevantné procesy a systémy, určím, kde sa stráca čas, a odporučím zmenu s najväčším prínosom spolu s jasnou metrikou úspechu."
       },
       {
         "label": "03",
-        "title": "Realizácia",
-        "description": "Postavíme dohodnuté riešenie, otestujeme ho na reálnych úlohách, zaškolíme prvých používateľov a zmeriame jeho prínos."
+        "title": "Implementácia",
+        "description": "Postavím a otestujem dohodnutý softvér, automatizáciu, AI agenta alebo ich kombináciu na reálnych úlohách."
       },
       {
         "label": "04",
-        "title": "Odovzdanie do praxe",
-        "description": "Keď riešenie funguje, preberá ho Váš tím. Ak chcete pokračovať ďalej, dlhodobá podpora ostáva otvorená."
+        "title": "Zavedenie a odovzdanie",
+        "description": "Pomôžem Vášmu tímu zaviesť riešenie do každodennej práce, zmerať výsledok a prevziať ho do vlastných rúk. Ak to dáva zmysel, podpora môže pokračovať."
       }
     ],
     "firstStepOffer": {
-      "eyebrow": "Najčastejší prvý krok",
-      "title": "45-minútová diagnostika možností AI",
-      "description": "Za 45 minút zmapujeme jeden opakujúci sa proces a posúdime, či sa ho oplatí automatizovať. Ak nie, poviem Vám to priamo. Diagnostika je bezplatná a bez záväzkov.",
-      "cta": "Zistiť, čo sa oplatí automatizovať"
+      "eyebrow": "Jednoduchý prvý krok",
+      "title": "Začnime bezplatnou 30-minútovou konzultáciou",
+      "description": "Povedzte mi, kde sa vo Vašej firme práca spomaľuje, zostáva manuálna alebo ju obmedzuje súčasný softvér. Spoločne si ujasníme problém, posúdime, či Vám viem pomôcť, a dohodneme sa na správnom ďalšom kroku. Bez záväzkov.",
+      "cta": "Dohodnúť si bezplatnú konzultáciu"
     },
     "atlasProofEyebrow": "Bezpečnostný výskum",
     "atlasProofTitle": "Bezpečnosť AI agentov nie je abstraktné riziko.",
@@ -69,75 +69,75 @@
     "trustTitle": "Postavené na praktickej hodnote, nie na hype",
     "trustDescription": "Odporúčam technológiu a spôsob nasadenia, ktoré sedia Vášmu problému, tímu, rozpočtu a bezpečnostným požiadavkám.",
     "ctaBandTitle": "Začnime procesom, ktorý Vašu firmu stojí najviac času.",
-    "ctaBandDescription": "Väčšina klientov začína 45-minútovou diagnostikou možností AI. Bez záväzkov, bez zbytočného hypu."
+    "ctaBandDescription": "Začnime bezplatnou 30-minútovou konzultáciou. Spoločne si ujasníme problém, posúdime, či Vám viem pomôcť, a dohodneme sa na správnom ďalšom kroku. Bez záväzkov."
   },
   "services": {
     "heroTitle": "Ako pomôžem",
-    "heroDescription": "Od prvého procesu, ktorý sa oplatí riešiť, po bezpečné nasadenie.",
+    "heroDescription": "Od posúdenia cez implementáciu až po zavedenie a bezpečné odovzdanie.",
     "consulting": {
-      "title": "Audit procesov a AI príležitostí",
-      "subtitle": "Zistite, ktorý proces má zmysel riešiť skôr, než miniete čas alebo peniaze.",
-      "description": "Zhodnotím Vaše súčasné procesy, nájdem AI príležitosti s najväčším prínosom a pripravím konkrétny plán. Získate jasno v tom, čo sa oplatí automatizovať, čo má počkať a ako budeme merať hodnotu.",
+      "title": "Assessment Sprint pre procesy a softvér",
+      "subtitle": "Nájdite zmeny s najväčším prínosom skôr, než investujete do technológií.",
+      "description": "Zmapujem, ako vo Vašej firme prebieha práca, kde sa stráca čas a kde súčasný softvér vytvára obchádzky. Dostanete plán zoradený podľa priority, ktorý ukáže, čo zjednodušiť, automatizovať, nanovo postaviť alebo podporiť pomocou AI.",
       "includes": [
-        "Procesy, ktoré dnes stoja najviac času",
-        "3–5 príležitostí zoradených podľa prínosu a náročnosti",
-        "Odporúčanie prvého procesu a metrika úspechu",
-        "Konkrétny plán ďalších krokov"
+        "Zmapovanie kľúčových procesov, systémov a odovzdávania práce",
+        "Vyčíslenie časových strát, úzkych miest a obchádzok",
+        "Príležitosti zoradené podľa prínosu, náročnosti a rizika",
+        "Odporúčanie prvej implementácie a metriky úspechu"
       ],
-      "cta": "Zistiť, čo sa oplatí automatizovať"
+      "cta": "Prebrať Assessment Sprint"
     },
     "implementation": {
-      "title": "Automatizácia jedného konkrétneho procesu",
-      "subtitle": "Jeden proces. Jedna metrika. Riešenie otestované na reálnej práci.",
-      "description": "Navrhnem a postavím automatizáciu okolo jedného konkrétneho procesu. Napojím ju na nástroje, ktoré už používate, otestujem na reálnych prípadoch a nastavím kontrolu chýb aj meranie výsledku.",
+      "title": "Softvér na mieru, automatizácie a AI agenti",
+      "subtitle": "Správny systém pre jeden dôležitý problém vo Vašom podnikaní.",
+      "description": "Navrhnem a postavím riešenie podľa Vašich reálnych procesov a existujúcich systémov. Môže ísť o softvér na mieru, automatizáciu, AI agenta alebo ich kombináciu — bez presadzovania AI tam, kde lepšie poslúži jednoduchšie technické riešenie.",
       "includes": [
-        "Automatizovaný proces napojený na Vaše súčasné nástroje",
-        "Testovanie na reálnych prípadoch a kontrola chýb",
-        "Meranie času, kvality alebo nákladov pred a po nasadení",
-        "Zaškolenie tímu a bezpečné odovzdanie"
+        "Riešenie navrhnuté pre jeden konkrétny problém",
+        "Napojenie na Vaše existujúce nástroje a údaje",
+        "Testovanie na reálnej práci vrátane riešenia chýb a zlyhaní",
+        "Meranie výsledku, dokumentácia a bezpečné odovzdanie"
       ],
-      "cta": "Prebrať riešenie na mieru"
+      "cta": "Prebrať implementáciu"
     },
     "training": {
-      "title": "AI v každodennej práci tímu",
-      "subtitle": "Nie jednorazové demo. Konkrétne úlohy, pravidlá a pracovné návyky.",
-      "description": "Tímu ukážem, kde má AI zmysel v ich konkrétnych úlohách, ako si overovať výstupy a kde sú hranice bezpečného používania. Cieľom nie je jednorazové demo, ale nové pracovné návyky, ktoré sa vo firme udržia.",
+      "title": "Zavedenie do praxe, odovzdanie a zlepšovanie",
+      "subtitle": "Aby sa nový systém stal súčasťou každodennej práce.",
+      "description": "Riešenie prináša hodnotu len vtedy, keď ho ľudia spoľahlivo používajú. Pomôžem tímu osvojiť si nový systém, nastaviť pravidlá prevádzky, merať výsledky a zlepšovať ho podľa reálneho používania.",
       "includes": [
-        "Workshopy postavené na reálnych úlohách Vášho tímu",
-        "Praktické používanie AI pri písaní, analýze a rozhodovaní",
-        "Kontrola výstupov, limity modelov a zdravá miera dôvery",
-        "Pravidlá pre bezpečné používanie dát a nástrojov"
+        "Zaškolenie tímu na reálnych pracovných postupoch",
+        "Pravidlá prevádzky, kontroly a eskalácie",
+        "Meranie voči dohodnutej metrike úspechu",
+        "Bezpečné odovzdanie alebo dlhodobá podpora"
       ],
-      "cta": "Prebrať workshop pre tím"
+      "cta": "Prebrať zavedenie a podporu"
     },
     "notSure": {
       "title": "Neviete, kde začať?",
-      "description": "Väčšina klientov začína 45-minútovou diagnostikou možností AI. Bez záväzkov, bez žargónu — len konkrétny pohľad na jeden opakujúci sa proces.",
-      "cta": "Zistiť, čo sa oplatí automatizovať"
+      "description": "Začnime bezplatnou 30-minútovou konzultáciou. Spoločne si ujasníme problém, posúdime, či Vám viem pomôcť, a dohodneme sa na správnom ďalšom kroku. Bez záväzkov.",
+      "cta": "Dohodnúť si bezplatnú konzultáciu"
     }
   },
   "about": {
     "heroTitle": "Kto som",
-    "heroDescription": "Pomáham firmám premeniť AI tlak na bezpečné a merateľné riešenia.",
+    "heroDescription": "Malým a stredným firmám pomáham riešiť problémy v podnikaní správnou kombináciou softvéru na mieru, automatizácií a AI.",
     "bioName": "Matej Lukášik",
-    "bioTitle": "Špecialista na užitočnú AI",
-    "bioText": "Som konzultant pre agentické AI, ktorý sa opiera o 10 rokov praxe v softvérovom inžinierstve. Pomáham malým a stredným firmám nájsť konkrétne miesta, kde im AI vie ušetriť čas, zefektívniť tímovú prácu a priniesť merateľnú hodnotu.\n\nDo projektov vstupujem prakticky: najprv porozumiem biznis problémom, procesom a dátovým zdrojom, až potom vyberám vhodné nástroje. Spolu navrhneme prvý použiteľný workflow, nastavíme metriky úspechu a bezpečné pravidlá nasadenia.\n\nMoje riešenia vychádzajú zo skúseností s LLM systémami, RAGmi, evaluáciami, AI modelmi, automatizáciami a AI agentmi. Mojím cieľom je dodať riešenie, ktorému rozumie vedenie, tím ho vie používať a firma ho dokáže ďalej samostatne rozvíjať.",
+    "bioTitle": "Konzultant pre AI systémy a softvérové inžinierstvo",
+    "bioText": "Mám 10 rokov praxe v softvérovom inžinierstve. Malým a stredným firmám pomáham nahrádzať časovo náročné procesy a nevyhovujúci softvér správnou kombináciou softvéru na mieru, automatizácií a AI agentov.\n\nNajprv porozumiem problému vo Vašom podnikaní, súčasným procesom, systémom a dátam. Až potom navrhnem riešenie, ktoré dáva technický aj ekonomický zmysel. AI používam len tam, kde prináša hodnotu. Niekedy je správnym riešením jednoduchá automatizácia alebo nový softvér.\n\nRiešenie navrhnem, postavím a overím na reálnej práci, potom pomôžem tímu zaviesť ho do praxe. Mojím cieľom je systém, ktorému rozumie vedenie, tím ho vie spoľahlivo používať a firma ho dokáže ďalej rozvíjať.",
     "approachTitle": "Môj prístup",
     "principle1Title": "Najprv problém, potom nástroj",
     "principle1Description": "Open-source alebo spravované, self-hosted alebo cloud — odporúčam to, čo sedí tímu, rozpočtu a bezpečnostným požiadavkám.",
     "principle2Title": "Schopnosť, nie závislosť",
-    "principle2Description": "Tím školím súčasne s nasadením. Cieľom je, aby ste svoje AI workflowy vlastnili a vedeli ich ďalej rozvíjať.",
+    "principle2Description": "Váš tím zapájam počas celej realizácie. Cieľom je, aby ste systém vlastnili a vedeli ho ďalej rozvíjať.",
     "principle3Title": "Začať rozumne, dokázať hodnotu",
     "principle3Description": "Najprv overíme jeden užitočný use case. Meriame výsledky a rozširujeme len to, čo funguje.",
     "techTitle": "Technológia",
     "techDescription": "Správne technické riešenie závisí od workflowu. Niekedy stačí ľahká automatizácia, inokedy RAG systém alebo vlastný AI agent napojený na existujúce nástroje. Spoločné sú jasné pravidlá, kontrolovaný prístup, merateľné výsledky a tím, ktorý vie riešenie používať.",
-    "ctaTitle": "Porozprávajme sa o prvom AI workflowe, ktorý má zmysel riešiť.",
-    "ctaPrimary": "Dohodnúť hovor",
+    "ctaTitle": "Porozprávajme sa o procese alebo softvéri, ktorý Vašu firmu brzdí.",
+    "ctaPrimary": "Dohodnúť si bezplatnú konzultáciu",
     "ctaSecondary": "Napísať správu"
   },
   "contact": {
     "heroTitle": "Spojte sa so mnou",
-    "heroDescription": "Či už máte jasný projekt, alebo len otázky — som tu.",
+    "heroDescription": "Máte konkrétny projekt alebo chcete zistiť, kde začať? Dohodnite si bezplatnú konzultáciu alebo mi napíšte.",
     "formTitle": "Napíšte mi",
     "nameLabel": "Meno",
     "namePlaceholder": "Vaše meno",
@@ -145,9 +145,9 @@
     "emailPlaceholder": "vy@firma.sk",
     "serviceLabel": "O čo máte záujem?",
     "serviceOptions": {
-      "consulting": "Audit procesov a AI príležitostí",
-      "implementation": "Automatizácia jedného konkrétneho procesu",
-      "training": "AI v každodennej práci tímu",
+      "consulting": "Assessment Sprint pre procesy a softvér",
+      "implementation": "Softvér na mieru, automatizácie a AI agenti",
+      "training": "Zavedenie do praxe, odovzdanie a zlepšovanie",
       "notSure": "Zatiaľ neviem"
     },
     "messageLabel": "Správa",
@@ -158,24 +158,24 @@
     "privacyNotice": "Tieto údaje použijem iba na odpoveď na Vašu správu.",
     "bookingPrivacyNotice": "Pri otvorení stránky Kontakt dostane Cal.com technické údaje potrebné na zobrazenie a ochranu rezervačného kalendára. Ak vytvoríte rezerváciu, spracúva aj údaje, ktoré zadáte.",
     "privacyLink": "Podrobnosti o súkromí",
-    "bookTitle": "45-minútová diagnostika možností AI",
-    "bookDescription": "Za 45 minút zmapujeme jeden opakujúci sa proces a posúdime, či sa ho oplatí automatizovať. Ak nie, poviem Vám to priamo. Diagnostika je bezplatná a bez záväzkov.",
+    "bookTitle": "Bezplatná 30-minútová konzultácia",
+    "bookDescription": "Povedzte mi, kde sa vo Vašej firme práca spomaľuje, zostáva manuálna alebo ju obmedzuje súčasný softvér. Spoločne si ujasníme problém, posúdime, či Vám viem pomôcť, a dohodneme sa na správnom ďalšom kroku. Bez záväzkov.",
     "directTitle": "Alebo ma kontaktujte priamo",
     "email": "matej@matejlukasik.com",
     "location": "Slovensko",
     "faqTitle": "Často kladené otázky",
     "faq": [
       {
-        "question": "Nevieme, kde s AI začať. Má zmysel sa ozvať?",
-        "answer": "Áno. Práve toto je najčastejší začiatok. Na úvodnom hovore sa pozrieme na Vaše procesy, dáta a miesta, kde tím stráca čas. Cieľom je prvý proces, ktorý sa oplatí riešiť, nie zoznam nástrojov."
+        "question": "Nevieme, či potrebujeme nový softvér, automatizáciu alebo AI. Má zmysel sa ozvať?",
+        "answer": "Áno. Počas bezplatnej konzultácie si ujasníme problém v procese alebo softvéri, jeho dopad na Vaše podnikanie a posúdime, či je Assessment Sprint správnym ďalším krokom."
       },
       {
-        "question": "Ako dlho trvá prvé nasadenie?",
-        "answer": "Väčšina prvých projektov ide od štartu po funkčné riešenie za 2–6 týždňov. Jednoduchá automatizácia môže bežať za pár dní. Zložitejšie systémy trvajú dlhšie, ale pokrok by ste mali vidieť každý týždeň."
+        "question": "Ako dlho trvá implementácia?",
+        "answer": "Závisí to od problému, existujúcich systémov a rizík. Assessment Sprint určí odporúčaný rozsah, metriku úspechu a realistický plán implementácie ešte predtým, než sa rozhodnete pre realizáciu."
       },
       {
-        "question": "Ako zistíme, či AI naozaj prináša hodnotu?",
-        "answer": "Ešte pred implementáciou si nastavíme metriku: ušetrený čas, kratší proces, menej chýb, vyššia kvalita alebo rýchlejšia obsluha zákazníkov. Ak sa hodnota nedá merať, projekt treba zúžiť alebo odložiť."
+        "question": "Ako zistíme, či riešenie skutočne prináša hodnotu?",
+        "answer": "Pred implementáciou sa dohodneme, čo sa má zlepšiť: ušetrený čas, náklady, chybovosť, kvalita alebo rýchlosť obsluhy. Ak výsledok nevieme dôveryhodne zmerať, projekt zúžime alebo ho nezačneme."
       },
       {
         "question": "Ako riešite bezpečnosť dát?",
@@ -188,8 +188,8 @@
         "answer": "Nie nutne. Technickú stránku viem vyriešiť ja. Niekto technický vo Vašom tíme pomáha pri dlhodobej údržbe a vlastníctve riešenia, ale prvý projekt môže začať aj bez interného vývojára."
       },
       {
-        "question": "S akými nástrojmi pracujete?",
-        "answer": "Nástroj vyberám až po pochopení procesu. Niekedy stačí jednoduchá automatizácia medzi aplikáciami, ktoré už používate. Vlastný AI agent má zmysel iba pri zložitejších úlohách. Rozhoduje bezpečnosť, prevádzkové náklady a to, či riešenie dokáže Váš tím dlhodobo používať."
+        "question": "Aké technológie používate?",
+        "answer": "Technológiu vyberám až po pochopení problému a existujúcich systémov. Riešením môže byť softvér na mieru, automatizácia, AI agent alebo ich kombinácia. Rozhoduje vhodnosť, spoľahlivosť, bezpečnosť, prevádzkové náklady a dlhodobá udržiavateľnosť."
       },
       {
         "question": "Čo sa stane po odovzdaní riešenia?",
@@ -198,7 +198,7 @@
     ]
   },
   "footer": {
-    "description": "Prestaňte robiť prácu, ktorú má za Vás robiť AI.",
+    "description": "Nahraďte časovo náročné procesy a softvér, ktorý už Vašej firme nevyhovuje.",
     "navigation": "Navigácia",
     "getInTouch": "Kontakt",
     "copyright": "Matej Lukášik. Všetky práva vyhradené.",

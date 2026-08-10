@@ -4,10 +4,13 @@ interface Props {
   subtitle?: string;
   description?: string;
   size?: 'large' | 'small';
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
-const { title, subtitle, description, size = 'small' } = Astro.props;
+const { title, subtitle, description, size = 'small', imageSrc, imageAlt = '' } = Astro.props;
 const isLarge = size === 'large';
+const hasImage = isLarge && Boolean(imageSrc);
 ---
 
 <section class:list={["relative overflow-hidden wave-divider", isLarge ? "hero-aurora" : "bg-gradient-to-br from-primary-dark to-primary-dark"]}>
@@ -26,23 +29,67 @@ const isLarge = size === 'large';
     </>
   )}
 
-  <div class:list={["container mx-auto px-4 sm:px-6 relative z-10 text-center", isLarge ? "py-28 md:py-40" : "py-16 md:py-24"]}>
-    {subtitle && (
-      <p class:list={["font-semibold text-accent mb-4 reveal", isLarge ? "text-lg md:text-xl" : "text-base"]}>
-        {subtitle}
-      </p>
-    )}
-    <h1 class:list={["font-bold leading-tight reveal reveal-delay-1", isLarge ? "text-4xl md:text-7xl max-w-4xl mx-auto gradient-text" : "text-3xl md:text-5xl max-w-3xl mx-auto text-white"]}>
-      {title}
-    </h1>
-    {description && (
-      <p class:list={["text-white/70 max-w-2xl mx-auto reveal reveal-delay-2", isLarge ? "text-lg md:text-xl mt-6" : "text-base md:text-lg mt-4"]}>
-        {description}
-      </p>
-    )}
-    <div class:list={["reveal reveal-delay-3", isLarge ? "mt-10" : "mt-6"]}>
-      <slot />
+  <div
+    class:list={[
+      "container mx-auto px-4 sm:px-6 relative z-10",
+      hasImage
+        ? "grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(320px,2fr)] items-center gap-12 lg:gap-14 py-16 sm:py-20 lg:py-16"
+        : isLarge
+          ? "py-28 md:py-40"
+          : "py-16 md:py-24",
+    ]}
+  >
+    <div class:list={[hasImage ? "text-center lg:text-left" : "text-center"]}>
+      {subtitle && (
+        <p class:list={["font-semibold text-accent mb-4 reveal", isLarge ? "text-lg md:text-xl" : "text-base"]}>
+          {subtitle}
+        </p>
+      )}
+      <h1
+        class:list={[
+          "font-bold leading-tight reveal reveal-delay-1",
+          isLarge
+            ? hasImage
+              ? "text-4xl sm:text-5xl lg:text-5xl xl:text-6xl max-w-3xl mx-auto lg:mx-0 gradient-text"
+              : "text-4xl md:text-7xl max-w-4xl mx-auto gradient-text"
+            : "text-3xl md:text-5xl max-w-3xl mx-auto text-white",
+        ]}
+      >
+        {title}
+      </h1>
+      {description && (
+        <p
+          class:list={[
+            "text-white/70 reveal reveal-delay-2",
+            hasImage ? "max-w-xl mx-auto lg:mx-0" : "max-w-2xl mx-auto",
+            isLarge ? "text-lg md:text-xl mt-6" : "text-base md:text-lg mt-4",
+          ]}
+        >
+          {description}
+        </p>
+      )}
+      <div class:list={["reveal reveal-delay-3", hasImage ? "mt-8" : isLarge ? "mt-10" : "mt-6"]}>
+        <slot />
+      </div>
     </div>
+
+    {hasImage && (
+      <div class="hero-portrait-wrap relative w-full max-w-[460px] mx-auto lg:mr-0 reveal reveal-delay-2">
+        <div class="hero-portrait-glow" aria-hidden="true"></div>
+        <div class="hero-portrait aspect-[4/3] sm:aspect-[5/4] lg:aspect-[4/5]">
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            width="900"
+            height="1353"
+            class="absolute inset-0 h-full w-full object-cover object-[50%_20%] lg:object-[50%_35%]"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </div>
+      </div>
+    )}
   </div>
 </section>
 
@@ -95,5 +142,43 @@ const isLarge = size === 'large';
     top: 30%;
     left: 40%;
     animation: float 10s ease-in-out infinite reverse;
+  }
+
+  .hero-portrait-wrap {
+    isolation: isolate;
+  }
+
+  .hero-portrait-glow {
+    position: absolute;
+    inset: 8% -6% -6% 12%;
+    z-index: -1;
+    border-radius: 3rem;
+    background: rgba(147, 109, 255, 0.42);
+    filter: blur(48px);
+  }
+
+  .hero-portrait {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: clamp(1.5rem, 3vw, 2.75rem);
+    background: var(--color-primary-dark);
+    box-shadow: 0 28px 70px rgba(9, 5, 35, 0.38);
+  }
+
+  .hero-portrait::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(34, 24, 84, 0.46) 0%, transparent 24%),
+      linear-gradient(0deg, rgba(34, 24, 84, 0.72) 0%, transparent 26%);
+    pointer-events: none;
+  }
+
+  @media (max-width: 1023px) {
+    .hero-portrait::after {
+      background: linear-gradient(0deg, rgba(34, 24, 84, 0.72) 0%, transparent 28%);
+    }
   }
 </style>

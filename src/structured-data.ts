@@ -32,7 +32,9 @@ export function getStructuredData(lang: Lang, siteOrigin: string) {
         '@id': personId,
         name: 'Matej Lukášik',
         url: siteOrigin,
-        jobTitle: lang === 'sk' ? 'Konzultant pre agentickú AI' : 'Agentic AI Consultant',
+        jobTitle: lang === 'sk'
+          ? 'Konzultant pre AI systémy a softvérové inžinierstvo'
+          : 'AI Systems & Software Engineering Consultant',
         image: `${siteOrigin}/avatar.png`,
         sameAs: [
           'https://www.linkedin.com/in/matej-lukasik',
@@ -46,13 +48,13 @@ export function getStructuredData(lang: Lang, siteOrigin: string) {
         '@type': 'ProfessionalService',
         '@id': `${siteOrigin}/#business`,
         name: lang === 'sk'
-          ? 'Matej Lukášik — audit procesov a automatizácia AI'
-          : 'Matej Lukášik — AI Process Audits and Automation',
+          ? 'Matej Lukášik — Konzultant pre AI systémy a softvérové inžinierstvo'
+          : 'Matej Lukášik — AI Systems & Software Engineering Consultant',
         url: siteOrigin,
         description: lang === 'sk'
-          ? 'Pomáham firmám nájsť opakujúcu sa prácu, ktorá im berie najviac času, zjednodušiť ju, zautomatizovať a zmerať výsledok.'
-          : 'I help businesses find recurring work that takes up the most time, simplify it, automate it, and measure the result.',
-        areaServed: 'EU',
+          ? 'Pomáham malým a stredným firmám nahrádzať časovo náročné procesy a nevyhovujúci softvér správnou kombináciou softvéru na mieru, automatizácií a AI agentov.'
+          : 'I help small and medium-sized businesses replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.',
+        areaServed: ['Europe', 'United States'],
         availableLanguage: ['en', 'sk'],
         provider: { '@id': personId },
         telephone: '+421944302185',

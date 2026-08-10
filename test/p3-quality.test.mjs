@@ -52,18 +52,20 @@ test('structured data uses the active language origin and verified business iden
   assert.equal(business.url, 'https://matejlukasik.sk');
   assert.equal(business.telephone, '+421944302185');
   assert.equal(business.email, 'matej@matejlukasik.com');
-  assert.equal(person.jobTitle, 'Konzultant pre agentickú AI');
-  assert.equal(englishPerson.jobTitle, 'Agentic AI Consultant');
-  assert.equal(business.name, 'Matej Lukášik — audit procesov a automatizácia AI');
-  assert.equal(englishBusiness.name, 'Matej Lukášik — AI Process Audits and Automation');
+  assert.equal(person.jobTitle, 'Konzultant pre AI systémy a softvérové inžinierstvo');
+  assert.equal(englishPerson.jobTitle, 'AI Systems & Software Engineering Consultant');
+  assert.equal(business.name, 'Matej Lukášik — Konzultant pre AI systémy a softvérové inžinierstvo');
+  assert.equal(englishBusiness.name, 'Matej Lukášik — AI Systems & Software Engineering Consultant');
   assert.equal(
     business.description,
-    'Pomáham firmám nájsť opakujúcu sa prácu, ktorá im berie najviac času, zjednodušiť ju, zautomatizovať a zmerať výsledok.',
+    'Pomáham malým a stredným firmám nahrádzať časovo náročné procesy a nevyhovujúci softvér správnou kombináciou softvéru na mieru, automatizácií a AI agentov.',
   );
   assert.equal(
     englishBusiness.description,
-    'I help businesses find recurring work that takes up the most time, simplify it, automate it, and measure the result.',
+    'I help small and medium-sized businesses replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.',
   );
+  assert.deepEqual(business.areaServed, ['Europe', 'United States']);
+  assert.deepEqual(englishBusiness.areaServed, ['Europe', 'United States']);
   assert.deepEqual(
     business.identifier.map(({ propertyID, value }) => [propertyID, value]),
     [['IČO', '50113801'], ['Živnostenský register SR', '250-37148']],

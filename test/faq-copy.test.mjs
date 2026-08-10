@@ -9,17 +9,18 @@ test('Slovak FAQ addresses the full client decision path', () => {
   assert.deepEqual(
     sk.contact.faq.map((item) => item.question),
     [
-      'Nevieme, kde s AI začať. Má zmysel sa ozvať?',
-      'Ako dlho trvá prvé nasadenie?',
-      'Ako zistíme, či AI naozaj prináša hodnotu?',
+      'Nevieme, či potrebujeme nový softvér, automatizáciu alebo AI. Má zmysel sa ozvať?',
+      'Ako dlho trvá implementácia?',
+      'Ako zistíme, či riešenie skutočne prináša hodnotu?',
       'Ako riešite bezpečnosť dát?',
       'Potrebujeme vlastný technický tím?',
-      'S akými nástrojmi pracujete?',
+      'Aké technológie používate?',
       'Čo sa stane po odovzdaní riešenia?',
     ],
   );
 
-  assert.match(sk.contact.faq[0].answer, /prvý proces, ktorý sa oplatí riešiť/);
+  assert.match(sk.contact.faq[0].answer, /Assessment Sprint/);
+  assert.match(sk.contact.faq[1].answer, /realistický plán implementácie/);
   assert.match(sk.contact.faq[2].answer, /ušetrený čas/);
   assert.match(sk.contact.faq[3].answer, /oprávnenia/);
   assert.match(sk.contact.faq[6].answer, /Váš tím/);
@@ -29,29 +30,29 @@ test('English FAQ mirrors the Slovak FAQ scope', () => {
   assert.deepEqual(
     en.contact.faq.map((item) => item.question),
     [
-      "We don't know where to start with AI. Is it worth getting in touch?",
-      'How long does the first deployment take?',
-      'How do we know whether AI is creating real value?',
+      'We don’t know whether we need new software, automation, or AI. Is it worth getting in touch?',
+      'How long does an implementation take?',
+      'How do we know whether the solution is creating real value?',
       'How do you handle data security?',
       'Do we need our own technical team?',
-      'What tools do you work with?',
+      'What technology do you use?',
       'What happens after handoff?',
     ],
   );
 });
 
 test('Tools FAQ explains selection in plain business language in both languages', () => {
-  const slovakToolsFaq = sk.contact.faq.find((item) => item.question === 'S akými nástrojmi pracujete?');
-  const englishToolsFaq = en.contact.faq.find((item) => item.question === 'What tools do you work with?');
+  const slovakToolsFaq = sk.contact.faq.find((item) => item.question === 'Aké technológie používate?');
+  const englishToolsFaq = en.contact.faq.find((item) => item.question === 'What technology do you use?');
 
   assert.ok(slovakToolsFaq);
   assert.ok(englishToolsFaq);
 
-  assert.match(slovakToolsFaq.answer, /pochopení procesu/);
-  assert.match(slovakToolsFaq.answer, /jednoduchá automatizácia/);
+  assert.match(slovakToolsFaq.answer, /pochopení problému/);
+  assert.match(slovakToolsFaq.answer, /softvér na mieru/);
   assert.match(slovakToolsFaq.answer, /prevádzkové náklady/);
-  assert.match(englishToolsFaq.answer, /understanding the process/);
-  assert.match(englishToolsFaq.answer, /simple automation/);
+  assert.match(englishToolsFaq.answer, /understanding the problem/);
+  assert.match(englishToolsFaq.answer, /bespoke software/);
   assert.match(englishToolsFaq.answer, /operating cost/);
 
   for (const answer of [slovakToolsFaq.answer, englishToolsFaq.answer]) {

@@ -25,14 +25,14 @@ test('footer has privacy route without location or booking CTA', () => {
   assert.doesNotMatch(footer, /focus=calendar/);
 });
 
-test('footer repeats the Slovak homepage promise', () => {
+test('footer repeats the canonical homepage problem statement', () => {
   assert.equal(
     sk.footer.description,
-    'Prestaňte robiť prácu, ktorú má za Vás robiť AI.',
+    'Nahraďte časovo náročné procesy a softvér, ktorý už Vašej firme nevyhovuje.',
   );
   assert.equal(
     en.footer.description,
-    'Stop doing work that AI should be doing for you.',
+    'Replace time-consuming workflows and software that no longer fits.',
   );
 });
 

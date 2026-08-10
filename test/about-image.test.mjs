@@ -26,14 +26,15 @@ test('about section centers the portrait and title within the left column', () =
   assert.doesNotMatch(aboutSection, /lg:text-left/);
 });
 
-test('slovak about title uses useful AI specialist wording', () => {
-  assert.equal(sk.about.bioTitle, 'Špecialista na užitočnú AI');
+test('slovak about title uses the canonical consultant positioning', () => {
+  assert.equal(sk.about.bioTitle, 'Konzultant pre AI systémy a softvérové inžinierstvo');
 });
 
-test('slovak about bio builds trust without repeating the AI urgency hook', () => {
-  assert.match(sk.about.bioText, /konzultant pre agentické AI/);
+test('slovak about bio leads with software engineering and business problems', () => {
   assert.match(sk.about.bioText, /10 rokov praxe/);
-  assert.doesNotMatch(sk.about.bioText, /tlak okolo AI/);
+  assert.match(sk.about.bioText, /časovo náročné procesy/);
+  assert.match(sk.about.bioText, /AI používam len tam, kde prináša hodnotu/);
+  assert.doesNotMatch(sk.about.bioText, /konzultant pre agentické AI|tlak okolo AI/);
 });
 
 test('homepage does not render a separate about approach section', () => {

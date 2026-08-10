@@ -7,17 +7,24 @@ const hero = readFileSync(new URL('../src/components/Hero.astro', import.meta.ur
 const en = JSON.parse(readFileSync(new URL('../src/i18n/en.json', import.meta.url), 'utf8'));
 const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
 
-test('the public homepage is the Agentic AI consulting site', () => {
-  assert.equal(en.home.heroTitle, 'Stop doing work that AI should be doing for you.');
+test('the public homepage presents the approved AI systems and software positioning', () => {
+  assert.equal(en.home.pageTitle, 'Matej Lukášik — AI Systems & Software Engineering Consultant');
+  assert.equal(en.home.heroTitle, 'Replace time-consuming workflows and software that no longer fits.');
   assert.equal('heroTypewords' in en.home, false);
   assert.equal('heroTypewordTemplate' in en.home, false);
-  assert.equal(en.home.heroDescription, "AI should save your business time and money, not create more work. First, we'll find the recurring work that takes up the most time in your business. Then we'll simplify it, automate it, and measure the result.");
-  assert.equal(sk.home.heroTitle, 'Prestaňte robiť prácu, ktorú má za Vás robiť AI.');
+  assert.equal(en.home.heroDescription, 'I’m an AI Systems & Software Engineering Consultant for SMBs. I find and build the right mix of bespoke software systems, automations, and AI agents.');
+  assert.equal(en.home.ctaPrimary, 'Book a Free 30-Minute Consultation');
+  assert.equal(en.home.ctaSecondary, 'See How I Can Help');
+  assert.equal(sk.home.pageTitle, 'Matej Lukášik — Konzultant pre AI systémy a softvérové inžinierstvo');
+  assert.equal(sk.home.heroTitle, 'Nahraďte časovo náročné procesy a softvér, ktorý už Vašej firme nevyhovuje.');
   assert.equal('heroTypewords' in sk.home, false);
   assert.equal('heroTypewordTemplate' in sk.home, false);
-  assert.equal(sk.home.heroDescription, 'AI Vám má šetriť čas a peniaze, nie vytvárať ďalšiu prácu. Najprv nájdeme opakujúcu sa prácu, ktorá Vašej firme berie najviac času. Potom ju zjednodušíme, zautomatizujeme a zmeriame výsledok.');
-  assert.equal(sk.home.firstStepOffer.title, '45-minútová diagnostika možností AI');
-  assert.equal(en.home.painTitle, 'Bringing AI into your company only makes sense when it solves a real business problem.');
+  assert.equal(sk.home.heroDescription, 'Som konzultant pre AI systémy a softvérové inžinierstvo. Malým a stredným firmám pomáham nájsť a vytvoriť správnu kombináciu softvérových systémov na mieru, automatizácií a AI agentov.');
+  assert.equal(sk.home.ctaPrimary, 'Dohodnúť si bezplatnú 30-minútovú konzultáciu');
+  assert.equal(sk.home.ctaSecondary, 'Ako Vám môžem pomôcť');
+  assert.equal(sk.home.firstStepOffer.title, 'Začnime bezplatnou 30-minútovou konzultáciou');
+  assert.equal(en.home.painTitle, 'AI and/or new software only make sense when they solve a real business problem.');
+  assert.equal(sk.home.painTitle, 'AI, nový softvér alebo ich kombinácia majú zmysel len vtedy, keď riešia skutočný problém vo Vašom podnikaní.');
   assert.equal(en.home.servicesTitle, 'How can I help you?');
   assert.match(index, /<Hero\s/);
   assert.match(index, /title=\{strings\.home\.heroTitle\}/);

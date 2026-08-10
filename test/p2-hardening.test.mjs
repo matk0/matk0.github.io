@@ -202,8 +202,8 @@ test('localized logo-based social previews exist at the required dimensions', ()
   assert.match(layout, /property="og:image:height" content="630"/);
   assert.match(layout, /property="og:image:alt"/);
   assert.match(layout, /name="twitter:image:alt"/);
-  assert.match(layout, /Matej Lukášik — špecialista na užitočnú AI/);
-  assert.match(layout, /Matej Lukášik — specialist in actually useful AI/);
+  assert.match(layout, /Matej Lukášik — Konzultant pre AI systémy a softvérové inžinierstvo/);
+  assert.match(layout, /Matej Lukášik — AI Systems & Software Engineering Consultant/);
 
   for (const path of ['../public/og-en-useful-ai.png', '../public/og-sk-useful-ai.png']) {
     const url = new URL(path, import.meta.url);
@@ -215,14 +215,15 @@ test('localized logo-based social previews exist at the required dimensions', ()
   }
 
   const socialPreviews = [
-    ['../public/og-sk-useful-ai.svg', 'Špecialista na užitočnú AI'],
-    ['../public/og-en-useful-ai.svg', 'Specialist in actually useful AI'],
+    ['../public/og-sk-useful-ai.svg', ['Konzultant pre AI systémy', 'a softvérové inžinierstvo', 'Softvér na mieru · automatizácie · AI agenti']],
+    ['../public/og-en-useful-ai.svg', ['AI Systems &amp; Software', 'Engineering Consultant', 'Bespoke software · automations · AI agents']],
   ];
 
-  for (const [path, title] of socialPreviews) {
+  for (const [path, expectedCopy] of socialPreviews) {
     const svg = read(path);
     assert.match(svg, /<text x="440" y="220"[^>]*font-size="64"[^>]*>Matej Lukášik<\/text>/);
-    assert.match(svg, new RegExp(`<text x="440" y="285"[^>]*font-size="36"[^>]*>${title}<\\/text>`));
+    for (const copy of expectedCopy) assert.ok(svg.includes(copy), `${path} must include ${copy}`);
+    assert.doesNotMatch(svg, /Specialist in actually useful AI|Špecialista na užitočnú AI|workshops|workshopy/);
   }
 });
 
