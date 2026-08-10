@@ -42,7 +42,7 @@
       {
         "label": "02",
         "title": "Workflow & Software Assessment Sprint",
-        "description": "I map the relevant workflows and systems, identify where time is lost, and recommend the highest-value change with a clear success metric."
+        "description": "I map how work actually happens, including handoffs, exceptions, and workarounds, and recommend the highest-value change with a clear success metric."
       },
       {
         "label": "03",
@@ -77,8 +77,8 @@
     "consulting": {
       "title": "Workflow & Software Assessment Sprint",
       "subtitle": "Find the highest-value changes before you invest in technology.",
-      "description": "I map how work moves through your company, where time is lost, and where existing software creates workarounds. You receive a prioritized plan showing what to streamline, automate, rebuild, or support with AI.",
-      "includes": ["Key workflows, systems, and handoffs mapped", "Time losses, bottlenecks, and workarounds quantified", "Opportunities ranked by impact, effort, and risk", "Recommended first implementation and success metric"],
+      "description": "I map how work actually happens—not just how it is documented—including handoffs, exceptions, workarounds, and the systems involved. You receive a prioritized plan showing what to streamline, automate, rebuild, or support with AI.",
+      "includes": ["Real workflows, systems, handoffs, and exceptions mapped", "Time losses, bottlenecks, and workarounds quantified", "Opportunities ranked by impact, effort, and risk", "Recommended first implementation and success metric"],
       "cta": "Discuss an Assessment Sprint"
     },
     "implementation": {
@@ -153,6 +153,10 @@
       {
         "question": "We don’t know whether we need new software, automation, or AI. Is it worth getting in touch?",
         "answer": "Yes. In the free consultation, we’ll clarify the workflow or software problem, its business impact, and whether an Assessment Sprint is the right next step."
+      },
+      {
+        "question": "Do we need to replace our current software?",
+        "answer": "Usually not. I first look for ways to improve or connect the systems that already work. I recommend replacing software only when the current system is holding the business back and the value of replacing it is clear."
       },
       {
         "question": "How long does an implementation take?",

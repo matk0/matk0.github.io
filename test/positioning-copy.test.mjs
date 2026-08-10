@@ -21,7 +21,7 @@ test('english homepage positions Matej as an AI systems and software consultant 
   );
   assert.equal(
     en.home.processSteps[1].description,
-    'I map the relevant workflows and systems, identify where time is lost, and recommend the highest-value change with a clear success metric.',
+    'I map how work actually happens, including handoffs, exceptions, and workarounds, and recommend the highest-value change with a clear success metric.',
   );
   assert.equal(
     en.home.trustDescription,
@@ -65,8 +65,12 @@ test('service copy presents the assessment, implementation, and adoption lifecyc
     en.services.consulting.subtitle,
     'Find the highest-value changes before you invest in technology.',
   );
+  assert.equal(
+    en.services.consulting.description,
+    'I map how work actually happens—not just how it is documented—including handoffs, exceptions, workarounds, and the systems involved. You receive a prioritized plan showing what to streamline, automate, rebuild, or support with AI.',
+  );
   assert.deepEqual(en.services.consulting.includes, [
-    'Key workflows, systems, and handoffs mapped',
+    'Real workflows, systems, handoffs, and exceptions mapped',
     'Time losses, bottlenecks, and workarounds quantified',
     'Opportunities ranked by impact, effort, and risk',
     'Recommended first implementation and success metric',
@@ -85,6 +89,16 @@ test('service copy presents the assessment, implementation, and adoption lifecyc
   assert.equal(sk.home.trainingTitle, 'Zavedenie do praxe, odovzdanie a zlepšovanie');
   assert.equal(sk.services.training.title, 'Zavedenie do praxe, odovzdanie a zlepšovanie');
   assert.equal(sk.services.consulting.cta, 'Prebrať Assessment Sprint');
+  assert.equal(
+    sk.services.consulting.description,
+    'Zmapujem prácu tak, ako vo Vašej firme skutočne prebieha — vrátane používaných systémov, odovzdávania práce, výnimiek a obchádzok. Dostanete plán zoradený podľa priority, ktorý ukáže, čo zjednodušiť, automatizovať, nanovo postaviť alebo podporiť pomocou AI.',
+  );
+  assert.deepEqual(sk.services.consulting.includes, [
+    'Zmapovanie reálnych procesov, systémov, odovzdávania práce a výnimiek',
+    'Vyčíslenie časových strát, úzkych miest a obchádzok',
+    'Príležitosti zoradené podľa prínosu, náročnosti a rizika',
+    'Odporúčanie prvej implementácie a metriky úspechu',
+  ]);
   assert.equal(sk.services.implementation.cta, 'Prebrať implementáciu');
   assert.equal(sk.services.training.cta, 'Prebrať zavedenie a podporu');
   assert.equal(en.services.consulting.cta, 'Discuss an Assessment Sprint');
@@ -154,7 +168,7 @@ test('process copy follows consultation, assessment, implementation, and handoff
       },
       {
         title: 'Workflow & Software Assessment Sprint',
-        description: 'I map the relevant workflows and systems, identify where time is lost, and recommend the highest-value change with a clear success metric.',
+        description: 'I map how work actually happens, including handoffs, exceptions, and workarounds, and recommend the highest-value change with a clear success metric.',
       },
       {
         title: 'Implementation',
@@ -178,7 +192,7 @@ test('process copy follows consultation, assessment, implementation, and handoff
       },
       {
         title: 'Assessment Sprint pre procesy a softvér',
-        description: 'Zmapujem relevantné procesy a systémy, určím, kde sa stráca čas, a odporučím zmenu s najväčším prínosom spolu s jasnou metrikou úspechu.',
+        description: 'Zmapujem, ako práca skutočne prebieha, vrátane odovzdávania práce, výnimiek a obchádzok, a odporučím zmenu s najväčším prínosom spolu s jasnou metrikou úspechu.',
       },
       {
         title: 'Implementácia',
@@ -232,6 +246,10 @@ test('machine-readable copy mirrors the free consultation callout', () => {
   assert.match(llms, /\*\*Workflow & Software Assessment Sprint\*\*/);
   assert.match(llms, /1\. Free 30-Minute Consultation — We discuss the business problem/);
   assert.match(llms, /1\. Bezplatná 30-minútová konzultácia — Preberieme problém vo Vašom podnikaní/);
+  assert.match(llms, /Maps how work actually happens, including handoffs, exceptions, workarounds, and the systems involved/);
+  assert.match(llms, /Improve or connect existing systems before recommending replacement/);
+  assert.match(llms, /Mapuje prácu tak, ako skutočne prebieha, vrátane používaných systémov, odovzdávania práce, výnimiek a obchádzok/);
+  assert.match(llms, /Zlepšiť alebo prepojiť existujúce systémy skôr, než sa odporučí ich výmena/);
   assert.doesNotMatch(llms, /const EN = `# Matej Lukášik — AI Agent Consulting/);
   assert.doesNotMatch(llms, /AI agent konzulting|Samostatny AI agent konzultant/);
   assert.doesNotMatch(llms, /1–2 weeks|1–2 tyzdne/);

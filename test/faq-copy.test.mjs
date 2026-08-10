@@ -10,6 +10,7 @@ test('Slovak FAQ addresses the full client decision path', () => {
     sk.contact.faq.map((item) => item.question),
     [
       'Nevieme, či potrebujeme nový softvér, automatizáciu alebo AI. Má zmysel sa ozvať?',
+      'Budeme musieť nahradiť náš súčasný softvér?',
       'Ako dlho trvá implementácia?',
       'Ako zistíme, či riešenie skutočne prináša hodnotu?',
       'Ako riešite bezpečnosť dát?',
@@ -20,10 +21,12 @@ test('Slovak FAQ addresses the full client decision path', () => {
   );
 
   assert.match(sk.contact.faq[0].answer, /Assessment Sprint/);
-  assert.match(sk.contact.faq[1].answer, /realistický plán implementácie/);
-  assert.match(sk.contact.faq[2].answer, /ušetrený čas/);
-  assert.match(sk.contact.faq[3].answer, /oprávnenia/);
-  assert.match(sk.contact.faq[6].answer, /Váš tím/);
+  assert.match(sk.contact.faq[1].answer, /zlepšiť alebo prepojiť/);
+  assert.match(sk.contact.faq[1].answer, /Výmenu softvéru/);
+  assert.match(sk.contact.faq[2].answer, /realistický plán implementácie/);
+  assert.match(sk.contact.faq[3].answer, /ušetrený čas/);
+  assert.match(sk.contact.faq[4].answer, /oprávnenia/);
+  assert.match(sk.contact.faq[7].answer, /Váš tím/);
 });
 
 test('English FAQ mirrors the Slovak FAQ scope', () => {
@@ -31,6 +34,7 @@ test('English FAQ mirrors the Slovak FAQ scope', () => {
     en.contact.faq.map((item) => item.question),
     [
       'We don’t know whether we need new software, automation, or AI. Is it worth getting in touch?',
+      'Do we need to replace our current software?',
       'How long does an implementation take?',
       'How do we know whether the solution is creating real value?',
       'How do you handle data security?',
@@ -39,6 +43,9 @@ test('English FAQ mirrors the Slovak FAQ scope', () => {
       'What happens after handoff?',
     ],
   );
+
+  assert.match(en.contact.faq[1].answer, /improve or connect/);
+  assert.match(en.contact.faq[1].answer, /replacing software/);
 });
 
 test('Tools FAQ explains selection in plain business language in both languages', () => {

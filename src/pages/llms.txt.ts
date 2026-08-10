@@ -9,14 +9,14 @@ Matej is an AI Systems & Software Engineering Consultant with 10 years of softwa
 
 ## Services
 
-- **Workflow & Software Assessment Sprint** — Maps workflows, systems, time losses, bottlenecks, and workarounds, then recommends the highest-value first implementation.
+- **Workflow & Software Assessment Sprint** — Maps how work actually happens, including handoffs, exceptions, workarounds, and the systems involved, then recommends the highest-value first implementation.
 - **Bespoke Software, Automation & AI Agents** — Builds the right solution around one defined business problem and tests it on real work.
 - **Adoption, Handoff & Improvement** — Helps the team adopt the solution, establish operating rules, measure results, and improve it from real usage.
 
 ## Process
 
 1. Free 30-Minute Consultation — We discuss the business problem, the current workflow or software, and whether an Assessment Sprint is the right next step.
-2. Workflow & Software Assessment Sprint — Matej maps the relevant workflows and systems, identifies where time is lost, and recommends the highest-value change with a clear success metric.
+2. Workflow & Software Assessment Sprint — Matej maps how work actually happens, including handoffs, exceptions, and workarounds, and recommends the highest-value change with a clear success metric.
 3. Implementation — Matej builds and tests the agreed software, automation, AI agent, or combination on real work.
 4. Adoption & Handoff — Matej helps the team adopt the system, measure the result, and take ownership, with ongoing support available if useful.
 
@@ -32,6 +32,7 @@ Matej is an AI Systems & Software Engineering Consultant with 10 years of softwa
 ## Principles
 
 - Right tool for the job (open-source vs. managed, self-hosted vs. cloud — recommended on fit, not commission).
+- Improve or connect existing systems before recommending replacement.
 - Capability over dependency — train the team alongside deployment.
 - Start with a clearly scoped problem, measure the result, and expand only what works.
 
@@ -62,14 +63,14 @@ Matej má 10 rokov praxe v softvérovom inžinierstve. Posudzuje procesy a exist
 
 ## Služby
 
-- **Assessment Sprint pre procesy a softvér** — Zmapuje procesy, systémy, časové straty, úzke miesta a obchádzky a odporučí prvú implementáciu s najväčším prínosom.
+- **Assessment Sprint pre procesy a softvér** — Mapuje prácu tak, ako skutočne prebieha, vrátane používaných systémov, odovzdávania práce, výnimiek a obchádzok, a odporučí prvú implementáciu s najväčším prínosom.
 - **Softvér na mieru, automatizácie a AI agenti** — Postaví správne riešenie pre jeden konkrétny problém a otestuje ho na reálnej práci.
 - **Zavedenie do praxe, odovzdanie a zlepšovanie** — Pomôže tímu osvojiť si riešenie, nastaviť pravidlá prevádzky, merať výsledky a zlepšovať ho podľa reálneho používania.
 
 ## Proces
 
 1. Bezplatná 30-minútová konzultácia — Preberieme problém vo Vašom podnikaní, súčasný proces alebo softvér a posúdime, či je Assessment Sprint správnym ďalším krokom.
-2. Assessment Sprint pre procesy a softvér — Matej zmapuje relevantné procesy a systémy, určí, kde sa stráca čas, a odporučí zmenu s najväčším prínosom spolu s jasnou metrikou úspechu.
+2. Assessment Sprint pre procesy a softvér — Matej zmapuje, ako práca skutočne prebieha, vrátane odovzdávania práce, výnimiek a obchádzok, a odporučí zmenu s najväčším prínosom spolu s jasnou metrikou úspechu.
 3. Implementácia — Matej postaví a otestuje dohodnutý softvér, automatizáciu, AI agenta alebo ich kombináciu na reálnych úlohách.
 4. Zavedenie a odovzdanie — Matej pomôže tímu zaviesť riešenie do každodennej práce, zmerať výsledok a prevziať ho do vlastných rúk; ak to dáva zmysel, podpora môže pokračovať.
 
@@ -85,6 +86,7 @@ Matej má 10 rokov praxe v softvérovom inžinierstve. Posudzuje procesy a exist
 ## Princípy
 
 - Správny nástroj pre danú úlohu — open-source alebo spravované riešenie, vlastná infraštruktúra alebo cloud; odporúčanie podľa vhodnosti, nie provízie.
+- Zlepšiť alebo prepojiť existujúce systémy skôr, než sa odporučí ich výmena.
 - Schopnosť namiesto závislosti — tím sa zapája počas realizácie a riešenie preberá.
 - Začať jasne vymedzeným problémom, zmerať výsledok a rozširovať len to, čo funguje.
 

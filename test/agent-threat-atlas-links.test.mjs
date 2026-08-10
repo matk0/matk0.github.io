@@ -33,17 +33,20 @@ test('homepage omits the dedicated Agent Threat Atlas landing section', () => {
 });
 
 test('Slovak copy connects the security FAQ and footer to Agent Threat Atlas', () => {
+  const skSecurityFaq = sk.contact.faq.find((item) => item.question === 'Ako riešite bezpečnosť dát?');
+  const enSecurityFaq = en.contact.faq.find((item) => item.question === 'How do you handle data security?');
+
   assert.equal(sk.home.atlasProofTitle, 'Bezpečnosť AI agentov nie je abstraktné riziko.');
   assert.equal(sk.home.atlasProofCta, 'Otvoriť Agent Threat Atlas');
   assert.equal(sk.home.pain3AtlasText, undefined);
-  assert.equal(sk.contact.faq[3].linkHref, 'https://atlas.matejlukasik.sk/');
-  assert.equal(sk.contact.faq[3].linkText, 'Otvoriť Agent Threat Atlas');
+  assert.equal(skSecurityFaq?.linkHref, 'https://atlas.matejlukasik.sk/');
+  assert.equal(skSecurityFaq?.linkText, 'Otvoriť Agent Threat Atlas');
   assert.equal(sk.footer.research, 'Projekty');
   assert.equal(sk.about.atlasText, undefined);
   assert.equal(sk.about.atlasLink, undefined);
 
   assert.equal(en.home.atlasProofCta, 'Open Agent Threat Atlas');
-  assert.equal(en.contact.faq[3].linkHref, 'https://atlas.matejlukasik.sk/');
+  assert.equal(enSecurityFaq?.linkHref, 'https://atlas.matejlukasik.sk/');
   assert.equal(en.footer.research, 'Projects');
   assert.equal(en.about.atlasText, undefined);
   assert.equal(en.about.atlasLink, undefined);

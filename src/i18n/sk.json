@@ -42,7 +42,7 @@
       {
         "label": "02",
         "title": "Assessment Sprint pre procesy a softvér",
-        "description": "Zmapujem relevantné procesy a systémy, určím, kde sa stráca čas, a odporučím zmenu s najväčším prínosom spolu s jasnou metrikou úspechu."
+        "description": "Zmapujem, ako práca skutočne prebieha, vrátane odovzdávania práce, výnimiek a obchádzok, a odporučím zmenu s najväčším prínosom spolu s jasnou metrikou úspechu."
       },
       {
         "label": "03",
@@ -77,9 +77,9 @@
     "consulting": {
       "title": "Assessment Sprint pre procesy a softvér",
       "subtitle": "Nájdite zmeny s najväčším prínosom skôr, než investujete do technológií.",
-      "description": "Zmapujem, ako vo Vašej firme prebieha práca, kde sa stráca čas a kde súčasný softvér vytvára obchádzky. Dostanete plán zoradený podľa priority, ktorý ukáže, čo zjednodušiť, automatizovať, nanovo postaviť alebo podporiť pomocou AI.",
+      "description": "Zmapujem prácu tak, ako vo Vašej firme skutočne prebieha — vrátane používaných systémov, odovzdávania práce, výnimiek a obchádzok. Dostanete plán zoradený podľa priority, ktorý ukáže, čo zjednodušiť, automatizovať, nanovo postaviť alebo podporiť pomocou AI.",
       "includes": [
-        "Zmapovanie kľúčových procesov, systémov a odovzdávania práce",
+        "Zmapovanie reálnych procesov, systémov, odovzdávania práce a výnimiek",
         "Vyčíslenie časových strát, úzkych miest a obchádzok",
         "Príležitosti zoradené podľa prínosu, náročnosti a rizika",
         "Odporúčanie prvej implementácie a metriky úspechu"
@@ -168,6 +168,10 @@
       {
         "question": "Nevieme, či potrebujeme nový softvér, automatizáciu alebo AI. Má zmysel sa ozvať?",
         "answer": "Áno. Počas bezplatnej konzultácie si ujasníme problém v procese alebo softvéri, jeho dopad na Vaše podnikanie a posúdime, či je Assessment Sprint správnym ďalším krokom."
+      },
+      {
+        "question": "Budeme musieť nahradiť náš súčasný softvér?",
+        "answer": "Zvyčajne nie. Najprv hľadám spôsob, ako zlepšiť alebo prepojiť systémy, ktoré už vo Vašej firme fungujú. Výmenu softvéru odporučím len vtedy, keď súčasný systém firmu obmedzuje a prínos výmeny je jasný."
       },
       {
         "question": "Ako dlho trvá implementácia?",

@@ -262,7 +262,8 @@
     height: 60px;
     background: var(--color-surface);
     clip-path: ellipse(55% 100% at 50% 100%);
-    z-index: 1;
+    z-index: 20;
+    pointer-events: none;
   }
 
   .wave-divider-alt::after {
