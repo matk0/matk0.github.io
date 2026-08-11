@@ -107,6 +107,7 @@ const paths = getLocalizedPaths(lang);
 
 <script is:inline>
   const form = document.getElementById('contact-form');
+  const formHeading = document.getElementById('contact-form-heading');
   const nameInput = document.getElementById('name');
   const serviceSelect = document.getElementById('service');
   const shouldFocusForm =
@@ -137,7 +138,7 @@ const paths = getLocalizedPaths(lang);
     if (!form) return;
 
     removeContactFormHash();
-    window.scrollTo(0, 0);
+    formHeading?.scrollIntoView({ block: 'start' });
     form.classList.remove('contact-form-flash');
     void form.offsetWidth;
     form.classList.add('contact-form-flash');
@@ -154,6 +155,7 @@ const paths = getLocalizedPaths(lang);
   if (shouldFocusForm) {
     queueContactFormFocus();
     window.addEventListener('load', queueContactFormFocus, { once: true });
+    window.addEventListener('booking-calendar-ready', queueContactFormFocus, { once: true });
   }
 
   window.addEventListener('hashchange', () => {

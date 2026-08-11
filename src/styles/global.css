@@ -301,11 +301,11 @@
   }
 
   .contact-form-flash {
-    animation: contactFormFlash 1.4s ease-out;
+    animation: contactFormFlash 2.2s ease-out;
   }
 
   .booking-calendar-flash {
-    animation: bookingCalendarFlash 1.4s ease-out;
+    animation: bookingCalendarFlash 2.2s ease-out;
   }
 }
 

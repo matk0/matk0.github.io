@@ -28,7 +28,7 @@ const service = Astro.url.searchParams.get('service') || undefined;
           <CalEmbed title={strings.contact.bookTitle} description={strings.contact.bookDescription} lang={lang} />
         </div>
         <div>
-          <h2 class="text-xl font-bold text-heading mb-6">{strings.contact.formTitle}</h2>
+          <h2 id="contact-form-heading" class="scroll-mt-20 text-xl font-bold text-heading mb-6">{strings.contact.formTitle}</h2>
           <ContactForm lang={lang} preselectedService={service} />
         </div>
       </div>

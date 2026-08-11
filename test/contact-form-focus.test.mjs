@@ -6,6 +6,8 @@ const index = readFileSync(new URL('../src/pages/index.astro', import.meta.url),
 const nav = readFileSync(new URL('../src/components/Nav.astro', import.meta.url), 'utf8');
 const calEmbed = readFileSync(new URL('../src/components/CalEmbed.astro', import.meta.url), 'utf8');
 const contactForm = readFileSync(new URL('../src/components/ContactForm.astro', import.meta.url), 'utf8');
+const contactPage = readFileSync(new URL('../src/pages/contact.astro', import.meta.url), 'utf8');
+const slovakContactPage = readFileSync(new URL('../src/pages/kontakt.astro', import.meta.url), 'utf8');
 const contactApi = readFileSync(new URL('../src/pages/api/contact.ts', import.meta.url), 'utf8');
 const styles = readFileSync(new URL('../src/styles/global.css', import.meta.url), 'utf8');
 
@@ -24,13 +26,18 @@ test('targeted contact form flashes and focuses the name field', () => {
   assert.match(contactForm, /history\.replaceState\(null, '', `\$\{window\.location\.pathname\}\$\{window\.location\.search\}`\)/);
   assert.match(contactForm, /get\('focus'\) === 'contact-form'/);
   assert.match(contactForm, /history\.scrollRestoration = 'manual'/);
-  assert.match(contactForm, /window\.scrollTo\(0, 0\)/);
+  assert.match(contactForm, /getElementById\('contact-form-heading'\)/);
+  assert.match(contactForm, /scrollIntoView\(\{ block: 'start' \}\)/);
+  assert.doesNotMatch(contactForm, /window\.scrollTo\(0, 0\)/);
   assert.match(contactForm, /setTimeout\(focusContactForm, 0\)/);
+  assert.match(contactForm, /window\.addEventListener\('booking-calendar-ready', queueContactFormFocus, \{ once: true \}\)/);
   assert.match(contactForm, /window\.addEventListener\('hashchange'/);
   assert.match(contactForm, /classList\.add\('contact-form-flash'\)/);
   assert.match(contactForm, /\.focus\(\{ preventScroll: true \}\)/);
   assert.match(styles, /@keyframes contactFormFlash/);
-  assert.match(styles, /\.contact-form-flash/);
+  assert.match(styles, /\.contact-form-flash\s*\{\s*animation: contactFormFlash 2\.2s ease-out;/);
+  assert.match(contactPage, /<h2 id="contact-form-heading" class="scroll-mt-20 /);
+  assert.match(slovakContactPage, /<h2 id="contact-form-heading" class="scroll-mt-20 /);
 });
 
 test('booking CTAs target the calendar booking form', () => {
@@ -40,12 +47,15 @@ test('booking CTAs target the calendar booking form', () => {
   assert.equal(index.match(/href=\{bookingHref\}/g)?.length, 3);
 });
 
-test('targeted calendar booking form flashes without an anchor jump', () => {
+test('targeted calendar booking form scrolls into view and flashes', () => {
   assert.match(calEmbed, /id="booking-calendar"/);
+  assert.match(calEmbed, /id="booking-calendar" class="scroll-mt-20 /);
   assert.match(calEmbed, /get\('focus'\) === 'calendar'/);
+  assert.match(calEmbed, /bookingCalendar\.scrollIntoView\(\{ block: 'start' \}\)/);
+  assert.match(calEmbed, /window\.dispatchEvent\(new Event\('booking-calendar-ready'\)\)/);
   assert.match(calEmbed, /classList\.add\('booking-calendar-flash'\)/);
   assert.match(styles, /@keyframes bookingCalendarFlash/);
-  assert.match(styles, /\.booking-calendar-flash/);
+  assert.match(styles, /\.booking-calendar-flash\s*\{\s*animation: bookingCalendarFlash 2\.2s ease-out;/);
 });
 
 test('contact form does not ask for company details', () => {
