@@ -40,9 +40,13 @@ test('service sections are grouped under the compact services heading', () => {
   const servicesGroup = index.match(/<section id="services"[\s\S]*?\n  <\/section>/)?.[0] ?? '';
 
   assert.match(servicesGroup, /\{strings\.home\.servicesTitle\}/);
-  assert.match(index, /<section id="services" class="py-8 md:py-10 bg-surface-alt relative"/);
+  assert.match(index, /<section id="services" class="scroll-mt-\[66px\] py-8 md:py-10 bg-surface-alt relative"/);
   assert.match(index, /<h2 class="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-10 reveal">/);
   assert.equal(serviceSections.length, 3);
   assert.equal((servicesGroup.match(/<ServiceSection/g) ?? []).length, 3);
   serviceSections.forEach((section) => assert.match(section, /\bnested\b/));
+});
+
+test('services anchor clears the fixed navigation', () => {
+  assert.match(index, /<section id="services" class="[^\"]*scroll-mt-\[66px\][^\"]*"/);
 });
