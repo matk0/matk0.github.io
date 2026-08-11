@@ -58,11 +58,11 @@ test('structured data uses the active language origin and verified business iden
   assert.equal(englishBusiness.name, 'Matej Lukášik — AI Systems & Software Engineering Consultant');
   assert.equal(
     business.description,
-    'Pomáham malým a stredným firmám nahrádzať časovo náročné procesy a nevyhovujúci softvér správnou kombináciou softvéru na mieru, automatizácií a AI agentov.',
+    'Pomáham firmám nahrádzať časovo náročné procesy a nevyhovujúci softvér správnou kombináciou softvéru na mieru, automatizácií a AI agentov.',
   );
   assert.equal(
     englishBusiness.description,
-    'I help small and medium-sized businesses replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.',
+    'I help companies replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.',
   );
   assert.deepEqual(business.areaServed, ['Europe', 'United States']);
   assert.deepEqual(englishBusiness.areaServed, ['Europe', 'United States']);

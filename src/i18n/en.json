@@ -14,7 +14,7 @@
   "home": {
     "pageTitle": "Matej Lukášik — AI Systems & Software Engineering Consultant",
     "heroTitle": "Replace time-consuming workflows and software that no longer fits.",
-    "heroDescription": "I’m an AI Systems & Software Engineering Consultant for SMBs. I find and build the right mix of bespoke software systems, automations, and AI agents.",
+    "heroDescription": "I’m an AI Systems & Software Engineering Consultant. I find and build the right mix of bespoke software systems, automations, and AI agents.",
     "ctaPrimary": "Book a Free 30-Minute Consultation",
     "ctaSecondary": "See How I Can Help",
     "painTitle": "AI and/or new software only make sense when they solve a real business problem.",
@@ -103,10 +103,10 @@
   },
   "about": {
     "heroTitle": "Who I Am",
-    "heroDescription": "I help SMBs solve business problems with the right mix of bespoke software, automation, and AI.",
+    "heroDescription": "I help companies solve business problems with the right mix of bespoke software, automation, and AI.",
     "bioName": "Matej Lukášik",
     "bioTitle": "AI Systems & Software Engineering Consultant",
-    "bioText": "I’m an AI Systems & Software Engineering Consultant with 10 years of software engineering experience. I help SMBs replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.\n\nI start with the business problem, current workflows, systems, and data. Only then do I recommend a solution that makes technical and business sense. I use AI only where it adds value; sometimes the right answer is a simple automation or new software.\n\nI design, build, and test the solution on real work, then help the team adopt it. My goal is a system leadership understands, the team can use reliably, and the business can own and improve over time.",
+    "bioText": "I’m an AI Systems & Software Engineering Consultant with 10 years of software engineering experience. I help companies replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.\n\nI start with the business problem, current workflows, systems, and data. Only then do I recommend a solution that makes technical and business sense. I use AI only where it adds value; sometimes the right answer is a simple automation or new software.\n\nI design, build, and test the solution on real work, then help the team adopt it. My goal is a system leadership understands, the team can use reliably, and the business can own and improve over time.",
     "approachTitle": "My Approach",
     "principle1Title": "Problem First, Tool Second",
     "principle1Description": "Open source or managed, self-hosted or cloud — I recommend what fits your team, budget, and security requirements.",

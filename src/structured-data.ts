@@ -52,8 +52,8 @@ export function getStructuredData(lang: Lang, siteOrigin: string) {
           : 'Matej Lukášik — AI Systems & Software Engineering Consultant',
         url: siteOrigin,
         description: lang === 'sk'
-          ? 'Pomáham malým a stredným firmám nahrádzať časovo náročné procesy a nevyhovujúci softvér správnou kombináciou softvéru na mieru, automatizácií a AI agentov.'
-          : 'I help small and medium-sized businesses replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.',
+          ? 'Pomáham firmám nahrádzať časovo náročné procesy a nevyhovujúci softvér správnou kombináciou softvéru na mieru, automatizácií a AI agentov.'
+          : 'I help companies replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.',
         areaServed: ['Europe', 'United States'],
         availableLanguage: ['en', 'sk'],
         provider: { '@id': personId },

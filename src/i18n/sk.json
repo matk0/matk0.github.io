@@ -14,7 +14,7 @@
   "home": {
     "pageTitle": "Matej Lukášik — Konzultant pre AI systémy a softvérové inžinierstvo",
     "heroTitle": "Nahraďte časovo náročné procesy a softvér, ktorý už Vašej firme nevyhovuje.",
-    "heroDescription": "Som konzultant pre AI systémy a softvérové inžinierstvo. Malým a stredným firmám pomáham nájsť a vytvoriť správnu kombináciu softvérových systémov na mieru, automatizácií a AI agentov.",
+    "heroDescription": "Som konzultant pre AI systémy a softvérové inžinierstvo. Firmám pomáham nájsť a vytvoriť správnu kombináciu softvérových systémov na mieru, automatizácií a AI agentov.",
     "ctaPrimary": "Dohodnúť si bezplatnú 30-minútovú konzultáciu",
     "ctaSecondary": "Ako Vám môžem pomôcť",
     "painTitle": "AI, nový softvér alebo ich kombinácia majú zmysel len vtedy, keď riešia skutočný problém vo Vašom podnikaní.",
@@ -118,10 +118,10 @@
   },
   "about": {
     "heroTitle": "Kto som",
-    "heroDescription": "Malým a stredným firmám pomáham riešiť problémy v podnikaní správnou kombináciou softvéru na mieru, automatizácií a AI.",
+    "heroDescription": "Firmám pomáham riešiť problémy v podnikaní správnou kombináciou softvéru na mieru, automatizácií a AI.",
     "bioName": "Matej Lukášik",
     "bioTitle": "Konzultant pre AI systémy a softvérové inžinierstvo",
-    "bioText": "Mám 10 rokov praxe v softvérovom inžinierstve. Malým a stredným firmám pomáham nahrádzať časovo náročné procesy a nevyhovujúci softvér správnou kombináciou softvéru na mieru, automatizácií a AI agentov.\n\nNajprv porozumiem problému vo Vašom podnikaní, súčasným procesom, systémom a dátam. Až potom navrhnem riešenie, ktoré dáva technický aj ekonomický zmysel. AI používam len tam, kde prináša hodnotu. Niekedy je správnym riešením jednoduchá automatizácia alebo nový softvér.\n\nRiešenie navrhnem, postavím a overím na reálnej práci, potom pomôžem tímu zaviesť ho do praxe. Mojím cieľom je systém, ktorému rozumie vedenie, tím ho vie spoľahlivo používať a firma ho dokáže ďalej rozvíjať.",
+    "bioText": "Mám 10 rokov praxe v softvérovom inžinierstve. Firmám pomáham nahrádzať časovo náročné procesy a nevyhovujúci softvér správnou kombináciou softvéru na mieru, automatizácií a AI agentov.\n\nNajprv porozumiem problému vo Vašom podnikaní, súčasným procesom, systémom a dátam. Až potom navrhnem riešenie, ktoré dáva technický aj ekonomický zmysel. AI používam len tam, kde prináša hodnotu. Niekedy je správnym riešením jednoduchá automatizácia alebo nový softvér.\n\nRiešenie navrhnem, postavím a overím na reálnej práci, potom pomôžem tímu zaviesť ho do praxe. Mojím cieľom je systém, ktorému rozumie vedenie, tím ho vie spoľahlivo používať a firma ho dokáže ďalej rozvíjať.",
     "approachTitle": "Môj prístup",
     "principle1Title": "Najprv problém, potom nástroj",
     "principle1Description": "Open-source alebo spravované, self-hosted alebo cloud — odporúčam to, čo sedí tímu, rozpočtu a bezpečnostným požiadavkám.",

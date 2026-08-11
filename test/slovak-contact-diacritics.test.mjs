@@ -43,6 +43,6 @@ test('Slovak tools FAQ explains selection in plain business language', () => {
 
 test('Slovak contact page metadata uses Slovak diacritics', () => {
   assert.match(kontaktPage, /Dohodnite si bezplatnú 30-minútovú konzultáciu alebo mi napíšte správu\./);
-  assert.match(structuredData, /Pomáham malým a stredným firmám nahrádzať časovo náročné procesy/);
+  assert.match(structuredData, /Pomáham firmám nahrádzať časovo náročné procesy/);
   assert.match(layout, /getStructuredData/);
 });

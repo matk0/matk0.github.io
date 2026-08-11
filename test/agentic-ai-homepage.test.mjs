@@ -12,14 +12,14 @@ test('the public homepage presents the approved AI systems and software position
   assert.equal(en.home.heroTitle, 'Replace time-consuming workflows and software that no longer fits.');
   assert.equal('heroTypewords' in en.home, false);
   assert.equal('heroTypewordTemplate' in en.home, false);
-  assert.equal(en.home.heroDescription, 'I’m an AI Systems & Software Engineering Consultant for SMBs. I find and build the right mix of bespoke software systems, automations, and AI agents.');
+  assert.equal(en.home.heroDescription, 'I’m an AI Systems & Software Engineering Consultant. I find and build the right mix of bespoke software systems, automations, and AI agents.');
   assert.equal(en.home.ctaPrimary, 'Book a Free 30-Minute Consultation');
   assert.equal(en.home.ctaSecondary, 'See How I Can Help');
   assert.equal(sk.home.pageTitle, 'Matej Lukášik — Konzultant pre AI systémy a softvérové inžinierstvo');
   assert.equal(sk.home.heroTitle, 'Nahraďte časovo náročné procesy a softvér, ktorý už Vašej firme nevyhovuje.');
   assert.equal('heroTypewords' in sk.home, false);
   assert.equal('heroTypewordTemplate' in sk.home, false);
-  assert.equal(sk.home.heroDescription, 'Som konzultant pre AI systémy a softvérové inžinierstvo. Malým a stredným firmám pomáham nájsť a vytvoriť správnu kombináciu softvérových systémov na mieru, automatizácií a AI agentov.');
+  assert.equal(sk.home.heroDescription, 'Som konzultant pre AI systémy a softvérové inžinierstvo. Firmám pomáham nájsť a vytvoriť správnu kombináciu softvérových systémov na mieru, automatizácií a AI agentov.');
   assert.equal(sk.home.ctaPrimary, 'Dohodnúť si bezplatnú 30-minútovú konzultáciu');
   assert.equal(sk.home.ctaSecondary, 'Ako Vám môžem pomôcť');
   assert.equal(sk.home.firstStepOffer.title, 'Začnime bezplatnou 30-minútovou konzultáciou');

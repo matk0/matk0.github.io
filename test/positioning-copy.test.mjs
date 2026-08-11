@@ -6,13 +6,24 @@ const en = JSON.parse(readFileSync(new URL('../src/i18n/en.json', import.meta.ur
 const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
 const llms = readFileSync(new URL('../src/pages/llms.txt.ts', import.meta.url), 'utf8');
 const llmsFull = readFileSync(new URL('../src/pages/llms-full.txt.ts', import.meta.url), 'utf8');
+const structuredData = readFileSync(new URL('../src/structured-data.ts', import.meta.url), 'utf8');
 
-test('english homepage positions Matej as an AI systems and software consultant for SMBs', () => {
+test('public positioning remains neutral about company size', () => {
+  const publicPositioning = [JSON.stringify(en), JSON.stringify(sk), llms, structuredData].join('\n');
+
+  assert.doesNotMatch(publicPositioning, /\bSMBs?\b|small and medium-sized businesses/i);
+  assert.doesNotMatch(
+    publicPositioning,
+    /mal(?:ým|é|ých)\s+a\s+stredn(?:ým|é|ých)\s+firm(?:ám|y|ách)/iu,
+  );
+});
+
+test('english homepage positions Matej as an AI systems and software consultant', () => {
   assert.equal(en.home.pageTitle, 'Matej Lukášik — AI Systems & Software Engineering Consultant');
   assert.equal(en.home.heroTitle, 'Replace time-consuming workflows and software that no longer fits.');
   assert.equal(
     en.home.heroDescription,
-    'I’m an AI Systems & Software Engineering Consultant for SMBs. I find and build the right mix of bespoke software systems, automations, and AI agents.',
+    'I’m an AI Systems & Software Engineering Consultant. I find and build the right mix of bespoke software systems, automations, and AI agents.',
   );
   assert.equal(en.home.ctaBandTitle, "Let's start with the process that costs your business the most time.");
   assert.equal(
@@ -30,12 +41,12 @@ test('english homepage positions Matej as an AI systems and software consultant 
   assert.equal(en.about.heroTitle, 'Who I Am');
   assert.equal(
     en.about.heroDescription,
-    'I help SMBs solve business problems with the right mix of bespoke software, automation, and AI.',
+    'I help companies solve business problems with the right mix of bespoke software, automation, and AI.',
   );
   assert.equal(en.about.bioTitle, 'AI Systems & Software Engineering Consultant');
   assert.equal(
     en.about.bioText,
-    'I’m an AI Systems & Software Engineering Consultant with 10 years of software engineering experience. I help SMBs replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.\n\nI start with the business problem, current workflows, systems, and data. Only then do I recommend a solution that makes technical and business sense. I use AI only where it adds value; sometimes the right answer is a simple automation or new software.\n\nI design, build, and test the solution on real work, then help the team adopt it. My goal is a system leadership understands, the team can use reliably, and the business can own and improve over time.',
+    'I’m an AI Systems & Software Engineering Consultant with 10 years of software engineering experience. I help companies replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.\n\nI start with the business problem, current workflows, systems, and data. Only then do I recommend a solution that makes technical and business sense. I use AI only where it adds value; sometimes the right answer is a simple automation or new software.\n\nI design, build, and test the solution on real work, then help the team adopt it. My goal is a system leadership understands, the team can use reliably, and the business can own and improve over time.',
   );
 });
 

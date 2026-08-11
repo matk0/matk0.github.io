@@ -3,9 +3,9 @@ import { type Lang } from '../i18n';
 
 const EN = `# Matej Lukášik — AI Systems & Software Engineering Consultant
 
-> Helps small and medium-sized businesses replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.
+> Helps companies replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.
 
-Matej is an AI Systems & Software Engineering Consultant with 10 years of software engineering experience. He assesses workflows and existing systems, builds the right mix of bespoke software, automations, and AI agents, and helps teams adopt and own the solution. He serves SMBs in Europe and the United States. Engagements start with a free 30-minute consultation. Bilingual (English / Slovak).
+Matej is an AI Systems & Software Engineering Consultant with 10 years of software engineering experience. He assesses workflows and existing systems, builds the right mix of bespoke software, automations, and AI agents, and helps teams adopt and own the solution. He works with companies in Europe and the United States. Engagements start with a free 30-minute consultation. Bilingual (English / Slovak).
 
 ## Services
 
@@ -57,9 +57,9 @@ Matej is an AI Systems & Software Engineering Consultant with 10 years of softwa
 
 const SK = `# Matej Lukášik — Konzultant pre AI systémy a softvérové inžinierstvo
 
-> Pomáha malým a stredným firmám nahrádzať časovo náročné procesy a nevyhovujúci softvér správnou kombináciou softvéru na mieru, automatizácií a AI agentov. Východiskom je konkrétny problém vo firme, nie nástroj AI.
+> Pomáha firmám nahrádzať časovo náročné procesy a nevyhovujúci softvér správnou kombináciou softvéru na mieru, automatizácií a AI agentov. Východiskom je konkrétny problém vo firme, nie nástroj AI.
 
-Matej má 10 rokov praxe v softvérovom inžinierstve. Posudzuje procesy a existujúce systémy, vytvára správnu kombináciu softvéru na mieru, automatizácií a AI agentov a pomáha tímom riešenie zaviesť a prevziať. Služby ponúka malým a stredným firmám v Európe a USA. Spolupráca sa začína bezplatnou 30-minútovou konzultáciou. Komunikuje po slovensky a anglicky.
+Matej má 10 rokov praxe v softvérovom inžinierstve. Posudzuje procesy a existujúce systémy, vytvára správnu kombináciu softvéru na mieru, automatizácií a AI agentov a pomáha tímom riešenie zaviesť a prevziať. Pracuje s firmami v Európe a USA. Spolupráca sa začína bezplatnou 30-minútovou konzultáciou. Komunikuje po slovensky a anglicky.
 
 ## Služby
 
