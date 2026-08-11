@@ -21,8 +21,10 @@ test('desktop portrait sits directly beside the hero copy', () => {
 });
 
 test('hero wave masks portrait effects at the section boundary', () => {
+  const portraitRule = hero.match(/\.hero-portrait-wrap\s*\{([\s\S]*?)\}/)?.[1] ?? '';
   const waveRule = globalStyles.match(/\.wave-divider::after\s*\{([\s\S]*?)\}/)?.[1] ?? '';
 
+  assert.match(portraitRule, /top:\s*clamp\(2rem,\s*4vw,\s*3rem\);/);
   assert.match(waveRule, /z-index:\s*20;/);
   assert.match(waveRule, /pointer-events:\s*none;/);
 });
