@@ -33,7 +33,7 @@ const hasImage = isLarge && Boolean(imageSrc);
     class:list={[
       "container mx-auto px-4 sm:px-6 relative z-10",
       hasImage
-        ? "grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(320px,2fr)] items-center gap-12 lg:gap-14 py-16 sm:py-20 lg:py-16"
+        ? "grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(320px,2fr)] items-center gap-12 lg:gap-6 py-16 sm:py-20 lg:py-16"
         : isLarge
           ? "py-28 md:py-40"
           : "py-16 md:py-24",
@@ -74,7 +74,7 @@ const hasImage = isLarge && Boolean(imageSrc);
     </div>
 
     {hasImage && (
-      <div class="hero-portrait-wrap relative w-full max-w-[460px] mx-auto lg:mr-0 reveal reveal-delay-2">
+      <div class="hero-portrait-wrap relative w-full max-w-[460px] mx-auto lg:ml-0 reveal reveal-delay-2">
         <div class="hero-portrait-glow" aria-hidden="true"></div>
         <div class="hero-portrait aspect-[4/3] sm:aspect-[5/4] lg:aspect-[4/5]">
           <img

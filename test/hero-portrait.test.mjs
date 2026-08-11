@@ -14,6 +14,12 @@ test('homepage hero presents Matej alongside the consulting offer', () => {
   assert.match(hero, /fetchpriority="high"/);
 });
 
+test('desktop portrait sits directly beside the hero copy', () => {
+  assert.match(hero, /lg:gap-6/);
+  assert.match(hero, /hero-portrait-wrap[^\n]*lg:ml-0/);
+  assert.doesNotMatch(hero, /hero-portrait-wrap[^\n]*lg:mr-0/);
+});
+
 test('hero wave masks portrait effects at the section boundary', () => {
   const waveRule = globalStyles.match(/\.wave-divider::after\s*\{([\s\S]*?)\}/)?.[1] ?? '';
 
