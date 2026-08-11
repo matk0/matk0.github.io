@@ -40,6 +40,11 @@ test('targeted contact form flashes and focuses the name field', () => {
   assert.match(slovakContactPage, /<h2 id="contact-form-heading" class="scroll-mt-20 /);
 });
 
+test('calendar growth re-aligns the targeted contact form', () => {
+  assert.match(contactForm, /new ResizeObserver\(queueContactFormFocus\)/);
+  assert.match(contactForm, /calendarResizeObserver\.observe\(bookingCalendar\)/);
+});
+
 test('booking CTAs target the calendar booking form', () => {
   assert.match(nav, /const bookingHref = `\$\{paths\.contact\}\?focus=calendar`;/);
   assert.match(index, /const bookingHref = `\$\{paths\.contact\}\?focus=calendar`;/);

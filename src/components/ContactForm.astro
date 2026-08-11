@@ -108,6 +108,7 @@ const paths = getLocalizedPaths(lang);
 <script is:inline>
   const form = document.getElementById('contact-form');
   const formHeading = document.getElementById('contact-form-heading');
+  const bookingCalendar = document.getElementById('booking-calendar');
   const nameInput = document.getElementById('name');
   const serviceSelect = document.getElementById('service');
   const shouldFocusForm =
@@ -156,6 +157,12 @@ const paths = getLocalizedPaths(lang);
     queueContactFormFocus();
     window.addEventListener('load', queueContactFormFocus, { once: true });
     window.addEventListener('booking-calendar-ready', queueContactFormFocus, { once: true });
+
+    if (bookingCalendar && 'ResizeObserver' in window) {
+      const calendarResizeObserver = new ResizeObserver(queueContactFormFocus);
+      calendarResizeObserver.observe(bookingCalendar);
+      setTimeout(() => calendarResizeObserver.disconnect(), 10000);
+    }
   }
 
   window.addEventListener('hashchange', () => {
