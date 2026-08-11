@@ -28,3 +28,10 @@ test('hero wave masks portrait effects at the section boundary', () => {
   assert.match(waveRule, /z-index:\s*20;/);
   assert.match(waveRule, /pointer-events:\s*none;/);
 });
+
+test('hero portrait has square bottom corners behind the wave', () => {
+  const portraitRule = hero.match(/\.hero-portrait\s*\{([\s\S]*?)\}/)?.[1] ?? '';
+
+  assert.match(portraitRule, /border-bottom-left-radius:\s*0;/);
+  assert.match(portraitRule, /border-bottom-right-radius:\s*0;/);
+});
