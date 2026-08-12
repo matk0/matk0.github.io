@@ -39,6 +39,17 @@ test('alternate language links keep production domain switching in production', 
   );
 });
 
+test('project pages switch between their localized routes', () => {
+  assert.equal(
+    getAlternateUrl('en', '/projects', new URL('http://localhost:4321/projects')),
+    'http://localhost:4321/projekty?lang=sk',
+  );
+  assert.equal(
+    getAlternateUrl('sk', '/projekty', new URL('https://matejlukasik.sk/projekty')),
+    'https://matejlukasik.com/projects',
+  );
+});
+
 test('local language can be selected by query param or cookie', () => {
   assert.equal(getLangFromUrl(new URL('http://localhost:4321/?lang=sk')), 'sk');
   assert.equal(getLangFromUrl(new URL('http://localhost:4321/'), 'sk'), 'sk');

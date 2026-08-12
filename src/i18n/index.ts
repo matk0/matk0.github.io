@@ -15,6 +15,7 @@ export const DOMAINS: Record<Lang, string> = {
 
 export const ATLAS_URL = 'https://atlas.matejlukasik.sk/';
 export const ATLAS_THREATS_URL = 'https://atlas.matejlukasik.sk/threats';
+export const POSTWORK_URL = 'https://post.work/';
 
 export const LOCAL_LANG_COOKIE = 'lang';
 
@@ -65,6 +66,8 @@ const PATH_MAP: Record<string, Record<Lang, string>> = {
   '/sluzby': { en: '/', sk: '/' },
   '/about': { en: '/', sk: '/' },
   '/o-mne': { en: '/', sk: '/' },
+  '/projects': { en: '/projects', sk: '/projekty' },
+  '/projekty': { en: '/projects', sk: '/projekty' },
   '/contact': { en: '/contact', sk: '/kontakt' },
   '/kontakt': { en: '/contact', sk: '/kontakt' },
   '/privacy': { en: '/privacy', sk: '/sukromie' },
@@ -98,6 +101,7 @@ export function getLocalizedPaths(lang: Lang) {
   return {
     services: '/#services',
     about: '/#about',
+    projects: lang === 'sk' ? '/projekty' : '/projects',
     contact: lang === 'sk' ? '/kontakt' : '/contact',
     privacy: lang === 'sk' ? '/sukromie' : '/privacy',
   };

@@ -3,6 +3,7 @@ import { DOMAINS, type Lang } from '../i18n';
 
 const PAGE_PATHS: Array<Record<Lang, string>> = [
   { en: '/', sk: '/' },
+  { en: '/projects', sk: '/projekty' },
   { en: '/contact', sk: '/kontakt' },
   { en: '/privacy', sk: '/sukromie' },
 ];

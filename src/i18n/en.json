@@ -7,6 +7,7 @@
   "nav": {
     "services": "Services",
     "about": "About",
+    "projects": "Projects",
     "contact": "Contact",
     "bookCall": "Book a Free 30-Minute Consultation",
     "faq": "FAQ"
@@ -70,6 +71,38 @@
     "trustDescription": "I recommend the technology and rollout path that fit your business problem, team, budget, and security requirements.",
     "ctaBandTitle": "Let's start with the process that costs your business the most time.",
     "ctaBandDescription": "Start with a free 30-minute consultation. We’ll clarify the problem, determine whether I can help, and agree on the right next step. No commitment."
+  },
+  "projects": {
+    "pageTitle": "Projects — Matej Lukášik",
+    "metaDescription": "Selected software systems, AI automations, and applied research by Matej Lukášik.",
+    "heroTitle": "Projects",
+    "heroDescription": "Software systems, AI automations, and applied research built around real problems.",
+    "ownershipLabel": "What I’m building",
+    "items": [
+      {
+        "title": "post.work",
+        "mark": "p.w",
+        "eyebrow": "Managed AI automation",
+        "status": "In development",
+        "description": "A managed service for recurring business work. post.work connects AI automations to the tools a business already uses, adapts them to its processes, and keeps human decisions or approvals in the loop where needed.",
+        "ownership": "I’m building the product, delivery model, integrations, evaluation, and operating infrastructure.",
+        "cta": "Visit post.work",
+        "analyticsDestination": "postwork"
+      },
+      {
+        "title": "Agent Threat Atlas",
+        "mark": "ATA",
+        "eyebrow": "AI security research",
+        "status": "Public research",
+        "description": "A public atlas of real AI agent incidents, mapped to threat categories and practical prevention principles.",
+        "ownership": "I research incidents, maintain the taxonomy, and translate failures into guidance teams can use before deployment.",
+        "cta": "Explore the atlas",
+        "analyticsDestination": "agent_threat_atlas"
+      }
+    ],
+    "ctaTitle": "Have a similar problem to solve?",
+    "ctaDescription": "Let’s clarify the workflow, system, or business problem and decide what is worth building.",
+    "cta": "Book a Free Consultation"
   },
   "services": {
     "heroTitle": "How I Help",

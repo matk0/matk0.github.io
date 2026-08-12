@@ -5,6 +5,7 @@ function render(lang: Lang): string {
   const s = t(lang);
   const domain = DOMAINS[lang];
   const contactPath = lang === 'sk' ? '/kontakt' : '/contact';
+  const projectsPath = lang === 'sk' ? '/projekty' : '/projects';
 
   const sections: string[] = [];
 
@@ -93,6 +94,22 @@ function render(lang: Lang): string {
   sections.push('');
   sections.push(s.about.bioText);
   sections.push('');
+
+  sections.push('---');
+  sections.push('');
+  sections.push(`# ${s.projects.heroTitle} (${domain}${projectsPath})`);
+  sections.push('');
+  sections.push(s.projects.heroDescription);
+  sections.push('');
+  for (const project of s.projects.items) {
+    sections.push(`## ${project.title}`);
+    sections.push(`*${project.eyebrow} — ${project.status}*`);
+    sections.push('');
+    sections.push(project.description);
+    sections.push('');
+    sections.push(`${s.projects.ownershipLabel}: ${project.ownership}`);
+    sections.push('');
+  }
 
   sections.push('---');
   sections.push('');

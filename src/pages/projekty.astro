@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import CTABand from '../components/CTABand.astro';
+import { ATLAS_URL, POSTWORK_URL, getLocalizedPaths, t } from '../i18n';
+
+const lang = 'sk';
+const strings = t(lang);
+const paths = getLocalizedPaths(lang);
+const projectUrls = [POSTWORK_URL, ATLAS_URL];
+---
+
+<Layout
+  title={strings.projects.pageTitle}
+  description={strings.projects.metaDescription}
+  lang={lang}
+  currentPath="/projekty"
+>
+  <Hero title={strings.projects.heroTitle} description={strings.projects.heroDescription} />
+
+  <section class="section-padding bg-surface" data-analytics-section="projects">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+        {strings.projects.items.map((project, index) => (
+          <ProjectCard
+            {...project}
+            ownershipLabel={strings.projects.ownershipLabel}
+            href={projectUrls[index]}
+            linkText={project.cta}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABand title={strings.projects.ctaTitle} description={strings.projects.ctaDescription}>
+    <a href={`${paths.contact}?focus=calendar`} class="btn-white">{strings.projects.cta}</a>
+  </CTABand>
+</Layout>

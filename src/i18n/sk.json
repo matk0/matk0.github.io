@@ -7,6 +7,7 @@
   "nav": {
     "services": "Služby",
     "about": "O mne",
+    "projects": "Projekty",
     "contact": "Kontakt",
     "bookCall": "Dohodnúť si bezplatnú 30-minútovú konzultáciu",
     "faq": "FAQ"
@@ -70,6 +71,38 @@
     "trustDescription": "Odporúčam technológiu a spôsob nasadenia, ktoré sedia Vášmu problému, tímu, rozpočtu a bezpečnostným požiadavkám.",
     "ctaBandTitle": "Začnime procesom, ktorý Vašu firmu stojí najviac času.",
     "ctaBandDescription": "Začnime bezplatnou 30-minútovou konzultáciou. Spoločne si ujasníme problém, posúdime, či Vám viem pomôcť, a dohodneme sa na správnom ďalšom kroku. Bez záväzkov."
+  },
+  "projects": {
+    "pageTitle": "Projekty — Matej Lukášik",
+    "metaDescription": "Vybrané softvérové systémy, AI automatizácie a aplikovaný výskum Mateja Lukášika.",
+    "heroTitle": "Projekty",
+    "heroDescription": "Softvérové systémy, AI automatizácie a aplikovaný výskum postavené okolo skutočných problémov.",
+    "ownershipLabel": "Čo staviam",
+    "items": [
+      {
+        "title": "post.work",
+        "mark": "p.w",
+        "eyebrow": "Spravovaná AI automatizácia",
+        "status": "Vo vývoji",
+        "description": "Spravovaná služba pre opakujúcu sa prácu vo firme. post.work prepája AI automatizácie s nástrojmi, ktoré firma už používa, prispôsobuje ich jej procesom a ponecháva ľudské rozhodnutia alebo schválenia tam, kde sú potrebné.",
+        "ownership": "Staviam produkt, model poskytovania služby, integrácie, vyhodnocovanie a prevádzkovú infraštruktúru.",
+        "cta": "Navštíviť post.work",
+        "analyticsDestination": "postwork"
+      },
+      {
+        "title": "Agent Threat Atlas",
+        "mark": "ATA",
+        "eyebrow": "Výskum bezpečnosti AI",
+        "status": "Verejný výskum",
+        "description": "Verejný atlas skutočných incidentov AI agentov, mapovaných na kategórie hrozieb a praktické princípy prevencie.",
+        "ownership": "Vyhľadávam a analyzujem incidenty, udržiavam taxonómiu a pretavujem zlyhania do odporúčaní, ktoré môžu tímy použiť ešte pred nasadením.",
+        "cta": "Otvoriť atlas",
+        "analyticsDestination": "agent_threat_atlas"
+      }
+    ],
+    "ctaTitle": "Riešite podobný problém?",
+    "ctaDescription": "Ujasnime si proces, systém alebo problém vo Vašom podnikaní a rozhodnime, čo sa oplatí postaviť.",
+    "cta": "Dohodnúť si bezplatnú konzultáciu"
   },
   "services": {
     "heroTitle": "Ako pomôžem",

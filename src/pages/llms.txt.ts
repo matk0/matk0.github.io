@@ -29,6 +29,11 @@ Matej is an AI Systems & Software Engineering Consultant with 10 years of softwa
 - [Agent Threat Atlas](https://atlas.matejlukasik.sk/): Daily agentic AI incidents mapped to threat categories and prevention principles.
 - [Threat categories](https://atlas.matejlukasik.sk/threats): Practical risk categories for teams deploying AI agents.
 
+## Projects
+
+- [post.work](https://post.work/): Managed AI automations for recurring business work.
+- [Agent Threat Atlas](https://atlas.matejlukasik.sk/): Applied security research documenting real AI-agent failures and prevention principles.
+
 ## Principles
 
 - Right tool for the job (open-source vs. managed, self-hosted vs. cloud — recommended on fit, not commission).
@@ -39,8 +44,10 @@ Matej is an AI Systems & Software Engineering Consultant with 10 years of softwa
 ## Pages
 
 - [Home (EN)](https://matejlukasik.com/): Services overview, process, about, FAQ.
+- [Projects (EN)](https://matejlukasik.com/projects): Selected software systems, AI automations, and applied research.
 - [Contact (EN)](https://matejlukasik.com/contact): Contact form and direct email.
 - [Domov (SK)](https://matejlukasik.sk/): Slovak homepage.
+- [Projekty (SK)](https://matejlukasik.sk/projekty): Vybrané softvérové systémy, AI automatizácie a aplikovaný výskum.
 - [Kontakt (SK)](https://matejlukasik.sk/kontakt): Slovak contact page.
 
 ## Optional
@@ -83,6 +90,11 @@ Matej má 10 rokov praxe v softvérovom inžinierstve. Posudzuje procesy a exist
 - [Agent Threat Atlas](https://atlas.matejlukasik.sk/): Denné incidenty agentickej AI mapované na kategórie hrozieb a preventívne princípy.
 - [Kategórie hrozieb](https://atlas.matejlukasik.sk/threats): Praktické kategórie rizík pre tímy nasadzujúce AI agentov.
 
+## Projekty
+
+- [post.work](https://post.work/): Spravované AI automatizácie pre opakujúcu sa prácu vo firme.
+- [Agent Threat Atlas](https://atlas.matejlukasik.sk/): Aplikovaný bezpečnostný výskum skutočných zlyhaní AI agentov a princípov prevencie.
+
 ## Princípy
 
 - Správny nástroj pre danú úlohu — open-source alebo spravované riešenie, vlastná infraštruktúra alebo cloud; odporúčanie podľa vhodnosti, nie provízie.
@@ -93,8 +105,10 @@ Matej má 10 rokov praxe v softvérovom inžinierstve. Posudzuje procesy a exist
 ## Stránky
 
 - [Domov (SK)](https://matejlukasik.sk/): Prehľad služieb, proces, profil a FAQ.
+- [Projekty (SK)](https://matejlukasik.sk/projekty): Vybrané softvérové systémy, AI automatizácie a aplikovaný výskum.
 - [Kontakt (SK)](https://matejlukasik.sk/kontakt): Kontaktný formulár a priamy email.
 - [Home (EN)](https://matejlukasik.com/): Anglická domovská stránka.
+- [Projects (EN)](https://matejlukasik.com/projects): Selected software systems, AI automations, and applied research.
 - [Contact (EN)](https://matejlukasik.com/contact): Anglická kontaktná stránka.
 
 ## Voliteľné

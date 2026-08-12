@@ -19,7 +19,7 @@ test('browser-cacheable static assets receive durable cache headers', () => {
   assert.match(headers, /\/og-\*\.png[\s\S]*max-age=604800/);
 });
 
-test('each sitemap publishes home, contact, and privacy with bilingual alternates', async () => {
+test('each sitemap publishes home, projects, contact, and privacy with bilingual alternates', async () => {
   const source = read('../src/pages/sitemap.xml.ts')
     .replace("import type { APIRoute } from 'astro';", '')
     .replace(
@@ -31,11 +31,15 @@ test('each sitemap publishes home, contact, and privacy with bilingual alternate
   const { GET } = await import(moduleUrl);
 
   const skXml = await (await GET({ locals: { lang: 'sk' } })).text();
+  assert.match(skXml, /<loc>https:\/\/matejlukasik\.sk\/projekty<\/loc>/);
+  assert.match(skXml, /hreflang="en" href="https:\/\/matejlukasik\.com\/projects"/);
   assert.match(skXml, /<loc>https:\/\/matejlukasik\.sk\/sukromie<\/loc>/);
   assert.match(skXml, /hreflang="en" href="https:\/\/matejlukasik\.com\/privacy"/);
   assert.match(skXml, /hreflang="x-default" href="https:\/\/matejlukasik\.com\//);
 
   const enXml = await (await GET({ locals: { lang: 'en' } })).text();
+  assert.match(enXml, /<loc>https:\/\/matejlukasik\.com\/projects<\/loc>/);
+  assert.match(enXml, /hreflang="sk" href="https:\/\/matejlukasik\.sk\/projekty"/);
   assert.match(enXml, /<loc>https:\/\/matejlukasik\.com\/privacy<\/loc>/);
   assert.match(enXml, /hreflang="sk" href="https:\/\/matejlukasik\.sk\/sukromie"/);
 });
