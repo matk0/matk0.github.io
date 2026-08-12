@@ -82,11 +82,11 @@ test('homepage funnel surfaces are annotated for click and section tracking', ()
   assert.match(faq, /data-analytics-event="faq_opened"/);
 });
 
-test('navigation, footer, and direct contact links expose conversion intent', () => {
+test('navigation and footer links expose conversion intent', () => {
   assert.equal(nav.match(/data-analytics-event="booking_intent_clicked"/g)?.length, 2);
   assert.match(nav, /data-analytics-position="nav_desktop"/);
   assert.match(nav, /data-analytics-position="nav_mobile"/);
-  assert.match(contact, /data-analytics-event="mailto_clicked"/);
+  assert.doesNotMatch(contact, /data-analytics-event="mailto_clicked"/);
   assert.match(footer, /data-analytics-event="mailto_clicked"/);
 });
 

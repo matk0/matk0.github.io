@@ -15,8 +15,11 @@ test('contact pages show booking before message form in source order', () => {
   }
 });
 
-test('Slovak contact page does not include direct contact section', () => {
-  const source = readFileSync(new URL('../src/pages/kontakt.astro', import.meta.url), 'utf8');
+test('contact pages do not include a separate direct contact section', () => {
+  for (const page of pages) {
+    const source = readFileSync(new URL(page, import.meta.url), 'utf8');
 
-  assert.equal(source.includes('strings.contact.directTitle'), false);
+    assert.equal(source.includes('strings.contact.directTitle'), false);
+    assert.equal(source.includes('data-analytics-position="contact_direct"'), false);
+  }
 });
