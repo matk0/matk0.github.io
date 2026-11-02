@@ -32,9 +32,7 @@ export function getStructuredData(lang: Lang, siteOrigin: string) {
         '@id': personId,
         name: 'Matej Lukášik',
         url: siteOrigin,
-        jobTitle: lang === 'sk'
-          ? 'Konzultant pre AI systémy a softvérové inžinierstvo'
-          : 'AI Systems & Software Engineering Consultant',
+        jobTitle: 'AI Systems & Software Engineering Consultant',
         image: `${siteOrigin}/avatar.png`,
         sameAs: [
           'https://www.linkedin.com/in/matej-lukasik',
@@ -47,13 +45,9 @@ export function getStructuredData(lang: Lang, siteOrigin: string) {
       {
         '@type': 'ProfessionalService',
         '@id': `${siteOrigin}/#business`,
-        name: lang === 'sk'
-          ? 'Matej Lukášik — Konzultant pre AI systémy a softvérové inžinierstvo'
-          : 'Matej Lukášik — AI Systems & Software Engineering Consultant',
+        name: 'Matej Lukášik — AI Systems & Software Engineering Consultant',
         url: siteOrigin,
-        description: lang === 'sk'
-          ? 'Pomáham firmám nahrádzať časovo náročné procesy a nevyhovujúci softvér správnou kombináciou softvéru na mieru, automatizácií a AI agentov.'
-          : 'I help companies replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.',
+        description: 'I help companies replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.',
         areaServed: ['Europe', 'United States'],
         availableLanguage: ['en', 'sk'],
         provider: { '@id': personId },

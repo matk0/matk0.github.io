@@ -1,5 +1,5 @@
 ---
-import { t, getAlternateUrl, getAlternateLang, getLocalizedPaths, CONTACT_HREF } from '../i18n';
+import { t, getLocalizedPaths, CONTACT_HREF } from '../i18n';
 import type { Lang } from '../i18n';
 
 interface Props {
@@ -10,8 +10,6 @@ interface Props {
 
 const { lang, currentPath, currentUrl } = Astro.props;
 const strings = t(lang);
-const altLang = getAlternateLang(lang);
-const altUrl = getAlternateUrl(lang, currentPath, currentUrl);
 const paths = getLocalizedPaths(lang);
 ---
 
@@ -37,13 +35,6 @@ const paths = getLocalizedPaths(lang);
     </div>
 
     <div class="flex items-center gap-3 md:justify-self-end">
-      <a
-        href={altUrl}
-        class="text-sm font-medium text-body hover:text-primary transition-colors px-2 py-1 rounded-lg hover:bg-primary-light"
-      >
-        {altLang.toUpperCase()}
-      </a>
-
       <button
         id="mobile-menu-btn"
         class="md:hidden p-2 text-body hover:text-heading"

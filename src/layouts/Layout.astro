@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
 import CookieNotice from '../components/CookieNotice.astro';
 import type { Lang } from '../i18n';
-import { getAlternateUrl, getAlternateLang, getSiteOrigin, t } from '../i18n';
+import { getSiteOrigin, t } from '../i18n';
 import { getStructuredData } from '../structured-data';
 import { env as cloudflareEnv } from 'cloudflare:workers';
 
@@ -20,19 +20,12 @@ const { title, description, lang, currentPath } = Astro.props;
 const strings = t(lang);
 const siteOrigin = getSiteOrigin(lang, Astro.url);
 const canonicalURL = new URL(currentPath, siteOrigin);
-const alternateURL = getAlternateUrl(lang, currentPath, Astro.url);
-const altLang = getAlternateLang(lang);
-const ogImagePath = lang === 'sk' ? '/og-sk-portrait.png' : '/og-en-portrait.png';
+const ogImagePath = '/og-en-portrait.png';
 const ogImage = new URL(ogImagePath, siteOrigin).href;
-const ogImageAlt = lang === 'sk'
-  ? 'Portrét Mateja Lukášika — senior produktový inžinier'
-  : 'Portrait of Matej Lukášik — Senior Product Engineer';
+const ogImageAlt = 'Portrait of Matej Lukášik — Senior Product Engineer';
 const googleSiteVerification =
   import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION ||
   cloudflareEnv.PUBLIC_GOOGLE_SITE_VERIFICATION;
-const googleSiteVerificationSk =
-  import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION_SK ||
-  cloudflareEnv.PUBLIC_GOOGLE_SITE_VERIFICATION_SK;
 const gaMeasurementId =
   import.meta.env.PUBLIC_GA_MEASUREMENT_ID ||
   cloudflareEnv.PUBLIC_GA_MEASUREMENT_ID;
@@ -52,7 +45,6 @@ const jsonLd = JSON.stringify(getStructuredData(lang, siteOrigin));
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     {googleSiteVerification && <meta name="google-site-verification" content={googleSiteVerification} />}
-    {lang === 'sk' && googleSiteVerificationSk && <meta name="google-site-verification" content={googleSiteVerificationSk} />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -62,7 +54,7 @@ const jsonLd = JSON.stringify(getStructuredData(lang, siteOrigin));
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={ogImageAlt} />
-    <meta property="og:locale" content={lang === 'sk' ? 'sk_SK' : 'en_US'} />
+    <meta property="og:locale" content={'en_US'} />
     <meta property="og:site_name" content="Matej Lukášik" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -71,8 +63,6 @@ const jsonLd = JSON.stringify(getStructuredData(lang, siteOrigin));
     <meta name="twitter:image:alt" content={ogImageAlt} />
     <script type="application/ld+json" set:html={jsonLd} />
     <link rel="canonical" href={canonicalURL.href} />
-    <link rel="alternate" hreflang={altLang} href={alternateURL} />
-    <link rel="alternate" hreflang={lang} href={canonicalURL.href} />
     <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
     <link rel="alternate" type="text/plain" title="llms-full.txt" href="/llms-full.txt" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

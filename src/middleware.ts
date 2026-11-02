@@ -1,32 +1,18 @@
 import { defineMiddleware } from 'astro:middleware';
-import { getExpectedPath, getLangFromUrl, isLang, isProductionHost, LOCAL_LANG_COOKIE } from './i18n';
 import { applyProductionSecurityHeaders, getCanonicalProductionUrl } from './http-policy';
 
-export const onRequest = defineMiddleware(async ({ url, locals, redirect, cookies }, next) => {
+const legacyPaths: Record<string, string> = { '/projekty': '/projects', '/sukromie': '/privacy', '/kontakt': '/', '/sluzby': '/', '/o-mne': '/' };
+export const onRequest = defineMiddleware(async ({ url, locals, redirect }, next) => {
   const canonicalUrl = getCanonicalProductionUrl(url);
-  if (canonicalUrl) {
-    return applyProductionSecurityHeaders(redirect(canonicalUrl.href, 308), url);
+  if (canonicalUrl) return applyProductionSecurityHeaders(redirect(canonicalUrl.href, 308), url);
+  const oldHost = url.hostname.replace(/^www\./, '') === 'matejlukasik.sk';
+  const legacyPath = legacyPaths[url.pathname];
+  if (oldHost || legacyPath) {
+    const target = new URL(legacyPath || url.pathname, oldHost ? 'https://matejlukasik.com' : url.origin);
+    target.search = url.search;
+    target.searchParams.delete('lang');
+    return applyProductionSecurityHeaders(redirect(target.href, 301), url);
   }
-
-  if (url.pathname.startsWith('/api/')) {
-    return applyProductionSecurityHeaders(await next(), url);
-  }
-
-  const lang = getLangFromUrl(url, cookies.get(LOCAL_LANG_COOKIE)?.value);
-  (locals as any).lang = lang;
-
-  const requestedLang = url.searchParams.get('lang');
-  if (!isProductionHost(url.hostname) && isLang(requestedLang)) {
-    cookies.set(LOCAL_LANG_COOKIE, requestedLang, {
-      path: '/',
-      sameSite: 'lax',
-    });
-  }
-
-  const expected = getExpectedPath(lang, url.pathname);
-  if (isProductionHost(url.hostname) && expected !== null && expected !== url.pathname) {
-    return applyProductionSecurityHeaders(redirect(expected, 301), url);
-  }
-
+  (locals as any).lang = 'en';
   return applyProductionSecurityHeaders(await next(), url);
 });

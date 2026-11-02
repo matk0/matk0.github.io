@@ -9,8 +9,7 @@
   ],
   "vars": {
     "PUBLIC_GA_MEASUREMENT_ID": "G-25EZ859D79",
-    "PUBLIC_GOOGLE_SITE_VERIFICATION": "dLw3bqFci_Kn9iQRfvRBo28i3MJJMv1z-vgNBoA2eN8",
-    "PUBLIC_GOOGLE_SITE_VERIFICATION_SK": "JFrmiyTfscF0PhSKuFTaj4OMwWzJDF9Ww8MgXm0jZ20"
+    "PUBLIC_GOOGLE_SITE_VERIFICATION": "dLw3bqFci_Kn9iQRfvRBo28i3MJJMv1z-vgNBoA2eN8"
   },
   "observability": { "enabled": true }
 }

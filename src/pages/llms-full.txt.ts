@@ -6,7 +6,7 @@ function render(lang: Lang): string {
   const s = t(lang);
   const resume = cv[lang];
   const domain = DOMAINS[lang];
-  const projectsPath = lang === 'sk' ? '/projekty' : '/projects';
+  const projectsPath = '/projects';
 
   const sections: string[] = [];
 
@@ -21,7 +21,7 @@ function render(lang: Lang): string {
 
   sections.push('---');
   sections.push('');
-  sections.push(`# ${lang === 'sk' ? 'Domovská stránka' : 'Home'} (${domain}/)`);
+  sections.push(`# Home (${domain}/)`);
   sections.push('');
   sections.push(`## ${s.home.heroTitle}`);
   sections.push('');
@@ -34,7 +34,7 @@ function render(lang: Lang): string {
 
   sections.push('---');
   sections.push('');
-  sections.push(`# ${lang === 'sk' ? 'O mne' : 'About'}`);
+  sections.push(`# About`);
   sections.push('');
   sections.push(`## ${s.about.bioName}`);
   sections.push(`*${s.about.bioTitle}*`);
@@ -80,7 +80,7 @@ function render(lang: Lang): string {
 
   sections.push('---');
   sections.push('');
-  sections.push(`# ${lang === 'sk' ? 'Emailový kontakt' : 'Email contact'}`);
+  sections.push(`# Email contact`);
   sections.push('');
   sections.push(`[${CONTACT_EMAIL}](${CONTACT_HREF})`);
   sections.push('');

@@ -20,13 +20,13 @@ for (const [filename, size] of [
 const photo = await sharp(await readFile(portrait))
   .resize(460, 630, { fit: 'cover', position: 'top' }).png().toBuffer();
 
-for (const [lang, title] of [['en', 'Senior Product Engineer'], ['sk', 'Senior produktový inžinier']]) {
+for (const [lang, title] of [['en', 'Senior Product Engineer']]) {
   const layout = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
     <rect width="1200" height="630" fill="#242424"/>
     <rect x="76" y="220" width="54" height="5" fill="#c6bafc"/>
     <text x="76" y="315" fill="#ffffff" font-family="sans-serif" font-size="65" font-weight="700">Matej Lukášik</text>
     <text x="76" y="380" fill="#ded9f7" font-family="sans-serif" font-size="34" font-weight="500">${title}</text>
-    <text x="76" y="542" fill="#bcbcbc" font-family="sans-serif" font-size="24">${lang === 'sk' ? 'matejlukasik.sk' : 'matejlukasik.com'}</text>
+    <text x="76" y="542" fill="#bcbcbc" font-family="sans-serif" font-size="24">matejlukasik.com</text>
   </svg>`);
   await sharp(layout).composite([{ input: photo, left: 740, top: 0 }])
     .png().toFile(new URL(`og-${lang}-portrait.png`, publicDir).pathname);
