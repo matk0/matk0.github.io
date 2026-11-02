@@ -19,19 +19,19 @@ test('public positioning remains neutral about company size', () => {
 });
 
 test('english homepage positions Matej as an AI systems and software consultant', () => {
-  assert.equal(en.home.pageTitle, 'Matej Lukášik — AI Systems & Software Engineering Consultant');
-  assert.equal(en.home.heroTitle, 'Replace time-consuming workflows and software that no longer fits.');
+  assert.equal(en.home.pageTitle, 'Matej Lukášik — Senior Product Engineer');
+  assert.equal(en.home.heroTitle, 'Senior Product Engineer');
   assert.equal(
     en.home.heroDescription,
-    'I’m an AI Systems & Software Engineering Consultant. I find and build the right mix of bespoke software systems, automations, and AI agents.',
+    'I turn loosely defined problems into simple, intuitive and reliable software products. I present a unique and powerful blend of ten years of software engineering experience, exceptional product judgment, design sensibility and AI-assisted development (SW Factories FTW!).',
   );
   assert.equal(en.home.ctaBandTitle, "Let's start with the process that costs your business the most time.");
   assert.equal(
     en.home.ctaBandDescription,
-    'Start with a free 30-minute consultation. We’ll clarify the problem, determine whether I can help, and agree on the right next step. No commitment.',
+    'Email me about your project or question, and I’ll get back to you.',
   );
   assert.equal(
-    en.home.processSteps[1].description,
+    en.home.processSteps[0].description,
     'I map how work actually happens, including handoffs, exceptions, and workarounds, and recommend the highest-value change with a clear success metric.',
   );
   assert.equal(
@@ -51,26 +51,26 @@ test('english homepage positions Matej as an AI systems and software consultant'
 });
 
 test('slovak homepage uses the approved AI systems and software engineering title', () => {
-  assert.equal(sk.home.pageTitle, 'Matej Lukášik — Konzultant pre AI systémy a softvérové inžinierstvo');
+  assert.equal(sk.home.pageTitle, 'Matej Lukášik — Senior produktový inžinier');
   assert.equal(sk.about.bioTitle, 'Konzultant pre AI systémy a softvérové inžinierstvo');
   assert.equal(
     sk.home.ctaBandDescription,
-    'Začnime bezplatnou 30-minútovou konzultáciou. Spoločne si ujasníme problém, posúdime, či Vám viem pomôcť, a dohodneme sa na správnom ďalšom kroku. Bez záväzkov.',
+    'Napíšte mi email o Vašom projekte alebo otázke a ozvem sa Vám.',
   );
 });
 
 test('service copy presents the assessment, implementation, and adoption lifecycle', () => {
   assert.deepEqual(
-    [en.home.consultingTitle, en.services.consulting.title, en.contact.serviceOptions.consulting],
-    ['Workflow & Software Assessment Sprint', 'Workflow & Software Assessment Sprint', 'Workflow & Software Assessment Sprint'],
+    [en.home.consultingTitle, en.services.consulting.title],
+    ['Workflow & Software Assessment Sprint', 'Workflow & Software Assessment Sprint'],
   );
   assert.deepEqual(
-    [en.home.implementationTitle, en.services.implementation.title, en.contact.serviceOptions.implementation],
-    ['Bespoke Software, Automation & AI Agents', 'Bespoke Software, Automation & AI Agents', 'Bespoke Software, Automation & AI Agents'],
+    [en.home.implementationTitle, en.services.implementation.title],
+    ['Bespoke Software, Automation & AI Agents', 'Bespoke Software, Automation & AI Agents'],
   );
   assert.deepEqual(
-    [en.home.trainingTitle, en.services.training.title, en.contact.serviceOptions.training],
-    ['Adoption, Handoff & Improvement', 'Adoption, Handoff & Improvement', 'Adoption, Handoff & Improvement'],
+    [en.home.trainingTitle, en.services.training.title],
+    ['Adoption, Handoff & Improvement', 'Adoption, Handoff & Improvement'],
   );
   assert.equal(
     en.services.consulting.subtitle,
@@ -145,38 +145,31 @@ test('pain copy names recognizable recurring work and measurable outcomes', () =
   assert.equal(en.home.pain3Title, 'AI must not become another experiment without results');
 });
 
-test('booking CTAs use the approved consultation wording', () => {
-  assert.equal(sk.nav.bookCall, 'Dohodnúť si bezplatnú 30-minútovú konzultáciu');
-  assert.equal(sk.home.ctaPrimary, sk.nav.bookCall);
-  assert.equal(sk.home.ctaSecondary, 'Ako Vám môžem pomôcť');
-  assert.equal(en.nav.bookCall, 'Book a Free 30-Minute Consultation');
-  assert.equal(en.home.ctaPrimary, en.nav.bookCall);
-  assert.equal(en.home.ctaSecondary, 'See How I Can Help');
-  assert.deepEqual(en.services.notSure, {
-    title: 'Not sure where to start?',
-    description: 'Start with a free 30-minute consultation. We’ll clarify the problem, determine whether I can help, and agree on the right next step. No commitment.',
-    cta: 'Book a Free Consultation',
-  });
-  assert.equal(en.contact.bookTitle, 'Free 30-Minute Consultation');
-  assert.equal(en.contact.bookDescription, en.home.firstStepOffer.description);
-  assert.deepEqual(sk.services.notSure, {
-    title: 'Neviete, kde začať?',
-    description: 'Začnime bezplatnou 30-minútovou konzultáciou. Spoločne si ujasníme problém, posúdime, či Vám viem pomôcť, a dohodneme sa na správnom ďalšom kroku. Bez záväzkov.',
-    cta: 'Dohodnúť si bezplatnú konzultáciu',
-  });
-  assert.equal(sk.contact.bookTitle, 'Bezplatná 30-minútová konzultácia');
-  assert.equal(sk.contact.bookDescription, sk.home.firstStepOffer.description);
+test('contact invitations use direct email without form or booking copy', () => {
+  for (const copy of [en, sk]) {
+    assert.equal('bookCall' in copy.nav, false);
+    assert.equal('ctaPrimary' in copy.home, false);
+    assert.equal('firstStepOffer' in copy.home, false);
+    assert.equal('bookTitle' in copy.contact, false);
+    assert.equal('bookDescription' in copy.contact, false);
+    assert.equal('bookingPrivacyNotice' in copy.contact, false);
+    assert.equal('formTitle' in copy.contact, false);
+    assert.equal('serviceOptions' in copy.contact, false);
+    assert.equal(copy.contact.email, 'matej@matejlukasik.com');
+  }
+  assert.equal(en.services.notSure.cta, 'Email me');
+  assert.equal(sk.services.notSure.cta, 'Napíšte mi');
+  assert.equal(en.projects.cta, 'Email me');
+  assert.equal(sk.projects.cta, 'Napíšte mi');
+  assert.equal('heroDescription' in en.contact, false);
+  assert.equal('heroDescription' in sk.contact, false);
 });
 
-test('process copy follows consultation, assessment, implementation, and handoff', () => {
+test('process copy follows assessment, implementation, and handoff', () => {
   assert.equal(en.home.processTitle, 'How We Work Together');
   assert.deepEqual(
     en.home.processSteps.map(({ title, description }) => ({ title, description })),
     [
-      {
-        title: 'Free 30-Minute Consultation',
-        description: 'We discuss the business problem, the current workflow or software, and whether an Assessment Sprint is the right next step.',
-      },
       {
         title: 'Workflow & Software Assessment Sprint',
         description: 'I map how work actually happens, including handoffs, exceptions, and workarounds, and recommend the highest-value change with a clear success metric.',
@@ -198,10 +191,6 @@ test('process copy follows consultation, assessment, implementation, and handoff
     sk.home.processSteps.map(({ title, description }) => ({ title, description })),
     [
       {
-        title: 'Bezplatná 30-minútová konzultácia',
-        description: 'Preberieme problém vo Vašom podnikaní, súčasný proces alebo softvér a posúdime, či je Assessment Sprint správnym ďalším krokom.',
-      },
-      {
         title: 'Assessment Sprint pre procesy a softvér',
         description: 'Zmapujem, ako práca skutočne prebieha, vrátane odovzdávania práce, výnimiek a obchádzok, a odporučím zmenu s najväčším prínosom spolu s jasnou metrikou úspechu.',
       },
@@ -215,22 +204,6 @@ test('process copy follows consultation, assessment, implementation, and handoff
       },
     ],
   );
-});
-
-test('homepage presents a free consultation as the simple first step', () => {
-  assert.deepEqual(en.home.firstStepOffer, {
-    eyebrow: 'A simple first step',
-    title: 'Start with a Free 30-Minute Consultation',
-    description: 'Tell me where work is slow, manual, or constrained by your current software. We’ll clarify the problem, determine whether I can help, and agree on the right next step. No commitment.',
-    cta: 'Book a Free Consultation',
-  });
-
-  assert.deepEqual(sk.home.firstStepOffer, {
-    eyebrow: 'Jednoduchý prvý krok',
-    title: 'Začnime bezplatnou 30-minútovou konzultáciou',
-    description: 'Povedzte mi, kde sa vo Vašej firme práca spomaľuje, zostáva manuálna alebo ju obmedzuje súčasný softvér. Spoločne si ujasníme problém, posúdime, či Vám viem pomôcť, a dohodneme sa na správnom ďalšom kroku. Bez záväzkov.',
-    cta: 'Dohodnúť si bezplatnú konzultáciu',
-  });
 });
 
 test('service pages avoid premature architecture promises', () => {
@@ -249,21 +222,18 @@ test('service pages avoid premature architecture promises', () => {
   }
 });
 
-test('machine-readable copy mirrors the free consultation callout', () => {
-  assert.match(llms, /\*\*Start with a Free 30-Minute Consultation\*\* — Tell me where work is slow/);
-  assert.match(llms, /\*\*Začnime bezplatnou 30-minútovou konzultáciou\*\* — Povedzte mi, kde sa vo Vašej firme práca spomaľuje/);
+test('machine-readable copy preserves principles without removed sales sections', () => {
   assert.match(llms, /const EN = `# Matej Lukášik — AI Systems & Software Engineering Consultant/);
   assert.match(llms, /const SK = `# Matej Lukášik — Konzultant pre AI systémy a softvérové inžinierstvo/);
-  assert.match(llms, /\*\*Workflow & Software Assessment Sprint\*\*/);
-  assert.match(llms, /1\. Free 30-Minute Consultation — We discuss the business problem/);
-  assert.match(llms, /1\. Bezplatná 30-minútová konzultácia — Preberieme problém vo Vašom podnikaní/);
-  assert.match(llms, /Maps how work actually happens, including handoffs, exceptions, workarounds, and the systems involved/);
   assert.match(llms, /Improve or connect existing systems before recommending replacement/);
-  assert.match(llms, /Mapuje prácu tak, ako skutočne prebieha, vrátane používaných systémov, odovzdávania práce, výnimiek a obchádzok/);
   assert.match(llms, /Zlepšiť alebo prepojiť existujúce systémy skôr, než sa odporučí ich výmena/);
   assert.doesNotMatch(llms, /const EN = `# Matej Lukášik — AI Agent Consulting/);
   assert.doesNotMatch(llms, /AI agent konzulting|Samostatny AI agent konzultant/);
-  assert.doesNotMatch(llms, /1–2 weeks|1–2 tyzdne/);
+  assert.doesNotMatch(llms, /1–2 weeks|1–2 tyzdne|free.*consultation|bezplatn.*konzultáci/iu);
+  assert.doesNotMatch(llms, /## (?:Services|Služby|Process|Proces)\n|FAQ/);
+  assert.match(llms, /\[Email Matej\]\(\$\{CONTACT_HREF\}\)/);
+  assert.match(llms, /\[Napísať email\]\(\$\{CONTACT_HREF\}\)/);
+  assert.doesNotMatch(llms, /https:\/\/matejlukasik\.(?:com|sk)\/(?:contact|kontakt)/);
 });
 
 test('full machine-readable copy mirrors only sections rendered on the current site', () => {
@@ -273,4 +243,9 @@ test('full machine-readable copy mirrors only sections rendered on the current s
   assert.doesNotMatch(llmsFull, /s\.about\.approachTitle/);
   assert.doesNotMatch(llmsFull, /s\.about\.techTitle/);
   assert.match(llmsFull, /s\.home\.ctaBandTitle/);
+  assert.doesNotMatch(llmsFull, /s\.home\.firstStepOffer/);
+  assert.doesNotMatch(llmsFull, /s\.services\.|Services — detail|Služby — detail/);
+  assert.doesNotMatch(llmsFull, /s\.home\.processTitle|s\.home\.processSteps|s\.contact\.faq/);
+  assert.doesNotMatch(llmsFull, /s\.contact\.hero|contactPath/);
+  assert.match(llmsFull, /\[\$\{CONTACT_EMAIL\}\]\(\$\{CONTACT_HREF\}\)/);
 });

@@ -1,28 +1,11 @@
 import type { APIRoute } from 'astro';
-import { type Lang } from '../i18n';
+import { CONTACT_EMAIL, CONTACT_HREF, type Lang } from '../i18n';
 
 const EN = `# Matej Lukášik — AI Systems & Software Engineering Consultant
 
 > Helps companies replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.
 
-Matej is an AI Systems & Software Engineering Consultant with 10 years of software engineering experience. He assesses workflows and existing systems, builds the right mix of bespoke software, automations, and AI agents, and helps teams adopt and own the solution. He works with companies in Europe and the United States. Engagements start with a free 30-minute consultation. Bilingual (English / Slovak).
-
-## Services
-
-- **Workflow & Software Assessment Sprint** — Maps how work actually happens, including handoffs, exceptions, workarounds, and the systems involved, then recommends the highest-value first implementation.
-- **Bespoke Software, Automation & AI Agents** — Builds the right solution around one defined business problem and tests it on real work.
-- **Adoption, Handoff & Improvement** — Helps the team adopt the solution, establish operating rules, measure results, and improve it from real usage.
-
-## Process
-
-1. Free 30-Minute Consultation — We discuss the business problem, the current workflow or software, and whether an Assessment Sprint is the right next step.
-2. Workflow & Software Assessment Sprint — Matej maps how work actually happens, including handoffs, exceptions, and workarounds, and recommends the highest-value change with a clear success metric.
-3. Implementation — Matej builds and tests the agreed software, automation, AI agent, or combination on real work.
-4. Adoption & Handoff — Matej helps the team adopt the system, measure the result, and take ownership, with ongoing support available if useful.
-
-## A simple first step
-
-**Start with a Free 30-Minute Consultation** — Tell me where work is slow, manual, or constrained by your current software. We’ll clarify the problem, determine whether I can help, and agree on the right next step. No commitment.
+Matej is an AI Systems & Software Engineering Consultant with 10 years of software engineering experience. He assesses workflows and existing systems, builds the right mix of bespoke software, automations, and AI agents, and helps teams adopt and own the solution. He works with companies in Europe and the United States. Bilingual (English / Slovak).
 
 ## Research
 
@@ -31,8 +14,9 @@ Matej is an AI Systems & Software Engineering Consultant with 10 years of softwa
 
 ## Projects
 
-- [post.work](https://post.work/): Managed AI automations for recurring business work.
-- [Agent Threat Atlas](https://atlas.matejlukasik.sk/): Applied security research documenting real AI-agent failures and prevention principles.
+- [Vozokany](https://matejlukasik.com/projects#vozokany): Farm software for weekly offers, customer orders, packing and harvest planning.
+- [post.work](https://post.work/): A workspace integrating managed Hermes agents with business tools, persistent context and human review.
+- [Viki](https://github.com/matk0/viki): A human-governed specification and knowledge workspace with Gherkin scenarios, revision history and scoped AI assistance.
 
 ## Principles
 
@@ -43,12 +27,12 @@ Matej is an AI Systems & Software Engineering Consultant with 10 years of softwa
 
 ## Pages
 
-- [Home (EN)](https://matejlukasik.com/): Services overview, process, about, FAQ.
-- [Projects (EN)](https://matejlukasik.com/projects): Selected software systems, AI automations, and applied research.
-- [Contact (EN)](https://matejlukasik.com/contact): Contact form and direct email.
+- [Home (EN)](https://matejlukasik.com/): Software engineering focus and about.
+- [CV (EN)](https://matejlukasik.com/cv): Professional profile and work experience.
+- [Projects (EN)](https://matejlukasik.com/projects): Vozokany, post.work and Viki, with product screenshots and engineering context.
 - [Domov (SK)](https://matejlukasik.sk/): Slovak homepage.
-- [Projekty (SK)](https://matejlukasik.sk/projekty): Vybrané softvérové systémy, AI automatizácie a aplikovaný výskum.
-- [Kontakt (SK)](https://matejlukasik.sk/kontakt): Slovak contact page.
+- [CV (SK)](https://matejlukasik.sk/cv): Slovak professional profile and work experience.
+- [Projekty (SK)](https://matejlukasik.sk/projekty): Vozokany, post.work a Viki so snímkami produktov a opisom práce.
 
 ## Optional
 
@@ -56,7 +40,7 @@ Matej is an AI Systems & Software Engineering Consultant with 10 years of softwa
 
 ## Contact
 
-- Email: matej@matejlukasik.com
+- [Email Matej](${CONTACT_HREF}): ${CONTACT_EMAIL}
 - Location: Slovakia (serves Europe and the United States)
 - LinkedIn: https://www.linkedin.com/in/matej-lukasik
 - GitHub: https://github.com/matk0
@@ -66,24 +50,7 @@ const SK = `# Matej Lukášik — Konzultant pre AI systémy a softvérové inž
 
 > Pomáha firmám nahrádzať časovo náročné procesy a nevyhovujúci softvér správnou kombináciou softvéru na mieru, automatizácií a AI agentov. Východiskom je konkrétny problém vo firme, nie nástroj AI.
 
-Matej má 10 rokov praxe v softvérovom inžinierstve. Posudzuje procesy a existujúce systémy, vytvára správnu kombináciu softvéru na mieru, automatizácií a AI agentov a pomáha tímom riešenie zaviesť a prevziať. Pracuje s firmami v Európe a USA. Spolupráca sa začína bezplatnou 30-minútovou konzultáciou. Komunikuje po slovensky a anglicky.
-
-## Služby
-
-- **Assessment Sprint pre procesy a softvér** — Mapuje prácu tak, ako skutočne prebieha, vrátane používaných systémov, odovzdávania práce, výnimiek a obchádzok, a odporučí prvú implementáciu s najväčším prínosom.
-- **Softvér na mieru, automatizácie a AI agenti** — Postaví správne riešenie pre jeden konkrétny problém a otestuje ho na reálnej práci.
-- **Zavedenie do praxe, odovzdanie a zlepšovanie** — Pomôže tímu osvojiť si riešenie, nastaviť pravidlá prevádzky, merať výsledky a zlepšovať ho podľa reálneho používania.
-
-## Proces
-
-1. Bezplatná 30-minútová konzultácia — Preberieme problém vo Vašom podnikaní, súčasný proces alebo softvér a posúdime, či je Assessment Sprint správnym ďalším krokom.
-2. Assessment Sprint pre procesy a softvér — Matej zmapuje, ako práca skutočne prebieha, vrátane odovzdávania práce, výnimiek a obchádzok, a odporučí zmenu s najväčším prínosom spolu s jasnou metrikou úspechu.
-3. Implementácia — Matej postaví a otestuje dohodnutý softvér, automatizáciu, AI agenta alebo ich kombináciu na reálnych úlohách.
-4. Zavedenie a odovzdanie — Matej pomôže tímu zaviesť riešenie do každodennej práce, zmerať výsledok a prevziať ho do vlastných rúk; ak to dáva zmysel, podpora môže pokračovať.
-
-## Jednoduchý prvý krok
-
-**Začnime bezplatnou 30-minútovou konzultáciou** — Povedzte mi, kde sa vo Vašej firme práca spomaľuje, zostáva manuálna alebo ju obmedzuje súčasný softvér. Spoločne si ujasníme problém, posúdime, či Vám viem pomôcť, a dohodneme sa na správnom ďalšom kroku. Bez záväzkov.
+Matej má 10 rokov praxe v softvérovom inžinierstve. Posudzuje procesy a existujúce systémy, vytvára správnu kombináciu softvéru na mieru, automatizácií a AI agentov a pomáha tímom riešenie zaviesť a prevziať. Pracuje s firmami v Európe a USA. Komunikuje po slovensky a anglicky.
 
 ## Výskum
 
@@ -92,8 +59,9 @@ Matej má 10 rokov praxe v softvérovom inžinierstve. Posudzuje procesy a exist
 
 ## Projekty
 
-- [post.work](https://post.work/): Spravované AI automatizácie pre opakujúcu sa prácu vo firme.
-- [Agent Threat Atlas](https://atlas.matejlukasik.sk/): Aplikovaný bezpečnostný výskum skutočných zlyhaní AI agentov a princípov prevencie.
+- [Vozokany](https://matejlukasik.sk/projekty#vozokany): Softvér pre týždenné ponuky, zákaznícke objednávky, balenie a plánovanie zberu na farme.
+- [post.work](https://post.work/): Pracovný priestor, ktorý prepája spravovaných agentov Hermes s firemnými nástrojmi, trvalým kontextom a ľudskou kontrolou.
+- [Viki](https://github.com/matk0/viki): Pracovný priestor pre špecifikácie a znalosti s ľudským schvaľovaním, Gherkin scenármi, históriou verzií a AI asistenciou s vymedzenými oprávneniami.
 
 ## Princípy
 
@@ -104,12 +72,12 @@ Matej má 10 rokov praxe v softvérovom inžinierstve. Posudzuje procesy a exist
 
 ## Stránky
 
-- [Domov (SK)](https://matejlukasik.sk/): Prehľad služieb, proces, profil a FAQ.
-- [Projekty (SK)](https://matejlukasik.sk/projekty): Vybrané softvérové systémy, AI automatizácie a aplikovaný výskum.
-- [Kontakt (SK)](https://matejlukasik.sk/kontakt): Kontaktný formulár a priamy email.
+- [Domov (SK)](https://matejlukasik.sk/): Zameranie na softvérové inžinierstvo a profil.
+- [CV (SK)](https://matejlukasik.sk/cv): Profesijný profil a pracovné skúsenosti.
+- [Projekty (SK)](https://matejlukasik.sk/projekty): Vozokany, post.work a Viki so snímkami produktov a opisom práce.
 - [Home (EN)](https://matejlukasik.com/): Anglická domovská stránka.
-- [Projects (EN)](https://matejlukasik.com/projects): Selected software systems, AI automations, and applied research.
-- [Contact (EN)](https://matejlukasik.com/contact): Anglická kontaktná stránka.
+- [CV (EN)](https://matejlukasik.com/cv): Anglický profesijný profil a pracovné skúsenosti.
+- [Projects (EN)](https://matejlukasik.com/projects): Vozokany, post.work and Viki, with product screenshots and engineering context.
 
 ## Voliteľné
 
@@ -117,7 +85,7 @@ Matej má 10 rokov praxe v softvérovom inžinierstve. Posudzuje procesy a exist
 
 ## Kontakt
 
-- Email: matej@matejlukasik.com
+- [Napísať email](${CONTACT_HREF}): ${CONTACT_EMAIL}
 - Lokalita: Slovensko (služby pre Európu a USA)
 - LinkedIn: https://www.linkedin.com/in/matej-lukasik
 - GitHub: https://github.com/matk0

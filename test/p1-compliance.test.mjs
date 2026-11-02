@@ -17,12 +17,12 @@ test('production requests canonicalize to the HTTPS apex and receive HSTS', asyn
   const { applyProductionSecurityHeaders, getCanonicalProductionUrl } = await import(moduleUrl);
 
   assert.equal(
-    getCanonicalProductionUrl(new URL('http://www.matejlukasik.com/contact?focus=calendar')).href,
-    'https://matejlukasik.com/contact?focus=calendar',
+    getCanonicalProductionUrl(new URL('http://www.matejlukasik.com/projects?lang=en')).href,
+    'https://matejlukasik.com/projects?lang=en',
   );
   assert.equal(
-    getCanonicalProductionUrl(new URL('http://matejlukasik.sk/kontakt')).href,
-    'https://matejlukasik.sk/kontakt',
+    getCanonicalProductionUrl(new URL('http://matejlukasik.sk/projekty')).href,
+    'https://matejlukasik.sk/projekty',
   );
   assert.equal(getCanonicalProductionUrl(new URL('https://matejlukasik.com/')), null);
   assert.equal(getCanonicalProductionUrl(new URL('http://localhost:4321/')), null);
@@ -60,9 +60,7 @@ test('privacy notices publish concrete controller, retention, cookie, transfer, 
     assert.match(source, /14 months|14 mesiacov/);
     assert.match(source, /30 days|30 dní/);
     assert.match(source, /_ga/);
-    assert.match(source, /__cf_bm/);
     assert.match(source, /two years|dva roky/);
-    assert.match(source, /30 minutes|30 minút/);
     assert.match(source, /Data Privacy Framework|rámca ochrany osobných údajov/);
     assert.match(source, /dataprotection\.gov\.sk/);
   }
@@ -79,13 +77,4 @@ test('consent is versioned, expires after one year, and the privacy link is spac
   assert.match(cookieNotice, /\{' '\}\s*<a/);
   assert.match(analytics, /CONSENT_VERSION/);
   assert.match(analytics, /JSON\.parse/);
-});
-
-test('Cal.com loads immediately on the contact page without a manual gate', () => {
-  const calEmbed = read('../src/components/CalEmbed.astro');
-
-  assert.doesNotMatch(calEmbed, /data-cal-load/);
-  assert.doesNotMatch(calEmbed, /data-cal-gate/);
-  assert.match(calEmbed, /loadCalEmbed/);
-  assert.match(calEmbed, /if \(bookingCalendar\) \{\s+loadCalEmbed\(\);/);
 });

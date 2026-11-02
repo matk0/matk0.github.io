@@ -1,10 +1,11 @@
 import type { APIRoute } from 'astro';
-import { t, DOMAINS, type Lang } from '../i18n';
+import { t, CONTACT_EMAIL, CONTACT_HREF, DOMAINS, type Lang } from '../i18n';
+import { cv } from '../data/cv';
 
 function render(lang: Lang): string {
   const s = t(lang);
+  const resume = cv[lang];
   const domain = DOMAINS[lang];
-  const contactPath = lang === 'sk' ? '/kontakt' : '/contact';
   const projectsPath = lang === 'sk' ? '/projekty' : '/projects';
 
   const sections: string[] = [];
@@ -14,8 +15,8 @@ function render(lang: Lang): string {
   sections.push(`> ${s.footer.description}`);
   sections.push('');
   sections.push(`Site: ${domain}`);
-  sections.push(`Contact: ${s.contact.email}`);
-  sections.push(`Location: ${s.contact.location}`);
+  sections.push(`Contact: [${CONTACT_EMAIL}](${CONTACT_HREF})`);
+  sections.push(`Location: ${resume.location}`);
   sections.push('');
 
   sections.push('---');
@@ -27,62 +28,8 @@ function render(lang: Lang): string {
   sections.push(s.home.heroDescription);
   sections.push('');
 
-  sections.push(`## ${s.home.painTitle}`);
-  sections.push('');
-  sections.push(`### ${s.home.pain1Title}`);
-  sections.push(s.home.pain1Description);
-  sections.push('');
-  sections.push(`### ${s.home.pain2Title}`);
-  sections.push(s.home.pain2Description);
-  sections.push('');
-  sections.push(`### ${s.home.pain3Title}`);
-  sections.push(s.home.pain3Description);
-  sections.push('');
-
-  sections.push(`## ${s.home.processTitle}`);
-  sections.push('');
-  for (const step of s.home.processSteps) {
-    sections.push(`### ${step.label} — ${step.title}`);
-    sections.push(step.description);
-    sections.push('');
-  }
-
-  sections.push(`## ${s.home.firstStepOffer.eyebrow}`);
-  sections.push('');
-  sections.push(`### ${s.home.firstStepOffer.title}`);
-  sections.push(s.home.firstStepOffer.description);
-  sections.push('');
-
   sections.push(`## ${s.home.ctaBandTitle}`);
   sections.push(s.home.ctaBandDescription);
-  sections.push('');
-
-  sections.push('---');
-  sections.push('');
-  sections.push(`# ${lang === 'sk' ? 'Služby — detail' : 'Services — detail'}`);
-  sections.push('');
-  sections.push(`## ${s.services.consulting.title}`);
-  sections.push(`*${s.services.consulting.subtitle}*`);
-  sections.push('');
-  sections.push(s.services.consulting.description);
-  sections.push('');
-  for (const item of s.services.consulting.includes) sections.push(`- ${item}`);
-  sections.push('');
-
-  sections.push(`## ${s.services.implementation.title}`);
-  sections.push(`*${s.services.implementation.subtitle}*`);
-  sections.push('');
-  sections.push(s.services.implementation.description);
-  sections.push('');
-  for (const item of s.services.implementation.includes) sections.push(`- ${item}`);
-  sections.push('');
-
-  sections.push(`## ${s.services.training.title}`);
-  sections.push(`*${s.services.training.subtitle}*`);
-  sections.push('');
-  sections.push(s.services.training.description);
-  sections.push('');
-  for (const item of s.services.training.includes) sections.push(`- ${item}`);
   sections.push('');
 
   sections.push('---');
@@ -113,21 +60,30 @@ function render(lang: Lang): string {
 
   sections.push('---');
   sections.push('');
-  sections.push(`# ${s.contact.heroTitle} (${domain}${contactPath})`);
+  sections.push(`# CV (${domain}/cv)`);
   sections.push('');
-  sections.push(s.contact.heroDescription);
+  sections.push(`## ${resume.name}`);
+  sections.push(resume.headline);
   sections.push('');
-  sections.push(`Email: ${s.contact.email}`);
-  sections.push(`${lang === 'sk' ? 'Lokalita' : 'Location'}: ${s.contact.location}`);
+  sections.push(`## ${resume.profileHeading}`);
+  sections.push(resume.profile.join('\n\n'));
   sections.push('');
-
-  sections.push(`## ${s.contact.faqTitle}`);
-  sections.push('');
-  for (const item of s.contact.faq) {
-    sections.push(`### ${item.question}`);
-    sections.push(item.answer);
+  sections.push(`## ${resume.experienceHeading}`);
+  for (const entry of resume.entries) {
+    sections.push(`### ${entry.role} — ${entry.organization}`);
+    sections.push(`${entry.period} | ${entry.location}`);
+    sections.push('');
+    sections.push(entry.summary);
+    for (const highlight of entry.highlights) sections.push(`- ${highlight}`);
     sections.push('');
   }
+
+  sections.push('---');
+  sections.push('');
+  sections.push(`# ${lang === 'sk' ? 'Emailový kontakt' : 'Email contact'}`);
+  sections.push('');
+  sections.push(`[${CONTACT_EMAIL}](${CONTACT_HREF})`);
+  sections.push('');
 
   return sections.join('\n');
 }

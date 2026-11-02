@@ -1,14 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import ProjectShowcase from '../components/ProjectShowcase.astro';
 import CTABand from '../components/CTABand.astro';
-import { ATLAS_URL, POSTWORK_URL, getLocalizedPaths, t } from '../i18n';
+import { t, CONTACT_HREF } from '../i18n';
 
 const lang = 'en';
 const strings = t(lang);
-const paths = getLocalizedPaths(lang);
-const projectUrls = [POSTWORK_URL, ATLAS_URL];
 ---
 
 <Layout
@@ -19,22 +17,9 @@ const projectUrls = [POSTWORK_URL, ATLAS_URL];
 >
   <Hero title={strings.projects.heroTitle} description={strings.projects.heroDescription} />
 
-  <section class="section-padding bg-surface" data-analytics-section="projects">
-    <div class="container mx-auto">
-      <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
-        {strings.projects.items.map((project, index) => (
-          <ProjectCard
-            {...project}
-            ownershipLabel={strings.projects.ownershipLabel}
-            href={projectUrls[index]}
-            linkText={project.cta}
-          />
-        ))}
-      </div>
-    </div>
-  </section>
+  <ProjectShowcase projects={strings.projects.items} ownershipLabel={strings.projects.ownershipLabel} lang={lang} />
 
   <CTABand title={strings.projects.ctaTitle} description={strings.projects.ctaDescription}>
-    <a href={`${paths.contact}?focus=calendar`} class="btn-white">{strings.projects.cta}</a>
+    <a href={CONTACT_HREF} class="btn-white" data-analytics-event="mailto_clicked" data-analytics-position="projects_cta">{strings.projects.cta}</a>
   </CTABand>
 </Layout>

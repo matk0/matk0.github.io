@@ -7,7 +7,7 @@ interface Props {
   includes: string[];
   ctaText: string;
   ctaHref: string;
-  ctaTarget?: 'calendar' | 'contact_form';
+  ctaTarget?: 'email';
   imageSrc: string;
   imageAlt?: string;
   reversed?: boolean;
@@ -15,7 +15,7 @@ interface Props {
   nested?: boolean;
 }
 
-const { id, title, subtitle, description, includes, ctaText, ctaHref, ctaTarget = 'contact_form', imageSrc, imageAlt = '', reversed = false, bg = 'white', nested = false } = Astro.props;
+const { id, title, subtitle, description, includes, ctaText, ctaHref, ctaTarget = 'email', imageSrc, imageAlt = '', reversed = false, bg = 'white', nested = false } = Astro.props;
 ---
 
 <section

@@ -6,7 +6,7 @@ const index = readFileSync(new URL('../src/pages/index.astro', import.meta.url),
 const serviceCard = readFileSync(new URL('../src/components/ServiceCard.astro', import.meta.url), 'utf8');
 const serviceSection = readFileSync(new URL('../src/components/ServiceSection.astro', import.meta.url), 'utf8');
 
-test('service cards and sections use schematic images', () => {
+test('homepage omits service images while the reusable assets remain available', () => {
   const imagePaths = [
     '/images/service-strategy.webp',
     '/images/service-implementation.webp',
@@ -14,7 +14,7 @@ test('service cards and sections use schematic images', () => {
   ];
 
   for (const imagePath of imagePaths) {
-    assert.ok(index.includes(`imageSrc="${imagePath}"`), `${imagePath} should be referenced`);
+    assert.ok(!index.includes(`imageSrc="${imagePath}"`), `${imagePath} should not appear on the homepage`);
     assert.ok(existsSync(new URL(`../public${imagePath}`, import.meta.url)), `${imagePath} should exist`);
   }
 });

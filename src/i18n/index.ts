@@ -4,6 +4,9 @@ import sk from './sk.json';
 export const languages = { en, sk } as const;
 export type Lang = keyof typeof languages;
 
+export const CONTACT_EMAIL = 'matej@matejlukasik.com';
+export const CONTACT_HREF = `mailto:${CONTACT_EMAIL}`;
+
 export function t(lang: Lang) {
   return languages[lang];
 }
@@ -66,6 +69,7 @@ const PATH_MAP: Record<string, Record<Lang, string>> = {
   '/sluzby': { en: '/', sk: '/' },
   '/about': { en: '/', sk: '/' },
   '/o-mne': { en: '/', sk: '/' },
+  '/cv': { en: '/cv', sk: '/cv' },
   '/projects': { en: '/projects', sk: '/projekty' },
   '/projekty': { en: '/projects', sk: '/projekty' },
   '/contact': { en: '/contact', sk: '/kontakt' },
@@ -99,10 +103,9 @@ export function getExpectedPath(lang: Lang, currentPath: string): string | null 
 
 export function getLocalizedPaths(lang: Lang) {
   return {
-    services: '/#services',
     about: '/#about',
+    cv: '/cv',
     projects: lang === 'sk' ? '/projekty' : '/projects',
-    contact: lang === 'sk' ? '/kontakt' : '/contact',
     privacy: lang === 'sk' ? '/sukromie' : '/privacy',
   };
 }

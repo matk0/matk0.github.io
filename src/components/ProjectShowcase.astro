@@ -1,0 +1,113 @@
+---
+import { projectMedia } from '../data/projects';
+import type { Lang } from '../i18n';
+
+interface Project {
+  id: string;
+  title: string;
+  eyebrow: string;
+  status: string;
+  description: string;
+  ownership: string;
+  cta: string;
+  analyticsDestination: string;
+}
+
+interface Props {
+  projects: Project[];
+  ownershipLabel: string;
+  lang: Lang;
+}
+
+const { projects, ownershipLabel, lang } = Astro.props;
+const screenshotLabel = lang === 'sk' ? 'Otvoriť celú snímku obrazovky' : 'Open full screenshot';
+---
+
+<div class="project-showcase">
+  {projects.map((project, index) => {
+    const media = projectMedia[project.id];
+    return (
+      <section
+        id={project.id}
+        class:list={['project-row', { 'project-row-reversed': index % 2 === 1 }]}
+        aria-labelledby={`project-${project.id}`}
+        data-analytics-section={`project_${project.id}`}
+      >
+        <figure class="project-figure">
+          <a class="project-screenshot" href={media.image} target="_blank" rel="noopener noreferrer" aria-label={`${project.title}: ${screenshotLabel}`}>
+            <img
+              src={media.image}
+              alt={media.alt[lang]}
+              width={media.width}
+              height={media.height}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          </a>
+          <figcaption>{media.caption[lang]}</figcaption>
+        </figure>
+
+        <div class="project-copy">
+          <p class="project-eyebrow">{project.eyebrow}</p>
+          <h2 id={`project-${project.id}`}>{project.title}</h2>
+          <p class="project-description">{project.description}</p>
+          <p class="project-ownership"><span>{ownershipLabel}</span>{project.ownership}</p>
+          <div class="project-actions">
+            <a
+              href={media.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-analytics-event="external_link_clicked"
+              data-analytics-destination={project.analyticsDestination}
+              data-analytics-position="projects_showcase"
+            >
+              {project.cta}<span aria-hidden="true">↗</span>
+            </a>
+            <span class="project-status">{project.status}</span>
+          </div>
+        </div>
+      </section>
+    );
+  })}
+</div>
+
+<style>
+  .project-showcase { width: min(1280px, calc(100% - 96px)); margin: 0 auto; padding: 20px 0 56px; }
+  .project-row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(36px, 5vw, 72px); align-items: center; padding: 64px 0; scroll-margin-top: 88px; }
+  .project-row + .project-row { border-top: 1px solid var(--color-border); }
+  .project-figure { margin: 0; min-width: 0; }
+  .project-screenshot { display: flex; align-items: center; justify-content: center; aspect-ratio: 8 / 5; padding: 10px; border: 1px solid var(--color-border); border-radius: 20px; background: var(--color-surface-alt); box-shadow: 0 15px 45px rgba(27, 19, 64, .08); transition: border-color .2s ease, box-shadow .2s ease; }
+  .project-screenshot:hover { border-color: var(--color-primary); box-shadow: 0 15px 45px rgba(27, 19, 64, .13); }
+  .project-screenshot:focus-visible, .project-actions a:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 5px; }
+  .project-screenshot img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 10px; }
+  figcaption { margin-top: 14px; color: var(--color-body); font-size: 11px; line-height: 1.6; }
+  .project-copy { min-width: 0; }
+  .project-eyebrow { margin: 0 0 14px; color: var(--color-primary-hover); font-size: 11px; font-weight: 600; line-height: 1.6; letter-spacing: .1em; text-transform: uppercase; }
+  h2 { margin: 0 0 22px; font-size: clamp(38px, 4vw, 54px); letter-spacing: -.045em; line-height: 1.1; }
+  .project-description { margin: 0; font-size: 17px; line-height: 1.8; color: #514d5b; }
+  .project-ownership { margin: 24px 0 0; color: var(--color-body); font-size: 13px; line-height: 1.8; }
+  .project-ownership span { display: block; margin-bottom: 5px; color: var(--color-heading); font-size: 11px; font-weight: 600; }
+  .project-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; margin-top: 26px; }
+  .project-actions a { display: inline-flex; align-items: center; gap: 10px; padding: 7px 0; color: var(--color-primary-hover); font-size: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 5px; }
+  .project-status { font-size: 11px; line-height: 1.5; color: var(--color-body); }
+  @media (min-width: 1001px) {
+    .project-row-reversed { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+    .project-row-reversed .project-figure { grid-column: 2; grid-row: 1; }
+    .project-row-reversed .project-copy { grid-column: 1; grid-row: 1; }
+  }
+  @media (max-width: 1000px) {
+    .project-row { grid-template-columns: 1fr; gap: 32px; padding: 44px 0; }
+    .project-copy { max-width: 700px; }
+    .project-description { font-size: 16px; }
+  }
+  @media (max-width: 600px) {
+    .project-showcase { width: calc(100% - 40px); padding-top: 0; padding-bottom: 24px; }
+    .project-row { gap: 24px; padding: 32px 0; }
+    .project-screenshot { padding: 5px; border-radius: 13px; }
+    .project-screenshot img { border-radius: 8px; }
+    h2 { font-size: 38px; margin-bottom: 18px; }
+    .project-description { font-size: 15px; }
+    .project-ownership { margin-top: 18px; }
+    .project-actions { margin-top: 18px; }
+  }
+</style>

@@ -10,7 +10,7 @@ const en = JSON.parse(readFileSync(new URL('../src/i18n/en.json', import.meta.ur
 const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
 
 test('footer uses the same logotype as the navigation', () => {
-  assert.match(footer, /src="\/logo\.svg"/);
+  assert.match(footer, /src="\/images\/matej-pixel-logo\.png"/);
   assert.match(footer, /alt="Matej Lukášik"/);
   assert.doesNotMatch(footer, /matejlukasik<\/a>/);
 });

@@ -19,7 +19,7 @@ test('browser-cacheable static assets receive durable cache headers', () => {
   assert.match(headers, /\/og-\*\.png[\s\S]*max-age=604800/);
 });
 
-test('each sitemap publishes home, projects, contact, and privacy with bilingual alternates', async () => {
+test('each sitemap publishes home, CV, projects and privacy while omitting retired contact pages', async () => {
   const source = read('../src/pages/sitemap.xml.ts')
     .replace("import type { APIRoute } from 'astro';", '')
     .replace(
@@ -36,12 +36,24 @@ test('each sitemap publishes home, projects, contact, and privacy with bilingual
   assert.match(skXml, /<loc>https:\/\/matejlukasik\.sk\/sukromie<\/loc>/);
   assert.match(skXml, /hreflang="en" href="https:\/\/matejlukasik\.com\/privacy"/);
   assert.match(skXml, /hreflang="x-default" href="https:\/\/matejlukasik\.com\//);
+  assert.doesNotMatch(skXml, /\/(?:contact|kontakt)(?:<|")/);
+
+  const skCv = skXml.match(/<url>\s*<loc>https:\/\/matejlukasik\.sk\/cv<\/loc>[\s\S]*?<\/url>/)?.[0];
+  assert.ok(skCv, 'expected the Slovak CV in the sitemap');
+  assert.match(skCv, /hreflang="en" href="https:\/\/matejlukasik\.com\/cv"/);
+  assert.match(skCv, /hreflang="sk" href="https:\/\/matejlukasik\.sk\/cv"/);
 
   const enXml = await (await GET({ locals: { lang: 'en' } })).text();
   assert.match(enXml, /<loc>https:\/\/matejlukasik\.com\/projects<\/loc>/);
   assert.match(enXml, /hreflang="sk" href="https:\/\/matejlukasik\.sk\/projekty"/);
   assert.match(enXml, /<loc>https:\/\/matejlukasik\.com\/privacy<\/loc>/);
   assert.match(enXml, /hreflang="sk" href="https:\/\/matejlukasik\.sk\/sukromie"/);
+  assert.doesNotMatch(enXml, /\/(?:contact|kontakt)(?:<|")/);
+
+  const enCv = enXml.match(/<url>\s*<loc>https:\/\/matejlukasik\.com\/cv<\/loc>[\s\S]*?<\/url>/)?.[0];
+  assert.ok(enCv, 'expected the English CV in the sitemap');
+  assert.match(enCv, /hreflang="sk" href="https:\/\/matejlukasik\.sk\/cv"/);
+  assert.match(enCv, /hreflang="x-default" href="https:\/\/matejlukasik\.com\/cv"/);
 });
 
 test('structured data uses the active language origin and verified business identity', async () => {

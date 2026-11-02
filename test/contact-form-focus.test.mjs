@@ -1,84 +1,45 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { test } from 'node:test';
+import { transformSync } from 'esbuild';
 
-const index = readFileSync(new URL('../src/pages/index.astro', import.meta.url), 'utf8');
-const nav = readFileSync(new URL('../src/components/Nav.astro', import.meta.url), 'utf8');
-const calEmbed = readFileSync(new URL('../src/components/CalEmbed.astro', import.meta.url), 'utf8');
-const contactForm = readFileSync(new URL('../src/components/ContactForm.astro', import.meta.url), 'utf8');
-const contactPage = readFileSync(new URL('../src/pages/contact.astro', import.meta.url), 'utf8');
-const slovakContactPage = readFileSync(new URL('../src/pages/kontakt.astro', import.meta.url), 'utf8');
-const contactApi = readFileSync(new URL('../src/pages/api/contact.ts', import.meta.url), 'utf8');
-const styles = readFileSync(new URL('../src/styles/global.css', import.meta.url), 'utf8');
+const read = (path) => readFileSync(new URL(path, import.meta.url), 'utf8');
+const source = read('../src/i18n/index.ts')
+  .replace("import en from './en.json';", 'const en = {};')
+  .replace("import sk from './sk.json';", 'const sk = {};');
+const { code } = transformSync(source, { format: 'esm', loader: 'ts' });
+const moduleUrl = 'data:text/javascript;base64,' + Buffer.from(code).toString('base64');
+const { CONTACT_EMAIL, CONTACT_HREF, getLocalizedPaths } = await import(moduleUrl);
 
-test('service CTAs route the consultation to booking and scoped work to the contact form', () => {
-  assert.match(index, /id="consulting"[\s\S]*?ctaHref=\{bookingHref\}[\s\S]*?ctaTarget="calendar"/);
-  assert.match(index, /ctaHref=\{`\$\{paths\.contact\}\?service=implementation&focus=contact-form`\}/);
-  assert.match(index, /ctaHref=\{`\$\{paths\.contact\}\?service=training&focus=contact-form`\}/);
-  assert.doesNotMatch(index, /#contact-form`/);
+test('contact invitations use one direct email destination in both languages', () => {
+  assert.equal(CONTACT_EMAIL, 'matej@matejlukasik.com');
+  assert.equal(CONTACT_HREF, 'mailto:matej@matejlukasik.com');
+  for (const lang of ['en', 'sk']) {
+    assert.equal('contact' in getLocalizedPaths(lang), false);
+  }
+
+  for (const path of [
+    '../src/components/Nav.astro',
+    '../src/components/Footer.astro',
+    '../src/pages/index.astro',
+    '../src/pages/projects.astro',
+    '../src/pages/projekty.astro',
+  ]) {
+    const page = read(path);
+    assert.match(page, /href=\{CONTACT_HREF\}/, path + ' must offer direct email');
+    assert.doesNotMatch(page, /paths\.contact|focus=contact-form|focus=calendar|bookingHref/);
+  }
 });
 
-test('targeted contact form flashes and focuses the name field', () => {
-  assert.match(contactForm, /id="contact-form"/);
-  assert.match(contactForm, /id="name"/);
-  assert.match(contactForm, /<script is:inline>/);
-  assert.match(contactForm, /window\.location\.hash === '#contact-form'/);
-  assert.match(contactForm, /history\.replaceState\(null, '', `\$\{window\.location\.pathname\}\$\{window\.location\.search\}`\)/);
-  assert.match(contactForm, /get\('focus'\) === 'contact-form'/);
-  assert.match(contactForm, /history\.scrollRestoration = 'manual'/);
-  assert.match(contactForm, /getElementById\('contact-form-heading'\)/);
-  assert.match(contactForm, /scrollIntoView\(\{ block: 'start' \}\)/);
-  assert.doesNotMatch(contactForm, /window\.scrollTo\(0, 0\)/);
-  assert.match(contactForm, /setTimeout\(focusContactForm, 0\)/);
-  assert.match(contactForm, /window\.addEventListener\('booking-calendar-ready', queueContactFormFocus, \{ once: true \}\)/);
-  assert.match(contactForm, /window\.addEventListener\('hashchange'/);
-  assert.match(contactForm, /classList\.add\('contact-form-flash'\)/);
-  assert.match(contactForm, /\.focus\(\{ preventScroll: true \}\)/);
-  assert.match(styles, /@keyframes contactFormFlash/);
-  assert.match(styles, /\.contact-form-flash\s*\{\s*animation: contactFormFlash 2\.2s ease-out;/);
-  assert.match(contactPage, /<h2 id="contact-form-heading" class="scroll-mt-20 /);
-  assert.match(slovakContactPage, /<h2 id="contact-form-heading" class="scroll-mt-20 /);
-});
+test('retired form, email backend and focus effects are removed', () => {
+  for (const path of [
+    '../src/components/ContactForm.astro',
+    '../src/pages/api/contact.ts',
+    '../src/components/CalEmbed.astro',
+    '../src/components/FirstStepOffer.astro',
+  ]) {
+    assert.equal(existsSync(new URL(path, import.meta.url)), false, path + ' must be removed');
+  }
 
-test('calendar growth re-aligns the targeted contact form', () => {
-  assert.match(contactForm, /new ResizeObserver\(queueContactFormFocus\)/);
-  assert.match(contactForm, /calendarResizeObserver\.observe\(bookingCalendar\)/);
-});
-
-test('booking CTAs target the calendar booking form', () => {
-  assert.match(nav, /const bookingHref = `\$\{paths\.contact\}\?focus=calendar`;/);
-  assert.match(index, /const bookingHref = `\$\{paths\.contact\}\?focus=calendar`;/);
-  assert.equal(nav.match(/href=\{bookingHref\}/g)?.length, 2);
-  assert.equal(index.match(/href=\{bookingHref\}/g)?.length, 3);
-});
-
-test('targeted calendar booking form scrolls into view and flashes', () => {
-  assert.match(calEmbed, /id="booking-calendar"/);
-  assert.match(calEmbed, /id="booking-calendar" class="scroll-mt-20 /);
-  assert.match(calEmbed, /get\('focus'\) === 'calendar'/);
-  assert.match(calEmbed, /bookingCalendar\.scrollIntoView\(\{ block: 'start' \}\)/);
-  assert.match(calEmbed, /window\.dispatchEvent\(new Event\('booking-calendar-ready'\)\)/);
-  assert.match(calEmbed, /classList\.add\('booking-calendar-flash'\)/);
-  assert.match(styles, /@keyframes bookingCalendarFlash/);
-  assert.match(styles, /\.booking-calendar-flash\s*\{\s*animation: bookingCalendarFlash 2\.2s ease-out;/);
-});
-
-test('contact form does not ask for company details', () => {
-  assert.doesNotMatch(contactForm, /id="company"/);
-  assert.doesNotMatch(contactForm, /name="company"/);
-  assert.doesNotMatch(contactForm, /companyLabel/);
-  assert.doesNotMatch(contactForm, /companyPlaceholder/);
-  assert.doesNotMatch(contactApi, /formData\.get\('company'\)/);
-  assert.doesNotMatch(contactApi, /<strong>Company:<\/strong>/);
-});
-
-test('contact form defaults to the assessment sprint while preserving explicit service selection', () => {
-  assert.match(
-    contactForm,
-    /<option value="consulting" selected=\{!preselectedService \|\| preselectedService === 'consulting'\}>/,
-  );
-  assert.match(
-    contactForm,
-    /<option value="notSure" selected=\{preselectedService === 'notSure'\}>/,
-  );
+  assert.doesNotMatch(read('../src/styles/global.css'), /contact-form-flash|contactFormFlash|booking-calendar-flash/);
 });

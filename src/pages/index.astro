@@ -1,19 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import PainCard from '../components/PainCard.astro';
-import ServiceSection from '../components/ServiceSection.astro';
-import ProcessTimeline from '../components/ProcessTimeline.astro';
-import FirstStepOffer from '../components/FirstStepOffer.astro';
 import CTABand from '../components/CTABand.astro';
-import FAQ from '../components/FAQ.astro';
-import { t, getLocalizedPaths } from '../i18n';
+import { t, CONTACT_EMAIL, CONTACT_HREF } from '../i18n';
 import type { Lang } from '../i18n';
 
 const lang = (Astro.locals as any).lang as Lang || 'en';
 const strings = t(lang);
-const paths = getLocalizedPaths(lang);
-const bookingHref = `${paths.contact}?focus=calendar`;
 const socialLinks = [
   {
     label: 'LinkedIn',
@@ -54,91 +47,7 @@ const socialLinks = [
     size="large"
     imageSrc="/images/hero-matej-portrait.webp"
     imageAlt="Matej Lukášik"
-  >
-    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-      <a href="#services" class="btn-outline-white" data-analytics-event="services_intent_clicked" data-analytics-position="hero">
-        {strings.home.ctaSecondary}
-      </a>
-      <a href={bookingHref} class="btn-white" data-analytics-event="booking_intent_clicked" data-analytics-position="hero" data-analytics-target="calendar">
-        {strings.home.ctaPrimary}
-      </a>
-    </div>
-  </Hero>
-
-  <section class="section-padding bg-surface bg-dots relative" data-analytics-section="pain_points">
-    <div class="container mx-auto">
-      <h2 class="text-2xl md:text-4xl font-bold text-heading text-center mb-12 max-w-3xl mx-auto reveal">
-        {strings.home.painTitle}
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="reveal reveal-delay-1">
-          <PainCard imageSrc="/images/pain-clarity-consulting.webp" title={strings.home.pain1Title} description={strings.home.pain1Description} />
-        </div>
-        <div class="reveal reveal-delay-2">
-          <PainCard imageSrc="/images/pain-value-automation.webp" title={strings.home.pain2Title} description={strings.home.pain2Description} />
-        </div>
-        <div class="reveal reveal-delay-3">
-          <PainCard
-            imageSrc="/images/pain-security-agent.webp"
-            title={strings.home.pain3Title}
-            description={strings.home.pain3Description}
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="scroll-mt-[66px] py-8 md:py-10 bg-surface-alt relative" data-analytics-section="services">
-    <div class="container mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-10 reveal">
-        <span class="gradient-text-dark">{strings.home.servicesTitle}</span>
-      </h2>
-
-      <div class="space-y-6 md:space-y-8">
-        <ServiceSection
-          id="consulting"
-          imageSrc="/images/service-strategy.webp"
-          title={strings.services.consulting.title}
-          subtitle={strings.services.consulting.subtitle}
-          description={strings.services.consulting.description}
-          includes={strings.services.consulting.includes}
-          ctaText={strings.services.consulting.cta}
-          ctaHref={bookingHref}
-          ctaTarget="calendar"
-          nested
-        />
-
-        <ServiceSection
-          id="implementation"
-          imageSrc="/images/service-implementation.webp"
-          title={strings.services.implementation.title}
-          subtitle={strings.services.implementation.subtitle}
-          description={strings.services.implementation.description}
-          includes={strings.services.implementation.includes}
-          ctaText={strings.services.implementation.cta}
-          ctaHref={`${paths.contact}?service=implementation&focus=contact-form`}
-          reversed
-          nested
-        />
-
-        <ServiceSection
-          id="training"
-          imageSrc="/images/service-training.webp"
-          title={strings.services.training.title}
-          subtitle={strings.services.training.subtitle}
-          description={strings.services.training.description}
-          includes={strings.services.training.includes}
-          ctaText={strings.services.training.cta}
-          ctaHref={`${paths.contact}?service=training&focus=contact-form`}
-          nested
-        />
-      </div>
-    </div>
-  </section>
-
-  <ProcessTimeline title={strings.home.processTitle} steps={strings.home.processSteps} />
-
-  <FirstStepOffer offer={strings.home.firstStepOffer} href={bookingHref} />
+  />
 
   <section id="about" class="section-padding bg-surface" data-analytics-section="about">
     <div class="container mx-auto">
@@ -181,11 +90,9 @@ const socialLinks = [
     </div>
   </section>
 
-  <FAQ title={strings.contact.faqTitle} items={strings.contact.faq} />
-
   <CTABand title={strings.home.ctaBandTitle} description={strings.home.ctaBandDescription}>
-    <a href={bookingHref} class="btn-white" data-analytics-event="booking_intent_clicked" data-analytics-position="final_cta" data-analytics-target="calendar">
-      {strings.home.ctaPrimary}
+    <a href={CONTACT_HREF} class="btn-white" data-analytics-event="mailto_clicked" data-analytics-position="final_cta">
+      {CONTACT_EMAIL}
     </a>
   </CTABand>
 </Layout>

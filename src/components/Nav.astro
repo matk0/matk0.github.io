@@ -1,5 +1,5 @@
 ---
-import { t, getAlternateUrl, getAlternateLang, getLocalizedPaths } from '../i18n';
+import { t, getAlternateUrl, getAlternateLang, getLocalizedPaths, CONTACT_HREF } from '../i18n';
 import type { Lang } from '../i18n';
 
 interface Props {
@@ -13,23 +13,25 @@ const strings = t(lang);
 const altLang = getAlternateLang(lang);
 const altUrl = getAlternateUrl(lang, currentPath, currentUrl);
 const paths = getLocalizedPaths(lang);
-const bookingHref = `${paths.contact}?focus=calendar`;
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-xl saturate-150 border-b border-border/50 shadow-sm shadow-black/[0.03]">
   <div class="container mx-auto px-4 sm:px-6 h-16 flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:justify-normal">
     <a href="/" class="inline-flex items-center rounded-xl md:justify-self-start" aria-label="Matej Lukášik">
-      <img src="/logo.svg" alt="Matej Lukášik" width="40" height="40" class="block h-10 w-10" />
+      <img src="/images/matej-pixel-logo.png" alt="Matej Lukášik" width="40" height="40" class="block h-10 w-10 object-contain [image-rendering:pixelated]" />
     </a>
 
     <div class="hidden md:flex items-center gap-1 md:justify-self-center">
-      <a href="/#services" class="nav-pill">
-        {strings.nav.services}
-      </a>
       <a href="/#about" class="nav-pill">
         {strings.nav.about}
       </a>
-      <a href={paths.contact} class:list={["nav-pill", currentPath === paths.contact && "nav-pill-active"]}>
+      <a href={paths.cv} class:list={["nav-pill", currentPath === paths.cv && "nav-pill-active"]} aria-current={currentPath === paths.cv ? 'page' : undefined}>
+        CV
+      </a>
+      <a href={paths.projects} class:list={["nav-pill", currentPath === paths.projects && "nav-pill-active"]} aria-current={currentPath === paths.projects ? 'page' : undefined}>
+        {strings.nav.projects}
+      </a>
+      <a href={CONTACT_HREF} class="nav-pill" data-analytics-event="mailto_clicked" data-analytics-position="nav_desktop">
         {strings.nav.contact}
       </a>
     </div>
@@ -40,15 +42,6 @@ const bookingHref = `${paths.contact}?focus=calendar`;
         class="text-sm font-medium text-body hover:text-primary transition-colors px-2 py-1 rounded-lg hover:bg-primary-light"
       >
         {altLang.toUpperCase()}
-      </a>
-      <a
-        href={bookingHref}
-        class="hidden sm:inline-flex btn-primary !py-2 !px-4 !text-sm"
-        data-analytics-event="booking_intent_clicked"
-        data-analytics-position="nav_desktop"
-        data-analytics-target="calendar"
-      >
-        {strings.nav.bookCall}
       </a>
 
       <button
@@ -67,18 +60,10 @@ const bookingHref = `${paths.contact}?focus=calendar`;
 
   <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-surface" aria-hidden="true">
     <div class="container mx-auto px-4 py-4 flex flex-col gap-3">
-      <a href="/#services" class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.services}</a>
       <a href="/#about" class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.about}</a>
-      <a href={paths.contact} class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.contact}</a>
-      <a
-        href={bookingHref}
-        class="btn-primary !text-sm mt-2"
-        data-analytics-event="booking_intent_clicked"
-        data-analytics-position="nav_mobile"
-        data-analytics-target="calendar"
-      >
-        {strings.nav.bookCall}
-      </a>
+      <a href={paths.cv} class="text-sm font-medium text-body hover:text-primary py-2" aria-current={currentPath === paths.cv ? 'page' : undefined}>CV</a>
+      <a href={paths.projects} class="text-sm font-medium text-body hover:text-primary py-2" aria-current={currentPath === paths.projects ? 'page' : undefined}>{strings.nav.projects}</a>
+      <a href={CONTACT_HREF} class="text-sm font-medium text-body hover:text-primary py-2" data-analytics-event="mailto_clicked" data-analytics-position="nav_mobile">{strings.nav.contact}</a>
     </div>
   </div>
 </nav>

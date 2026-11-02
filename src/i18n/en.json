@@ -9,14 +9,12 @@
     "about": "About",
     "projects": "Projects",
     "contact": "Contact",
-    "bookCall": "Book a Free 30-Minute Consultation",
     "faq": "FAQ"
   },
   "home": {
-    "pageTitle": "Matej Lukášik — AI Systems & Software Engineering Consultant",
-    "heroTitle": "Replace time-consuming workflows and software that no longer fits.",
-    "heroDescription": "I’m an AI Systems & Software Engineering Consultant. I find and build the right mix of bespoke software systems, automations, and AI agents.",
-    "ctaPrimary": "Book a Free 30-Minute Consultation",
+    "pageTitle": "Matej Lukášik — Senior Product Engineer",
+    "heroTitle": "Senior Product Engineer",
+    "heroDescription": "I turn loosely defined problems into simple, intuitive and reliable software products. I present a unique and powerful blend of ten years of software engineering experience, exceptional product judgment, design sensibility and AI-assisted development (SW Factories FTW!).",
     "ctaSecondary": "See How I Can Help",
     "painTitle": "AI and/or new software only make sense when they solve a real business problem.",
     "pain1Title": "Work gets stuck between people and systems",
@@ -37,31 +35,20 @@
     "processSteps": [
       {
         "label": "01",
-        "title": "Free 30-Minute Consultation",
-        "description": "We discuss the business problem, the current workflow or software, and whether an Assessment Sprint is the right next step."
-      },
-      {
-        "label": "02",
         "title": "Workflow & Software Assessment Sprint",
         "description": "I map how work actually happens, including handoffs, exceptions, and workarounds, and recommend the highest-value change with a clear success metric."
       },
       {
-        "label": "03",
+        "label": "02",
         "title": "Implementation",
         "description": "I build and test the agreed software, automation, AI agent, or combination on real work."
       },
       {
-        "label": "04",
+        "label": "03",
         "title": "Adoption & Handoff",
         "description": "I help your team adopt the system, measure the result, and take ownership—with ongoing support available if useful."
       }
     ],
-    "firstStepOffer": {
-      "eyebrow": "A simple first step",
-      "title": "Start with a Free 30-Minute Consultation",
-      "description": "Tell me where work is slow, manual, or constrained by your current software. We’ll clarify the problem, determine whether I can help, and agree on the right next step. No commitment.",
-      "cta": "Book a Free Consultation"
-    },
     "atlasProofEyebrow": "Security Research",
     "atlasProofTitle": "AI agent security is not an abstract risk.",
     "atlasProofDescription": "I maintain a public atlas of agentic AI incidents that maps real failures to threat categories and prevention principles teams can use before deployment.",
@@ -70,39 +57,49 @@
     "trustTitle": "Practical value, not hype",
     "trustDescription": "I recommend the technology and rollout path that fit your business problem, team, budget, and security requirements.",
     "ctaBandTitle": "Let's start with the process that costs your business the most time.",
-    "ctaBandDescription": "Start with a free 30-minute consultation. We’ll clarify the problem, determine whether I can help, and agree on the right next step. No commitment."
+    "ctaBandDescription": "Email me about your project or question, and I’ll get back to you."
   },
   "projects": {
     "pageTitle": "Projects — Matej Lukášik",
-    "metaDescription": "Selected software systems, AI automations, and applied research by Matej Lukášik.",
+    "metaDescription": "Vozokany, post.work and Viki: software for farm operations, managed AI agents and specification-driven development by Matej Lukášik.",
     "heroTitle": "Projects",
-    "heroDescription": "Software systems, AI automations, and applied research built around real problems.",
+    "heroDescription": "Software built for real workflows, from farm operations to AI-assisted development.",
     "ownershipLabel": "What I’m building",
     "items": [
       {
+        "id": "vozokany",
+        "title": "Vozokany",
+        "eyebrow": "Farm operations",
+        "status": "In use",
+        "description": "A farm-ordering application that brings weekly offers, customer orders, packing and harvest planning into one system. Farmers manage quantities, ordering deadlines and customer consent, while customers order through a simple web interface.",
+        "ownership": "I designed and built the application, its Rust/TypeScript API contract, executable business specifications and release verification.",
+        "cta": "Explore Vozokany",
+        "analyticsDestination": "vozokany"
+      },
+      {
+        "id": "postwork",
         "title": "post.work",
-        "mark": "p.w",
-        "eyebrow": "Managed AI automation",
+        "eyebrow": "Managed AI agents",
         "status": "In development",
-        "description": "A managed service for recurring business work. post.work connects AI automations to the tools a business already uses, adapts them to its processes, and keeps human decisions or approvals in the loop where needed.",
-        "ownership": "I’m building the product, delivery model, integrations, evaluation, and operating infrastructure.",
+        "description": "A workspace for running AI agents against real business tasks. post.work integrates managed Hermes runtimes with business tools, persistent context and human review, while the application controls access and records execution.",
+        "ownership": "I’m building the workspace, agent integrations, runtime lifecycle and recovery mechanisms around Hermes.",
         "cta": "Visit post.work",
         "analyticsDestination": "postwork"
       },
       {
-        "title": "Agent Threat Atlas",
-        "mark": "ATA",
-        "eyebrow": "AI security research",
-        "status": "Public research",
-        "description": "A public atlas of real AI agent incidents, mapped to threat categories and practical prevention principles.",
-        "ownership": "I research incidents, maintain the taxonomy, and translate failures into guidance teams can use before deployment.",
-        "cta": "Explore the atlas",
-        "analyticsDestination": "agent_threat_atlas"
+        "id": "viki",
+        "title": "Viki",
+        "eyebrow": "Specifications and agent context",
+        "status": "Working system",
+        "description": "A specification and knowledge workspace for software teams. Viki links concepts, features and Gherkin scenarios with version history, human review and source citations. Scoped AI assistance helps people navigate and work with that context.",
+        "ownership": "I built the Go/React application, scoped agent tools and the import pipeline that validates repository specifications and verification evidence.",
+        "cta": "Explore Viki",
+        "analyticsDestination": "viki"
       }
     ],
     "ctaTitle": "Have a similar problem to solve?",
     "ctaDescription": "Let’s clarify the workflow, system, or business problem and decide what is worth building.",
-    "cta": "Book a Free Consultation"
+    "cta": "Email me"
   },
   "services": {
     "heroTitle": "How I Help",
@@ -111,27 +108,42 @@
       "title": "Workflow & Software Assessment Sprint",
       "subtitle": "Find the highest-value changes before you invest in technology.",
       "description": "I map how work actually happens—not just how it is documented—including handoffs, exceptions, workarounds, and the systems involved. You receive a prioritized plan showing what to streamline, automate, rebuild, or support with AI.",
-      "includes": ["Real workflows, systems, handoffs, and exceptions mapped", "Time losses, bottlenecks, and workarounds quantified", "Opportunities ranked by impact, effort, and risk", "Recommended first implementation and success metric"],
+      "includes": [
+        "Real workflows, systems, handoffs, and exceptions mapped",
+        "Time losses, bottlenecks, and workarounds quantified",
+        "Opportunities ranked by impact, effort, and risk",
+        "Recommended first implementation and success metric"
+      ],
       "cta": "Discuss an Assessment Sprint"
     },
     "implementation": {
       "title": "Bespoke Software, Automation & AI Agents",
       "subtitle": "Build the right system for one important business problem.",
       "description": "I design and build the solution around your real workflows and existing systems. It may be bespoke software, an automation, an AI agent, or a combination—without forcing AI where simpler engineering works better.",
-      "includes": ["A solution designed around one defined problem", "Integration with your existing tools and data", "Testing on real work, including error and failure handling", "Outcome measurement, documentation, and safe handoff"],
+      "includes": [
+        "A solution designed around one defined problem",
+        "Integration with your existing tools and data",
+        "Testing on real work, including error and failure handling",
+        "Outcome measurement, documentation, and safe handoff"
+      ],
       "cta": "Discuss an Implementation"
     },
     "training": {
       "title": "Adoption, Handoff & Improvement",
       "subtitle": "Make the new system part of everyday work.",
       "description": "A system creates value only when people use it reliably. I help your team adopt the solution, establish operating rules, measure the outcome, and improve it based on real usage.",
-      "includes": ["Team training using real workflows", "Operating, review, and escalation rules", "Results tracked against the agreed success metric", "Safe handoff or ongoing improvement and support"],
+      "includes": [
+        "Team training using real workflows",
+        "Operating, review, and escalation rules",
+        "Results tracked against the agreed success metric",
+        "Safe handoff or ongoing improvement and support"
+      ],
       "cta": "Discuss Adoption & Support"
     },
     "notSure": {
       "title": "Not sure where to start?",
-      "description": "Start with a free 30-minute consultation. We’ll clarify the problem, determine whether I can help, and agree on the right next step. No commitment.",
-      "cta": "Book a Free Consultation"
+      "description": "Email me about your project or question, and I’ll get back to you.",
+      "cta": "Email me"
     }
   },
   "about": {
@@ -150,41 +162,17 @@
     "techTitle": "Technology",
     "techDescription": "The right technical solution depends on the workflow. Sometimes a lightweight automation is enough; other times it takes a RAG system or a custom AI agent connected to existing tools. What they share are clear rules, controlled access, measurable results, and a team that knows how to use the solution.",
     "ctaTitle": "Let's talk about the workflow or software problem that matters most.",
-    "ctaPrimary": "Book a Free Consultation",
-    "ctaSecondary": "Send a Message"
+    "ctaPrimary": "Email me",
+    "ctaSecondary": "Email me"
   },
   "contact": {
-    "heroTitle": "Get in Touch",
-    "heroDescription": "Have a defined project or want to find the right place to start? Book a free consultation or send me a message.",
-    "formTitle": "Send me a message",
-    "nameLabel": "Name",
-    "namePlaceholder": "Your name",
-    "emailLabel": "Email",
-    "emailPlaceholder": "you@company.com",
-    "serviceLabel": "What are you interested in?",
-    "serviceOptions": {
-      "consulting": "Workflow & Software Assessment Sprint",
-      "implementation": "Bespoke Software, Automation & AI Agents",
-      "training": "Adoption, Handoff & Improvement",
-      "notSure": "Not sure yet"
-    },
-    "messageLabel": "Message",
-    "messagePlaceholder": "Tell me about your project or question...",
-    "submit": "Send Message",
-    "success": "Message sent! I'll get back to you within 24 hours.",
-    "error": "Something went wrong. Please try again or email me directly at matej@matejlukasik.com.",
-    "privacyNotice": "I use these details only to respond to your inquiry.",
-    "bookingPrivacyNotice": "When you open the Contact page, Cal.com receives the technical data needed to display and protect the booking calendar. If you make a booking, it also processes the details you enter.",
-    "privacyLink": "Privacy details",
-    "bookTitle": "Free 30-Minute Consultation",
-    "bookDescription": "Tell me where work is slow, manual, or constrained by your current software. We’ll clarify the problem, determine whether I can help, and agree on the right next step. No commitment.",
     "email": "matej@matejlukasik.com",
     "location": "Slovakia",
     "faqTitle": "Frequently Asked Questions",
     "faq": [
       {
         "question": "We don’t know whether we need new software, automation, or AI. Is it worth getting in touch?",
-        "answer": "Yes. In the free consultation, we’ll clarify the workflow or software problem, its business impact, and whether an Assessment Sprint is the right next step."
+        "answer": "Yes. Send me a message about the workflow or software problem and its business impact. We can then determine whether an Assessment Sprint is the right next step."
       },
       {
         "question": "Do we need to replace our current software?",
@@ -221,7 +209,7 @@
   "footer": {
     "description": "Replace time-consuming workflows and software that no longer fits.",
     "navigation": "Navigation",
-    "getInTouch": "Get in Touch",
+    "getInTouch": "Email",
     "copyright": "Matej Lukášik. All rights reserved.",
     "followMe": "Social Media",
     "research": "Projects",
@@ -243,7 +231,7 @@
   },
   "cookieNotice": {
     "title": "Analytics cookies",
-    "description": "I use optional analytics cookies to understand aggregate page views and conversion events. No form content or booking identifiers are sent.",
+    "description": "I use optional analytics cookies to understand aggregate page views and conversion events. Email content is not sent to analytics.",
     "privacyLink": "Privacy details",
     "accept": "Allow analytics",
     "reject": "Reject analytics",

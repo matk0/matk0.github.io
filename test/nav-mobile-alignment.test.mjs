@@ -4,9 +4,9 @@ import { test } from 'node:test';
 
 const nav = readFileSync(new URL('../src/components/Nav.astro', import.meta.url), 'utf8');
 
-test('top navigation uses the mlx logotype asset', () => {
+test('top navigation uses the approved pixel-art portrait logo', () => {
   assert.match(nav, /href="\/"/);
-  assert.match(nav, /src="\/logo\.svg"/);
+  assert.match(nav, /src="\/images\/matej-pixel-logo\.png"/);
   assert.match(nav, /alt="Matej Lukášik"/);
 });
 

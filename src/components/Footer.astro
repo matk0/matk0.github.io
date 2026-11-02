@@ -1,5 +1,5 @@
 ---
-import { t, getLocalizedPaths, ATLAS_URL } from '../i18n';
+import { t, getLocalizedPaths, ATLAS_URL, CONTACT_EMAIL, CONTACT_HREF } from '../i18n';
 import type { Lang } from '../i18n';
 
 interface Props {
@@ -17,7 +17,7 @@ const year = new Date().getFullYear();
     <div class="grid grid-cols-1 md:grid-cols-[1.25fr_0.75fr_0.9fr_0.9fr_0.75fr] gap-10 lg:gap-12 mb-12">
       <div>
         <a href="/" class="inline-flex items-center" aria-label="Matej Lukášik">
-          <img src="/logo.svg" alt="Matej Lukášik" width="48" height="48" class="block h-12 w-12" />
+          <img src="/images/matej-pixel-logo.png" alt="Matej Lukášik" width="48" height="48" class="block h-12 w-12 object-contain [image-rendering:pixelated]" />
         </a>
         <p class="mt-4 text-sm leading-relaxed max-w-xs">{strings.footer.description}</p>
       </div>
@@ -25,10 +25,9 @@ const year = new Date().getFullYear();
       <div>
         <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{strings.footer.navigation}</h4>
         <ul class="space-y-2">
-          <li><a href="/#services" class="text-sm hover:text-white transition-colors">{strings.nav.services}</a></li>
           <li><a href="/#about" class="text-sm hover:text-white transition-colors">{strings.nav.about}</a></li>
           <li><a href={paths.projects} class="text-sm hover:text-white transition-colors">{strings.nav.projects}</a></li>
-          <li><a href={paths.contact} class="text-sm hover:text-white transition-colors">{strings.nav.contact}</a></li>
+          <li><a href={CONTACT_HREF} class="text-sm hover:text-white transition-colors" data-analytics-event="mailto_clicked" data-analytics-position="footer_nav">{strings.nav.contact}</a></li>
         </ul>
       </div>
 
@@ -37,12 +36,12 @@ const year = new Date().getFullYear();
         <ul class="space-y-3">
           <li>
             <a
-              href={`mailto:${strings.contact.email}`}
+              href={CONTACT_HREF}
               class="text-sm hover:text-white transition-colors"
               data-analytics-event="mailto_clicked"
               data-analytics-position="footer"
             >
-              {strings.contact.email}
+              {CONTACT_EMAIL}
             </a>
           </li>
         </ul>
@@ -100,7 +99,7 @@ const year = new Date().getFullYear();
           </p>
           <p>
             {strings.footer.emailLabel}:{' '}
-            <a href={`mailto:${strings.contact.email}`} class="hover:text-white transition-colors">{strings.contact.email}</a>
+            <a href={CONTACT_HREF} class="hover:text-white transition-colors" data-analytics-event="mailto_clicked" data-analytics-position="business_details">{CONTACT_EMAIL}</a>
           </p>
         </address>
       </div>
