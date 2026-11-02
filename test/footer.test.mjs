@@ -7,7 +7,6 @@ const i18n = readFileSync(new URL('../src/i18n/index.ts', import.meta.url), 'utf
 const layout = readFileSync(new URL('../src/layouts/Layout.astro', import.meta.url), 'utf8');
 const structuredData = readFileSync(new URL('../src/structured-data.ts', import.meta.url), 'utf8');
 const en = JSON.parse(readFileSync(new URL('../src/i18n/en.json', import.meta.url), 'utf8'));
-const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
 
 test('footer uses the same logotype as the navigation', () => {
   assert.match(footer, /src="\/images\/matej-pixel-logo\.png"/);
@@ -17,19 +16,17 @@ test('footer uses the same logotype as the navigation', () => {
 
 test('footer has privacy route without location or booking CTA', () => {
   assert.match(footer, /strings\.footer\.privacy/);
-  assert.match(i18n, /privacy: lang === 'sk' \? '\/sukromie' : '\/privacy'/);
+  assert.match(i18n, /privacy: '\/privacy'/);
+
   assert.equal(existsSync(new URL('../src/pages/privacy.astro', import.meta.url)), true);
-  assert.equal(existsSync(new URL('../src/pages/sukromie.astro', import.meta.url)), true);
+
   assert.doesNotMatch(footer, /strings\.contact\.location/);
   assert.doesNotMatch(footer, /strings\.nav\.bookCall/);
   assert.doesNotMatch(footer, /focus=calendar/);
 });
 
 test('footer repeats the canonical homepage problem statement', () => {
-  assert.equal(
-    sk.footer.description,
-    'Nahraďte časovo náročné procesy a softvér, ktorý už Vašej firme nevyhovuje.',
-  );
+
   assert.equal(
     en.footer.description,
     'Replace time-consuming workflows and software that no longer fits.',
@@ -37,7 +34,7 @@ test('footer repeats the canonical homepage problem statement', () => {
 });
 
 test('footer shows selected professional and publishing profiles', () => {
-  assert.equal(sk.footer.followMe, 'Sociálne médiá');
+
   assert.equal(en.footer.followMe, 'Social Media');
   assert.match(footer, /linkedin\.com\/in\/matej-lukasik/);
   assert.match(footer, /x\.com\/matejlukasik/);

@@ -34,26 +34,21 @@ test('production requests canonicalize to the HTTPS apex and receive HSTS', asyn
   assert.equal(secured.headers.get('strict-transport-security'), 'max-age=31536000');
 });
 
-test('footer publishes the registered provider and supervisory details in both languages', () => {
+test('footer publishes the registered provider and supervisory details', () => {
   const footer = read('../src/components/Footer.astro');
   const en = JSON.parse(read('../src/i18n/en.json'));
-  const sk = JSON.parse(read('../src/i18n/sk.json'));
 
   assert.match(footer, /strings\.footer\.businessDetails/);
   assert.match(footer, /tel:\+421944302185/);
   assert.match(footer, /strings\.footer\.tradeSupervision/);
-  assert.equal(sk.footer.businessName, 'Matej Lukášik');
-  assert.equal(sk.footer.businessId, '50113801');
-  assert.equal(sk.footer.businessAddress, 'Ulica Hlboká 5943/14, 917 01 Trnava, Slovensko');
-  assert.equal(sk.footer.tradeRegister, 'Živnostenský register SR č. 250-37148');
+  assert.equal(en.footer.businessName, 'Matej Lukášik');
   assert.equal(en.footer.businessId, '50113801');
 });
 
 test('privacy notices publish concrete controller, retention, cookie, transfer, and complaint information', () => {
   const privacy = read('../src/pages/privacy.astro');
-  const sukromie = read('../src/pages/sukromie.astro');
 
-  for (const source of [privacy, sukromie]) {
+  for (const source of [privacy]) {
     assert.match(source, /50113801/);
     assert.match(source, /Ulica Hlboká 5943\/14/);
     assert.match(source, /\+421 944 302 185/);

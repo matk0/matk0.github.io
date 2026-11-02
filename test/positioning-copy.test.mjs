@@ -3,13 +3,13 @@ import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 
 const en = JSON.parse(readFileSync(new URL('../src/i18n/en.json', import.meta.url), 'utf8'));
-const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
+
 const llms = readFileSync(new URL('../src/pages/llms.txt.ts', import.meta.url), 'utf8');
 const llmsFull = readFileSync(new URL('../src/pages/llms-full.txt.ts', import.meta.url), 'utf8');
 const structuredData = readFileSync(new URL('../src/structured-data.ts', import.meta.url), 'utf8');
 
 test('public positioning remains neutral about company size', () => {
-  const publicPositioning = [JSON.stringify(en), JSON.stringify(sk), llms, structuredData].join('\n');
+  const publicPositioning = [JSON.stringify(en), llms, structuredData].join('\n');
 
   assert.doesNotMatch(publicPositioning, /\bSMBs?\b|small and medium-sized businesses/i);
   assert.doesNotMatch(
@@ -50,15 +50,6 @@ test('english homepage positions Matej as an AI systems and software consultant'
   );
 });
 
-test('slovak homepage uses the approved AI systems and software engineering title', () => {
-  assert.equal(sk.home.pageTitle, 'Matej Lukášik — Senior produktový inžinier');
-  assert.equal(sk.about.bioTitle, 'Konzultant pre AI systémy a softvérové inžinierstvo');
-  assert.equal(
-    sk.home.ctaBandDescription,
-    'Napíšte mi email o Vašom projekte alebo otázke a ozvem sa Vám.',
-  );
-});
-
 test('service copy presents the assessment, implementation, and adoption lifecycle', () => {
   assert.deepEqual(
     [en.home.consultingTitle, en.services.consulting.title],
@@ -95,42 +86,15 @@ test('service copy presents the assessment, implementation, and adoption lifecyc
   ]);
   assert.equal(en.services.training.subtitle, 'Make the new system part of everyday work.');
   assert.ok(en.services.training.description.includes('adopt the solution'));
-  assert.equal(sk.home.consultingTitle, 'Assessment Sprint pre procesy a softvér');
-  assert.equal(sk.home.implementationTitle, 'Softvér na mieru, automatizácie a AI agenti');
-  assert.equal(sk.home.trainingTitle, 'Zavedenie do praxe, odovzdanie a zlepšovanie');
-  assert.equal(sk.services.training.title, 'Zavedenie do praxe, odovzdanie a zlepšovanie');
-  assert.equal(sk.services.consulting.cta, 'Prebrať Assessment Sprint');
-  assert.equal(
-    sk.services.consulting.description,
-    'Zmapujem prácu tak, ako vo Vašej firme skutočne prebieha — vrátane používaných systémov, odovzdávania práce, výnimiek a obchádzok. Dostanete plán zoradený podľa priority, ktorý ukáže, čo zjednodušiť, automatizovať, nanovo postaviť alebo podporiť pomocou AI.',
-  );
-  assert.deepEqual(sk.services.consulting.includes, [
-    'Zmapovanie reálnych procesov, systémov, odovzdávania práce a výnimiek',
-    'Vyčíslenie časových strát, úzkych miest a obchádzok',
-    'Príležitosti zoradené podľa prínosu, náročnosti a rizika',
-    'Odporúčanie prvej implementácie a metriky úspechu',
-  ]);
-  assert.equal(sk.services.implementation.cta, 'Prebrať implementáciu');
-  assert.equal(sk.services.training.cta, 'Prebrať zavedenie a podporu');
+
   assert.equal(en.services.consulting.cta, 'Discuss an Assessment Sprint');
   assert.equal(en.services.implementation.cta, 'Discuss an Implementation');
   assert.equal(en.services.training.cta, 'Discuss Adoption & Support');
-  assert.ok(sk.services.training.description.includes('osvojiť si nový systém'));
+
 });
 
 test('pain copy names recognizable recurring work and measurable outcomes', () => {
-  assert.equal(sk.home.painTitle, 'AI, nový softvér alebo ich kombinácia majú zmysel len vtedy, keď riešia skutočný problém vo Vašom podnikaní.');
-  assert.equal(sk.home.pain1Title, 'Práca sa zasekáva medzi ľuďmi a systémami');
-  assert.equal(
-    sk.home.pain1Description,
-    'Schvaľovanie, údaje a rozhodnutia sa medzi ľuďmi a systémami presúvajú cez e-maily, tabuľky a opakované urgencie. Ako firma rastie, práca sa spomaľuje, rastie riziko chýb a kľúčoví ľudia sa stávajú úzkym miestom.',
-  );
-  assert.equal(sk.home.pain2Title, 'Softvér už nezodpovedá tomu, ako Vaša firma funguje');
-  assert.equal(
-    sk.home.pain2Description,
-    'Chýbajúce funkcie a nepružné systémy vedú k pomocným tabuľkám, duplicitnému zadávaniu údajov a ručným kontrolám. Softvér sa má prispôsobiť firme, nie firma softvéru.',
-  );
-  assert.equal(sk.home.pain3Title, 'AI nesmie byť ďalší experiment bez výsledku');
+
   assert.equal(en.home.painTitle, 'AI and/or new software only make sense when they solve a real business problem.');
   assert.equal(en.home.pain1Title, 'Work gets stuck between people and systems');
   assert.equal(
@@ -146,7 +110,7 @@ test('pain copy names recognizable recurring work and measurable outcomes', () =
 });
 
 test('contact invitations use direct email without form or booking copy', () => {
-  for (const copy of [en, sk]) {
+  for (const copy of [en]) {
     assert.equal('bookCall' in copy.nav, false);
     assert.equal('ctaPrimary' in copy.home, false);
     assert.equal('firstStepOffer' in copy.home, false);
@@ -158,11 +122,11 @@ test('contact invitations use direct email without form or booking copy', () => 
     assert.equal(copy.contact.email, 'matej@matejlukasik.com');
   }
   assert.equal(en.services.notSure.cta, 'Email me');
-  assert.equal(sk.services.notSure.cta, 'Napíšte mi');
+
   assert.equal(en.projects.cta, 'Email me');
-  assert.equal(sk.projects.cta, 'Napíšte mi');
+
   assert.equal('heroDescription' in en.contact, false);
-  assert.equal('heroDescription' in sk.contact, false);
+
 });
 
 test('process copy follows assessment, implementation, and handoff', () => {
@@ -185,29 +149,10 @@ test('process copy follows assessment, implementation, and handoff', () => {
     ],
   );
 
-  assert.equal(sk.home.processTitle, 'Ako prebieha spolupráca?');
-  assert.equal(sk.home.ctaBandTitle, 'Začnime procesom, ktorý Vašu firmu stojí najviac času.');
-  assert.deepEqual(
-    sk.home.processSteps.map(({ title, description }) => ({ title, description })),
-    [
-      {
-        title: 'Assessment Sprint pre procesy a softvér',
-        description: 'Zmapujem, ako práca skutočne prebieha, vrátane odovzdávania práce, výnimiek a obchádzok, a odporučím zmenu s najväčším prínosom spolu s jasnou metrikou úspechu.',
-      },
-      {
-        title: 'Implementácia',
-        description: 'Postavím a otestujem dohodnutý softvér, automatizáciu, AI agenta alebo ich kombináciu na reálnych úlohách.',
-      },
-      {
-        title: 'Zavedenie a odovzdanie',
-        description: 'Pomôžem Vášmu tímu zaviesť riešenie do každodennej práce, zmerať výsledok a prevziať ho do vlastných rúk. Ak to dáva zmysel, podpora môže pokračovať.',
-      },
-    ],
-  );
 });
 
 test('service pages avoid premature architecture promises', () => {
-  const combinedCopy = `${JSON.stringify({ en, sk })}\n${llms}`;
+  const combinedCopy = `${JSON.stringify({ en })}\n${llms}`;
   const bannedPhrases = [
     'One API key',
     'CEO orchestrator',
@@ -224,16 +169,15 @@ test('service pages avoid premature architecture promises', () => {
 
 test('machine-readable copy preserves principles without removed sales sections', () => {
   assert.match(llms, /const EN = `# Matej Lukášik — AI Systems & Software Engineering Consultant/);
-  assert.match(llms, /const SK = `# Matej Lukášik — Konzultant pre AI systémy a softvérové inžinierstvo/);
   assert.match(llms, /Improve or connect existing systems before recommending replacement/);
-  assert.match(llms, /Zlepšiť alebo prepojiť existujúce systémy skôr, než sa odporučí ich výmena/);
+
   assert.doesNotMatch(llms, /const EN = `# Matej Lukášik — AI Agent Consulting/);
   assert.doesNotMatch(llms, /AI agent konzulting|Samostatny AI agent konzultant/);
   assert.doesNotMatch(llms, /1–2 weeks|1–2 tyzdne|free.*consultation|bezplatn.*konzultáci/iu);
   assert.doesNotMatch(llms, /## (?:Services|Služby|Process|Proces)\n|FAQ/);
   assert.match(llms, /\[Email Matej\]\(\$\{CONTACT_HREF\}\)/);
-  assert.match(llms, /\[Napísať email\]\(\$\{CONTACT_HREF\}\)/);
   assert.doesNotMatch(llms, /https:\/\/matejlukasik\.(?:com|sk)\/(?:contact|kontakt)/);
+
 });
 
 test('full machine-readable copy mirrors only sections rendered on the current site', () => {

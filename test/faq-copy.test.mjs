@@ -3,33 +3,8 @@ import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 
 const en = JSON.parse(readFileSync(new URL('../src/i18n/en.json', import.meta.url), 'utf8'));
-const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
 
-test('Slovak FAQ addresses the full client decision path', () => {
-  assert.deepEqual(
-    sk.contact.faq.map((item) => item.question),
-    [
-      'Nevieme, či potrebujeme nový softvér, automatizáciu alebo AI. Má zmysel sa ozvať?',
-      'Budeme musieť nahradiť náš súčasný softvér?',
-      'Ako dlho trvá implementácia?',
-      'Ako zistíme, či riešenie skutočne prináša hodnotu?',
-      'Ako riešite bezpečnosť dát?',
-      'Potrebujeme vlastný technický tím?',
-      'Aké technológie používate?',
-      'Čo sa stane po odovzdaní riešenia?',
-    ],
-  );
-
-  assert.match(sk.contact.faq[0].answer, /Assessment Sprint/);
-  assert.match(sk.contact.faq[1].answer, /zlepšiť alebo prepojiť/);
-  assert.match(sk.contact.faq[1].answer, /Výmenu softvéru/);
-  assert.match(sk.contact.faq[2].answer, /realistický plán implementácie/);
-  assert.match(sk.contact.faq[3].answer, /ušetrený čas/);
-  assert.match(sk.contact.faq[4].answer, /oprávnenia/);
-  assert.match(sk.contact.faq[7].answer, /Váš tím/);
-});
-
-test('English FAQ mirrors the Slovak FAQ scope', () => {
+test('English FAQ addresses the client decision path', () => {
   assert.deepEqual(
     en.contact.faq.map((item) => item.question),
     [
@@ -48,21 +23,17 @@ test('English FAQ mirrors the Slovak FAQ scope', () => {
   assert.match(en.contact.faq[1].answer, /replacing software/);
 });
 
-test('Tools FAQ explains selection in plain business language in both languages', () => {
-  const slovakToolsFaq = sk.contact.faq.find((item) => item.question === 'Aké technológie používate?');
+test('Tools FAQ explains selection in plain business language', () => {
+
   const englishToolsFaq = en.contact.faq.find((item) => item.question === 'What technology do you use?');
 
-  assert.ok(slovakToolsFaq);
   assert.ok(englishToolsFaq);
 
-  assert.match(slovakToolsFaq.answer, /pochopení problému/);
-  assert.match(slovakToolsFaq.answer, /softvér na mieru/);
-  assert.match(slovakToolsFaq.answer, /prevádzkové náklady/);
   assert.match(englishToolsFaq.answer, /understanding the problem/);
   assert.match(englishToolsFaq.answer, /bespoke software/);
   assert.match(englishToolsFaq.answer, /operating cost/);
 
-  for (const answer of [slovakToolsFaq.answer, englishToolsFaq.answer]) {
+  for (const answer of [englishToolsFaq.answer]) {
     assert.doesNotMatch(answer, /workflow|frontier|stack|self-hosting|LangChain|CrewAI/i);
   }
 });

@@ -37,16 +37,12 @@ test('Cloudflare runtime vars preserve the public GA measurement ID for deploys'
   assert.equal(wrangler.vars.PUBLIC_GA_MEASUREMENT_ID, 'G-25EZ859D79');
 });
 
-test('layout exposes both Google site verification tokens from Cloudflare runtime vars', () => {
+test('layout exposes the English Google site verification token from Cloudflare runtime vars', () => {
   assert.match(layout, /PUBLIC_GOOGLE_SITE_VERIFICATION/);
   assert.match(layout, /cloudflareEnv\.PUBLIC_GOOGLE_SITE_VERIFICATION/);
   assert.match(layout, /<meta name="google-site-verification" content=\{googleSiteVerification\} \/>/);
   assert.equal(wrangler.vars.PUBLIC_GOOGLE_SITE_VERIFICATION, 'dLw3bqFci_Kn9iQRfvRBo28i3MJJMv1z-vgNBoA2eN8');
-  assert.match(layout, /PUBLIC_GOOGLE_SITE_VERIFICATION_SK/);
-  assert.match(layout, /cloudflareEnv\.PUBLIC_GOOGLE_SITE_VERIFICATION_SK/);
-  assert.match(layout, /lang === 'sk' && googleSiteVerificationSk/);
-  assert.match(layout, /<meta name="google-site-verification" content=\{googleSiteVerificationSk\} \/>/);
-  assert.equal(wrangler.vars.PUBLIC_GOOGLE_SITE_VERIFICATION_SK, 'JFrmiyTfscF0PhSKuFTaj4OMwWzJDF9Ww8MgXm0jZ20');
+  assert.equal(wrangler.vars.PUBLIC_GOOGLE_SITE_VERIFICATION_SK, undefined);
 });
 
 test('analytics helper tracks governed events with sanitized properties', () => {

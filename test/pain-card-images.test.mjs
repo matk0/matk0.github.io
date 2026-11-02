@@ -1,21 +1,12 @@
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 
 const index = readFileSync(new URL('../src/pages/index.astro', import.meta.url), 'utf8');
 const painCard = readFileSync(new URL('../src/components/PainCard.astro', import.meta.url), 'utf8');
 
-test('homepage pain cards use generated illustrations', () => {
-  const imagePaths = [
-    '/images/pain-clarity-consulting.webp',
-    '/images/pain-value-automation.webp',
-    '/images/pain-security-agent.webp',
-  ];
-
-  for (const imagePath of imagePaths) {
-    assert.match(index, new RegExp(`imageSrc="${imagePath}"`));
-    assert.ok(existsSync(new URL(`../public${imagePath}`, import.meta.url)), `${imagePath} should exist`);
-  }
+test('the removed pain card section is not rendered on the homepage', () => {
+  assert.doesNotMatch(index, /<PainCard|pain-clarity-consulting|pain-value-automation|pain-security-agent/);
 });
 
 test('pain card keeps image rendering and emoji fallback', () => {

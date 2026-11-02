@@ -6,34 +6,30 @@ import { buildSync } from 'esbuild';
 const root = new URL('../', import.meta.url);
 const read = (path) => readFileSync(new URL(path, root), 'utf8');
 const en = JSON.parse(read('src/i18n/en.json'));
-const sk = JSON.parse(read('src/i18n/sk.json'));
 
 test('Projects appears in both desktop and mobile navigation', () => {
   const nav = read('src/components/Nav.astro');
 
   assert.equal(en.nav.projects, 'Projects');
-  assert.equal(sk.nav.projects, 'Projekty');
   assert.doesNotMatch(nav, /strings\.nav\.faq/);
   assert.equal(nav.match(/strings\.nav\.projects/g)?.length, 2);
   assert.equal(nav.match(/href=\{paths\.projects\}/g)?.length, 2);
 });
 
-test('English and Slovak project routes show Vozokany, post.work and Viki in the same order', () => {
+test('The English project route show Vozokany, post.work and Viki in the same order', () => {
   assert.ok(existsSync(new URL('src/pages/projects.astro', root)));
   assert.ok(existsSync(new URL('src/pages/projekty.astro', root)));
 
   const englishPage = read('src/pages/projects.astro');
-  const slovakPage = read('src/pages/projekty.astro');
 
-  for (const source of [englishPage, slovakPage]) {
+  for (const source of [englishPage]) {
     assert.match(source, /<ProjectShowcase/);
     assert.match(source, /projects=\{strings\.projects\.items\}/);
     assert.doesNotMatch(source, /<ProjectCard/);
   }
 
   assert.match(englishPage, /currentPath="\/projects"/);
-  assert.match(slovakPage, /currentPath="\/projekty"/);
-  for (const copy of [en, sk]) {
+  for (const copy of [en]) {
     assert.deepEqual(copy.projects.items.map((project) => project.id), ['vozokany', 'postwork', 'viki']);
     assert.deepEqual(copy.projects.items.map((project) => project.title), ['Vozokany', 'post.work', 'Viki']);
     for (const project of copy.projects.items) {
@@ -48,15 +44,13 @@ test('project routes participate in localization, discovery, and the footer', ()
   const footer = read('src/components/Footer.astro');
   const llms = read('src/pages/llms.txt.ts');
 
-  assert.match(i18n, /'\/projects': \{ en: '\/projects', sk: '\/projekty' \}/);
-  assert.match(i18n, /projects: lang === 'sk' \? '\/projekty' : '\/projects'/);
-  assert.match(sitemap, /\{ en: '\/projects', sk: '\/projekty' \}/);
+  assert.match(i18n, /projects: '\/projects'/);
+  assert.match(sitemap, /'\/projects'/);
   assert.match(footer, /href=\{paths\.projects\}/);
   assert.match(llms, /https:\/\/matejlukasik\.com\/projects/);
-  assert.match(llms, /https:\/\/matejlukasik\.sk\/projekty/);
 });
 
-test('every listed project has its own local screenshot with localized alternative text', async () => {
+test('every listed project has its own local screenshot with English alternative text', async () => {
   const { outputFiles } = buildSync({
     entryPoints: [new URL('src/data/projects.ts', root).pathname],
     bundle: true,
@@ -75,7 +69,6 @@ test('every listed project has its own local screenshot with localized alternati
     assert.ok(Number.isInteger(media.width) && media.width > 0);
     assert.ok(Number.isInteger(media.height) && media.height > 0);
     assert.ok(media.alt.en.trim(), `${project.id} needs English alternative text`);
-    assert.ok(media.alt.sk.trim(), `${project.id} needs Slovak alternative text`);
     screenshots.push(media.image);
   }
 

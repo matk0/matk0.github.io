@@ -18,7 +18,6 @@ test('navigation and layout expose keyboard and assistive-technology state', () 
   const nav = read('../src/components/Nav.astro');
   const layout = read('../src/layouts/Layout.astro');
   const en = JSON.parse(read('../src/i18n/en.json'));
-  const sk = JSON.parse(read('../src/i18n/sk.json'));
 
   assert.match(nav, /aria-expanded="false"/);
   assert.match(nav, /aria-controls="mobile-menu"/);
@@ -28,7 +27,6 @@ test('navigation and layout expose keyboard and assistive-technology state', () 
   assert.match(layout, /class="skip-link"/);
   assert.match(layout, /<main id="main-content" tabindex="-1"/);
   assert.equal(en.accessibility.skipToContent, 'Skip to content');
-  assert.equal(sk.accessibility.skipToContent, 'Preskočiť na obsah');
 });
 
 test('motion-heavy effects respect the reduced-motion preference', () => {
@@ -41,17 +39,16 @@ test('motion-heavy effects respect the reduced-motion preference', () => {
   assert.match(layout, /matchMedia\('\(prefers-reduced-motion: reduce\)'\)/);
 });
 
-test('localized photo-based social previews exist at the required dimensions', () => {
+test('photo-based social previews exist at the required dimensions', () => {
   const layout = read('../src/layouts/Layout.astro');
-  assert.match(layout, /lang === 'sk' \? '\/og-sk-portrait\.png' : '\/og-en-portrait\.png'/);
+  assert.match(layout, /\/og-en-portrait\.png/);
   assert.match(layout, /property="og:image:width" content="1200"/);
   assert.match(layout, /property="og:image:height" content="630"/);
   assert.match(layout, /property="og:image:alt"/);
   assert.match(layout, /name="twitter:image:alt"/);
-  assert.match(layout, /Portrét Mateja Lukášika — senior produktový inžinier/);
   assert.match(layout, /Portrait of Matej Lukášik — Senior Product Engineer/);
 
-  for (const path of ['../public/og-en-portrait.png', '../public/og-sk-portrait.png']) {
+  for (const path of ['../public/og-en-portrait.png']) {
     const url = new URL(path, import.meta.url);
     assert.equal(existsSync(url), true, `${path} must exist`);
     const png = readFileSync(url);

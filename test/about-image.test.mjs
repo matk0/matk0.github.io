@@ -3,7 +3,6 @@ import { existsSync, readFileSync } from 'node:fs';
 import { test } from 'node:test';
 
 const index = readFileSync(new URL('../src/pages/index.astro', import.meta.url), 'utf8');
-const sk = JSON.parse(readFileSync(new URL('../src/i18n/sk.json', import.meta.url), 'utf8'));
 
 test('about section uses the supplied black-and-white portrait', () => {
   assert.match(index, /src="\/images\/about-matej-portrait\.webp"/);
@@ -25,17 +24,6 @@ test('about section centers the portrait and title within the left column', () =
   assert.match(aboutSection, /<div class="mt-6 lg:mt-8 text-center">/);
   assert.doesNotMatch(aboutSection, /lg:mx-0/);
   assert.doesNotMatch(aboutSection, /lg:text-left/);
-});
-
-test('slovak about title uses the canonical consultant positioning', () => {
-  assert.equal(sk.about.bioTitle, 'Konzultant pre AI systémy a softvérové inžinierstvo');
-});
-
-test('slovak about bio leads with software engineering and business problems', () => {
-  assert.match(sk.about.bioText, /10 rokov praxe/);
-  assert.match(sk.about.bioText, /časovo náročné procesy/);
-  assert.match(sk.about.bioText, /AI používam len tam, kde prináša hodnotu/);
-  assert.doesNotMatch(sk.about.bioText, /konzultant pre agentické AI|tlak okolo AI/);
 });
 
 test('homepage does not render a separate about approach section', () => {

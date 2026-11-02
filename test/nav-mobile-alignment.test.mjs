@@ -21,19 +21,8 @@ test('desktop navigation keeps the link group centered independently of side con
   assert.match(nav, /class="[^"]*\bflex\b[^"]*\bitems-center\b[^"]*\bmd:justify-self-end\b[^"]*"/);
 });
 
-test('mobile language picker is grouped with the hamburger menu', () => {
-  const actionGroup = /<div class="[^"]*\bflex\b[^"]*\bitems-center\b[^"]*\bgap-3\b[^"]*">/.exec(nav);
-
-  assert.ok(actionGroup, 'expected a right-side action group');
-
-  const actionGroupStart = actionGroup.index;
-  const actionGroupEnd = nav.indexOf('</div>', actionGroupStart);
-  const languagePicker = nav.indexOf('{altLang.toUpperCase()}', actionGroupStart);
-  const hamburgerButton = nav.indexOf('id="mobile-menu-btn"', actionGroupStart);
-
-  assert.ok(languagePicker > actionGroupStart, 'expected the language picker in the action group');
-  assert.ok(
-    hamburgerButton > languagePicker && hamburgerButton < actionGroupEnd,
-    'expected the hamburger menu button in the same action group as the language picker',
-  );
+test('mobile navigation retains an accessible hamburger without a language picker', () => {
+  assert.match(nav, /id="mobile-menu-btn"/);
+  assert.match(nav, /aria-controls="mobile-menu"/);
+  assert.doesNotMatch(nav, /altLang|language picker/i);
 });

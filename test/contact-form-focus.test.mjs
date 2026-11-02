@@ -11,10 +11,10 @@ const { code } = transformSync(source, { format: 'esm', loader: 'ts' });
 const moduleUrl = 'data:text/javascript;base64,' + Buffer.from(code).toString('base64');
 const { CONTACT_EMAIL, CONTACT_HREF, getLocalizedPaths } = await import(moduleUrl);
 
-test('contact invitations use one direct email destination in both languages', () => {
+test('contact invitations use one direct email destination', () => {
   assert.equal(CONTACT_EMAIL, 'matej@matejlukasik.com');
   assert.equal(CONTACT_HREF, 'mailto:matej@matejlukasik.com');
-  for (const lang of ['en', 'sk']) {
+  for (const lang of ['en']) {
     assert.equal('contact' in getLocalizedPaths(lang), false);
   }
 
@@ -23,7 +23,6 @@ test('contact invitations use one direct email destination in both languages', (
     '../src/components/Footer.astro',
     '../src/pages/index.astro',
     '../src/pages/projects.astro',
-    '../src/pages/projekty.astro',
   ]) {
     const page = read(path);
     assert.match(page, /href=\{CONTACT_HREF\}/, path + ' must offer direct email');
