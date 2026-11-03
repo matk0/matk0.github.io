@@ -28,10 +28,6 @@ function render(lang: Lang): string {
   sections.push(s.home.heroDescription);
   sections.push('');
 
-  sections.push(`## ${s.home.ctaBandTitle}`);
-  sections.push(s.home.ctaBandDescription);
-  sections.push('');
-
   sections.push('---');
   sections.push('');
   sections.push(`# About`);
@@ -67,6 +63,9 @@ function render(lang: Lang): string {
   sections.push('');
   sections.push(`## ${resume.profileHeading}`);
   sections.push(resume.profile.join('\n\n'));
+  sections.push('');
+  sections.push(`## ${resume.skillsHeading}`);
+  sections.push(resume.skills.map(skill => `- ${skill}`).join('\n'));
   sections.push('');
   sections.push(`## ${resume.experienceHeading}`);
   for (const entry of resume.entries) {

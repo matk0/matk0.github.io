@@ -34,7 +34,7 @@ const screenshotLabel = 'Open full screenshot';
         data-analytics-section={`project_${project.id}`}
       >
         <figure class="project-figure">
-          <a class="project-screenshot" href={media.image} target="_blank" rel="noopener noreferrer" aria-label={`${project.title}: ${screenshotLabel}`}>
+          <a class:list={["project-screenshot", { "project-screenshot-tall": media.height > media.width }]} href={media.image} target="_blank" rel="noopener noreferrer" aria-label={`${project.title}: ${screenshotLabel}`}>
             <img
               src={media.image}
               alt={media.alt[lang]}
@@ -80,6 +80,7 @@ const screenshotLabel = 'Open full screenshot';
   .project-screenshot:hover { border-color: var(--color-primary); box-shadow: 0 15px 45px rgba(27, 19, 64, .13); }
   .project-screenshot:focus-visible, .project-actions a:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 5px; }
   .project-screenshot img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 10px; }
+  .project-screenshot-tall img { object-fit: cover; object-position: top; aspect-ratio: 8 / 5; }
   figcaption { margin-top: 14px; color: var(--color-body); font-size: 11px; line-height: 1.6; }
   .project-copy { min-width: 0; }
   .project-eyebrow { margin: 0 0 14px; color: var(--color-primary-hover); font-size: 11px; font-weight: 600; line-height: 1.6; letter-spacing: .1em; text-transform: uppercase; }

@@ -21,7 +21,6 @@ test('contact invitations use one direct email destination', () => {
   for (const path of [
     '../src/components/Nav.astro',
     '../src/components/Footer.astro',
-    '../src/pages/index.astro',
     '../src/pages/projects.astro',
   ]) {
     const page = read(path);

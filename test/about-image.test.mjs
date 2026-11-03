@@ -16,8 +16,8 @@ test('about section gives the portrait half-width presence', () => {
 
 test('about section centers the portrait and title within the left column', () => {
   const aboutStart = index.indexOf('<section id="about"');
-  const aboutEnd = index.indexOf('<CTABand ', aboutStart);
-  assert.ok(aboutStart >= 0 && aboutEnd > aboutStart, 'expected About before the final contact band');
+  const aboutEnd = index.indexOf('</Layout>', aboutStart);
+  assert.ok(aboutStart >= 0 && aboutEnd > aboutStart, 'expected About within the page layout');
   const aboutSection = index.slice(aboutStart, aboutEnd);
 
   assert.match(aboutSection, /<div class="w-full max-w-\[560px\] mx-auto">/);

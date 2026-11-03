@@ -26,6 +26,8 @@ export interface CVContent {
   profileHeading: string;
   profile: string[];
   experienceHeading: string;
+  skillsHeading: string;
+  skills: string[];
   entries: CVEntry[];
 }
 
@@ -47,22 +49,34 @@ export const cv: Record<'en', CVContent> = {
     emailLabel: 'Email',
     profileHeading: 'Profile',
     profile: [
-      'I’m a Senior Software Engineer focusing on AI Productivity Systems: tools and workflows that help engineers build reliable software with AI. I bring over ten years of experience building web applications, owning projects from early ideas through delivery and leading engineering teams.',
-      'My current work focuses on agentic AI and software factories. I’m building tools around clear specifications, context for agents, controlled tool access and independent verification, with people in control of requirements, review and release.',
-      'My experience includes Ruby on Rails, API design, integrations, performance optimization and front-end development with React and React Native. As a former CTO and mentor, I care about both software quality and helping teams build, operate and improve their systems.',
+      'I’m a Senior Product Engineer with over ten years of experience turning loosely defined problems into useful, reliable software. My strength is asking the right questions, understanding customer needs and technical constraints, and deciding what deserves to be built. I take ownership from problem definition and design through implementation, release and improvement.',
+      'My experience spans hands-on product engineering at Doconomy, delivering production features as a one-person development team at Createview, and building and leading an engineering team as CTO at Zeilenwerk. Today, I combine that engineering foundation with product judgment, design taste and practical experience building AI tools and automations.',
     ],
     experienceHeading: 'Work experience',
+    skillsHeading: 'Core skills',
+    skills: [
+      'Problem definition & product judgment: Clarifying ambiguous requirements, asking the right questions, and deciding what to build, simplify or leave out.',
+      'Product design: Turning customer needs and complex workflows into intuitive interfaces and useful features.',
+      'End-to-end ownership: Taking features and products from discovery and scope through implementation, release and improvement.',
+      'Software engineering: Building web applications, APIs and integrations, with attention to reliability, maintainability and performance.',
+      'AI-assisted development & automation: Building agent tools, shared context and verification workflows that support software delivery and business tasks.',
+      'Technical collaboration: Working autonomously in remote teams, communicating decisions and tradeoffs, and mentoring engineers.',
+    ],
     entries: [
       {
         id: 'independent',
-        role: 'Independent software engineering',
-        organization: 'Agentic AI & productivity systems',
-        start: '2026-05',
+        role: 'Independent Product Engineer',
+        organization: 'Vozokany · Viki · post.work',
+        start: '2026-06',
         end: null,
-        period: 'May 2026 – Present',
+        period: 'June 2026 – Present',
         location: 'Trnava, Slovakia',
-        summary: 'Working on agentic AI and software productivity systems, with a current focus on building software factories.',
-        highlights: [],
+        summary: 'Designing and building products independently, owning problem definition, scope, user experience, implementation and release. My work combines practical business software with tools for AI-assisted development and automation.',
+        highlights: [
+          'Vozokany: Brought a farm’s weekly offers, customer orders, packing and harvest planning into one application now in use. Designed and built the customer ordering experience and farm management workflows, with executable business specifications and release verification.',
+          'Viki: Made product requirements explicit and reviewable through a workspace connecting concepts, features and acceptance scenarios. Built version history, source references and scoped AI assistance so people and agents can work from shared, traceable context.',
+          'post.work: Building a workspace that connects AI agents with business tools, persistent context and human review. Own the product experience and integrations, including access controls and mechanisms for managing and recovering agent sessions.',
+        ],
       },
       {
         id: 'doconomy',

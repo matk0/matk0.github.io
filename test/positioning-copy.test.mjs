@@ -23,7 +23,7 @@ test('english homepage positions Matej as an AI systems and software consultant'
   assert.equal(en.home.heroTitle, 'Senior Product Engineer');
   assert.equal(
     en.home.heroDescription,
-    'I turn loosely defined problems into simple, intuitive and reliable software products. I present a unique and powerful blend of ten years of software engineering experience, exceptional product judgment, design sensibility and AI-assisted development (SW Factories FTW!).',
+    'I turn loosely defined problems into simple, intuitive and reliable software products. I take ideas from problem definition through design, implementation and release, combining extensive engineering experience, exceptional design taste and bleeding-edge AI automations.',
   );
   assert.equal(en.home.ctaBandTitle, "Let's start with the process that costs your business the most time.");
   assert.equal(
@@ -43,10 +43,10 @@ test('english homepage positions Matej as an AI systems and software consultant'
     en.about.heroDescription,
     'I help companies solve business problems with the right mix of bespoke software, automation, and AI.',
   );
-  assert.equal(en.about.bioTitle, 'AI Systems & Software Engineering Consultant');
+  assert.equal(en.about.bioTitle, 'Senior Product Engineer');
   assert.equal(
     en.about.bioText,
-    'I’m an AI Systems & Software Engineering Consultant with 10 years of software engineering experience. I help companies replace time-consuming workflows and software that no longer fits with the right mix of bespoke software systems, automations, and AI agents.\n\nI start with the business problem, current workflows, systems, and data. Only then do I recommend a solution that makes technical and business sense. I use AI only where it adds value; sometimes the right answer is a simple automation or new software.\n\nI design, build, and test the solution on real work, then help the team adopt it. My goal is a system leadership understands, the team can use reliably, and the business can own and improve over time.',
+    'My biggest strength is the ability to ask the right questions and thus bringing clarity into complex, loosely defined problems. People often come to me with a long story: competing ideas, requirements, feedback, constraints, and uncertainty about what to do next. I listen, ask a few pointed questions, and reflect back a clearer definition of the problem. From there, I help shape the product: what deserves to be built, what would add complexity without value, and what we still need to understand before making a decision.\n\nI enjoy taking responsibility for a feature or an entire product, from understanding the problem to shipping and improving the solution. I get to know the customers, the business and the surrounding systems, then work out where software can make a meaningful difference. I take ownership of the decisions and tradeoffs along the way, follow through on implementation, and stay engaged after release to understand what works and what needs improving.\n\nI’ve spent the past ten years working remotely with small and medium-sized companies. I value autonomy, trust and clear asynchronous communication, and I take initiative while keeping the people I work with informed.\n\nI live in Trnava, Slovakia, and love spending time with my family—whether we’re walking in nature, solving an escape room, or visiting somewhere for tea and cookies. I’m fascinated by ancient Greece, philosophy, and questions of conviction, ambition and free will. Steven Pressfield’s Gates of Fire and Tides of War are particular favourites. I believe in being the author of your own story and enjoying the ride with the people you love.',
   );
 });
 
@@ -186,7 +186,7 @@ test('full machine-readable copy mirrors only sections rendered on the current s
   assert.doesNotMatch(llmsFull, /s\.home\.trustTitle/);
   assert.doesNotMatch(llmsFull, /s\.about\.approachTitle/);
   assert.doesNotMatch(llmsFull, /s\.about\.techTitle/);
-  assert.match(llmsFull, /s\.home\.ctaBandTitle/);
+  assert.doesNotMatch(llmsFull, /s\.home\.ctaBandTitle/);
   assert.doesNotMatch(llmsFull, /s\.home\.firstStepOffer/);
   assert.doesNotMatch(llmsFull, /s\.services\.|Services — detail|Služby — detail/);
   assert.doesNotMatch(llmsFull, /s\.home\.processTitle|s\.home\.processSteps|s\.contact\.faq/);

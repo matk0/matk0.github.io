@@ -8,18 +8,22 @@ export interface ProjectMedia {
 }
 
 // Unmodified actual-product captures. post.work uses synthetic visual-test data.
-// Source paths and capture context: artifacts/project-screenshots/2026-10-28/README.md.
+// Initial captures: artifacts/project-screenshots/2026-10-28/README.md.
+// Vozokany: rehealthyfarm.sk/zasoby?stav=skladom, body > div > div,
+// captured 2 November 2026 and cropped to the element bounds (outer margins excluded).
+// Viki: selected live pricing scenario, captured 2 November 2026 at 1440 × 900
+// to match the preview aspect ratio and preserve the full interface without cropping.
 export const projectMedia: Record<string, ProjectMedia> = {
   vozokany: {
-    image: '/images/projects/vozokany.jpg',
-    width: 1440,
-    height: 900,
+    image: '/images/projects/vozokany-inventory.webp',
+    width: 1120,
+    height: 2169,
     href: 'https://rehealthyfarm.sk',
     alt: {
-      en: 'Vozokany customer ordering screen with the weekly farm offer, product photos, prices and quantity controls.',
+      en: 'Vozokany farm inventory screen filtered to in-stock products, showing crop categories, availability controls and prices.',
     },
     caption: {
-      en: 'Customer ordering screen',
+      en: 'Farm inventory filtered to in-stock products',
     },
   },
   postwork: {
@@ -35,15 +39,15 @@ export const projectMedia: Record<string, ProjectMedia> = {
     },
   },
   viki: {
-    image: '/images/projects/viki.png',
-    width: 1728,
-    height: 940,
+    image: '/images/projects/viki-sent-prices-scenario.webp',
+    width: 1440,
+    height: 900,
     href: 'https://github.com/matk0/viki',
     alt: {
-      en: 'Viki specification workspace displaying a Gherkin scenario, its revision and related pages.',
+      en: 'Viki specification workspace showing the complete “Keep sent prices when the catalogue changes” Gherkin scenario, revision metadata and related pages.',
     },
     caption: {
-      en: 'Versioned scenario in the specification workspace',
+      en: 'Preserving sent offer prices when the catalogue changes',
     },
   },
 };

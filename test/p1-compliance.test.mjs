@@ -34,15 +34,12 @@ test('production requests canonicalize to the HTTPS apex and receive HSTS', asyn
   assert.equal(secured.headers.get('strict-transport-security'), 'max-age=31536000');
 });
 
-test('footer publishes the registered provider and supervisory details', () => {
+test('footer keeps contact and privacy links without the retired business details block', () => {
   const footer = read('../src/components/Footer.astro');
-  const en = JSON.parse(read('../src/i18n/en.json'));
-
-  assert.match(footer, /strings\.footer\.businessDetails/);
-  assert.match(footer, /tel:\+421944302185/);
-  assert.match(footer, /strings\.footer\.tradeSupervision/);
-  assert.equal(en.footer.businessName, 'Matej Lukášik');
-  assert.equal(en.footer.businessId, '50113801');
+  assert.doesNotMatch(footer, /strings\.footer\.(?:businessDetails|tradeSupervision|consumerSupervision)|<address/);
+  assert.match(footer, /href=\{CONTACT_HREF\}/);
+  assert.match(footer, /href=\{paths\.privacy\}/);
+  assert.match(footer, /data-cookie-settings/);
 });
 
 test('privacy notices publish concrete controller, retention, cookie, transfer, and complaint information', () => {
