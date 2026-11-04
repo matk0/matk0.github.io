@@ -75,7 +75,7 @@
         "eyebrow": "Farm operations",
         "status": "In use",
         "preview": "Software for a farm’s weekly offers, customer orders, packing and harvest planning. I designed and built the application, from its ordering interface to its API and release verification.",
-        "description": "A farm-ordering application that brings weekly offers, customer orders, packing and harvest planning into one system. Farmers manage quantities, ordering deadlines and customer consent, while customers order through a simple web interface.",
+        "description": "I built Vozokany after experiencing the farm’s ordering process as a customer. Offers arrived by email as images containing products and prices. Customers had to compose their orders manually, leaving the farmer to process the replies.\n\nI created a working prototype and developed it through ongoing feedback from the farmer. It grew into a system for weekly offers, online ordering, harvest planning and packing. One important simplification was giving each customer a single editable weekly order until a defined deadline, resolving confusion around repeated submissions. I owned the idea, product decisions, design, development using AI, deployment and ongoing maintenance.\n\nThe farm now uses Vozokany every week to send offers and receive orders. The farmer reports that customers order more regularly, which has increased revenue.",
         "ownership": "I designed and built the application, its Rust/TypeScript API contract, executable business specifications and release verification.",
         "cta": "Explore Vozokany",
         "analyticsDestination": "vozokany"
@@ -86,7 +86,7 @@
         "eyebrow": "Managed AI agents",
         "status": "In development",
         "preview": "A workspace connecting AI agents with business tools, persistent context and human review. I’m building the integrations, runtime lifecycle and recovery mechanisms around Hermes.",
-        "description": "A workspace for running AI agents against real business tasks. post.work integrates managed Hermes runtimes with business tools, persistent context and human review, while the application controls access and records execution.",
+        "description": "post.work grew out of my work helping small businesses put AI agents to use. They wanted to delegate tasks, review the results and approve the work, while someone else handled setup, integrations and ongoing maintenance.\n\nI built a managed workspace around Hermes, which provides the underlying agent engine. Each business gets an agent connected to its existing tools through a simple interface. I designed the customer experience around delegating work and reviewing results, with the technical configuration and infrastructure handled as part of the service.\n\nVerifiable outcomes were central to the product: an email draft in Mailchimp, posts in Later, or a Shopify page that the customer can open and inspect. This makes the result tangible and gives the customer a clear basis for feedback and approval. I owned the idea, product decisions, design, development using AI, integrations, deployment and ongoing operation.",
         "ownership": "I’m building the workspace, agent integrations, runtime lifecycle and recovery mechanisms around Hermes.",
         "cta": "Visit post.work",
         "analyticsDestination": "postwork"
@@ -97,7 +97,7 @@
         "eyebrow": "Specifications and agent context",
         "status": "Working system",
         "preview": "A workspace for versioned specifications and knowledge, with scoped AI assistance. I built the Go/React application, agent tools and repository import pipeline.",
-        "description": "A specification and knowledge workspace for software teams. Viki links concepts, features and Gherkin scenarios with version history, human review and source citations. Scoped AI assistance helps people navigate and work with that context.",
+        "description": "Viki grew out of a proposal for a document-generation system. The business rules lived largely in an employee’s head, and we needed a shared place to make them explicit, discuss them and agree on how the software should behave.\n\nI built Viki around concepts, features and human-readable Gherkin scenarios. Stakeholders describe a change in conversation, and Viki examines it against the existing specification, surfaces potential conflicts and asks clarifying questions. It helps turn the request into proposed changes that people can review and approve before passing them to a coding agent for implementation and verification.\n\nViki is the specification layer of a software factory: a shared source of truth connecting stakeholder decisions with the software being built. I developed it alongside Vozokany, using a real application’s business rules to ground the workflow. I owned the idea, product decisions, design, development using AI, deployment and ongoing maintenance.",
         "ownership": "I built the Go/React application, scoped agent tools and the import pipeline that validates repository specifications and verification evidence.",
         "cta": "Explore Viki",
         "analyticsDestination": "viki"
