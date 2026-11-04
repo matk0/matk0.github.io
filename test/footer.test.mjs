@@ -29,7 +29,7 @@ test('footer repeats the canonical homepage problem statement', () => {
 
   assert.equal(
     en.footer.description,
-    'Replace time-consuming workflows and software that no longer fits.',
+    'Matej Lukášik - Senior Product Engineer',
   );
 });
 

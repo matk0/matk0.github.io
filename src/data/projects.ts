@@ -7,10 +7,11 @@ export interface ProjectMedia {
   caption: Record<'en', string>;
 }
 
-// Unmodified actual-product captures. post.work uses synthetic visual-test data.
+// Unmodified actual-product captures.
 // Initial captures: artifacts/project-screenshots/2026-10-28/README.md.
 // Vozokany: rehealthyfarm.sk/zasoby?stav=skladom, body > div > div,
 // captured 2 November 2026 and cropped to the element bounds (outer margins excluded).
+// post.work: Keyana social media planning chat, captured 4 November 2026.
 // Viki: selected live pricing scenario, captured 2 November 2026 at 1440 × 900
 // to match the preview aspect ratio and preserve the full interface without cropping.
 export const projectMedia: Record<string, ProjectMedia> = {
@@ -27,15 +28,15 @@ export const projectMedia: Record<string, ProjectMedia> = {
     },
   },
   postwork: {
-    image: '/images/projects/postwork.png',
-    width: 1440,
-    height: 900,
+    image: '/images/projects/postwork-social-plan.png',
+    width: 1600,
+    height: 1000,
     href: 'https://post.work/',
     alt: {
-      en: 'post.work campaign planner with a draft social post open for human review in a demo workspace.',
+      en: 'post.work chat showing Keyana’s weekly social media plan with posts awaiting review.',
     },
     caption: {
-      en: 'Demo workspace with sample campaign content',
+      en: 'Keyana’s weekly social media plan ready for review',
     },
   },
   viki: {

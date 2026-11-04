@@ -12,7 +12,7 @@ test('i18n exposes Agent Threat Atlas URLs', () => {
   assert.match(i18n, /ATLAS_THREATS_URL = 'https:\/\/atlas\.matejlukasik\.sk\/threats'/);
 });
 
-test('homepage keeps Agent Threat Atlas in the footer rather than separate content blocks', () => {
+test('homepage omits separate Agent Threat Atlas content blocks', () => {
   assert.doesNotMatch(index, /ATLAS_URL/);
   assert.doesNotMatch(index, /strings\.home\.pain3AtlasText/);
   assert.doesNotMatch(index, /strings\.home\.atlasProofTitle/);
@@ -20,7 +20,7 @@ test('homepage keeps Agent Threat Atlas in the footer rather than separate conte
   assert.doesNotMatch(index, /strings\.about\.atlasLink/);
   assert.doesNotMatch(index, /ATLAS_THREATS_URL/);
   assert.doesNotMatch(index, /ProcessTimeline|<FAQ/);
-  assert.match(footer, /href=\{ATLAS_URL\}/);
+  assert.doesNotMatch(footer, /href=\{ATLAS_URL\}/);
 });
 
 test('homepage omits the dedicated Agent Threat Atlas landing section', () => {
@@ -38,7 +38,7 @@ test('retained Atlas copy and footer headings use English', () => {
   assert.equal(en.about.atlasLink, undefined);
 });
 
-test('footer renders the Atlas research link', () => {
-  assert.match(footer, /strings\.footer\.research/);
-  assert.match(footer, /ATLAS_URL/);
+test('footer omits the removed projects column', () => {
+  assert.doesNotMatch(footer, /strings\.footer\.research/);
+  assert.doesNotMatch(footer, /ATLAS_URL/);
 });
