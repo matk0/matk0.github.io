@@ -46,7 +46,7 @@ test('english homepage positions Matej as an AI systems and software consultant'
   );
   assert.equal(en.about.bioTitle, 'Senior Product Engineer');
   assert.equal(
-    en.about.bioText,
+    en.about.bioText.replace(/\*\*/g, ''),
     'My strength is asking the questions that bring clarity to complex, loosely defined problems. When people come to me with competing ideas, requirements, feedback and constraints, I listen and help define what matters: the problem to solve, what is worth building, what would add complexity without value and what we still need to understand.\n\nI take responsibility for a feature or product from that first conversation through design, implementation, release and improvement. I get to know the customers, business and existing systems, make the necessary decisions and tradeoffs, and stay involved after launch to understand what works and what needs improving.\n\nI’ve spent the past ten years working remotely with small and medium-sized companies. I value autonomy, trust and clear asynchronous communication. I take initiative, communicate decisions and keep the people I work with informed.\n\nI live in Trnava, Slovakia, and love spending time with my family—walking in nature, solving escape rooms, or going out for tea and cookies. I’m fascinated by ancient Greece, philosophy, and questions of conviction, ambition and free will. Steven Pressfield’s Gates of Fire and Tides of War are particular favourites. I believe in being the author of your own story and enjoying the ride with the people you love.',
   );
 });

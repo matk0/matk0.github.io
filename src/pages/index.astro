@@ -55,7 +55,7 @@ const socialLinks = [
 
   <section id="about" class="section-padding bg-surface" data-analytics-section="about">
     <div class="container mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
         <div class="reveal">
           <div class="w-full max-w-[560px] mx-auto">
             <div class="aspect-[4/5] max-h-[680px] rounded-2xl overflow-hidden bg-primary-light border border-border shadow-sm">
@@ -87,7 +87,9 @@ const socialLinks = [
         </div>
         <div class="reveal reveal-delay-1 max-w-2xl">
           {strings.about.bioText.split('\n\n').map((paragraph) => (
-            <p class="text-body text-lg leading-relaxed mb-5 last:mb-0">{paragraph}</p>
+            <p class="text-body text-lg leading-relaxed mb-5 last:mb-0">{paragraph.split(/\*\*(.*?)\*\*/g).map((part, index) => (
+              index % 2 === 1 ? <strong class="font-semibold text-heading">{part}</strong> : part
+            ))}</p>
           ))}
         </div>
       </div>
