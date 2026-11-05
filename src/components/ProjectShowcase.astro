@@ -1,6 +1,7 @@
 ---
 import { projectMedia } from '../data/projects';
 import type { Lang } from '../i18n';
+import InlineEmphasis from './InlineEmphasis.astro';
 
 interface Project {
   id: string;
@@ -46,7 +47,7 @@ const screenshotLabel = 'Open full screenshot';
           <p class="project-eyebrow">{project.eyebrow}</p>
           <h2 id={`project-${project.id}`}>{project.title}</h2>
           <div class="project-description space-y-4">
-            {project.description.split('\n\n').map(paragraph => <p>{paragraph}</p>)}
+            {project.description.split('\n\n').map(paragraph => <p><InlineEmphasis text={paragraph} /></p>)}
           </div>
         </div>
       </section>

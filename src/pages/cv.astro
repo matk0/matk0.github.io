@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import InlineEmphasis from '../components/InlineEmphasis.astro';
 import { cv } from '../data/cv';
 import type { Lang } from '../i18n';
 
@@ -39,7 +40,7 @@ const content = cv[lang];
       <section class="cv-section" aria-labelledby="cv-profile-heading">
         <h2 id="cv-profile-heading">{content.profileHeading}</h2>
         <div class="cv-prose">
-          {content.profile.map(paragraph => <p>{paragraph}</p>)}
+          {content.profile.map(paragraph => <p><InlineEmphasis text={paragraph} /></p>)}
         </div>
       </section>
 
@@ -65,10 +66,10 @@ const content = cv[lang];
                 <div class="cv-entry-body">
                   <h3 id={`cv-${entry.id}`}>{entry.role}</h3>
                   <p class="cv-company">{entry.organization}</p>
-                  <p class="cv-entry-summary">{entry.summary}</p>
+                  <p class="cv-entry-summary"><InlineEmphasis text={entry.summary} /></p>
                   {entry.highlights.length > 0 && (
                     <ul class="cv-highlights">
-                      {entry.highlights.map(highlight => <li>{highlight}</li>)}
+                      {entry.highlights.map(highlight => <li><InlineEmphasis text={highlight} /></li>)}
                     </ul>
                   )}
                 </div>

@@ -46,7 +46,7 @@ test('privacy notices no longer describe the removed booking flow', () => {
 
 test('analytics notices exclude email content from analytics', () => {
   assert.equal(
-    en.cookieNotice.description,
+    en.cookieNotice.description.replace(/\*\*/g, ''),
     'I use optional analytics cookies to understand aggregate page views and conversion events. Email content is not sent to analytics.',
   );
 

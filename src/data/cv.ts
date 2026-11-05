@@ -49,8 +49,8 @@ export const cv: Record<'en', CVContent> = {
     emailLabel: 'Email',
     profileHeading: 'Profile',
     profile: [
-      'I’m a Senior Product Engineer with over ten years of experience turning loosely defined problems into useful, reliable software. My strength is asking the right questions, understanding customer needs and technical constraints, and deciding what deserves to be built. I take ownership from problem definition and design through implementation, release and improvement.',
-      'My experience spans hands-on product engineering at Doconomy, delivering production features as a one-person development team at Createview, and building and leading an engineering team as CTO at Zeilenwerk. Today, I combine that engineering foundation with product judgment, design taste and practical experience building AI tools and automations.',
+      'I’m a Senior Product Engineer with **over ten years of experience** turning loosely defined problems into useful, reliable software. My strength is asking the right questions, understanding customer needs and technical constraints, and deciding what deserves to be built. I **take ownership** from problem definition and design through implementation, release and improvement.',
+      'My experience spans hands-on product engineering at Doconomy, **delivering production features as a one-person development team** at Createview, and building and leading an engineering team as CTO at Zeilenwerk. Today, I combine that engineering foundation with product judgment, design taste and practical experience building AI tools and automations.',
     ],
     experienceHeading: 'Work experience',
     skillsHeading: 'Core skills',
@@ -73,9 +73,9 @@ export const cv: Record<'en', CVContent> = {
         location: 'Trnava, Slovakia',
         summary: 'Designing and building products independently, owning problem definition, scope, user experience, implementation and release. My work combines practical business software with tools for AI-assisted development and automation.',
         highlights: [
-          'Vozokany: Brought a farm’s weekly offers, customer orders, packing and harvest planning into one application now in use. Designed and built the customer ordering experience and farm management workflows, with executable business specifications and release verification.',
-          'Viki: Made product requirements explicit and reviewable through a workspace connecting concepts, features and acceptance scenarios. Built version history, source references and scoped AI assistance so people and agents can work from shared, traceable context.',
-          'post.work: Building a workspace that connects AI agents with business tools, persistent context and human review. Own the product experience and integrations, including access controls and mechanisms for managing and recovering agent sessions.',
+          '**Vozokany:** Brought a farm’s weekly offers, customer orders, packing and harvest planning into one application now in use. Designed and built the customer ordering experience and farm management workflows, with executable business specifications and release verification.',
+          '**Viki:** Made product requirements explicit and reviewable through a workspace connecting concepts, features and acceptance scenarios. Built version history, source references and scoped AI assistance so people and agents can work from shared, traceable context.',
+          '**post.work:** Building a workspace that connects AI agents with business tools, persistent context and human review. Own the product experience and integrations, including access controls and mechanisms for managing and recovering agent sessions.',
         ],
       },
       {
@@ -86,11 +86,11 @@ export const cv: Record<'en', CVContent> = {
         end: '2026-06',
         period: 'May 2025 – June 2026',
         location: 'Remote',
-        summary: 'Worked on Dreams Enterprise, a Ruby on Rails financial platform serving multiple partner banks and hundreds of thousands of users.',
+        summary: 'Worked on Dreams Enterprise, a Ruby on Rails financial platform serving multiple partner banks and **hundreds of thousands of users**.',
         highlights: [
-          'Turned production errors into proposed code fixes through an AI workflow connecting Datadog monitoring with GitHub.',
+          'Turned **production errors into proposed code fixes** through an AI workflow connecting Datadog monitoring with GitHub.',
           'Improved legacy Ruby code’s maintainability and performance with an agent that automated refactoring using object-oriented design practices.',
-          'Made application activity traceable by designing and implementing an Audit Trail system.',
+          '**Made application activity traceable** by designing and implementing an Audit Trail system.',
           'Made user activity and savings trends visible through analytics dashboards covering savings by type and goal creation, with monthly and cumulative views.',
         ],
       },
@@ -105,8 +105,8 @@ export const cv: Record<'en', CVContent> = {
         summary: '',
         highlights: [
           'Enabled users to explore underwater sensor data through interactive charts, timeframe navigation, and image browsing and filtering.',
-          'Turned brief product concepts into production-ready features, owning Ruby on Rails development as a one-person team.',
-          'Enabled real-time sensor visualization across millions of data points by optimizing queries for performance and scalability.',
+          'Turned brief product concepts into **production-ready features**, owning Ruby on Rails development as a one-person team.',
+          'Enabled **real-time sensor visualization across millions of data points** by optimizing queries for performance and scalability.',
           'Helped junior developers progress from minimal Rails experience to meaningful project contributions through mentoring.',
         ],
       },
@@ -121,10 +121,10 @@ export const cv: Record<'en', CVContent> = {
         summary: '',
         highlights: [
           'Helped turn a small startup into a structured engineering organization as its first employee and CTO.',
-          'Grew the development team from 2 to 10 people within three years.',
+          'Grew the development team **from 2 to 10 people within three years**.',
           'Gave the growing team a shared approach to software delivery by establishing Agile workflows, QA practices and collaboration processes using JIRA.',
           'Expanded the company’s development capabilities by introducing React, React Native and GraphQL.',
-          'Delivered medium- to large-scale software projects by leading them from initial concept through completion.',
+          'Delivered medium- to large-scale software projects by leading them **from initial concept through completion**.',
         ],
       },
       {
@@ -138,7 +138,7 @@ export const cv: Record<'en', CVContent> = {
         summary: '',
         highlights: [
           'Dashboard: Made internal and external data easier to understand and use by redesigning the main dashboard and shaping its information architecture and user experience, helping Datamolino move ahead of Receipt Bank.',
-          'QuickBooks Online: Opened access to the QBO app marketplace and created new business opportunities by building the QuickBooks Online integration.',
+          'QuickBooks Online: **Opened access to the QBO app marketplace** and created new business opportunities by building the QuickBooks Online integration.',
         ],
       },
       {
@@ -151,7 +151,7 @@ export const cv: Record<'en', CVContent> = {
         location: '',
         summary: '',
         highlights: [
-          'Vive.co: Made booking faster and easier to use by leading a front-end redesign with Sass and React and turning the booking flow into a single-page application.',
+          'Vive.co: **Made booking faster and easier to use** by leading a front-end redesign with Sass and React and turning the booking flow into a single-page application.',
           'Hlidacky.cz: Enabled mobile app integration through an API documented with Swagger. Made admin access rules explicit by introducing declarative authorization.',
         ],
       },

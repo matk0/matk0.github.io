@@ -1,6 +1,7 @@
 ---
 import { t, getLocalizedPaths } from '../i18n';
 import type { Lang } from '../i18n';
+import InlineEmphasis from './InlineEmphasis.astro';
 
 interface Props {
   lang: Lang;
@@ -26,7 +27,7 @@ const notice = strings.cookieNotice;
         <div class="max-w-3xl">
           <p class="font-heading text-base font-semibold text-heading">{notice.title}</p>
           <p class="mt-1 text-sm leading-relaxed text-body">
-            {notice.description}
+            <InlineEmphasis text={notice.description} />
             {' '}
             <a href={paths.privacy} class="font-medium text-primary hover:text-primary-hover">
               {notice.privacyLink}

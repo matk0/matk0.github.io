@@ -1,6 +1,7 @@
 ---
 import { t, getLocalizedPaths, type Lang } from '../i18n';
 import { projectMedia } from '../data/projects';
+import InlineEmphasis from './InlineEmphasis.astro';
 
 interface Props {
   lang: Lang;
@@ -34,7 +35,7 @@ const projects = ['vozokany', 'viki', 'postwork'].map(id =>
                   <p class="work-category">{project.eyebrow}</p>
                 </div>
                 <h3 id={`selected-${project.id}`}>{project.title}</h3>
-                <p class="work-description">{project.preview}</p>
+                <p class="work-description"><InlineEmphasis text={project.preview} /></p>
                 <span class="work-cta">{strings.home.selectedWorkLink}<span aria-hidden="true">→</span></span>
               </div>
             </a>

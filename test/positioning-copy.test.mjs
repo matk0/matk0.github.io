@@ -23,10 +23,10 @@ test('english homepage positions Matej as an AI systems and software consultant'
   assert.equal(en.home.pageTitle, 'Matej Lukášik — Senior Product Engineer');
   assert.equal(en.home.heroTitle, 'Senior Product Engineer');
   assert.equal(
-    en.home.heroDescription,
+    en.home.heroDescription.replace(/\*\*/g, ''),
     'I turn loosely defined problems into simple, reliable software products. I take ownership from understanding the customer’s problem and shaping scope through design, implementation, release and improvement.',
   );
-  assert.equal(en.home.heroExperience, '10+ years building software · Former Product Engineer at Doconomy · Former CTO at Zeilenwerk');
+  assert.equal(en.home.heroExperience.replace(/\*\*/g, ''), '10+ years building software · Former Product Engineer at Doconomy · Former CTO at Zeilenwerk');
   assert.equal(en.home.ctaBandTitle, "Let's start with the process that costs your business the most time.");
   assert.equal(
     en.home.ctaBandDescription,

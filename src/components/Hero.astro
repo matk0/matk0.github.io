@@ -1,4 +1,6 @@
 ---
+import InlineEmphasis from './InlineEmphasis.astro';
+
 interface Props {
   title: string;
   subtitle?: string;
@@ -65,7 +67,7 @@ const hasImage = isLarge && Boolean(imageSrc);
             isLarge ? "text-lg md:text-xl mt-6" : "text-base md:text-lg mt-4",
           ]}
         >
-          {description}
+          <InlineEmphasis text={description} class="text-white" />
         </p>
       )}
       <div class:list={["reveal reveal-delay-3", hasImage ? "mt-8" : isLarge ? "mt-10" : "mt-6"]}>

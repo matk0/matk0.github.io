@@ -18,7 +18,7 @@ export async function createCVPdf(content: CVContent): Promise<Uint8Array> {
   function wrap(text: string, font: PDFFont, size: number, available = width - margin * 2) {
     const lines: string[] = [];
     let line = '';
-    for (const word of text.split(/\s+/)) {
+    for (const word of text.replace(/\*\*/g, '').split(/\s+/)) {
       const next = line ? `${line} ${word}` : word;
       if (line && font.widthOfTextAtSize(next, size) > available) {
         lines.push(line);

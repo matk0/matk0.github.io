@@ -13,7 +13,7 @@ test('the public homepage presents the approved AI systems and software position
   assert.equal(en.home.heroTitle, 'Senior Product Engineer');
   assert.equal('heroTypewords' in en.home, false);
   assert.equal('heroTypewordTemplate' in en.home, false);
-  assert.equal(en.home.heroDescription, 'I turn loosely defined problems into simple, reliable software products. I take ownership from understanding the customer’s problem and shaping scope through design, implementation, release and improvement.');
+  assert.equal(en.home.heroDescription.replace(/\*\*/g, ''), 'I turn loosely defined problems into simple, reliable software products. I take ownership from understanding the customer’s problem and shaping scope through design, implementation, release and improvement.');
   assert.equal('ctaPrimary' in en.home, false);
 
   assert.equal(en.home.painTitle, 'AI and/or new software only make sense when they solve a real business problem.');

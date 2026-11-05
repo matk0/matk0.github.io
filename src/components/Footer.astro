@@ -1,6 +1,7 @@
 ---
 import { t, getLocalizedPaths, CONTACT_HREF } from '../i18n';
 import type { Lang } from '../i18n';
+import InlineEmphasis from './InlineEmphasis.astro';
 
 interface Props {
   lang: Lang;
@@ -19,7 +20,7 @@ const year = new Date().getFullYear();
         <a href="/" class="inline-flex items-center" aria-label="Matej Lukášik">
           <img src="/images/matej-pixel-logo.png" alt="Matej Lukášik" width="48" height="48" class="block h-12 w-12 object-contain [image-rendering:pixelated]" />
         </a>
-        <p class="mt-4 text-sm leading-relaxed max-w-xs">{strings.footer.description}</p>
+        <p class="mt-4 text-sm leading-relaxed max-w-xs"><InlineEmphasis text={strings.footer.description} class="text-white" /></p>
       </div>
 
       <div>

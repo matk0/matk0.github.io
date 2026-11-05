@@ -28,7 +28,7 @@ test('footer has privacy route without location or booking CTA', () => {
 test('footer repeats the canonical homepage problem statement', () => {
 
   assert.equal(
-    en.footer.description,
+    en.footer.description.replace(/\*\*/g, ''),
     'Matej Lukášik - Senior Product Engineer',
   );
 });
