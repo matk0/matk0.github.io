@@ -6,6 +6,7 @@ const en = JSON.parse(readFileSync(new URL('../src/i18n/en.json', import.meta.ur
 
 const llms = readFileSync(new URL('../src/pages/llms.txt.ts', import.meta.url), 'utf8');
 const llmsFull = readFileSync(new URL('../src/pages/llms-full.txt.ts', import.meta.url), 'utf8');
+const homepage = readFileSync(new URL('../src/pages/index.astro', import.meta.url), 'utf8');
 const structuredData = readFileSync(new URL('../src/structured-data.ts', import.meta.url), 'utf8');
 
 test('public positioning remains neutral about company size', () => {
@@ -175,15 +176,15 @@ test('machine-readable copy preserves principles without removed sales sections'
   assert.doesNotMatch(llms, /const EN = `# Matej Lukášik — AI Agent Consulting/);
   assert.doesNotMatch(llms, /AI agent konzulting|Samostatny AI agent konzultant/);
   assert.doesNotMatch(llms, /1–2 weeks|1–2 tyzdne|free.*consultation|bezplatn.*konzultáci/iu);
-  assert.doesNotMatch(llms, /## (?:Services|Služby|Process|Proces)\n|FAQ/);
+  assert.doesNotMatch(llms, /## (?:Services|Služby|Process|Proces|Research)\n|FAQ/);
   assert.match(llms, /\[Email Matej\]\(\$\{CONTACT_HREF\}\)/);
   assert.doesNotMatch(llms, /https:\/\/matejlukasik\.(?:com|sk)\/(?:contact|kontakt)/);
 
 });
 
 test('full machine-readable copy mirrors only sections rendered on the current site', () => {
+  assert.doesNotMatch(homepage, /ProcessTimeline|<FAQ/);
   assert.doesNotMatch(llmsFull, /s\.home\.consultingTitle/);
-  assert.doesNotMatch(llmsFull, /s\.home\.atlasProofTitle/);
   assert.doesNotMatch(llmsFull, /s\.home\.trustTitle/);
   assert.doesNotMatch(llmsFull, /s\.about\.approachTitle/);
   assert.doesNotMatch(llmsFull, /s\.about\.techTitle/);

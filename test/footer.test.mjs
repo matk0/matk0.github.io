@@ -36,6 +36,8 @@ test('footer repeats the canonical homepage problem statement', () => {
 test('footer shows selected professional and publishing profiles', () => {
 
   assert.equal(en.footer.followMe, 'Social Media');
+  assert.equal(en.footer.research, 'Projects');
+  assert.doesNotMatch(footer, /strings\.footer\.research/);
   assert.match(footer, /linkedin\.com\/in\/matej-lukasik/);
   assert.match(footer, /x\.com\/matejlukasik/);
   assert.match(footer, /github\.com\/matk0/);

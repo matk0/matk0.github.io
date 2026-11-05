@@ -7,11 +7,6 @@ const EN = `# Matej Lukášik — AI Systems & Software Engineering Consultant
 
 Matej is an AI Systems & Software Engineering Consultant with 10 years of software engineering experience. He assesses workflows and existing systems, builds the right mix of bespoke software, automations, and AI agents, and helps teams adopt and own the solution. He works with companies in Europe and the United States. Bilingual (English / Slovak).
 
-## Research
-
-- [Agent Threat Atlas](https://atlas.matejlukasik.sk/): Daily agentic AI incidents mapped to threat categories and prevention principles.
-- [Threat categories](https://atlas.matejlukasik.sk/threats): Practical risk categories for teams deploying AI agents.
-
 ## Projects
 
 - [Vozokany](https://matejlukasik.com/projects#vozokany): Farm software for weekly offers, customer orders, packing and harvest planning.

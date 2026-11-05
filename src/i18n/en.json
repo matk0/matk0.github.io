@@ -53,11 +53,6 @@
         "description": "I help your team adopt the system, measure the result, and take ownership—with ongoing support available if useful."
       }
     ],
-    "atlasProofEyebrow": "Security Research",
-    "atlasProofTitle": "AI agent security is not an abstract risk.",
-    "atlasProofDescription": "I maintain a public atlas of agentic AI incidents that maps real failures to threat categories and prevention principles teams can use before deployment.",
-    "atlasProofCta": "Open Agent Threat Atlas",
-    "atlasProofSecondaryCta": "Browse threat categories",
     "trustTitle": "Practical value, not hype",
     "trustDescription": "I recommend the technology and rollout path that fit your business problem, team, budget, and security requirements.",
     "ctaBandTitle": "Let's start with the process that costs your business the most time.",
@@ -195,9 +190,7 @@
       },
       {
         "question": "How do you handle data security?",
-        "answer": "We start with data, permissions, and deployment boundaries. The first version should use only the minimum necessary access, clear rules for sensitive data, and human review where the risk is higher. With security, slower and steadier is better.",
-        "linkText": "Open Agent Threat Atlas",
-        "linkHref": "https://atlas.matejlukasik.sk/"
+        "answer": "We start with data, permissions, and deployment boundaries. The first version should use only the minimum necessary access, clear rules for sensitive data, and human review where the risk is higher. With security, slower and steadier is better."
       },
       {
         "question": "Do we need our own technical team?",
@@ -220,7 +213,6 @@
     "copyright": "Matej Lukášik. All rights reserved.",
     "followMe": "Social Media",
     "research": "Projects",
-    "agentThreatAtlas": "Agent Threat Atlas",
     "privacy": "Privacy",
     "cookieSettings": "Cookie settings",
     "businessDetails": "Business details",
