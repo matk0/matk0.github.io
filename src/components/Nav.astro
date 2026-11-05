@@ -23,11 +23,11 @@ const paths = getLocalizedPaths(lang);
       <a href="/#about" class="nav-pill">
         {strings.nav.about}
       </a>
-      <a href={paths.cv} class:list={["nav-pill", currentPath === paths.cv && "nav-pill-active"]} aria-current={currentPath === paths.cv ? 'page' : undefined}>
-        CV
-      </a>
       <a href={paths.projects} class:list={["nav-pill", currentPath === paths.projects && "nav-pill-active"]} aria-current={currentPath === paths.projects ? 'page' : undefined}>
         {strings.nav.projects}
+      </a>
+      <a href={paths.cv} class:list={["nav-pill", currentPath === paths.cv && "nav-pill-active"]} aria-current={currentPath === paths.cv ? 'page' : undefined}>
+        CV
       </a>
       <a href={CONTACT_HREF} class="nav-pill" data-analytics-event="mailto_clicked" data-analytics-position="nav_desktop">
         {strings.nav.contact}
@@ -52,8 +52,8 @@ const paths = getLocalizedPaths(lang);
   <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-surface" aria-hidden="true">
     <div class="container mx-auto px-4 py-4 flex flex-col gap-3">
       <a href="/#about" class="text-sm font-medium text-body hover:text-primary py-2">{strings.nav.about}</a>
-      <a href={paths.cv} class="text-sm font-medium text-body hover:text-primary py-2" aria-current={currentPath === paths.cv ? 'page' : undefined}>CV</a>
       <a href={paths.projects} class="text-sm font-medium text-body hover:text-primary py-2" aria-current={currentPath === paths.projects ? 'page' : undefined}>{strings.nav.projects}</a>
+      <a href={paths.cv} class="text-sm font-medium text-body hover:text-primary py-2" aria-current={currentPath === paths.cv ? 'page' : undefined}>CV</a>
       <a href={CONTACT_HREF} class="text-sm font-medium text-body hover:text-primary py-2" data-analytics-event="mailto_clicked" data-analytics-position="nav_mobile">{strings.nav.contact}</a>
     </div>
   </div>
