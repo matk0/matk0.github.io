@@ -12,8 +12,8 @@
 
 - Zero production deployments
 - No case studies or social proof
-- Building credibility via a 5-project pipeline (HN agent → doc processing → RAG KB → Clawforce polish → first pro bono client)
-- Recent pivot from Clawforce company brand to personal name
+- Building credibility via a 5-project pipeline (HN agent → doc processing → RAG KB → deployment system refinement → first pro bono client)
+- Recent pivot from a company brand to a personal name
 
 ## Tensions
 

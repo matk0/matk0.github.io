@@ -1,8 +1,8 @@
-# clawforce.sk — Website Description
+# Earlier AI Agent Consulting Website — Description
 
 ## Overview
 
-Marketing website for **Clawforce** — an AI agent consulting/implementation business targeting SMBs in Slovakia. The value proposition: deploy AI agents for your team in days, not months. Services span consulting, implementation (per-employee AI agents via Slack orchestrated by a CEO agent on OpenClaw), and training.
+Marketing website for an earlier AI agent consulting and implementation business targeting SMBs in Slovakia. The value proposition: deploy AI agents for your team in days, not months. Services span consulting, implementation (per-employee AI agents via Slack orchestrated by a CEO agent on OpenClaw), and training.
 
 Founded by Matej Lukasik (Founder & AI Engineer). Based in Slovakia.
 
@@ -12,10 +12,10 @@ Founded by Matej Lukasik (Founder & AI Engineer). Based in Slovakia.
 - **Styling:** Tailwind CSS 4 via Vite plugin
 - **Font:** Inter (Google Fonts)
 - **Hosting:** Cloudflare Workers (via `@astrojs/cloudflare` adapter)
-- **Email:** Resend API (contact form delivery to matej@clawforce.sk)
+- **Email:** Resend API (contact form delivery to the business inbox)
 - **Scheduling:** Cal.com embed (30min booking with matejlukasik)
 - **Analytics:** Google Analytics 4 (custom events for CTA clicks and funnel signals)
-- **Domain:** clawforce.sk (+ www redirect)
+- **Domain:** Previous business domain with a www redirect
 
 ## Design
 
@@ -74,7 +74,7 @@ All pages share: `<Nav>` (fixed top) → `<main>` (slot) → `<Footer>`. Full OG
 ### Navigation (`Nav.astro`)
 
 - Fixed top bar with backdrop blur (`bg-surface/80 backdrop-blur-lg`)
-- Logo: "clawforce" text (bold, left)
+- Logo: Former business name in bold, left-aligned
 - Desktop: Services | About | Contact links + language toggle + "Book a Call" button
 - Mobile: Hamburger menu toggling a dropdown panel
 - Active page highlighting via `currentPath` prop
@@ -114,8 +114,8 @@ Each service section uses `ServiceSection.astro` — alternating layout (text le
 
 ### About (`/sk/o-nas` | `/en/about`)
 
-1. **Hero** (small) — "Who's Behind Clawforce"
-2. **Bio Section** — 2+3 column grid: avatar photo + name/title | multi-paragraph bio text. Bio covers: problem (wasted AI pilots), solution (Clawforce builds agents that work), approach (understand business first).
+1. **Hero** (small) — introduction to the founder
+2. **Bio Section** — 2+3 column grid: avatar photo + name/title | multi-paragraph bio text. Bio covers: problem (wasted AI pilots), solution (practical AI agents for teams), approach (understand business first).
 3. **Approach** — 3 principle cards:
    - Open-source first (OpenClaw, no vendor lock-in)
    - Capability, not dependency (train alongside deployment)
@@ -129,13 +129,13 @@ Each service section uses `ServiceSection.astro` — alternating layout (text le
 2. **Main Section** — 2-column grid:
    - **Left: Contact Form** — Name (required), Email (required), Company (optional), Service interest (dropdown, preselectable via `?service=` query param), Message (required), Submit button. AJAX submission with success/error feedback. Honeypot spam field.
    - **Right: Cal.com Embed** — Inline 30-min booking widget (month view, cal.eu origin)
-3. **Direct Contact** — Email link (matej@clawforce.sk) + location (Slovakia)
+3. **Direct Contact** — Link to the business inbox + location (Slovakia)
 
 ## API
 
 ### `POST /api/contact`
 
-Contact form handler. Validates required fields (name, email, message) and email format. Honeypot check (hidden `website` field — if filled, silently returns success). Sends email via Resend API to matej@clawforce.sk with reply-to set to submitter. Falls back to console logging if no `RESEND_API_KEY`.
+Contact form handler. Validates required fields (name, email, message) and email format. Honeypot check (hidden `website` field — if filled, silently returns success). Sends email via Resend API to the business inbox with reply-to set to submitter. Falls back to console logging if no `RESEND_API_KEY`.
 
 ## Components
 

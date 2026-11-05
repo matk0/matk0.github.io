@@ -2,7 +2,7 @@
 
 ## Context
 
-Overhaul of matejlukasik.com to fix identity crisis, build credibility pipeline, streamline funnel, and align all channels. The user has more assets than initially apparent: a 42-slide Agentic AI presentation (delivered to Amity Age), a Clawforce deployment system (Docker/OpenClaw/MCP server), and deep knowledge of agent architecture. No production client deployments yet — need a pipeline to get there.
+Overhaul of matejlukasik.com to fix identity crisis, build credibility pipeline, streamline funnel, and align all channels. The user has more assets than initially apparent: a 42-slide Agentic AI presentation (delivered to Amity Age), an existing multi-agent deployment system (Docker/OpenClaw/MCP server), and deep knowledge of agent architecture. No production client deployments yet — need a pipeline to get there.
 
 ---
 
@@ -84,7 +84,7 @@ Work through these one by one in future sessions.
 | X bio | "AI Engineer" | "AI Agent Consultant. Building agents that work for real teams. matejlukasik.com" |
 | X activity | 0 posts | Start posting (see content pipeline below) |
 | GitHub bio | "AI Engineer with 10+ years..." | "AI Agent Consultant. Building production agent systems." |
-| GitHub repos | No agent work visible | Publish Clawforce or demo agent repos (see pipeline) |
+| GitHub repos | No agent work visible | Publish the deployment system or demo agent repos (see pipeline) |
 | YouTube | Doesn't exist on site | Add @matejlukasik, start with presentation recording |
 
 ---
@@ -93,7 +93,7 @@ Work through these one by one in future sessions.
 
 You already have more than you think:
 - The Amity Age presentation (42 slides, detailed speaker notes, code examples)
-- The Clawforce deployment system (Docker, OpenClaw, MCP server, deploy script)
+- The existing deployment system (Docker, OpenClaw, MCP server, deploy script)
 - Deep knowledge of agent architecture (Brain + Tools + Memory + Agency)
 - The use cases from your presentation (each one is a potential project)
 
@@ -132,9 +132,9 @@ Learn/Build → Working Demo (GitHub) → Content (YouTube + LinkedIn + X)
 - X: Demo GIF + link
 - **Why third:** This is what CEOs actually want first. Proves you can handle enterprise data.
 
-**Project 4: Clawforce — Full Multi-Agent Deployment** (your existing project)
+**Project 4: Full Multi-Agent Deployment** (your existing project)
 - Learn: You already know this — Docker orchestration, MCP server, agent-per-employee
-- Demo: Polish Clawforce, deploy it on a VPS, make it reproducible
+- Demo: Refine the deployment system, deploy it on a VPS, make it reproducible
 - GitHub: Open-source the deployment framework (or parts of it)
 - YouTube: "Deploying AI agents for an entire team — architecture walkthrough" — this is the flagship video
 - LinkedIn: "Here's the exact architecture I use to deploy AI agents for teams. One server, one API key, one agent per employee."
@@ -143,7 +143,7 @@ Learn/Build → Working Demo (GitHub) → Content (YouTube + LinkedIn + X)
 
 **Project 5: Your First Client (pro bono or deeply discounted)**
 - Target: Amity Age or another contact from your network
-- Scope: Deploy the simplest version of Clawforce for their team
+- Scope: Deploy the simplest version of the multi-agent system for their team
 - Deliverable: Working agents + a case study with real metrics
 - Content: "Case Study: How [Company] deployed AI agents in 2 weeks" — blog post, video, LinkedIn
 - **Why fifth:** This is the only project that produces real social proof. Everything before this builds the skills and visibility to get here.
@@ -160,7 +160,7 @@ Learn/Build → Working Demo (GitHub) → Content (YouTube + LinkedIn + X)
 
 **Immediate (this week):**
 - Record/upload the Amity Age presentation to YouTube — this IS content, it shows expertise
-- Screenshot the Clawforce architecture and post it on LinkedIn
+- Screenshot the deployment architecture and post it on LinkedIn
 - Add "Speaking: The Age of Agentic AI (Amity Age, April 2026)" to your website's About section
 
 **Short-term (projects 1-3):**

@@ -2,7 +2,7 @@
 
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
-**Goal:** Migrate matejlukasik.com from a Hugo personal site to an Astro 6 bilingual marketing site for AI agent consulting, adapting the existing clawforce.sk codebase to a personal brand.
+**Goal:** Migrate matejlukasik.com from a Hugo personal site to an Astro 6 bilingual marketing site for AI agent consulting, adapting the earlier consulting site codebase to a personal brand.
 
 **Architecture:** Domain-based i18n — matejlukasik.com serves English, matejlukasik.sk serves Slovak. Astro middleware detects hostname and sets locale. All pages are SSR on Cloudflare Pages. Clean URLs with no language prefix (e.g., `/services` not `/en/services`). Language switcher links to the equivalent page on the other domain.
 
