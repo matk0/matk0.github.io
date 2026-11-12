@@ -66,17 +66,6 @@
     "ownershipLabel": "What I’m building",
     "items": [
       {
-        "id": "vozokany",
-        "title": "Vozokany",
-        "eyebrow": "Farm operations",
-        "status": "In use",
-        "preview": "I **replaced a farm’s email-based ordering** with a lean software solution. This made ordering products more convenient and led to **increased sales**.",
-        "description": "I built Vozokany after experiencing the farm’s ordering process as a customer. Offers arrived by email as images containing products and prices. Customers had to **compose their orders manually**, leaving the farmer to process the replies.\n\nI created a working prototype and developed it through ongoing feedback from the farmer. It grew into a system for weekly offers, online ordering, harvest planning and packing. One important simplification was giving each customer a **single editable weekly order** until a defined deadline, resolving confusion around repeated submissions. I owned the idea, product decisions, design, development using AI, deployment and ongoing maintenance.\n\nThe farm now **uses Vozokany every week** to send offers and receive orders. The farmer reports that customers order more regularly, which has **increased revenue**.",
-        "ownership": "I designed and built the application, its Rust/TypeScript API contract, executable business specifications and release verification.",
-        "cta": "Explore Vozokany",
-        "analyticsDestination": "vozokany"
-      },
-      {
         "id": "postwork",
         "title": "post.work",
         "eyebrow": "Managed AI agents",
@@ -96,11 +85,23 @@
         "ownership": "I built the Go/React application, scoped agent tools and the import pipeline that validates repository specifications and verification evidence.",
         "cta": "Explore Viki",
         "analyticsDestination": "viki"
+      },
+      {
+        "id": "vozokany",
+        "title": "Vozokany",
+        "eyebrow": "Farm operations",
+        "status": "In use",
+        "preview": "I **replaced a farm’s email-based ordering** with a lean software solution. This made ordering products more convenient and led to **increased sales**.",
+        "description": "I built Vozokany after experiencing the farm’s ordering process as a customer. Offers arrived by email as images containing products and prices. Customers had to **compose their orders manually**, leaving the farmer to process the replies.\n\nI created a working prototype and developed it through ongoing feedback from the farmer. It grew into a system for weekly offers, online ordering, harvest planning and packing. One important simplification was giving each customer a **single editable weekly order** until a defined deadline, resolving confusion around repeated submissions. I owned the idea, product decisions, design, development using AI, deployment and ongoing maintenance.\n\nThe farm now **uses Vozokany every week** to send offers and receive orders. The farmer reports that customers order more regularly, which has **increased revenue**.",
+        "ownership": "I designed and built the application, its Rust/TypeScript API contract, executable business specifications and release verification.",
+        "cta": "Explore Vozokany",
+        "analyticsDestination": "vozokany"
       }
     ],
     "ctaTitle": "Have a similar problem to solve?",
     "ctaDescription": "Let’s clarify the workflow, system, or business problem and **decide what is worth building**.",
-    "cta": "Email me"
+    "cta": "Email me",
+    "sectionTitle": "Current Projects"
   },
   "services": {
     "heroTitle": "How I Help",

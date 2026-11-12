@@ -16,7 +16,7 @@ test('Projects appears in both desktop and mobile navigation', () => {
   assert.equal(nav.match(/href="\/#projects"/g)?.length, 2);
 });
 
-test('The English project route show Vozokany, post.work and Viki in the same order', () => {
+test('The English project route shows post.work, Viki and Vozokany in the requested order', () => {
   assert.ok(existsSync(new URL('src/pages/projects.astro', root)));
   assert.ok(existsSync(new URL('src/pages/projekty.astro', root)));
 
@@ -30,8 +30,8 @@ test('The English project route show Vozokany, post.work and Viki in the same or
 
   assert.match(englishPage, /currentPath="\/projects"/);
   for (const copy of [en]) {
-    assert.deepEqual(copy.projects.items.map((project) => project.id), ['vozokany', 'postwork', 'viki']);
-    assert.deepEqual(copy.projects.items.map((project) => project.title), ['Vozokany', 'post.work', 'Viki']);
+    assert.deepEqual(copy.projects.items.map((project) => project.id), ['postwork', 'viki', 'vozokany']);
+    assert.deepEqual(copy.projects.items.map((project) => project.title), ['post.work', 'Viki', 'Vozokany']);
     for (const project of copy.projects.items) {
       const description = project.id === 'postwork' ? read('src/content/projects/postwork.md') : project.description;
       assert.ok(description.trim(), `${project.id} needs a description`);
@@ -91,8 +91,8 @@ test('post.work uses one Markdown case study for both page rendering and machine
   assert.match(showcase, /<PostworkDescription/);
   assert.match(fullCopy, /postwork\.md\?raw/);
   const description = read('src/content/projects/postwork.md');
-  assert.match(description, /^### Original Thesis/m);
-  assert.match(description, /^### Key Takeaways/m);
+  assert.match(description, /^### Thesis/m);
+  assert.match(description, /^### Key Learnings/m);
   assert.equal(description.match(/^- /gm)?.length, 3);
   assert.match(description, /\[autoresearch\]\(https:\/\/github.com\/karpathy\/autoresearch\)/);
   assert.match(description, /\[Hermes agent\]\(https:\/\/hermes-agent.nousresearch.com\/\)/);
