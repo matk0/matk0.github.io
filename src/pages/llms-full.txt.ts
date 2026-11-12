@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { t, CONTACT_EMAIL, CONTACT_HREF, DOMAINS, type Lang } from '../i18n';
 import { cv } from '../data/cv';
+import postworkDescription from '../content/projects/postwork.md?raw';
 
 function render(lang: Lang): string {
   const s = t(lang);
@@ -48,7 +49,9 @@ function render(lang: Lang): string {
     sections.push(`## ${project.title}`);
     sections.push(`*${project.eyebrow} — ${project.status}*`);
     sections.push('');
-    sections.push(project.description);
+    const description = project.id === 'postwork' ? postworkDescription.trim() : project.description;
+    if (!description) throw new Error(`Missing description for project ${project.id}`);
+    sections.push(description);
     sections.push('');
     sections.push(`${s.projects.ownershipLabel}: ${project.ownership}`);
     sections.push('');

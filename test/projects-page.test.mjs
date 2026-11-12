@@ -13,7 +13,7 @@ test('Projects appears in both desktop and mobile navigation', () => {
   assert.equal(en.nav.projects, 'Projects');
   assert.doesNotMatch(nav, /strings\.nav\.faq/);
   assert.equal(nav.match(/strings\.nav\.projects/g)?.length, 2);
-  assert.equal(nav.match(/href=\{paths\.projects\}/g)?.length, 2);
+  assert.equal(nav.match(/href="\/#projects"/g)?.length, 2);
 });
 
 test('The English project route show Vozokany, post.work and Viki in the same order', () => {
@@ -33,7 +33,8 @@ test('The English project route show Vozokany, post.work and Viki in the same or
     assert.deepEqual(copy.projects.items.map((project) => project.id), ['vozokany', 'postwork', 'viki']);
     assert.deepEqual(copy.projects.items.map((project) => project.title), ['Vozokany', 'post.work', 'Viki']);
     for (const project of copy.projects.items) {
-      assert.ok(project.description.trim(), `${project.id} needs a description`);
+      const description = project.id === 'postwork' ? read('src/content/projects/postwork.md') : project.description;
+      assert.ok(description.trim(), `${project.id} needs a description`);
     }
   }
 });
@@ -46,7 +47,7 @@ test('project routes participate in localization, discovery, and the footer', ()
 
   assert.match(i18n, /projects: '\/projects'/);
   assert.match(sitemap, /'\/projects'/);
-  assert.match(footer, /href=\{paths\.projects\}/);
+  assert.match(footer, /href="\/#projects"/);
   assert.match(llms, /https:\/\/matejlukasik\.com\/projects/);
 });
 
@@ -73,4 +74,27 @@ test('every listed project has its own local screenshot with English alternative
   }
 
   assert.equal(new Set(screenshots).size, 3);
+});
+
+test('the homepage replaces selected work with the complete project showcase before About', () => {
+  const homepage = read('src/pages/index.astro');
+  assert.doesNotMatch(homepage, /SelectedWork|id="selected-work"/);
+  assert.match(homepage, /id="projects"/);
+  assert.match(homepage, /<ProjectShowcase projects=\{strings.projects.items\}/);
+  assert.ok(homepage.indexOf('id="projects"') < homepage.indexOf('id="about"'));
+});
+
+test('post.work uses one Markdown case study for both page rendering and machine-readable copy', () => {
+  const showcase = read('src/components/ProjectShowcase.astro');
+  const fullCopy = read('src/pages/llms-full.txt.ts');
+  assert.match(showcase, /Content as PostworkDescription/);
+  assert.match(showcase, /<PostworkDescription/);
+  assert.match(fullCopy, /postwork\.md\?raw/);
+  const description = read('src/content/projects/postwork.md');
+  assert.match(description, /^### Original Thesis/m);
+  assert.match(description, /^### Key Takeaways/m);
+  assert.equal(description.match(/^- /gm)?.length, 3);
+  assert.match(description, /\[autoresearch\]\(https:\/\/github.com\/karpathy\/autoresearch\)/);
+  assert.match(description, /\[Hermes agent\]\(https:\/\/hermes-agent.nousresearch.com\/\)/);
+  assert.match(description, /\[keyana.sk\]\(https:\/\/www.keyana.sk\/\)/);
 });
