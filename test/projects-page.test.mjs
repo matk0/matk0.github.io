@@ -33,7 +33,7 @@ test('The English project route shows post.work, Viki and Vozokany in the reques
     assert.deepEqual(copy.projects.items.map((project) => project.id), ['postwork', 'viki', 'vozokany']);
     assert.deepEqual(copy.projects.items.map((project) => project.title), ['post.work', 'Viki', 'Vozokany']);
     for (const project of copy.projects.items) {
-      const description = project.id === 'postwork' ? read('src/content/projects/postwork.md') : project.description;
+      const description = ['postwork', 'viki'].includes(project.id) ? read(`src/content/projects/${project.id}.md`) : project.description;
       assert.ok(description.trim(), `${project.id} needs a description`);
     }
   }
@@ -84,12 +84,16 @@ test('the homepage replaces selected work with the complete project showcase bef
   assert.ok(homepage.indexOf('id="projects"') < homepage.indexOf('id="about"'));
 });
 
-test('post.work uses one Markdown case study for both page rendering and machine-readable copy', () => {
+test('long project descriptions use one Markdown source for page rendering and machine-readable copy', () => {
   const showcase = read('src/components/ProjectShowcase.astro');
   const fullCopy = read('src/pages/llms-full.txt.ts');
   assert.match(showcase, /Content as PostworkDescription/);
   assert.match(showcase, /<PostworkDescription/);
   assert.match(fullCopy, /postwork\.md\?raw/);
+  assert.match(showcase, /Content as VikiDescription/);
+  assert.match(showcase, /<VikiDescription/);
+  assert.match(fullCopy, /viki\.md\?raw/);
+  assert.equal(read('src/content/projects/viki.md').match(/^- /gm)?.length, 1);
   const description = read('src/content/projects/postwork.md');
   assert.match(description, /^### Thesis/m);
   assert.match(description, /^### Key Learnings/m);

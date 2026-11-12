@@ -3,6 +3,7 @@ import { projectMedia } from '../data/projects';
 import type { Lang } from '../i18n';
 import InlineEmphasis from './InlineEmphasis.astro';
 import { Content as PostworkDescription } from '../content/projects/postwork.md';
+import { Content as VikiDescription } from '../content/projects/viki.md';
 
 interface Project {
   id: string;
@@ -30,7 +31,7 @@ function paragraphs(project: Project) {
     return (
       <section
         id={project.id}
-        class:list={['project-row', { 'project-row-reversed': index % 2 === 1, 'project-row-essay': project.id === 'postwork' }]}
+        class:list={['project-row', { 'project-row-reversed': index % 2 === 1, 'project-row-essay': project.id === 'postwork' || project.id === 'viki' }]}
         aria-labelledby={`project-${project.id}`}
         data-analytics-section={`project_${project.id}`}
       >
@@ -69,7 +70,7 @@ function paragraphs(project: Project) {
             </div>
           </header>
           <div class="project-description space-y-4">
-            {project.id === 'postwork' ? <PostworkDescription /> : paragraphs(project).map(paragraph => <p><InlineEmphasis text={paragraph} /></p>)}
+            {project.id === 'postwork' ? <PostworkDescription /> : project.id === 'viki' ? <VikiDescription /> : paragraphs(project).map(paragraph => <p><InlineEmphasis text={paragraph} /></p>)}
           </div>
         </div>
       </section>
