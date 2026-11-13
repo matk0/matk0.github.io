@@ -64,6 +64,8 @@ export async function createCVPdf(content: CVContent): Promise<Uint8Array> {
   text('matejlukasik.com | linkedin.com/in/matej-lukasik | github.com/matk0', { size: 9, gap: 7 });
   heading(content.profileHeading);
   for (const paragraph of content.profile) text(paragraph);
+  heading(content.technologiesHeading);
+  text(content.technologies.join(' · '));
 
   const entryHeight = (entry: CVContent['entries'][number]) =>
     38 + (entry.summary ? wrap(entry.summary, regular, 10).length * 13 + 6 : 0)
@@ -81,9 +83,6 @@ export async function createCVPdf(content: CVContent): Promise<Uint8Array> {
     }
     y -= 6;
   }
-  heading(content.technologiesHeading);
-  text(content.technologies.join(' · '));
-
   const pages = pdf.getPages();
   pages.forEach((sheet, index) => {
     sheet.drawText('matejlukasik.com', { x: margin, y: 27, size: 8, font: regular, color: ink });

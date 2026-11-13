@@ -71,6 +71,9 @@ function render(lang: Lang): string {
   sections.push(`## ${resume.skillsHeading}`);
   sections.push(resume.skills.map(skill => `- ${skill}`).join('\n'));
   sections.push('');
+  sections.push(`## ${resume.technologiesHeading}`);
+  sections.push(resume.technologies.join(', '));
+  sections.push('');
   sections.push(`## ${resume.experienceHeading}`);
   for (const entry of resume.entries) {
     sections.push(`### ${entry.role} — ${entry.organization}`);
@@ -80,10 +83,6 @@ function render(lang: Lang): string {
     for (const highlight of entry.highlights) sections.push(`- ${highlight}`);
     sections.push('');
   }
-
-  sections.push(`## ${resume.technologiesHeading}`);
-  sections.push(resume.technologies.join(', '));
-  sections.push('');
 
   sections.push('---');
   sections.push('');

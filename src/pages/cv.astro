@@ -53,6 +53,11 @@ const content = cv[lang];
         </ul>
       </section>
 
+      <section class="cv-section" aria-labelledby="cv-technologies-heading">
+        <h2 id="cv-technologies-heading">{content.technologiesHeading}</h2>
+        <p class="cv-technologies cv-prose">{content.technologies.join(' · ')}</p>
+      </section>
+
       <section class="cv-experience" aria-labelledby="cv-experience-heading">
         <h2 id="cv-experience-heading">{content.experienceHeading}</h2>
         <ol class="cv-entries">
@@ -79,10 +84,6 @@ const content = cv[lang];
         </ol>
       </section>
 
-      <section class="cv-section" aria-labelledby="cv-technologies-heading">
-        <h2 id="cv-technologies-heading">{content.technologiesHeading}</h2>
-        <p class="cv-technologies cv-prose">{content.technologies.join(' · ')}</p>
-      </section>
     </div>
   </div>
 </Layout>
