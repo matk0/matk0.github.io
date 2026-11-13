@@ -28,6 +28,8 @@ export interface CVContent {
   experienceHeading: string;
   skillsHeading: string;
   skills: string[];
+  technologiesHeading: string;
+  technologies: string[];
   entries: CVEntry[];
 }
 
@@ -62,6 +64,8 @@ export const cv: Record<'en', CVContent> = {
       'AI-assisted development & automation: Building agent tools, shared context and verification workflows that support software delivery and business tasks.',
       'Technical collaboration: Working autonomously in remote teams, communicating decisions and tradeoffs, and mentoring engineers.',
     ],
+    technologiesHeading: 'Core Technologies',
+    technologies: ['Ruby', 'Ruby on Rails', 'PostgreSQL', 'Redis', 'Hotwire', 'Tailwind', 'React', 'GraphQL'],
     entries: [
       {
         id: 'independent',
@@ -115,13 +119,13 @@ export const cv: Record<'en', CVContent> = {
         role: 'Chief Technology Officer',
         organization: 'Zeilenwerk',
         start: '2017-08',
-        end: '2022-12',
-        period: 'August 2017 – December 2022',
+        end: '2020-10',
+        period: 'August 2017 – October 2020',
         location: '',
         summary: '',
         highlights: [
           'Helped turn a small startup into a structured engineering organization as its first employee and CTO.',
-          'Grew the development team **from 2 to 10 people within three years**.',
+          'Helped grow the development team **from 2 to 10 people within three years**.',
           'Gave the growing team a shared approach to software delivery by establishing Agile workflows, QA practices and collaboration processes using JIRA.',
           'Expanded the company’s development capabilities by introducing React, React Native and GraphQL.',
           'Delivered medium- to large-scale software projects by leading them **from initial concept through completion**.',

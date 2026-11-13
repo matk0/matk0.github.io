@@ -81,6 +81,10 @@ function render(lang: Lang): string {
     sections.push('');
   }
 
+  sections.push(`## ${resume.technologiesHeading}`);
+  sections.push(resume.technologies.join(', '));
+  sections.push('');
+
   sections.push('---');
   sections.push('');
   sections.push(`# Email contact`);

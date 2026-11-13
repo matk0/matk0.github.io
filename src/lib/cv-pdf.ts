@@ -81,6 +81,9 @@ export async function createCVPdf(content: CVContent): Promise<Uint8Array> {
     }
     y -= 6;
   }
+  heading(content.technologiesHeading);
+  text(content.technologies.join(' · '));
+
   const pages = pdf.getPages();
   pages.forEach((sheet, index) => {
     sheet.drawText('matejlukasik.com', { x: margin, y: 27, size: 8, font: regular, color: ink });
